@@ -2,7 +2,7 @@ This is a Dockerized [Next.js](https://nextjs.org/) project.
 
 ## Demo
 
-You can check [demo](https://june50232.github.io/next-typescript-tailwind-starter/)
+You can check [demo](https://june50232.github.io/ac-re-develop-website/)
 
 ## Features
 
