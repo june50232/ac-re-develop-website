@@ -1,12 +1,17 @@
-import Image from 'next/image';
+import React from 'react'
+import Image from 'next/image'
 
-import Nav from 'components/nav';
+import { 
+  HTMLHead,
+  Header, 
+} from 'components'
 
 export default function Main() {
   return (
     <div className="min-h-screen px-2 py-0 flex flex-col justify-center items-center">
-      <Nav />
-      <main className="px-0 py-20 flex flex-1 flex-col justify-center items-center">
+      <HTMLHead />
+      <Header />
+      <main className="px-0 flex flex-1 flex-col justify-center items-center">
         <h1 className="text-4xl mb-3 text-center">
           Welcome to{' '}
           <a

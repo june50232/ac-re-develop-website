@@ -1,8 +1,7 @@
 import Head from 'next/head';
 
-export default function Nav() {
+export default function HTMLHead() {
   return (
-    <nav>
       <Head>
         <title>Next Typescript Tailwind Starter</title>
         <meta charSet="utf-8" />
@@ -87,6 +86,5 @@ export default function Nav() {
         {/*  Manifest.json  */}
         <link href="manifest.json" rel="manifest" />
       </Head>
-    </nav>
   );
 }
