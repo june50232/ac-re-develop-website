@@ -1,9 +1,9 @@
 module.exports = {
   images: {
     loader: 'akamai',
-    path: '/',
+    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
   },
-  assetPrefix: ".",
+  assetPrefix: '.',
   webpackDevMiddleware: config => {
     config.watchOptions = {
       poll: 1000,
