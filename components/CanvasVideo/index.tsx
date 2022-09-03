@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 
 export default function CanvasVideo(props) {
-    const canvas = useRef(null)
-    const video = useRef(null)
+    const canvas: any = useRef(null)
+    const video: any = useRef(null)
     const fps = 60
     let width: number | null = 997
     let height: number | null = 700
@@ -10,7 +10,7 @@ export default function CanvasVideo(props) {
 
     const drawImage = () => {
         if (canvas.current && video.current) {
-            canvas.current?.getContext('2d', { alpha: false }).drawImage(video?.current, 0, 0, width, height);
+            canvas.current.getContext('2d', { alpha: false }).drawImage(video.current, 0, 0, width, height);
         }
     }
 
