@@ -28,7 +28,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        {/* TODO:   ＱㄌＱㄌ900 window width to mobile */}
+        {/* TODO: 900 window width to mobile */}
       </header>
   );
 }
