@@ -4,11 +4,12 @@ import Image from 'next/image'
 import { 
   HTMLHead,
   Header, 
+  Footer,
 } from 'components'
 
 export default function Main() {
   return (
-    <div className="min-h-screen px-2 py-0 flex flex-col justify-center items-center">
+    <div className="min-h-screen py-0 flex flex-col justify-center items-center">
       <HTMLHead />
       <Header />
       <main className="px-0 flex flex-1 flex-col justify-center items-center">
@@ -85,24 +86,7 @@ export default function Main() {
           </a>
         </div>
       </main>
-
-      <footer className="w-full h-24 border-gray-200 border-t-2 flex justify-center items-center">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center"
-        >
-          Powered by{' '}
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            className="h-4 ml-2"
-            width={70}
-            height={70}
-          />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
