@@ -9,14 +9,18 @@ export default function CanvasVideo(props) {
     let canvasInterval: number | undefined = undefined
 
     const drawImage = () => {
-        canvas.current.getContext('2d', { alpha: false }).drawImage(video.current, 0, 0, width, height);
+        if (canvas.current && video.current) {
+            canvas.current.getContext('2d', { alpha: false }).drawImage(video.current, 0, 0, width, height);
+        }
     }
 
     useEffect(() => {
         width = window.innerWidth
         height = window.innerHeight - 128
-        canvas.current.width = width
-        canvas.current.height = height
+        if (canvas.current) {
+            canvas.current.width = width
+            canvas.current.height = height
+        }
         canvasInterval = window.setInterval(() => {
             drawImage()
         }, 1000 / fps)
