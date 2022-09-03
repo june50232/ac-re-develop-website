@@ -27,12 +27,12 @@ export default function Footer() {
             <p>Fax: +886-2-2508-1348</p>
         </div> 
         <div
-            className="flex flex-1 justify-center"
+            className="flex justify-center"
         >    
         <Logo/>
         </div> 
         <ul
-            className="flex flex-1 justify-end space-x-4"
+            className="flex flex-1 justify-end space-x-8"
         >
             <li className="flex">
                 <a 
@@ -44,7 +44,7 @@ export default function Footer() {
                     width={36}
                     height={36}
                 />
-                <p>
+                <p className="text-xl">
                 info@ac-re.com.tw
                 </p>
                 <a hidden href="https://www.flaticon.com/free-icons/telephone" title="telephone icons">Telephone icons created by DinosoftLabs - Flaticon</a>
@@ -59,11 +59,8 @@ export default function Footer() {
                         src="/img/telephone-icon.svg"
                         width={28}
                         height={28}
-                        style={{
-                            marginBottom: '3px'
-                        }}
                     />
-                    <p>
+                    <p className="text-xl">
                     +886-2-2508-0488
                     </p>
                     <a hidden href="https://www.flaticon.com/free-icons/telephone" title="telephone icons">Telephone icons created by DinosoftLabs - Flaticon</a>

@@ -10,7 +10,7 @@ export default function CanvasVideo(props) {
 
     const drawImage = () => {
         if (canvas.current && video.current) {
-            canvas.current.getContext('2d', { alpha: false }).drawImage(video.current, 0, 0, width, height);
+            canvas.current?.getContext('2d', { alpha: false }).drawImage(video?.current, 0, 0, width, height);
         }
     }
 
