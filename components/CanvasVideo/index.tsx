@@ -5,7 +5,7 @@ export default function CanvasVideo(props) {
     const video = useRef(null)
     const fps = 60
     let width: number | null = 997
-    let height: number | null = 865
+    let height: number | null = 700
     let canvasInterval: number | undefined = undefined
 
     const drawImage = () => {
@@ -14,7 +14,7 @@ export default function CanvasVideo(props) {
 
     useEffect(() => {
         width = window.innerWidth
-        height = window.innerHeight
+        height = window.innerHeight - 128
         canvas.current.width = width
         canvas.current.height = height
         canvasInterval = window.setInterval(() => {
@@ -35,7 +35,6 @@ export default function CanvasVideo(props) {
     }
 
     const onPlay = () => {
-        console.log('play')
         clearInterval(canvasInterval)
         canvasInterval = window.setInterval(() => {
           drawImage()
