@@ -2,16 +2,16 @@ const NavList: {title: string, url: string}[] = [{
     title: 'Home',
     url: './home',
 }, {
-    title: 'About',
+    title: 'About AC Re',
     url: './about',
 }, {
-    title: 'Services',
+    title: 'Our Services & Products',
     url: './services'
 }, {
     title: 'Career',
     url: './career',
 }, {
-    title: 'Contact',
+    title: 'Contact Us',
     url: './contact',
 }]
 

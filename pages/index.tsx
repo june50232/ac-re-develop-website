@@ -1,91 +1,27 @@
+import { CanvasVideo } from 'components';
 import React from 'react'
-
-import { 
-  HTMLHead,
-  Header, 
-  Footer,
-} from 'components'
 
 export default function Main() {
   return (
-    <div className="min-h-screen py-0 flex flex-col justify-center items-center">
-      <HTMLHead />
-      <Header />
-      <main className="px-0 flex flex-1 flex-col justify-center items-center">
-        <h1 className="text-4xl mb-3 text-center">
-          Welcome to{' '}
-          <a
-            href="https://nextjs.org"
-            className="text-blue-600 no-underline hover:underline focus:underline active:underline"
+    <>
+      <section>
+        <div className="relative">
+          <CanvasVideo
+            src="https://acre-website.s3.ap-northeast-1.amazonaws.com/videos/ocean-video.mp4"
+          />
+          <div
+            className="absolute text-5xl text-white top-1/3 w-screen text-center"
           >
-            Next.js
-          </a>
-          {' + '}
-          <a
-            href="https://www.typescriptlang.org/"
-            className="text-blue-600 no-underline hover:underline focus:underline active:underline"
-          >
-            Typescript
-          </a>
-          {' + '}
-          <a
-            href="https://tailwindcss.com/"
-            className="text-blue-600 no-underline hover:underline focus:underline active:underline"
-          >
-            Tailwind CSS!
-          </a>
-        </h1>
-
-        <p className="text-xl text-center">
-          Get started by editing{' '}
-          <code className="bg-gray-50 rounded-md p-3 text-base font-mono">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="flex flex-wrap justify-center items-center max-w-screen-md mt-12 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="w-72 flex-grow flex-shrink-0 m-4 p-5 text-left no-underline border border-gray-200 rounded-xl transition duration-500 ease-in-out transform hover:text-blue-600 hover:border-2 hover:border-blue-600 focus:text-blue-600 focus:border-blue-600 active:text-blue-600 active:border-blue-600"
-          >
-            <h3 className="mb-4 text-xl">Documentation &rarr;</h3>
-            <p className="text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="w-72 flex-grow flex-shrink-0 m-4 p-5 text-left no-underline border border-gray-200 rounded-xl transition duration-500 ease-in-out transform hover:text-blue-600 hover:border-2 hover:border-blue-600 focus:text-blue-600 focus:border-blue-600 active:text-blue-600 active:border-blue-600"
-          >
-            <h3 className="mb-4 text-xl">Learn &rarr;</h3>
-            <p className="text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="w-72 flex-grow flex-shrink-0 m-4 p-5 text-left no-underline border border-gray-200 rounded-xl transition duration-500 ease-in-out transform hover:text-blue-600 hover:border-2 hover:border-blue-600 focus:text-blue-600 focus:border-blue-600 active:text-blue-600 active:border-blue-600"
-          >
-            <h3 className="mb-4 text-xl">Examples &rarr;</h3>
-            <p className="text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="w-72 flex-grow flex-shrink-0 m-4 p-5 text-left no-underline border border-gray-200 rounded-xl transition duration-500 ease-in-out transform hover:text-blue-600 hover:border-2 hover:border-blue-600 focus:text-blue-600 focus:border-blue-600 active:text-blue-600 active:border-blue-600"
-          >
-            <h3 className="mb-4 text-xl">Deploy &rarr;</h3>
-            <p className="text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <h1>Welcome to <span
+              className="text-5xl inline-block align-top text-left"
+              style={{
+                borderBottom: '3px double white',
+                lineHeight: '1.1em'
+              }}
+            >Asia Capital Reinsurance <br/>Service Corportation Limited.</span></h1>
+          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+    </>
   );
 }

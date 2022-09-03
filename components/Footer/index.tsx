@@ -23,7 +23,7 @@ export default function Footer() {
             className="flex flex-col flex-1"
         >   
             <h2>AC Re Services Co., Ltd.</h2>
-            <p>Adress: 9F.-5, No. 63, Sec. 2, Chang'an East Rd., Taipei 104097, Taiwan</p>
+            <p>9F.-5, No. 63, Sec. 2, Chang'an East Rd., Taipei 104097, Taiwan</p>
             <p>Fax: +886-2-2508-1348</p>
         </div> 
         <div
