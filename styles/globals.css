@@ -195,6 +195,16 @@ body::-webkit-scrollbar {
     top: 50%;
 }
 
+/* https://www.shutterstock.com/zh-Hant/image-vector/panorama-view-taipei-skyline-world-famous-1205662696 */
+.img-taipei {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://image.shutterstock.com/image-vector/panorama-view-taipei-skyline-world-600w-1205662696.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* https://www.shutterstock.com/zh/image-photo/business-man-open-hand-ready-seal-215547460 */
 .img-meeting {
     background-image: url("https://image.shutterstock.com/image-photo/business-man-open-hand-ready-600w-215547460.jpg");
