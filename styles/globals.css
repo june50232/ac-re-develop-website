@@ -100,7 +100,7 @@
     position: relative;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 
 .hover-effect1:hover p {
@@ -116,7 +116,7 @@
     bottom: 0;
     width: 0;
     height: 100%;
-    transition: all .3s ease-in-out;
+    transition: all .8s ease-in-out;
     opacity: 0.8;
     border-radius: 8px;
 }
