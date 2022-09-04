@@ -38,7 +38,7 @@ export default function Main() {
       <section className="bg-slate-200 flex flex-col album" id="why-ac-re-section">
         <div className="relative flex justify-center w-screen h-72 flex-col">
           <div className="flex texture-bg justify-center">
-            <h3 className="text-5xl">Why  <LogoIcon scale={1.2} />  AC Re</h3>
+            <h3 className="text-5xl">Why <LogoIcon scale={1.2} /> AC Re</h3>
           </div>
         </div>
         <ul
@@ -51,7 +51,7 @@ export default function Main() {
             <p className="text-2xl"><LogoIcon scale={0.5} /> AC Re always acts in the client’s best interest and represents you rather than a single insurance company, you can trust you’ll be receiving unbiased information and recommendations.</p>
           </li>
           <li className="flex grow justify-center bg-slate-50 img-texture hover-effect1 texture-bg">
-          <p className="text-2xl">We supports you by giving you technical advice that can be very useful if you need to make a claim.</p>
+          <p className="text-2xl">We support you by giving you technical advice that can be very useful if you need to make a claim.</p>
           </li>
         </ul>
         <ul
@@ -90,7 +90,7 @@ export default function Main() {
                 }}
                 className="img-forward-thinking hover-effect2 flex justify-end img-subscri-effect img-subscri-effect-no-hover">
                   <a className="flex justify-center" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-illustration/stand-out-crowd-dominos-business-leadership-1975784561">
-                    <h5 className="text-white z-[2] text-3xl">Forward-Thinking</h5>
+                    <h5 className="text-white z-[2] text-3xl">Forward Thinking</h5>
                   </a>
                 </li>
                 <li 
