@@ -30,6 +30,8 @@
 
 :root {
     --brand-blue-color: #2056AE;
+    --brand-darker-blue-color: #46659e;
+    --brand-light-blue-color: #1BA7E6;
 }
 
 * {
@@ -60,4 +62,114 @@
 .menu-hover-line:hover:after {
     opacity: 1;
     transform: translateY(0px);
+}
+
+.album ul li {
+    height: 350px;
+    width: 500px;
+    padding: 3em;
+    flex-direction: column;
+    position: relative;
+    cursor: arrow;
+}
+
+.img-bg:before {
+    content: '';
+    background: var(--brand-light-blue-color);
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+}
+
+/* .hover-effect1 start */
+
+.hover-effect1 p {
+    background-image: linear-gradient(
+        to right,
+        white,
+        white 50%,
+        var(--brand-darker-blue-color) 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-effect1:hover p {
+    background-position: 0;
+    z-index: 1;
+}
+
+.hover-effect1:after {
+    content: '';
+    background: var(--brand-blue-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    transition: all .3s ease-in-out;
+    opacity: 0.7;
+}
+
+.hover-effect1:hover:after {
+    bottom: 0;
+    width: 100%;
+}
+
+/* .hover-effect1 end */
+
+/* https://pixabay.com/photos/laptop-office-hand-writing-3196481/ */
+.img-meeting {
+    background-image: url("https://cdn.pixabay.com/photo/2018/03/03/20/02/laptop-3196481__480.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* https://pixabay.com/photos/shaking-hands-handshake-hands-3091906/ */
+.img-handsshake {
+    background-image: url("https://cdn.pixabay.com/photo/2018/01/19/07/57/shaking-hands-3091906_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* https://pixabay.com/photos/shipping-container-terminal-4319421/ */
+/* https://pixabay.com/photos/container-freight-cargo-port-489933/ */
+.img-cargo-ship {
+    background-image: url("https://cdn.pixabay.com/photo/2014/10/15/16/54/container-489933_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-building {
+    background-image: url("https://pixabay.com/photos/architecture-building-business-city-1868667/");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* https://pixabay.com/photos/texture-rough-plaster-plaster-wall-1504364/ */
+.texture-bg::before {
+    content: '';
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/08/13/37/texture-1504364_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1;
 }
