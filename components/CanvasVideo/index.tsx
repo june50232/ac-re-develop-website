@@ -21,6 +21,10 @@ export default function CanvasVideo(props) {
             canvas.current.width = width
             canvas.current.height = height
         }
+        if (video.current) {
+            video.current.width = width
+            video.current.height = height
+        }
         canvasInterval = window.setInterval(() => {
             drawImage()
         }, 1000 / fps)
@@ -48,11 +52,7 @@ export default function CanvasVideo(props) {
     return (
         <>
             <div className="w-screen relative">
-                <canvas 
-                    ref={canvas}
-                ></canvas>
                 <video
-                    controls 
                     autoPlay
                     ref={video}
                     src={props.src}
@@ -60,12 +60,17 @@ export default function CanvasVideo(props) {
                     playsInline
                     // webkit-playsinline
                     muted
-                    className="invisible absolute -z-1 top-0"
+                    //className="invisible absolute -z-1 top-0"
                     onPause={onPause}
                     onEnded={onEnded}
                     onPlay={onPlay}
                 >
                 </video>
+                <canvas 
+                    ref={canvas}
+                    className="invisible absolute -z-1 top-0"
+                ></canvas>
+                
             </div>
         </>
     )
