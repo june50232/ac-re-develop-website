@@ -134,31 +134,32 @@
     cursor: pointer;
 }
 
-.hover-effect2:after, .hover-effect2:before{
+.hover-effect2:before{
     content:" ";
-    width: 30%;
-    height: 10%;
+    width: 0;
+    opacity: 0;
     position:absolute;
     border :0px solid #fff;
     transition:all 1s;
 }
 
-.hover-effect2:after{
+/* .hover-effect2:after{
     top:-12px;
-    right:-12px;
-    border-top:1em solid var(--brand-light-blue-color);
-    border-right:1em solid var(--brand-light-blue-color);
-}
+    right:0;
+    border-top:1em solid white;
+    border-right:1em solid white;
+} */
 
 .hover-effect2:before{
     bottom:-12px;
-    left:-12px;
+    left:0;
     border-bottom:1em solid var(--brand-blue-color);
     border-left:1em solid var(--brand-blue-color);
 }
 
-.hover-effect2:hover:after, .hover-effect2:hover:before {
-    width:106%;
+.hover-effect2:hover:before {
+    opacity: 1;
+    width:100%;
 }
 /* .hover-effect2 end */
 
