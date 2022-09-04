@@ -145,16 +145,16 @@
 
 .hover-effect2:after{
     top:-12px;
-    left:-12px;
+    right:-12px;
     border-top:1em solid var(--brand-light-blue-color);
-    border-left:1em solid var(--brand-light-blue-color);
+    border-right:1em solid var(--brand-light-blue-color);
 }
 
 .hover-effect2:before{
     bottom:-12px;
-    right:-12px;
+    left:-12px;
     border-bottom:1em solid var(--brand-blue-color);
-    border-right:1em solid var(--brand-blue-color);
+    border-left:1em solid var(--brand-blue-color);
 }
 
 .hover-effect2:hover:after, .hover-effect2:hover:before {
