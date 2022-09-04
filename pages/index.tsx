@@ -88,7 +88,7 @@ export default function Main() {
                 onClick={() => {
                   window.open('https://www.shutterstock.com/zh/image-illustration/stand-out-crowd-dominos-business-leadership-1975784561')
                 }}
-                className="img-forward-thinking hover-effect2 flex justify-end img-subscri-effect">
+                className="img-forward-thinking hover-effect2 flex justify-end img-subscri-effect img-subscri-effect-no-hover">
                   <a className="flex justify-center" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-illustration/stand-out-crowd-dominos-business-leadership-1975784561">
                     <h5 className="text-white z-[2] text-2xl">Forward-Thinking</h5>
                   </a>
