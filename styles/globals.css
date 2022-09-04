@@ -41,6 +41,14 @@
     letter-spacing: 0.025em;
 }
 
+body {
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .menu-hover-line:hover {
     color: var(--brand-blue-color);
 }
