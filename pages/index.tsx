@@ -8,7 +8,7 @@ export default function Main() {
 
   return (
     <>
-      <section>
+      <section id="banner-section">
         <div className="relative">
           <CanvasVideo
           //https://www.istockphoto.com/video/beautiful-building-architecture-city-life-in-taipei-taiwan-gm1161758889-318437607
@@ -33,10 +33,10 @@ export default function Main() {
           </div>
         </div>
       </section>
-      <section className="bg-slate-200 flex flex-col album">
+      <section className="bg-slate-200 flex flex-col album" id="why-ac-re-section">
         <div className="relative flex justify-center w-screen h-72 flex-col">
           <div className="flex texture-bg justify-center">
-            <h3 className="text-5xl">Why <LogoIcon scale={1.5} /> AC Re</h3>
+            <h3 className="text-5xl">Why  <LogoIcon scale={1.2} />  AC Re</h3>
           </div>
         </div>
         <ul
@@ -59,6 +59,34 @@ export default function Main() {
           <li className="img-bg img-handsshake"></li>
         </ul>
       </section>
+
+      <section className="bg-slate-200 flex flex-col album" id="core-value-section">
+        <div className="relative flex justify-center w-screen h-72 flex-col">
+          <div className="flex texture-bg justify-center">
+            <h3 className="text-5xl">Core <LogoIcon rotate={180} />alue</h3>
+          </div>
+        </div>
+        <div className="texture-bg relative">
+            <ul className="flex mb-32 space-x-8 px-8">
+                <li className="img-professional hover-effect2 flex justify-end img-subscri-effect ">
+                  <a className="flex justify-center">
+                    <h5 className="text-white z-[2] text-2xl">Professional Service</h5>
+                  </a>
+                </li>
+                <li className="img-forward-thinking hover-effect2 flex justify-end img-subscri-effect ">
+                  <a className="flex justify-center">
+                    <h5 className="text-white z-[2] text-2xl">Forward-Thinking</h5>
+                  </a>
+                </li>
+                <li className="img-sustain hover-effect2 flex justify-end img-subscri-effect">
+                  <a className="flex justify-center">
+                    <h5 className="text-white z-[2] text-2xl">Sustainable Future</h5>
+                  </a>
+                </li>
+            </ul>
+        </div>
+      </section>
+
     </>
   );
 }

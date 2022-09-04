@@ -16,7 +16,10 @@ module.exports = {
     extend: {
       colors: {
         brand_blue: '#2056AE'
-      }
+      },
+      zIndex: {
+        '2': '2',
+      },
     }
   },
   variants: {
