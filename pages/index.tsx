@@ -48,17 +48,17 @@ export default function Main() {
             <a className="absolute top-0 bottom-0 left-0 right-0" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-photo/business-man-open-hand-ready-seal-215547460" />
           </li>
           <li className="flex grow justify-center bg-slate-100 img-texture hover-effect1 texture-bg">
-            <p className="text-xl"><LogoIcon scale={0.5} /> AC Re always acts in the client’s best interest and represents you rather than a single insurance company, you can trust you’ll be receiving unbiased information and recommendations.</p>
+            <p className="text-2xl"><LogoIcon scale={0.5} /> AC Re always acts in the client’s best interest and represents you rather than a single insurance company, you can trust you’ll be receiving unbiased information and recommendations.</p>
           </li>
           <li className="flex grow justify-center bg-slate-50 img-texture hover-effect1 texture-bg">
-          <p className="text-xl">We supports you by giving you technical advice that can be very useful if you need to make a claim.</p>
+          <p className="text-2xl">We supports you by giving you technical advice that can be very useful if you need to make a claim.</p>
           </li>
         </ul>
         <ul
           className="flex flex-row flex-nowrap justify-between"
         >
           <li className="flex grow justify-center bg-slate-50 img-texture hover-effect1 texture-bg">
-          <p className="text-xl">We also help you identify your risks and manage them by offering a customized insurance and risk management program, where we design the policies, negotiate the terms with insurance companies and help you find the most appropriate cover perfectly tailored to your unique needs at fair prices.</p>
+          <p className="text-2xl">We also help you identify your risks and manage them by offering a customized insurance and risk management program, where we design the policies, negotiate the terms with insurance companies and help you find the most appropriate cover perfectly tailored to your unique needs at fair prices.</p>
           </li>
           <li className="img-bg img-handsshake">
           <a className="absolute top-0 bottom-0 left-0 right-0" rel="noreferrer" target="_blank" href="https://www.istockphoto.com/photo/businessman-and-woman-shake-hands-after-a-successful-job-interview-gm1184002726-333113878?phrase=DOF%20bussiness" />
@@ -81,7 +81,7 @@ export default function Main() {
                   }}
                   >
                   <a className="flex justify-center" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-photo/closeup-image-businessman-drawing-graphbusiness-strategy-328738163">
-                    <h5 className="text-white z-[2] text-2xl">Professional Service</h5>
+                    <h5 className="text-white z-[2] text-3xl">Professional Service</h5>
                   </a>
                 </li>
                 <li 
@@ -90,7 +90,7 @@ export default function Main() {
                 }}
                 className="img-forward-thinking hover-effect2 flex justify-end img-subscri-effect img-subscri-effect-no-hover">
                   <a className="flex justify-center" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-illustration/stand-out-crowd-dominos-business-leadership-1975784561">
-                    <h5 className="text-white z-[2] text-2xl">Forward-Thinking</h5>
+                    <h5 className="text-white z-[2] text-3xl">Forward-Thinking</h5>
                   </a>
                 </li>
                 <li 
@@ -100,7 +100,7 @@ export default function Main() {
                 }}
                 >
                   <a className="flex justify-center" rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh/image-photo/eco-architecture-green-tree-glass-office-2042679986">
-                    <h5 className="text-white z-[2] text-2xl">Sustainable Future</h5>
+                    <h5 className="text-white z-[2] text-3xl">Sustainable Future</h5>
                   </a>
                 </li>
             </ul>
