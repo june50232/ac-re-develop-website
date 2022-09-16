@@ -4,7 +4,6 @@ import Logo from "./Logo"
 import Footer from "./Footer"
 import CanvasVideo from "./CanvasVideo"
 import Layout from "./Layout"
-import LogoIcon from "./LogoIcon"
 
 export {
     HTMLHead,
@@ -13,5 +12,4 @@ export {
     Footer,
     CanvasVideo,
     Layout,
-    LogoIcon,
 }

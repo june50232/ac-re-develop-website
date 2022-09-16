@@ -1,7 +1,4 @@
 const NavList: {title: string, url: string}[] = [{
-    title: 'Home',
-    url: './',
-}, {
     title: 'About AC Re',
     url: './about',
 }, {

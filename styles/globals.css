@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+
 /**
  * @license
  * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
@@ -24,52 +27,49 @@
     url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.svg) format('svg');
 }
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
     --brand-blue-color: #2056AE;
     --brand-darker-blue-color: #46659e;
     --brand-light-blue-color: #1BA7E6;
+    --font_1: normal normal normal initial 'AdobeGaramondBold',sans-serif;
+    --font_2: normal normal normal initial 'open sans',sans-serif;
 }
 
-* {
-    font-family: AdobeGaramondBold, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 450;
-    letter-spacing: 0.025em;
+@layer base {
+    body {
+        font-size: 16px;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-body {
-    scrollbar-width: none;
-}
+@layer utilities {
+    .menu-hover-line:after {
+        content: '';
+        left: 25%;
+        width: 50%;
+        height: 3px;
+        background: theme(colors.primary.light);
+        opacity: 0;
+        transform: translateY(5px);
+        transition: transform 0.3s, opacity 0.3s;
+        pointer-events: none;
+        @apply absolute bottom-0
+    }
 
-body::-webkit-scrollbar {
-    display: none;
-}
+    .menu-hover-line:hover:after {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 
-.menu-hover-line:hover {
-    color: var(--brand-blue-color);
-}
-
-.menu-hover-line:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--brand-blue-color);
-    opacity: 0;
-    transform: translateY(5px);
-    transition: transform 0.3s, opacity 0.3s;
-    pointer-events: none;
-}
-
-.menu-hover-line:hover:after {
-    opacity: 1;
-    transform: translateY(0px);
+    .hamburger-button-icon {
+        color: theme(colors.primary.DEFAULT);
+    }
 }
 
 .album ul li {
@@ -195,55 +195,55 @@ body::-webkit-scrollbar {
     top: 50%;
 }
 
-/* https://www.shutterstock.com/zh-Hant/image-vector/panorama-view-taipei-skyline-world-famous-1205662696 */
+/* https://www.shutterstock.com/zh-Hant/image-illustration/sun-shining-over-high-detailed-view-2004374999 */
 .img-taipei {
     width: 100vw;
     height: 100vh;
-    background-image: url("https://image.shutterstock.com/image-vector/panorama-view-taipei-skyline-world-600w-1205662696.jpg");
+    background-image: url("https://image.shutterstock.com/image-illustration/sun-shining-over-high-detailed-600w-2004374999.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-/* https://www.shutterstock.com/zh/image-photo/business-man-open-hand-ready-seal-215547460 */
+
+/* https://www.shutterstock.com/zh-Hant/image-photo/beautiful-woman-going-work-coffee-walking-778962694 */
 .img-meeting {
-    background-image: url("https://image.shutterstock.com/image-photo/business-man-open-hand-ready-600w-215547460.jpg");
+    background-image: url("https://image.shutterstock.com/image-photo/beautiful-woman-going-work-coffee-600w-778962694.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-/* https://www.shutterstock.com/zh/image-photo/closeup-image-businessman-drawing-graphbusiness-strategy-328738163 */
-.img-professional {
-    background-image: url("https://image.shutterstock.com/image-photo/closeup-image-businessman-drawing-graphbusiness-600w-328738163.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-/* https://www.shutterstock.com/zh/image-illustration/stand-out-crowd-dominos-business-leadership-1975784561 */
-.img-forward-thinking {
-    background-image: url("https://image.shutterstock.com/image-illustration/stand-out-crowd-dominos-business-600w-1975784561.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-
-/* https://www.shutterstock.com/zh/image-photo/eco-architecture-green-tree-glass-office-2042679986 */
-.img-sustain {
-    background-image: url("https://image.shutterstock.com/image-photo/eco-architecture-green-tree-glass-600w-2042679986.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-/* https://www.istockphoto.com/photo/businessman-and-woman-shake-hands-after-a-successful-job-interview-gm1184002726-333113878?phrase=DOF%20bussiness */
+/* https://www.shutterstock.com/zh-Hant/image-photo/good-deal-close-two-business-people-400222735 */
 .img-handsshake {
-    background-image: url("https://media.istockphoto.com/id/1184002726/photo/businessman-and-woman-shake-hands-after-a-successful-job-interview.webp?s=612x612&w=is&k=20&c=52LTr1JvtvFWApVRn9qVT4YE9v3E0IS0O4N2MsEtz7Y=");
+    background-image: url("https://image.shutterstock.com/image-photo/good-deal-closeup-two-business-600w-400222735.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* https://www.shutterstock.com/zh-Hant/image-photo/business-people-meeting-office-writing-memos-1680524947 */
+.img-professional {
+    background-image: url("https://image.shutterstock.com/image-photo/business-people-meeting-office-writing-600w-1680524947.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* https://www.shutterstock.com/zh-Hant/image-photo/start-think-big-recovery-challenge-life-2055565847 */
+.img-forward-thinking {
+    background-image: url("https://image.shutterstock.com/image-photo/start-think-big-recovery-challenge-600w-2055565847.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/* https://www.shutterstock.com/zh-Hant/image-photo/child-holding-paper-house-hands-real-1095897620 */
+.img-sustain {
+    background-image: url("https://image.shutterstock.com/image-photo/child-holding-paper-house-hands-600w-1095897620.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -1,15 +1,19 @@
 import React from 'react'
-import { LogoIcon } from '../'
+import Image from 'next/image'
 
-export default function Logo() {
+export default function Logo(props) {
+  const scale = props.scale ?? 1
   return (
-    <>
-        <div className="w-14">
-            <LogoIcon />
-        </div>
-        <h3
-            className="text-2xl mx-2.5 tracking-wider mt-5"
-        >AC Re</h3>
-    </>
+    <div 
+      className={"flex justify-start items-center"}
+      style={props.style || {}}
+      >
+        <Image 
+          src="/img/logo.svg" 
+          width={150*scale}
+          height={39*scale}
+          alt="logo"
+        />
+    </div>
   );
 }

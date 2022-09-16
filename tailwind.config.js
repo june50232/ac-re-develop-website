@@ -5,25 +5,48 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    screens: {
-      // adding xs to the rest
-      underLaptop: {'max': '900px'},
-      // if you did not add this, you would have only "xs"
-      ...defaultTheme.screens,
+    colors: {
+      white: '#ffffff',
+      default: '#034AF9',
+      primary: {
+        light: '#A0DDFE',
+        DEFAULT: '#034AF9',
+        dark: '#034AF9',
+      },
+      secondary: {
+        lightest: '#C4C4C4',
+        lighter: '#8A979F',
+        light: '#768592',
+        DEFAULT: '#596A78',
+        dark: '#374B5C',
+        darker: '#000000'
+      },
     },
-    extend: {
-      colors: {
-        brand_blue: '#2056AE'
-      },
-      zIndex: {
-        '2': '2',
-      },
+    fontSize: {
+      'xs': ['.57rem', '.85rem'], // 4, 6
+      'sm': ['.71rem', '1rem'], // 5, 7
+      'base': ['1rem', '1.28rem'], // 7, 9
+      'lg': ['1.14rem', '1.28rem'], // 8, 9
+      'xl': ['1.71rem', '2.074rem'], // 12, 14,52
+      '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
+      '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
+      '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
     }
   },
-  variants: {
-    extend: {},
+  extends: {
+    fontFamily: {
+      sans: ["Helvetica Neue", "Helvetica","Arial", "Verdana","Roboto", ...defaultTheme.fontFamily.sans],
+      serif: ["AdobeGaramondBold", ...defaultTheme.fontFamily.serif]
+    },
+    zIndex: {
+      '1': '1',
+    },
+    width: {
+      '42%': '42%',
+    }
   },
-  plugins: [],
+  plugins:  [
+    require('postcss-nesting'),
+  ]
 };

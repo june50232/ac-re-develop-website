@@ -1,34 +1,24 @@
 import React from 'react'
-import { 
-  CanvasVideo, 
-  LogoIcon 
-} from 'components';
 
-export default function Main() {
+export default function Home() {
 
   return (
     <>
       <section id="banner-section">
-      <a rel="noreferrer" target="_blank" href="https://www.istockphoto.com/video/beautiful-building-architecture-city-life-in-taipei-taiwan-gm1161758889-318437607">
+      <a rel="noreferrer" target="_blank" href="https://www.shutterstock.com/zh-Hant/image-vector/panorama-view-taipei-skyline-world-famous-1205662696">
         <div className="relative">
-          <CanvasVideo
+          {/* <CanvasVideo
           //https://www.istockphoto.com/video/beautiful-building-architecture-city-life-in-taipei-taiwan-gm1161758889-318437607
             src="https://media.istockphoto.com/videos/beautiful-building-architecture-city-life-in-taipei-taiwan-video-id1161758889"
             // src="https://acre-website.s3.ap-northeast-1.amazonaws.com/videos/city-video2.mp4"
-          />
+          /> */}
+          <div className="img-taipei"></div>
           <div
             className="absolute text-5xl text-white top-1/3 w-screen pl-12"
           >
             <h1>Welcome to <span
-              className="text-5xl inline-block align-top text-left max-w-screen-sm"
-            >Asia Capital Reinsurance <br/><span
-              className="text-5xl"
-              style={{
-                borderBottom: '3px double white',
-                lineHeight: '1.1em'
-              }}
-            >Service Corportation Limited.</span>
-            <br/>
+              className="text-5xl inline-block text-left max-w-screen-sm"
+            >AC Re Services Co., Ltd.
             </span>
             </h1>
           </div>
@@ -36,11 +26,32 @@ export default function Main() {
         </a>
       </section>
       <section className="bg-slate-200 flex flex-col album" id="why-ac-re-section">
+        {/* 
         <div className="relative flex justify-center w-screen h-72 flex-col">
           <div className="flex texture-bg justify-center">
-            <h3 className="text-5xl">Why <LogoIcon scale={1.2} /> AC Re</h3>
+            <h3 className="text-5xl">Why <LogoIcon scale={1.2} /> <span className="logo-font text-5xl">AC Re</span></h3>
           </div>
         </div>
+        */}
+
+        <ul
+          className="flex flex-row flex-nowrap justify-between"
+        >
+          <li className="img-meeting flex-none w-5/12"></li>
+          <li className="flex flex-grow">
+          {/* <p className="text-2xl"><LogoIcon scale={0.5} /> AC Re always acts in the client’s best interest and represents you rather than a single insurance company, you can trust you’ll be receiving unbiased information and recommendations.</p> */}
+          </li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+
+        {/* 
         <ul
           className="flex flex-row flex-nowrap justify-between"
         >
@@ -64,12 +75,13 @@ export default function Main() {
           <a className="absolute top-0 bottom-0 left-0 right-0" rel="noreferrer" target="_blank" href="https://www.istockphoto.com/photo/businessman-and-woman-shake-hands-after-a-successful-job-interview-gm1184002726-333113878?phrase=DOF%20bussiness" />
           </li>
         </ul>
+         */}
       </section>
 
       <section className="bg-slate-200 flex flex-col album" id="core-value-section">
         <div className="relative flex justify-center w-screen h-72 flex-col">
           <div className="flex texture-bg justify-center">
-            <h3 className="text-5xl">Core <LogoIcon rotate={180} />alue</h3>
+            {/* <h3 className="text-5xl">Core <LogoIcon rotate={180} />alue</h3> */}
           </div>
         </div>
         <div className="texture-bg relative">

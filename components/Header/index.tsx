@@ -1,34 +1,66 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { CgMenuLeft } from "react-icons/cg"
 import Link from 'next/link'
 import NavList from 'common/nav'
-
 import { Logo } from '../'
 
 export default function Header() {
+  const navRef = useRef(null)
+  const headerRef = useRef(null)
+
+  const toggleNav = () => {
+    if (navRef?.current && headerRef?.current) {
+        navRef.current.classList.toggle("open")
+        headerRef.current.classList.toggle("open")
+    }
+  }
+
   return (
-      <header className="w-screen h-32 inline-flex py-9 px-14">
-        <div className="flex justify-start items-center">
-          <Logo />
-        </div>
-        <nav className="flex justify-end grow underLaptop:hidden">
-          <ul className="flex flex-wrap px-0 mb-0 list-none space-x-8 items-stretch">
-            {NavList.map(({title, url}) => (
-              <li 
-                key={title}
-                className={"flex menu-hover-line relative px-1.5"}
-              >
-                <Link 
-                  href={url}
+      <header 
+        className="absolute top-0 left-0 z-[1] bg-white w-screen lg:w-[42%] h-24 flex  py-5 px-5 justify-center"
+        ref={headerRef}
+      >
+        <section
+          className="relative inline-flex w-full inline-flex justify-between items-center"
+        >
+          <Logo 
+            style={{
+              marginTop: '-5px'
+            }} 
+          />
+          <nav 
+            className="mainMenu md:flex lg:hidden  2xl:flex hidden justify-end grow"
+            ref={navRef}
+          >
+            <ul className="flex flex-wrap px-0 mb-0 list-none space-x-6 items-center">
+              {NavList.map(({title, url}) => (
+                <li 
+                  key={title}
+                  className={"flex menu-hover-line relative px-1 h-8"}
                 >
-                  <a
-                    className="flex self-stretch tracking-widest items-center font-extrabold text-lg"
-                  >{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        {/* TODO: 900 window width to mobile */}
+                  <Link 
+                    href={url}
+                  >
+                    <a
+                      className="flex self-stretch items-center text-xs tracking-tight"
+                    >{title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div
+            onClick={toggleNav}
+            className="hamburger-button md:hidden lg:inline-flex 2xl:hidden inline-flex items-center h-7 space-x-1.5"
+          >
+            <CgMenuLeft
+              className="text-lg hamburger-button-icon"
+            />
+            <span
+              className="text-xs font-bold"
+            >MENU</span>
+          </div>
+        </section>
       </header>
   );
 }

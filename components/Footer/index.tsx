@@ -26,11 +26,11 @@ export default function Footer() {
             <p>9F.-5, No. 63, Sec. 2, Chang&apos;an East Rd., Taipei 104097, Taiwan</p>
             <p>Fax: +886-2-2508-1348</p>
         </div> 
-        <div
+        {/* <div
             className="flex justify-center"
         >    
         <Logo/>
-        </div> 
+        </div>  */}
         <ul
             className="flex flex-1 justify-end space-x-8"
         >
