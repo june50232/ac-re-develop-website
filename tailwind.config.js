@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -20,33 +20,39 @@ module.exports = {
         light: '#768592',
         DEFAULT: '#596A78',
         dark: '#374B5C',
-        darker: '#000000'
+        darker: '#000000',
       },
     },
     fontSize: {
-      'xs': ['.57rem', '.85rem'], // 4, 6
-      'sm': ['.71rem', '1rem'], // 5, 7
-      'base': ['1rem', '1.28rem'], // 7, 9
-      'lg': ['1.14rem', '1.28rem'], // 8, 9
-      'xl': ['1.71rem', '2.074rem'], // 12, 14,52
+      xs: ['.57rem', '.85rem'], // 4, 6
+      sm: ['.71rem', '1rem'], // 5, 7
+      base: ['1rem', '1.28rem'], // 7, 9
+      lg: ['1.14rem', '1.28rem'], // 8, 9
+      xl: ['1.71rem', '2.074rem'], // 12, 14,52
       '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
       '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
       '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
-    }
+    },
   },
   extends: {
     fontFamily: {
-      sans: ["Helvetica Neue", "Helvetica","Arial", "Verdana","Roboto", ...defaultTheme.fontFamily.sans],
-      serif: ["AdobeGaramondBold", ...defaultTheme.fontFamily.serif]
+      sans: [
+        'Helvetica Neue',
+        'Helvetica',
+        'Arial',
+        'Verdana',
+        'Roboto',
+        ...defaultTheme.fontFamily.sans,
+      ],
+      serif: ['AdobeGaramondBold', ...defaultTheme.fontFamily.serif],
     },
     zIndex: {
-      '1': '1',
+      1: '1',
     },
-    width: {
+    spacing: {
+      '10%': '10%',
       '42%': '42%',
-    }
+    },
   },
-  plugins:  [
-    require('postcss-nesting'),
-  ]
+  plugins: [require('postcss-nesting')],
 };
