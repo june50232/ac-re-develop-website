@@ -5,13 +5,13 @@ import NavList from 'common/nav';
 import { Logo } from '../';
 
 export default function Header() {
-  const navRef = useRef(null);
-  const headerRef = useRef(null);
+  const navRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   const toggleNav = () => {
     if (navRef?.current && headerRef?.current) {
-      navRef.current.classList.toggle('open');
-      headerRef.current.classList.toggle('open');
+      navRef.current?.classList?.toggle('open');
+      headerRef.current?.classList?.toggle('open');
     }
   };
 
