@@ -18,264 +18,128 @@
  * 
  * 
  * © 2020 MyFonts Incn*/
- @font-face {
-    font-family: "AdobeGaramondBold";
-    font-display: swap;
-    src: url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.eot) format('eot'),
-    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.woff) format('woff'), 
-    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.woff2) format('woff2'),
-    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.svg) format('svg');
+@font-face {
+  font-family: 'AdobeGaramondBold';
+  font-display: swap;
+  src: url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.eot)
+      format('eot'),
+    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.woff)
+      format('woff'),
+    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.woff2)
+      format('woff2'),
+    url(https://acre-website.s3.ap-northeast-1.amazonaws.com/fonts/font.svg)
+      format('svg');
 }
 
 @tailwind utilities;
 
 :root {
-    --brand-blue-color: #2056AE;
-    --brand-darker-blue-color: #46659e;
-    --brand-light-blue-color: #1BA7E6;
-    --font_1: normal normal normal initial 'AdobeGaramondBold',sans-serif;
-    --font_2: normal normal normal initial 'open sans',sans-serif;
+  --brand-blue-color: #2056ae;
+  --brand-darker-blue-color: #46659e;
+  --brand-light-blue-color: #1ba7e6;
+  --font_1: normal normal normal initial 'AdobeGaramondBold', sans-serif;
+  --font_2: normal normal normal initial 'open sans', sans-serif;
 }
 
 @layer base {
-    body {
-        font-size: 16px;
-        scrollbar-width: none;
-    }
+  body {
+    font-size: 16px;
+    scrollbar-width: none;
+  }
 
-    body::-webkit-scrollbar {
-        display: none;
-    }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1 {
+    color: theme(colors.secondary.dark);
+  }
 }
 
 @layer utilities {
-    .menu-hover-line:after {
-        content: '';
-        left: 25%;
-        width: 50%;
-        height: 3px;
-        background: theme(colors.primary.light);
-        opacity: 0;
-        transform: translateY(5px);
-        transition: transform 0.3s, opacity 0.3s;
-        pointer-events: none;
-        @apply absolute bottom-0
-    }
+  .menu-hover-line:after {
+    content: '';
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: theme(colors.primary.light);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+    @apply absolute bottom-0;
+  }
 
-    .menu-hover-line:hover:after {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+  .menu-hover-line:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
-    .hamburger-button-icon {
-        color: theme(colors.primary.DEFAULT);
-    }
+  .hamburger-button-icon {
+    color: theme(colors.primary.DEFAULT);
+  }
 }
 
 .album ul li {
-    height: 460px;
-    width: 500px;
-    padding: 3em;
-    flex-direction: column;
-    position: relative;
-    border-radius: 8px;
+  height: 460px;
+  width: 500px;
+  padding: 3em;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
 }
 
 .img-bg:before {
-    content: '';
-    background: var(--brand-light-blue-color);
-    opacity: 0.2;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    top:0;
-    right:0;
+  content: '';
+  background: var(--brand-light-blue-color);
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
 }
 
 /* .hover-effect1 start */
 
 .hover-effect1 p {
-    background-image: linear-gradient(
-        to right,
-        white,
-        white 50%,
-        var(--brand-darker-blue-color) 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.8s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    white,
+    white 50%,
+    var(--brand-darker-blue-color) 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.8s ease-in-out;
 }
 
 .hover-effect1:hover p {
-    background-position: 0;
-    z-index: 1;
+  background-position: 0;
+  z-index: 1;
 }
 
 .hover-effect1:after {
-    content: '';
-    background: var(--brand-blue-color);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 100%;
-    transition: all .8s ease-in-out;
-    opacity: 0.8;
-    border-radius: 8px;
+  content: '';
+  background: var(--brand-blue-color);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  transition: all 0.8s ease-in-out;
+  opacity: 0.8;
+  border-radius: 8px;
 }
 
 .hover-effect1:hover:after {
-    bottom: 0;
-    width: 100%;
+  bottom: 0;
+  width: 100%;
 }
 
 /* .hover-effect1 end */
-/* .hover-effect2 start */
-
-.hover-effect2 {
-    transition:all 1s; 
-    cursor: pointer;
-}
-
-.hover-effect2:before{
-    content:" ";
-    width: 0;
-    opacity: 0;
-    position:absolute;
-    border :0px solid #fff;
-    transition:all 1s;
-}
-
-/* .hover-effect2:after{
-    top:-12px;
-    right:0;
-    border-top:1em solid white;
-    border-right:1em solid white;
-} */
-
-.hover-effect2:before{
-    bottom:-12px;
-    left:0;
-    border-bottom:1em solid var(--brand-blue-color);
-    border-left:1em solid var(--brand-blue-color);
-}
-
-.hover-effect2:hover:before {
-    opacity: 1;
-    width:100%;
-}
-/* .hover-effect2 end */
-
-.img-subscri-effect a:after {
-    content: "";
-    background: linear-gradient(
-				to bottom,
-				rgba(32,86,174,0) 0%,
-                rgba(32,86,174,0.7) 50%,
-				rgba(32,86,174,1) 100%
-			);
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition-property: top, opacity;
-    transition-duration: 0.3s;
-}
-
-.img-subscri-effect-no-hover  a:after,
-.img-subscri-effect:not(.img-subscri-effect-no-hover):hover a:after {
-    opacity: 1;
-    top: 50%;
-}
-
-/* https://www.shutterstock.com/zh-Hant/image-illustration/sun-shining-over-high-detailed-view-2004374999 */
-.img-taipei {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("https://image.shutterstock.com/image-illustration/sun-shining-over-high-detailed-600w-2004374999.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-/* https://www.shutterstock.com/zh-Hant/image-photo/beautiful-woman-going-work-coffee-walking-778962694 */
-.img-meeting {
-    background-image: url("https://image.shutterstock.com/image-photo/beautiful-woman-going-work-coffee-600w-778962694.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* https://www.shutterstock.com/zh-Hant/image-photo/good-deal-close-two-business-people-400222735 */
-.img-handsshake {
-    background-image: url("https://image.shutterstock.com/image-photo/good-deal-closeup-two-business-600w-400222735.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* https://www.shutterstock.com/zh-Hant/image-photo/business-people-meeting-office-writing-memos-1680524947 */
-.img-professional {
-    background-image: url("https://image.shutterstock.com/image-photo/business-people-meeting-office-writing-600w-1680524947.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-/* https://www.shutterstock.com/zh-Hant/image-photo/start-think-big-recovery-challenge-life-2055565847 */
-.img-forward-thinking {
-    background-image: url("https://image.shutterstock.com/image-photo/start-think-big-recovery-challenge-600w-2055565847.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-
-/* https://www.shutterstock.com/zh-Hant/image-photo/child-holding-paper-house-hands-real-1095897620 */
-.img-sustain {
-    background-image: url("https://image.shutterstock.com/image-photo/child-holding-paper-house-hands-600w-1095897620.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* https://pixabay.com/photos/shipping-container-terminal-4319421/ */
-/* https://pixabay.com/photos/container-freight-cargo-port-489933/ */
-.img-cargo-ship {
-    background-image: url("https://cdn.pixabay.com/photo/2014/10/15/16/54/container-489933_1280.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.img-building {
-    background-image: url("https://pixabay.com/photos/architecture-building-business-city-1868667/");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* https://pixabay.com/photos/texture-rough-plaster-plaster-wall-1504364/ */
-.texture-bg::before {
-    content: '';
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background-image: url("https://cdn.pixabay.com/photo/2016/07/08/13/37/texture-1504364_1280.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.1;
-}

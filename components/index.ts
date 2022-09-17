@@ -4,7 +4,7 @@ import Logo from './Logo';
 import Footer from './Footer';
 import CanvasVideo from './CanvasVideo';
 import Layout from './Layout';
-import Buttons from './Buttons';
+import Button from './Button';
 import BannerImage from './BannerImage';
 
 export {
@@ -14,6 +14,6 @@ export {
   Footer,
   CanvasVideo,
   Layout,
-  Buttons,
+  Button,
   BannerImage,
 };

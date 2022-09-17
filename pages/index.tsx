@@ -1,10 +1,29 @@
 import React from 'react';
-import { BannerImage, Buttons } from 'components';
+import { BannerImage, Button } from 'components';
+
+const MobileContainer = (props) => {
+  return (
+    <div
+      className={
+        'w-full relative flex items-center justify-center' +
+        (props.classnames ? ` ${props?.classnames}` : '')
+      }
+    >
+      {props.children}
+    </div>
+  );
+};
 
 export default function Home() {
+  const globalImgUrl = '/static/img/global.png';
+  const globalDottedImgUrl = '/static/img/dotted-map.png';
+
   return (
     <>
-      <section className="lg:inline-flex w-screen lg:flex-row hidden">
+      <section
+        className="lg:inline-flex w-screen lg:flex-row hidden"
+        id="banner-laptop"
+      >
         <div className="w-full lg:w-[42%] h-screen flex justify-center items-center">
           <div className="h-80 space-y-16">
             <h1 className="text-5xl font-extrabold">
@@ -20,8 +39,8 @@ export default function Home() {
               </span>
             </p>
             <div className="button-group space-x-3">
-              <Buttons title="ABOUT US" classnames="bg-primary text-white" />
-              <Buttons
+              <Button title="ABOUT US" classnames="bg-primary text-white" />
+              <Button
                 title="SERVICES"
                 classnames="bg-primary-light text-white"
               />
@@ -29,14 +48,53 @@ export default function Home() {
           </div>
         </div>
         <aside className="w-full lg:w-[58%] h-screen relative">
-          <BannerImage url="/static/img/global.png" />
-          <Buttons
+          <BannerImage url={globalImgUrl} />
+          <Button
             title="CONTACT US"
             classnames="absolute right-5 top-8 bg-white"
           />
         </aside>
       </section>
-      <section className="lg:hidden"></section>
+      <section
+        className="lg:hidden w-screen h-screen pt-24 flex flex-col justify-evenly"
+        id="banner-mobile"
+      >
+        <MobileContainer>
+          <BannerImage
+            url={globalDottedImgUrl}
+            classnames="absolute -z-[1] opacity-30"
+          />
+          <h1 className="text-3xl font-bold w-[180px] ml-16">
+            AC Re
+            <br />
+            Services
+            <br />
+            Co., Ltd.
+          </h1>
+        </MobileContainer>
+        <MobileContainer classnames="relative px-3  h-2/4">
+          <BannerImage url={globalImgUrl} />
+          <Button
+            title="CONTACT US"
+            classnames="absolute right-8 top-8 bg-white text-7xl"
+          />
+        </MobileContainer>
+        <MobileContainer classnames="px-3 space-x-1.5">
+          <p className="text-secondary-lighter">
+            We’re enabling a better, more <i>efficient</i> Reinsurance service
+          </p>
+          <Button
+            title="ABOUT"
+            classnames="bg-primary text-white text-7xl"
+            px="5"
+          />
+          <Button
+            title="SERVICES"
+            classnames="bg-primary-light text-white text-7xl"
+            px="5"
+          />
+        </MobileContainer>
+      </section>
 
       {/* 
       <section className="bg-slate-200 flex flex-col album" id="why-ac-re-section">
