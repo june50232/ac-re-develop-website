@@ -4,9 +4,31 @@ import { BannerImage, Buttons } from 'components';
 export default function Home() {
   return (
     <>
-      <section className="lg:inline-flex flex w-screen lg:flex-row flex-column">
-        <div className="lg:w-[42%] w-full h-screen"></div>
-        <aside className="lg:w-[58%] w-full h-screen relative">
+      <section className="lg:inline-flex w-screen lg:flex-row hidden">
+        <div className="w-full lg:w-[42%] h-screen flex justify-center items-center">
+          <div className="h-80 space-y-16">
+            <h1 className="text-5xl font-extrabold">
+              AC Re Services
+              <br />
+              Co., Ltd.
+            </h1>
+            <p className="text-secondary-lighter">
+              We’re enabling a better,
+              <br />
+              <span className="ml-20">
+                more <i>efficient</i> Reinsurance service
+              </span>
+            </p>
+            <div className="button-group space-x-3">
+              <Buttons title="ABOUT US" classnames="bg-primary text-white" />
+              <Buttons
+                title="SERVICES"
+                classnames="bg-primary-light text-white"
+              />
+            </div>
+          </div>
+        </div>
+        <aside className="w-full lg:w-[58%] h-screen relative">
           <BannerImage url="/static/img/global.png" />
           <Buttons
             title="CONTACT US"
@@ -14,6 +36,7 @@ export default function Home() {
           />
         </aside>
       </section>
+      <section className="lg:hidden"></section>
 
       {/* 
       <section className="bg-slate-200 flex flex-col album" id="why-ac-re-section">

@@ -33,6 +33,12 @@ module.exports = {
       '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
       '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
     },
+    extend: {
+      screens: {
+        '2xl': '1470px',
+        // => @media (min-width: 992px) { ... }
+      },
+    },
   },
   extends: {
     fontFamily: {
