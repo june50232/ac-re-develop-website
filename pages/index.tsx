@@ -17,16 +17,36 @@ const MobileContainer = (props) => {
 export default function Home() {
   const globalImgUrl = '/static/img/global.png';
   const globalDottedImgUrl = '/static/img/dotted-map.png';
+  const smileHandShakeImgUrl = '/static/img/handshake.png';
+  const whyReason = [
+    {
+      title: 'AC Re represents you rather than a single insurance company',
+      content:
+        'you can trust you’ll be receiving unbiased information and recommendations.',
+    },
+    {
+      title: 'We help you identify your risks and manage them',
+      content: `By offering a customized insurance and risk management program,\n 
+      where we design the policies, negotiate the terms with insurance companies\n  
+      and help you find the most appropriate cover perfectly tailored to\n   
+      your unique needs at fair prices.`,
+    },
+    {
+      title: 'AC Re also supports you by giving you technical advice',
+      content:
+        'the technical advice can be very useful if you need to make a claim.',
+    },
+  ];
 
   return (
     <>
       <section
-        className="lg:inline-flex w-screen lg:flex-row hidden"
+        className="lg:inline-flex w-screen flex-row hidden"
         id="banner-laptop"
       >
-        <div className="w-full lg:w-[42%] h-screen flex justify-center items-center">
+        <div className="w-full w-[42%] h-screen flex justify-center items-center">
           <div className="h-80 space-y-16">
-            <h1 className="text-5xl font-extrabold">
+            <h1 className="font-extrabold">
               AC Re Services
               <br />
               Co., Ltd.
@@ -34,9 +54,9 @@ export default function Home() {
             <p className="text-secondary-lighter">
               We’re enabling a better,
               <br />
-              <span className="ml-20">
-                more <i>efficient</i> Reinsurance service
-              </span>
+              {/* <span className="ml-20"> */}
+              more <i>efficient</i> Reinsurance service
+              {/* </span> */}
             </p>
             <div className="button-group space-x-3">
               <Button title="ABOUT US" classnames="bg-primary text-white" />
@@ -47,7 +67,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <aside className="w-full lg:w-[58%] h-screen relative">
+        <aside className="w-full w-[58%] h-screen relative">
           <BannerImage url={globalImgUrl} />
           <Button
             title="CONTACT US"
@@ -62,7 +82,7 @@ export default function Home() {
         <MobileContainer>
           <BannerImage
             url={globalDottedImgUrl}
-            classnames="absolute -z-[1] opacity-30"
+            classnames="absolute -z-[1] opacity-25"
           />
           <h1 className="text-3xl font-bold w-[180px] ml-16">
             AC Re
@@ -76,7 +96,7 @@ export default function Home() {
           <BannerImage url={globalImgUrl} />
           <Button
             title="CONTACT US"
-            classnames="absolute right-8 top-8 bg-white text-7xl"
+            classnames="absolute right-8 top-8 bg-white text-7xl pl-5 pr-5"
           />
         </MobileContainer>
         <MobileContainer classnames="px-3 space-x-1.5">
@@ -85,14 +105,94 @@ export default function Home() {
           </p>
           <Button
             title="ABOUT"
-            classnames="bg-primary text-white text-7xl"
-            px="5"
+            classnames="bg-primary text-white text-7xl pl-2 pr-2"
           />
           <Button
             title="SERVICES"
-            classnames="bg-primary-light text-white text-7xl"
-            px="5"
+            classnames="bg-primary-light text-white text-7xl pl-2 pr-2"
           />
+        </MobileContainer>
+      </section>
+
+      <section
+        className="lg:inline-flex w-screen flex-row hidden"
+        id="why-laptop"
+      >
+        <aside className="w-[42%] h-screen">
+          <BannerImage url={smileHandShakeImgUrl} />
+        </aside>
+        <div className="w-[58%] h-screen flex flex-col items-center justify-center">
+          <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
+            <div className="h2-pre-line-wrap">
+              <h2>WHY AC Re</h2>
+            </div>
+            <h3>
+              AC Re always acts in the
+              <br />
+              client’s best interest
+            </h3>
+            <div className="text-secondary space-y-5">
+              {whyReason.map(({ title, content }, i) => (
+                <div key={title} className="flex space-x-16">
+                  <div className="">
+                    <div
+                      className={`flex items-center justify-center order order-${
+                        (i + 1) * 25
+                      }`}
+                    >
+                      0{i + 1}
+                    </div>
+                  </div>
+                  　
+                  <div className="w-9/12">
+                    <h4 className="font-semibold">{title}</h4>
+                    <h5>{content}</h5>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="lg:hidden w-screen py-12 space-y-12" id="why-mobile">
+        <MobileContainer classnames="flex-col">
+          <BannerImage
+            url={globalDottedImgUrl}
+            classnames="absolute -z-[1] opacity-25 top-5 bottom-0"
+            styles={{
+              height: 'auto',
+              backgroundPosition: 'top',
+            }}
+          />
+          <h2 className="text-3xl mb-3">WHY AC Re</h2>
+          <h5 className="text-secondary-light tracking-wide">
+            AC Re always acts in the
+            <br />
+            client’s best interest
+          </h5>
+        </MobileContainer>
+        <div className="text-secondary space-y-16 px-8">
+          {whyReason.map(({ title, content }, i) => (
+            <div key={title} className="relative">
+              <div className="absolute -z-[1] -left-7 -top-8">
+                <div
+                  className={`flex items-center justify-center order order-${
+                    (i + 1) * 25
+                  } mobile`}
+                >
+                  0{i + 1}
+                </div>
+              </div>
+              　
+              <div className="pl-8 space-y-6">
+                <h4 className="font-semibold text-lg tracking-wide">{title}</h4>
+                <h5 className="text-base tracking-wide">{content}</h5>
+              </div>
+            </div>
+          ))}
+        </div>
+        <MobileContainer classnames="px-3 h-80">
+          <BannerImage url={smileHandShakeImgUrl} />
         </MobileContainer>
       </section>
 

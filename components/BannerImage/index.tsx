@@ -6,6 +6,7 @@ export default function BannerImage(props) {
         (props.classnames ? ` ${props?.classnames}` : '')
       }
       style={{
+        ...(props.styles ? props.styles : {}),
         backgroundImage: `url(${props?.url})`,
       }}
     />

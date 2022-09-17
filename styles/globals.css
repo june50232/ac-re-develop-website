@@ -53,6 +53,17 @@
 
   h1 {
     color: theme(colors.secondary.dark);
+    @apply text-5xl;
+  }
+
+  h2 {
+    color: theme(colors.primary.dark);
+    @apply font-black text-xl;
+  }
+
+  h3 {
+    color: theme(colors.secondary.dark);
+    @apply text-2xl font-bold;
   }
 }
 
@@ -78,6 +89,49 @@
   .hamburger-button-icon {
     color: theme(colors.primary.DEFAULT);
   }
+
+  .h2-pre-line-wrap {
+    @apply flex;
+  }
+
+  .h2-pre-line-wrap:before {
+    border-bottom: 2px solid theme(colors.primary.DEFAULT);
+    @apply w-16 content-[''] block mr-16;
+  }
+
+  .order {
+    color: theme(colors.primary.lighter);
+    @apply w-12 h-12 rounded-full relative font-bold;
+  }
+
+  .order.mobile {
+    @apply w-24 h-24 text-xl;
+  }
+
+  .order:before,
+  .order:after {
+    @apply absolute content-[''] block top-0 bottom-0 left-0 right-0 rounded-full;
+  }
+
+  .order:before {
+    border: 2px solid theme(colors.primary.lighter);
+  }
+
+  .order:after {
+    border: 2px solid white;
+  }
+}
+
+.order-25:after {
+  clip-path: polygon(50% 0%, 50% 50%, 100% 50%, 100% 0%);
+}
+
+.order-50:after {
+  clip-path: polygon(50% 50%, 50% 100%, 100% 100%, 100% 50%);
+}
+
+.order-75:after {
+  clip-path: polygon(0% 50%, 0% 100%, 50% 100%, 50% 50%);
 }
 
 .album ul li {
