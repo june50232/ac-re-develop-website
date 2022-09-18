@@ -53,7 +53,7 @@
 
   footer {
     border-top: 5px solid #f5f5f5;
-    @apply w-screen;
+    @apply w-screen flex justify-center items-center;
   }
 
   h1 {

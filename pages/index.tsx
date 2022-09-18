@@ -27,12 +27,14 @@ const LaptopH2PrelineH3Wrap = (props) => {
 };
 
 export default function Home() {
-  const globalImgUrl = '/img/global.png';
-  const globalDottedImgUrl = '/img/dotted-map.png';
-  const smileHandShakeImgUrl = '/img/handshake.png';
-  const globalNightImgUrl = '/img/global-night.png';
-  const esgImgUrl = '/img/esg.png';
-  const professionImgUrl = '/img/profession.png';
+  const isProd =
+    process.env.NODE_ENV === 'production' ? '${{ secrets.AWS_S3_DOMAIN }}' : '';
+  const globalImgUrl = `${isProd}/img/global.png`;
+  const globalDottedImgUrl = `${isProd}/img/dotted-map.png`;
+  const smileHandShakeImgUrl = `${isProd}/img/handshake.png`;
+  const globalNightImgUrl = `${isProd}/img/global-night.png`;
+  const esgImgUrl = `${isProd}/img/esg.png`;
+  const professionImgUrl = `${isProd}/img/profession.png`;
   const whyReason = [
     {
       title: 'AC Re represents you rather than a single insurance company',

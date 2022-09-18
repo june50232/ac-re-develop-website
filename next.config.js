@@ -1,9 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production';
+// const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   images: {
     loader: 'akamai',
-    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    path: '${{ secrets.AWS_S3_DOMAIN }}',
   },
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
@@ -13,7 +13,5 @@ module.exports = {
     return config;
   },
   output: 'standalone',
-  assetPrefix: isProd
-    ? 'https://acre-website.s3.ap-northeast-1.amazonaws.com'
-    : '.',
+  assetPrefix: '.',
 };
