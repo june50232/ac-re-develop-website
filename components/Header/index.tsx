@@ -29,6 +29,7 @@ export default function Header() {
         <nav
           className="mainMenu md:flex lg:hidden 2xl:flex hidden justify-end grow"
           ref={navRef}
+          data-aos="fade-down"
         >
           <ul className="flex flex-wrap px-0 mb-0 list-none space-x-3 items-center">
             {NavList.map(({ title, url }) => (
@@ -48,6 +49,7 @@ export default function Header() {
         <div
           onClick={toggleNav}
           className="hamburger-button md:hidden lg:inline-flex 2xl:hidden inline-flex items-center h-7 space-x-1.5"
+          data-aos="fade-down"
         >
           <CgMenuLeft className="text-lg hamburger-button-icon" />
           <span className="text-xs font-bold">MENU</span>
