@@ -13,6 +13,7 @@ function Button(props) {
       onClick={() => {
         // 導頁
       }}
+      data-aos={props.isFadeUp ? 'fade-up' : ''}
     >
       {props?.title}
     </button>

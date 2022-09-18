@@ -65,6 +65,15 @@
     color: theme(colors.secondary.dark);
     @apply text-2xl font-bold;
   }
+
+  .img-hover-scale,
+  .hover-scale-inner-img-effect .bannerImg {
+    transition: 0.6s;
+  }
+  .img-hover-scale:hover,
+  .hover-scale-inner-img-effect:hover .bannerImg {
+    transform: scale(1.1);
+  }
 }
 
 @layer utilities {
@@ -119,6 +128,17 @@
 
   .order:after {
     border: 2px solid white;
+  }
+
+  .coreValueLine {
+    border: 1px solid theme(colors.primary.light);
+    @apply -left-1.5 -bottom-1.5 right-1.5 top-1.5 z-[1];
+  }
+
+  .coreArrow {
+    border: 3px solid theme(colors.primary.light);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    @apply w-4 h-4 origin-center rotate-45 bottom-10 right-10;
   }
 }
 
