@@ -13,7 +13,5 @@ module.exports = {
     return config;
   },
   output: 'standalone',
-  assetPrefix: isProd
-    ? 'https://june50232.github.io/ac-re-develop-website'
-    : '.',
+  assetPrefix: isProd ? '/public' : '.',
 };
