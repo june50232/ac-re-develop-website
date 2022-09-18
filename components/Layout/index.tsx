@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import {
-  HTMLHead,
-  Header,
-  // Footer,
-} from '../';
+import { HTMLHead, Header, Footer } from '../';
 
 export default function Layout(props) {
   useEffect(() => {
@@ -25,7 +21,7 @@ export default function Layout(props) {
       <HTMLHead />
       <Header />
       <main className="px-0">{props.children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
