@@ -3,7 +3,7 @@
 module.exports = {
   images: {
     loader: 'akamai',
-    path: '${{ secrets.AWS_S3_DOMAIN }}',
+    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
   },
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
@@ -14,4 +14,7 @@ module.exports = {
   },
   output: 'standalone',
   assetPrefix: '.',
+  env: {
+    s3domain: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+  },
 };

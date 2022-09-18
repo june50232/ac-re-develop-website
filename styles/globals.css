@@ -145,6 +145,10 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
     @apply w-4 h-4 origin-center rotate-45 bottom-10 right-10;
   }
+
+  .bottom-light-gray {
+    border-top: 1px solid #f5f5f5;
+  }
 }
 
 .order-25:after {
