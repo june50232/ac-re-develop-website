@@ -13,5 +13,7 @@ module.exports = {
     return config;
   },
   output: 'standalone',
-  assetPrefix: isProd ? '/public' : '.',
+  assetPrefix: isProd
+    ? 'https://acre-website.s3.ap-northeast-1.amazonaws.com'
+    : '.',
 };

@@ -27,12 +27,12 @@ const LaptopH2PrelineH3Wrap = (props) => {
 };
 
 export default function Home() {
-  const globalImgUrl = '/static/img/global.png';
-  const globalDottedImgUrl = '/static/img/dotted-map.png';
-  const smileHandShakeImgUrl = '/static/img/handshake.png';
-  const globalNightImgUrl = '/static/img/global-night.png';
-  const esgImgUrl = '/static/img/esg.png';
-  const professionImgUrl = '/static/img/profession.png';
+  const globalImgUrl = '/img/global.png';
+  const globalDottedImgUrl = '/img/dotted-map.png';
+  const smileHandShakeImgUrl = '/img/handshake.png';
+  const globalNightImgUrl = '/img/global-night.png';
+  const esgImgUrl = '/img/esg.png';
+  const professionImgUrl = '/img/profession.png';
   const whyReason = [
     {
       title: 'AC Re represents you rather than a single insurance company',
