@@ -5,12 +5,15 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer data-aos="fade-up">
+    <footer>
       <section
         className="lg:flex hidden flex-col w-10/12 h-80 justify-center space-y-10 items-center"
         id="footer-laptop"
       >
-        <div className="flex justify-center items-center w-full space-x-2">
+        <div
+          className="flex justify-center items-center w-full space-x-2"
+          data-aos="fade-up"
+        >
           <div className="flex grow space-x-6">
             <a
               className="flex justify-center items-center space-x-2"
@@ -47,8 +50,8 @@ export default function Footer() {
             <p>Fax: +886-2-2508-1348</p>
           </div>
         </div>
-        <hr className="w-full block bottom-light-gray" />
-        <div className="w-full justify-start">
+        <hr className="w-full block bottom-light-gray" data-aos="fade-up" />
+        <div className="w-full justify-start" data-aos="fade-up">
           <ul className="flex space-x-6">
             {NavList.map(({ title, url }) => (
               <li key={title} className={'flex h-8'}>
@@ -70,7 +73,10 @@ export default function Footer() {
         className="lg:hidden w-screen py-12 space-y-3 flex flex-col items-center"
         id="footer-mobile"
       >
-        <div className="flex w-11/12  items-center justify-evenly pb-6">
+        <div
+          className="flex w-11/12  items-center justify-evenly pb-6"
+          data-aos="fade-up"
+        >
           <a className="" href="tel:+886225080488">
             <MdPhoneInTalk
               color="#A0DDFE"
@@ -84,7 +90,7 @@ export default function Footer() {
             <MdOutlineMail color="#A0DDFE" fontSize="5rem" />
           </a>
         </div>
-        <ul className="w-10/12">
+        <ul className="w-10/12" data-aos="fade-up">
           {NavList.map(({ title, url }) => (
             <li key={title} className={'h-8'}>
               <Link href={url}>
@@ -95,7 +101,10 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <div className="flex flex-col text-base text-secondary-light w-10/12 space-y-2">
+        <div
+          className="flex flex-col text-base text-secondary-light w-10/12 space-y-2"
+          data-aos="fade-up"
+        >
           <p>AC Re Services Co., Ltd.</p>
           <p>
             9F.-5, No. 63, Sec. 2, Chang&apos;an East Rd.,
@@ -104,7 +113,10 @@ export default function Footer() {
           </p>
           <p>Fax: +886-2-2508-1348</p>
         </div>
-        <p className="flex text-secondary-lightest text-7xl text-center w-10/12 pt-6">
+        <p
+          className="flex text-secondary-lightest text-7xl text-center w-10/12 pt-6"
+          data-aos="fade-up"
+        >
           Copyright © {new Date().getFullYear()} by AC Re Services Co., Ltd. All
           Rights Reserved.
         </p>
