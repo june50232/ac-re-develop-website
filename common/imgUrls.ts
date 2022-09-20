@@ -8,3 +8,6 @@ export const smileHandShakeImgUrl = `${domain}/img/handshake.png`;
 export const globalNightImgUrl = `${domain}/img/global-night.png`;
 export const esgImgUrl = `${domain}/img/esg.png`;
 export const professionImgUrl = `${domain}/img/profession.png`;
+
+export const aboutBannerImgUrl = `${domain}/img/about-banner.png`;
+export const aboutTeamsImgUrl = `${domain}/img/about-teams.png`;

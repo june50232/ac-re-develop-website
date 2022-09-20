@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -13,6 +14,7 @@ module.exports = {
         lighter: '#DCEFFC',
         light: '#A0DDFE',
         DEFAULT: '#034AF9',
+        darkGray: '#6166E2',
         dark: '#034AF9',
       },
       secondary: {
@@ -22,7 +24,9 @@ module.exports = {
         DEFAULT: '#596A78',
         dark: '#374B5C',
         darker: '#000000',
+        darkest: '#3F4079',
       },
+      neutral: colors.amber,
     },
     fontSize: {
       '7xl': ['.5rem', '.8rem'],
@@ -34,6 +38,8 @@ module.exports = {
       '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
       '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
       '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
+      '6xl': ['5rem', '5rem'],
+      '8xl': ['6rem', '6rem'], // 18, 21.78
     },
     extend: {
       screens: {

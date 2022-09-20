@@ -6,6 +6,8 @@ import CanvasVideo from './CanvasVideo';
 import Layout from './Layout';
 import Button from './Button';
 import BannerImage from './BannerImage';
+import LaptopH2PrelineH3Wrap from './LaptopH2PrelineH3Wrap';
+import GradientBg from './GradientBg';
 
 export {
   HTMLHead,
@@ -16,4 +18,6 @@ export {
   Layout,
   Button,
   BannerImage,
+  LaptopH2PrelineH3Wrap,
+  GradientBg,
 };

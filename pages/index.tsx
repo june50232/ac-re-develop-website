@@ -1,5 +1,5 @@
 import React from 'react';
-import { BannerImage, Button } from 'components';
+import { BannerImage, Button, LaptopH2PrelineH3Wrap } from 'components';
 import {
   globalImgUrl,
   globalDottedImgUrl,
@@ -20,17 +20,6 @@ const MobileContainer = (props) => {
     >
       {props.children}
     </div>
-  );
-};
-
-const LaptopH2PrelineH3Wrap = (props) => {
-  return (
-    <>
-      <div className="h2-pre-line-wrap" data-aos="fade-up">
-        <h2>{props.h2}</h2>
-      </div>
-      <h3 data-aos="fade-up">{props.children}</h3>
-    </>
   );
 };
 
