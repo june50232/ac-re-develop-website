@@ -64,10 +64,10 @@ export default function Home() {
   return (
     <>
       <section
-        className="lg:inline-flex w-screen flex-row hidden"
+        className="lg:inline-flex w-screen h-screen flex-row hidden"
         id="banner-laptop"
       >
-        <div className="w-full w-[42%] h-screen flex justify-center items-center">
+        <div className="w-full w-[42%] h-full flex justify-center items-center">
           <div className="h-80 space-y-16" data-aos="fade-up">
             <h1 className="font-extrabold">
               AC Re Services
@@ -90,7 +90,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <aside className="w-full w-[58%] h-screen relative overflow-hidden">
+        <aside className="w-full w-[58%] h-full relative overflow-hidden">
           <BannerImage url={globalImgUrl} />
           <Button
             title="CONTACT US"
@@ -141,13 +141,13 @@ export default function Home() {
       </section>
 
       <section
-        className="lg:inline-flex w-screen flex-row hidden"
+        className="lg:inline-flex w-screen h-screen flex-row hidden"
         id="why-laptop"
       >
-        <aside className="w-[42%] h-screen overflow-hidden">
+        <aside className="w-[42%] h-full overflow-hidden">
           <BannerImage url={smileHandShakeImgUrl} />
         </aside>
-        <div className="w-[58%] h-screen flex flex-col items-center justify-center">
+        <div className="w-[58%] h-full flex flex-col items-center justify-center">
           <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
             <LaptopH2PrelineH3Wrap h2="WHY AC Re">
               <>
@@ -210,7 +210,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="pl-8 space-y-6">
-                <h4 className="font-semibold text-lg tracking-wide">{title}</h4>
+                <h4 className="font-semibold font-subtitle">{title}</h4>
                 <h5 className="text-base tracking-wide">{content}</h5>
               </div>
             </div>

@@ -11,3 +11,7 @@ export const professionImgUrl = `${domain}/img/profession.png`;
 
 export const aboutBannerImgUrl = `${domain}/img/about-banner.png`;
 export const aboutTeamsImgUrl = `${domain}/img/about-teams.png`;
+export const aboutBestImgUrl = `${domain}/img/about-best.png`;
+export const aboutfastGrowImgUrl = `${domain}/img/about-fast-growing.png`;
+export const aboutSuccessfulImgUrl = `${domain}/img/about-successful.png`;
+export const aboutFounderImgUrl = `${domain}/img/about-founder.jpg`;
