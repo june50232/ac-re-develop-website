@@ -9,6 +9,8 @@ export const globalNightImgUrl = `${domain}/img/global-night.png`;
 export const esgImgUrl = `${domain}/img/esg.png`;
 export const professionImgUrl = `${domain}/img/profession.png`;
 
+export const homeOceanBanner = `${domain}/img/home-banner.png`;
+
 export const aboutBannerImgUrl = `${domain}/img/about-banner.png`;
 export const aboutTeamsImgUrl = `${domain}/img/about-teams.png`;
 export const aboutBestImgUrl = `${domain}/img/about-best.png`;

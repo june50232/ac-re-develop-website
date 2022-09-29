@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header
-      className="absolute top-0 left-0 z-[1] bg-transparent w-screen lg:w-[42%] h-22 flex pt-8 pb-6 pl-11 pr-6 justify-center"
+      className="absolute top-0 left-0 z-[1] bg-transparent w-screen h-22 flex pt-8 pb-6 pl-11 pr-6 justify-center"
       ref={headerRef}
     >
       <section className="relative inline-flex w-full inline-flex justify-between items-center">
@@ -27,7 +27,7 @@ export default function Header() {
           }}
         />
         <nav
-          className="mainMenu md:flex lg:hidden 2xl:flex hidden justify-end grow"
+          className="mainMenu md:flex hidden justify-end grow"
           ref={navRef}
           data-aos="fade-down"
         >
@@ -48,7 +48,7 @@ export default function Header() {
         </nav>
         <div
           onClick={toggleNav}
-          className="hamburger-button md:hidden lg:inline-flex 2xl:hidden inline-flex items-center h-7 space-x-1.5"
+          className="hamburger-button md:hidden inline-flex items-center h-7 space-x-1.5"
           data-aos="fade-down"
         >
           <CgMenuLeft className="text-lg hamburger-button-icon" />

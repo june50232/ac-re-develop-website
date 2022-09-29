@@ -63,12 +63,12 @@
 
   h2 {
     color: theme(colors.primary.dark);
-    @apply font-black text-xl;
+    @apply font-black text-lg;
   }
 
   h3 {
     color: theme(colors.secondary.dark);
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold;
   }
 
   .img-hover-scale,
@@ -148,7 +148,7 @@
   .coreArrow {
     border: 3px solid theme(colors.primary.light);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-    @apply w-4 h-4 origin-center rotate-45 bottom-10 right-10;
+    @apply w-4 h-4 origin-center rotate-45 bottom-[50%] right-10;
   }
 
   .bottom-light-gray {
@@ -172,28 +172,11 @@
   }
 
   .img-caption-bg-cover {
-    background: linear-gradient(rgba(3, 74, 249, 0.7), transparent);
-    transition: opacity 0.3s;
-  }
-
-  .img-caption-bg-cover.vertical {
-    opacity: 1;
-  }
-  .hover-grow-effect:hover .img-caption-bg-cover.vertical {
-    opacity: 0;
-  }
-
-  .img-caption-bg-cover.horizontal {
     background: linear-gradient(
-      to right,
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.7),
       transparent
     );
-    opacity: 0;
-  }
-  .hover-grow-effect:hover .img-caption-bg-cover.horizontal {
-    opacity: 1;
   }
 }
 

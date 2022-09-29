@@ -1,7 +1,7 @@
 import React from 'react';
-import { BannerImage, Button, LaptopH2PrelineH3Wrap } from 'components';
+import { BannerImage, GradientBg, LaptopH2PrelineH3Wrap } from 'components';
 import {
-  globalImgUrl,
+  homeOceanBanner,
   globalDottedImgUrl,
   smileHandShakeImgUrl,
   globalNightImgUrl,
@@ -26,9 +26,9 @@ const MobileContainer = (props) => {
 export default function Home() {
   const whyReason = [
     {
-      title: 'AC Re represents you rather than a single insurance company',
+      title: 'AC Re always acts in the client’s best interest',
       content:
-        'you can trust you’ll be receiving unbiased information and recommendations.',
+        'AC Re represents you rather than a single insurance company,\n you can trust you’ll be receiving unbiased information and recommendations.',
     },
     {
       title: 'We help you identify your risks and manage them',
@@ -40,17 +40,17 @@ export default function Home() {
     {
       title: 'AC Re also supports you by giving you technical advice',
       content:
-        'the technical advice can be very useful if you need to make a claim.',
+        'The technical advice can be very useful if you need to make a claim.',
     },
   ];
   const coreValue = [
     {
-      title: 'PROFESSIONALISM',
+      title: 'Prodessionalism',
       description: 'Professional Service',
       img: professionImgUrl,
     },
     {
-      title: 'GLOBAL PERSPECTIVES',
+      title: 'Global Perspectives',
       description: 'Forward-Thinking',
       img: globalNightImgUrl,
     },
@@ -64,98 +64,23 @@ export default function Home() {
   return (
     <>
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden"
-        id="banner-laptop"
+        className="flex w-screen h-screen flex-row overflow-hidden relative"
+        id="banner-laptop-mobile"
       >
-        <div className="w-full w-[42%] h-full flex justify-center items-center">
-          <div className="h-80 space-y-16" data-aos="fade-up">
-            <h1 className="font-extrabold">
-              AC Re Services
-              <br />
-              Co., Ltd.
-            </h1>
-            <p className="text-secondary-lighter">
-              We’re enabling a better,
-              <br />
-              {/* <span className="ml-20"> */}
-              more <i>efficient</i> Reinsurance service
-              {/* </span> */}
-            </p>
-            <div className="button-group space-x-3">
-              <Button title="ABOUT US" classnames="bg-primary text-white" />
-              <Button
-                title="SERVICES"
-                classnames="bg-primary-light text-white"
-              />
-            </div>
-          </div>
-        </div>
-        <aside className="w-full w-[58%] h-full relative overflow-hidden">
-          <BannerImage url={globalImgUrl} />
-          <Button
-            title="CONTACT US"
-            classnames="absolute right-5 top-8 bg-white"
-            isFadeUp
-          />
-        </aside>
+        <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
+        <BannerImage url={homeOceanBanner} />
       </section>
-      <section
-        className="lg:hidden w-screen h-screen pt-24 flex flex-col justify-evenly"
-        id="banner-mobile"
-        data-aos="fade-up"
-      >
-        <MobileContainer classnames="overflow-hidden">
-          <BannerImage
-            url={globalDottedImgUrl}
-            classnames="absolute -z-[1] opacity-25"
-          />
-          <h1 className="text-3xl font-bold w-[180px] ml-16">
-            AC Re
-            <br />
-            Services
-            <br />
-            Co., Ltd.
-          </h1>
-        </MobileContainer>
-        <MobileContainer classnames="relative px-3 h-2/4 overflow-hidden">
-          <BannerImage url={globalImgUrl} />
-          <Button
-            title="CONTACT US"
-            classnames="absolute right-8 top-8 bg-white text-7xl pl-5 pr-5"
-            isFadeUp
-          />
-        </MobileContainer>
-        <MobileContainer classnames="px-3 space-x-1.5">
-          <p className="text-secondary-lighter">
-            We’re enabling a better, more <i>efficient</i> Reinsurance service
-          </p>
-          <Button
-            title="ABOUT"
-            classnames="bg-primary text-white text-7xl pl-2 pr-2"
-          />
-          <Button
-            title="SERVICES"
-            classnames="bg-primary-light text-white text-7xl pl-2 pr-2"
-          />
-        </MobileContainer>
-      </section>
-
       <section
         className="lg:inline-flex w-screen h-screen flex-row hidden"
         id="why-laptop"
       >
-        <aside className="w-[42%] h-full overflow-hidden">
+        <aside className="w-[42%] h-full overflow-hidden relative">
+          <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={smileHandShakeImgUrl} />
         </aside>
         <div className="w-[58%] h-full flex flex-col items-center justify-center">
           <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
-            <LaptopH2PrelineH3Wrap h2="WHY AC Re">
-              <>
-                AC Re always acts in the
-                <br />
-                client’s best interest
-              </>
-            </LaptopH2PrelineH3Wrap>
+            <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-5">
               {whyReason.map(({ title, content }, i) => (
                 <div key={title} className="flex space-x-16" data-aos="fade-up">
@@ -168,9 +93,9 @@ export default function Home() {
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="w-9/12">
-                    <h4 className="font-semibold">{title}</h4>
-                    <h5>{content}</h5>
+                  <div className="w-9/12 space-y-2">
+                    <h4 className="text-base font-semibold">{title}</h4>
+                    <h5 className="text-sm">{content}</h5>
                   </div>
                 </div>
               ))}
@@ -178,7 +103,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="lg:hidden w-screen py-12 space-y-12" id="why-mobile">
+      <section
+        className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
+        id="why-mobile"
+      >
         <MobileContainer classnames="flex-col">
           <BannerImage
             url={globalDottedImgUrl}
@@ -191,11 +119,6 @@ export default function Home() {
           <h2 className="text-3xl mb-3" data-aos="fade-up">
             WHY AC Re
           </h2>
-          <h5 className="text-secondary-light tracking-wide" data-aos="fade-up">
-            AC Re always acts in the
-            <br />
-            client’s best interest
-          </h5>
         </MobileContainer>
         <div className="text-secondary space-y-20 px-8 pt-12">
           {whyReason.map(({ title, content }, i) => (
@@ -220,9 +143,8 @@ export default function Home() {
           <BannerImage url={smileHandShakeImgUrl} />
         </MobileContainer>
       </section>
-
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden justify-center items-center"
+        className="lg:inline-flex w-screen h-screen flex-row hidden justify-center items-center min-h-fit"
         id="core-value-laptop"
       >
         <div className="h-5/6 w-10/12 flex flex-col justify-evenly relative">
@@ -238,10 +160,11 @@ export default function Home() {
               }}
             />
           </div>
-          <LaptopH2PrelineH3Wrap h2="Our Core Value">
-            Professionalism, Global Perspectives and ESG
-          </LaptopH2PrelineH3Wrap>
-          <div className="flex justify-between h-4/6 pt-10" data-aos="fade-up">
+          <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
+          <div
+            className="flex justify-between h-4/6 min-h-fit pt-10"
+            data-aos="fade-up"
+          >
             {coreValue.map(
               ({
                 title,
@@ -258,9 +181,13 @@ export default function Home() {
                   <div className="w-full h-[76%] overflow-hidden">
                     <BannerImage url={img} classnames="no-scale-effect" />
                   </div>
-                  <div className="pt-5 pl-3 pb-11 relative">
-                    <h5 className="text-secondary-dark font-bold">{title}</h5>
-                    <p className="text-secondary-lightest">{description}</p>
+                  <div className="pt-5 pl-3 pb-11 relative space-y-1">
+                    <h5 className="text-secondary-dark font-bold text-base">
+                      {title}
+                    </h5>
+                    <p className="text-secondary-lightest text-sm">
+                      {description}
+                    </p>
                     <div className="absolute coreArrow"></div>
                   </div>
                 </a>
@@ -271,7 +198,7 @@ export default function Home() {
       </section>
 
       <section
-        className="lg:hidden w-screen py-12 space-y-12"
+        className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
         id="core-value-mobile"
       >
         <MobileContainer classnames="flex-col">
