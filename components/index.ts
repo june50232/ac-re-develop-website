@@ -8,6 +8,7 @@ import Button from './Button';
 import BannerImage from './BannerImage';
 import LaptopH2PrelineH3Wrap from './LaptopH2PrelineH3Wrap';
 import GradientBg from './GradientBg';
+import MobileContainer from './MobileContainer';
 
 export {
   HTMLHead,
@@ -20,4 +21,5 @@ export {
   BannerImage,
   LaptopH2PrelineH3Wrap,
   GradientBg,
+  MobileContainer,
 };
