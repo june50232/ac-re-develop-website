@@ -1,6 +1,9 @@
 const LaptopH2PrelineH3Wrap = (props) => {
   return (
-    <div className="h2-pre-line-wrap" data-aos="fade-up">
+    <div
+      className={['h2-pre-line-wrap', props.classnames].join(' ')}
+      data-aos="fade-up"
+    >
       <h2>{props.children}</h2>
     </div>
   );

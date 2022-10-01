@@ -17,3 +17,7 @@ export const aboutBestImgUrl = `${domain}/img/about-best.png`;
 export const aboutfastGrowImgUrl = `${domain}/img/about-fast-growing.png`;
 export const aboutSuccessfulImgUrl = `${domain}/img/about-successful.png`;
 export const aboutFounderImgUrl = `${domain}/img/about-founder.jpg`;
+
+export const servicesBannerImgUrl = `${domain}/img/services-banner.png`;
+export const services2WindImgUrl = `${domain}/img/services-2-wind.png`;
+export const services2SolarImgUrl = `${domain}/img/services-2-solar.png`;

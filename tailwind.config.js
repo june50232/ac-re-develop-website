@@ -67,6 +67,9 @@ module.exports = {
       '10%': '10%',
       '42%': '42%',
     },
+    left: {
+      '10%': '10%',
+    },
   },
   plugins: [require('postcss-nesting')],
 };

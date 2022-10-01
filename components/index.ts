@@ -9,6 +9,7 @@ import BannerImage from './BannerImage';
 import LaptopH2PrelineH3Wrap from './LaptopH2PrelineH3Wrap';
 import GradientBg from './GradientBg';
 import MobileContainer from './MobileContainer';
+import Section from './Section';
 
 export {
   HTMLHead,
@@ -22,4 +23,5 @@ export {
   LaptopH2PrelineH3Wrap,
   GradientBg,
   MobileContainer,
+  Section,
 };
