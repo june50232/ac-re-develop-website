@@ -21,3 +21,5 @@ export const aboutFounderImgUrl = `${domain}/img/about-founder.jpg`;
 export const servicesBannerImgUrl = `${domain}/img/services-banner.png`;
 export const services2WindImgUrl = `${domain}/img/services-2-wind.png`;
 export const services2SolarImgUrl = `${domain}/img/services-2-solar.png`;
+
+export const contactBannerImgUrl = `${domain}/img/contact-banner.png`;

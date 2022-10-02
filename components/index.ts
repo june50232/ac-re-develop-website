@@ -10,6 +10,7 @@ import LaptopH2PrelineH3Wrap from './LaptopH2PrelineH3Wrap';
 import GradientBg from './GradientBg';
 import MobileContainer from './MobileContainer';
 import Section from './Section';
+import GoogleMap from './GoogleMap';
 
 export {
   HTMLHead,
@@ -24,4 +25,5 @@ export {
   GradientBg,
   MobileContainer,
   Section,
+  GoogleMap,
 };

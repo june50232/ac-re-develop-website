@@ -1,9 +1,6 @@
 import React from 'react';
 
-interface SectionProps {
-  children: any;
-  classname?: string;
-}
+type SectionProps = any;
 
 export default function Section({
   children,
@@ -12,7 +9,10 @@ export default function Section({
 }: SectionProps) {
   return (
     <section
-      className={['lg:flex w-screen hidden h-screen', classname].join(' ')}
+      className={[
+        'lg:flex w-screen hidden h-screen overflow-hidden relative',
+        classname,
+      ].join(' ')}
       {...props}
     >
       {children}

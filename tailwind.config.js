@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     colors: {
       white: '#ffffff',
+      red: 'red',
       default: '#034AF9',
       primary: {
         lighter: '#DCEFFC',
@@ -62,6 +63,7 @@ module.exports = {
     },
     zIndex: {
       1: '1',
+      2: '2',
     },
     spacing: {
       '10%': '10%',
@@ -71,5 +73,5 @@ module.exports = {
       '10%': '10%',
     },
   },
-  plugins: [require('postcss-nesting')],
+  plugins: [require('postcss-nesting'), require('@tailwindcss/forms')],
 };
