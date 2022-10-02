@@ -55,7 +55,7 @@ export default function Services() {
         </>
       </Section>
       <Section classname="min-h-screen h-auto w-screen overflow-hidden py-[5%] space-y-2 relative">
-        <LaptopH2PrelineH3Wrap classnames="absolute top-32 left-[10%]">
+        <LaptopH2PrelineH3Wrap classnames="absolute top-28 left-[10%]">
           Marine
         </LaptopH2PrelineH3Wrap>
         <div
@@ -92,7 +92,7 @@ export default function Services() {
       </Section>
 
       <Section classname="min-h-screen h-auto w-screen overflow-hidden py-[5%] space-y-2 relative">
-        <LaptopH2PrelineH3Wrap classnames="absolute top-32 left-8">
+        <LaptopH2PrelineH3Wrap classnames="absolute top-28 left-8">
           Property & Casualty
         </LaptopH2PrelineH3Wrap>
         <div
@@ -172,10 +172,10 @@ export default function Services() {
         </div>
       </Section>
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden justify-center items-center min-h-fit"
+        className="lg:inline-flex w-screen h-[50rem] flex-row hidden justify-center items-center min-h-fit"
         id="core-value-laptop"
       >
-        <div className="h-full w-10/12 flex flex-col justify-evenly relative">
+        <div className="h-5/6 w-10/12 flex flex-col justify-evenly relative">
           <div
             className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
             data-aos="fade-up"
@@ -221,7 +221,7 @@ export default function Services() {
                       classnames="no-scale-effect"
                     />
                   </div>
-                  <div className="pt-5 pl-3 pr-3 pb-11 h-auto relative space-y-2">
+                  <div className="pt-5 pl-3 pr-3 pb-11 h-auto relative space-y-6">
                     <h5 className="text-secondary-dark font-bold text-base">
                       {mainTitle}
                     </h5>
