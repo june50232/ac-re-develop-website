@@ -94,7 +94,7 @@ export default function Contact() {
           </div>
         </div>
       </Section>
-      <Section classname="h-96" data-aos="fade-up">
+      <Section classname="h-96">
         {/* <GradientBg background="rgba(255, 247, 237, 0.4)" /> */}
         {/* <img 
                     src="https://maps.googleapis.com/maps/api/staticmap?center=@25.0469492,121.5254558&zoom=16&size=100%x100%&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=YOUR_API_KEY&map_id=YOUR_MAP_ID&signature=YOUR_SIGNATURE" 
@@ -106,9 +106,11 @@ export default function Contact() {
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
-        data-aos="fade-up"
       >
-        <div className="absolute -z-[1] top-2 -right-20 h-72 w-4/6">
+        <div
+          className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
+          data-aos="fade-up"
+        >
           <BannerImage
             url={globalDottedImgUrl}
             classnames="opacity-10"
@@ -118,7 +120,10 @@ export default function Contact() {
             noHoverEffect
           />
         </div>
-        <div className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative">
+        <div
+          className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
+          data-aos="fade-up"
+        >
           <h2 className="text-xl font-bold">Need More Help?</h2>
           <hr className="w-8 text-neutral-500" />
           <h5 className="text-sm w-6/12 text-center">
@@ -127,7 +132,10 @@ export default function Contact() {
             you can also connect with us via the contact form below.
           </h5>
         </div>
-        <div className="flex flex-wrap w-4/6 h-80 justify-between items-center">
+        <div
+          className="flex flex-wrap w-4/6 h-80 justify-between items-center"
+          data-aos="fade-up"
+        >
           <TextInput title="Your Name" required />
           <TextInput title="Company Name" />
           <TextInput title="Email Address" required />

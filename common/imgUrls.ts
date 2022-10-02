@@ -23,3 +23,6 @@ export const services2WindImgUrl = `${domain}/img/services-2-wind.png`;
 export const services2SolarImgUrl = `${domain}/img/services-2-solar.png`;
 
 export const contactBannerImgUrl = `${domain}/img/contact-banner.png`;
+
+export const careerTeamImgUrl = `${domain}/img/career-team.png`;
+export const careerCareImgUrl = `${domain}/img/career-care.png`;
