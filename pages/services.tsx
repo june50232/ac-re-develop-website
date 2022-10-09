@@ -8,6 +8,7 @@ import {
 } from 'components';
 import { servicesBannerImgUrl } from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
+import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
 const BLOCK_TYPE = {
