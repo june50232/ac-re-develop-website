@@ -198,7 +198,7 @@ export default function About() {
         </aside>
       </section>
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden min-h-[612px]"
+        className="lg:inline-flex w-screen h-screen flex-row hidden min-h-[600px]"
         id="leader-laptop"
       >
         <aside className="w-[42%] h-full overflow-hidden relative">
@@ -208,13 +208,15 @@ export default function About() {
             <BannerImage url={aboutFounderImgUrl} />
           </div>
         </aside>
-        <div className="w-[58%] h-full flex flex-col items-center justify-center">
-          <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
+        <div className="w-[58%] h-full grow flex flex-col items-center justify-center">
+          <div className="h-4/6 w-9/12 flex flex-col justify-evenly">
             <LaptopH2PrelineH3Wrap>Solomon Chiu</LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-5">
               {founder.map((content, i) => (
                 <div key={i} className="flex space-x-16" data-aos="fade-up">
-                  <h5 className="text-base leading-relaxed">{content}</h5>
+                  <h5 className="text-[.83rem] leading-relaxed indent-8">
+                    {content}
+                  </h5>
                 </div>
               ))}
             </div>

@@ -64,7 +64,10 @@ export default function Career() {
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
         </aside>
-        <div className="w-[58%] h-full flex flex-col items-center justify-center">
+        <div
+          className="w-[58%] h-full flex flex-col items-center justify-center"
+          data-aos="fade-up"
+        >
           <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
             <LaptopH2PrelineH3Wrap>Our Team</LaptopH2PrelineH3Wrap>
             <div
@@ -88,7 +91,10 @@ export default function Career() {
       </Section>
 
       <Section classname="h-[36rem]">
-        <div className="w-[58%] h-full flex flex-col items-center justify-center">
+        <div
+          className="w-[58%] h-full flex flex-col items-center justify-center"
+          data-aos="fade-up"
+        >
           <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
             <LaptopH2PrelineH3Wrap>What we care about</LaptopH2PrelineH3Wrap>
             <div

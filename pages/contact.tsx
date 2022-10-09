@@ -18,7 +18,7 @@ export default function Contact() {
         <div className="absolute h-full w-full flex flex-col justify-center items-center space-y-5">
           <h2 className="text-xl font-bold">Get in touch with AC Re!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-sm w-6/12 text-center">
+          <h3 className="text-sm w-6/12 text-center leading-loose">
             AC Re Services Co., Ltd. bring industry knowledge, expertise, and
             insight to design programs for your business&apos;s specific risks
             and needs. As strategic advisors, we build long-term partnerships
