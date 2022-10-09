@@ -87,18 +87,18 @@ export default function Services() {
       >
         <>
           <Section classname="h-[30rem]">
-            <aside className="w-[33%] h-full overflow-hidden relative">
+            <aside className="w-4/12 h-full overflow-hidden relative">
               <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
               <BannerImage url={servicesBannerImgUrl} />
             </aside>
             <PortalClickItem
               index={0}
-              width="33"
+              width="4/12"
               titleClassName="top-[11%] left-[10%]"
             />
             <PortalClickItem
               index={1}
-              width="34"
+              width="4/12"
               titleClassName="top-[11%] right-[66%]"
             />
           </Section>
@@ -106,10 +106,10 @@ export default function Services() {
           <Section classname="h-[30rem]">
             <PortalClickItem
               index={2}
-              width="30"
+              width="[30%]"
               titleClassName="top-[8%] left-8 w-80 items-center"
             />
-            <PortalClickItem index={3} width="30" isOther />
+            <PortalClickItem index={3} width="[30%]" isOther />
             <aside className="w-[40%] h-full overflow-hidden relative">
               <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
               <BannerImage url={servicesBannerImgUrl} />
@@ -161,7 +161,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
             {i === 0
               ? ({ ref, open }) => (
                   <div
-                    className={`w-[${width}%] h-full flex flex-col items-center justify-center cursor-pointer`}
+                    className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
                     style={{ border: '1px dotted #DCEFFC' }}
                     onClick={open}
                     ref={ref as any}
