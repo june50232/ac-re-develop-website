@@ -7,7 +7,6 @@ import {
   LaptopH2PrelineH3Wrap,
 } from 'components';
 import { servicesBannerImgUrl } from 'common/imgUrls';
-import 'photoswipe/dist/photoswipe.css';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
