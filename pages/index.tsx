@@ -13,6 +13,7 @@ import {
   esgImgUrl,
   professionImgUrl,
 } from 'common/imgUrls';
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 export default function Home() {
   const whyReason = [
@@ -55,30 +56,47 @@ export default function Home() {
   return (
     <>
       <section
-        className="flex w-screen h-[30rem] flex-row overflow-hidden relative"
+        className="flex w-screen h-[30rem] flex-row overflow-hidden relative mb-2"
         id="banner-laptop-mobile"
       >
-        <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9))" />
+        <GradientBg background="rgba(255, 247, 237, 0.7)" />
         <BannerImage
           url={homeOceanBanner}
           classnames="bg-fixed"
           noHoverEffect
         />
+        <h1 className="absolute flex items-center justify-center inset-0 font-semibold text-xl">
+          <FaQuoteLeft
+            color="#ffffff"
+            fontSize="1.5rem"
+            style={{
+              marginRight: '1rem',
+            }}
+          />
+          We bring industry knowledge, expertise, and insight for clients
+          <FaQuoteRight
+            color="#ffffff"
+            fontSize="1.5rem"
+            style={{
+              marginLeft: '1rem',
+            }}
+          />
+        </h1>
       </section>
       <section
-        className="lg:inline-flex w-screen h-[58rem] flex-row hidden"
+        className="lg:inline-flex w-screen h-[58rem] flex-row hidden pl-2"
         id="why-laptop"
       >
-        <aside className="w-[42%] h-full overflow-hidden relative">
+        <aside className="w-[38%] h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={smileHandShakeImgUrl} />
-          <GradientBg
+          {/* <GradientBg
             classnames="left-0 right-[92%]"
-            background="rgba(140,186,209,0.9)"
-          />
+            background="rgba(255, 247, 237, 0.7)"
+          /> */}
         </aside>
         <div
-          className="w-[58%] h-full flex flex-col items-center justify-center"
+          className="w-[60%] h-full flex flex-col items-center justify-center"
           // style={{ background: 'azure' }}
         >
           <div className="h-5/6 w-10/12 flex flex-col justify-around">
