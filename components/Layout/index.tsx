@@ -20,7 +20,7 @@ export default function Layout(props) {
     <div className="min-h-screen py-0">
       <HTMLHead />
       <Header />
-      <main className="px-0 flex flex-col">{props.children}</main>
+      <main className="pt-16 flex flex-col">{props.children}</main>
       <Footer />
     </div>
   );

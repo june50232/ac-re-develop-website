@@ -1,15 +1,22 @@
-const NavList: {title: string, url: string}[] = [{
+const NavList: { title: string; url: string }[] = [
+  {
     title: 'About AC Re',
     url: './about',
-}, {
-    title: 'Our Services & Products',
-    url: './services'
-}, {
+  },
+  {
+    title: 'Our services & products',
+    url: './services',
+  },
+  {
     title: 'Career',
     url: './career',
-}, {
-    title: 'Contact Us',
+  },
+  {
+    title: 'Contact us',
     url: './contact',
-}]
+  },
+];
 
-export default NavList
+export default NavList;
+
+export const homeUrl = './';

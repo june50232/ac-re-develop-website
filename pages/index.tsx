@@ -3,13 +3,13 @@ import {
   BannerImage,
   GradientBg,
   LaptopH2PrelineH3Wrap,
-  MobileContainer,
+  // MobileContainer,
 } from 'components';
 import {
   homeOceanBanner,
   globalDottedImgUrl,
   smileHandShakeImgUrl,
-  globalNightImgUrl,
+  globalImgUrl,
   esgImgUrl,
   professionImgUrl,
 } from 'common/imgUrls';
@@ -43,7 +43,7 @@ export default function Home() {
     {
       title: 'Global Perspectives',
       description: 'Forward-Thinking',
-      img: globalNightImgUrl,
+      img: globalImgUrl,
     },
     {
       title: 'ESG',
@@ -55,26 +55,37 @@ export default function Home() {
   return (
     <>
       <section
-        className="flex w-screen h-screen flex-row overflow-hidden relative"
+        className="flex w-screen h-[30rem] flex-row overflow-hidden relative"
         id="banner-laptop-mobile"
       >
-        <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
-        <BannerImage url={homeOceanBanner} />
+        <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9))" />
+        <BannerImage
+          url={homeOceanBanner}
+          classnames="bg-fixed"
+          noHoverEffect
+        />
       </section>
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden"
+        className="lg:inline-flex w-screen h-[58rem] flex-row hidden"
         id="why-laptop"
       >
         <aside className="w-[42%] h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={smileHandShakeImgUrl} />
+          <GradientBg
+            classnames="left-0 right-[92%]"
+            background="rgba(140,186,209,0.9)"
+          />
         </aside>
-        <div className="w-[58%] h-full flex flex-col items-center justify-center">
-          <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
+        <div
+          className="w-[58%] h-full flex flex-col items-center justify-center"
+          // style={{ background: 'azure' }}
+        >
+          <div className="h-5/6 w-10/12 flex flex-col justify-around">
             <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
-            <div className="text-secondary space-y-5">
+            <div className="text-secondary space-y-8">
               {whyReason.map(({ title, content }, i) => (
-                <div key={title} className="flex space-x-16" data-aos="fade-up">
+                <div key={title} className="flex space-x-10" data-aos="fade-up">
                   <div className="">
                     <div
                       className={`flex items-center justify-center order order-${
@@ -84,9 +95,9 @@ export default function Home() {
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="w-9/12 space-y-2">
-                    <h4 className="text-base font-semibold">{title}</h4>
-                    <h5 className="text-sm">{content}</h5>
+                  <div className="space-y-5">
+                    <h4 className="text-xl font-semibold">{title}</h4>
+                    <h5 className="text-lg leading-relaxed">{content}</h5>
                   </div>
                 </div>
               ))}
@@ -94,6 +105,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* 
       <section
         className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
         id="why-mobile"
@@ -134,11 +146,12 @@ export default function Home() {
           <BannerImage url={smileHandShakeImgUrl} />
         </MobileContainer>
       </section>
+       */}
       <section
-        className="lg:inline-flex w-screen h-screen flex-row hidden justify-center items-center min-h-fit"
+        className="lg:inline-flex w-screen h-[45rem] flex-row hidden justify-center items-start min-h-fit overflow-hidden relative"
         id="core-value-laptop"
       >
-        <div className="h-5/6 w-10/12 flex flex-col justify-evenly relative">
+        <div className="h-5/6 w-11/12 flex flex-col justify-evenly relative">
           <div
             className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
             data-aos="fade-up"
@@ -153,7 +166,7 @@ export default function Home() {
           </div>
           <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
           <div
-            className="flex justify-between h-4/6 min-h-fit pt-10"
+            className="flex justify-between h-4/6 min-h-fit"
             data-aos="fade-up"
           >
             {coreValue.map(
@@ -164,19 +177,29 @@ export default function Home() {
                 //url, // TODO
               }) => (
                 <a
-                  className="w-[30%] h-full relative hover-scale-inner-img-effect"
+                  className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect"
                   key={title}
                   href="javascript:;"
                 >
                   <div className="absolute coreValueLine"></div>
-                  <div className="w-full h-[76%] overflow-hidden">
+                  <div className="w-full h-[50%] overflow-hidden">
                     <BannerImage url={img} classnames="no-scale-effect" />
                   </div>
-                  <div className="pt-5 pl-3 pb-11 relative space-y-1">
-                    <h5 className="text-secondary-dark font-bold text-base">
+                  <div
+                    className="pt-5 pb-11 relative space-y-2 grow"
+                    style={{
+                      background: 'rgb(42,60,107)',
+                    }}
+                  >
+                    <h5
+                      className="text-white font-bold text-3xl pl-5"
+                      style={{
+                        borderLeft: '0.5rem solid #8CBAD1',
+                      }}
+                    >
                       {title}
                     </h5>
-                    <p className="text-secondary-lightest text-sm">
+                    <p className="text-secondary-lightest text-lg  pl-7">
                       {description}
                     </p>
                     <div className="absolute coreArrow"></div>
@@ -187,7 +210,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* 
       <section
         className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
         id="core-value-mobile"
@@ -238,6 +261,7 @@ export default function Home() {
           )}
         </div>
       </section>
+      */}
     </>
   );
 }
