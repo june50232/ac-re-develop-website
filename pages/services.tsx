@@ -59,7 +59,7 @@ export default function Services() {
   return (
     <>
       <div className="h-[5.5rem] w-screen bg-white" />
-      <Section classname="h-96">
+      <Section classname="h-96" data-aos="fade-up">
         <GradientBg background="rgba(255,255,255,0.85)" />
         <BannerImage url={servicesBannerImgUrl} />
         <div

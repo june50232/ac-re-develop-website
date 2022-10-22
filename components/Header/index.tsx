@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 z-[1] bg-white shadow-lg w-screen h-16 flex pt-8 pb-6 pl-11 pr-6 justify-center"
+      className="fixed top-0 left-0 z-10 bg-white shadow-lg w-screen h-16 flex pt-8 pb-6 pl-11 pr-6 justify-center"
       ref={headerRef}
     >
       <section className="relative inline-flex w-full inline-flex justify-between items-center">

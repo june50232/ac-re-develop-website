@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="overflow-hidden">
       <section
         className="lg:flex hidden flex-col w-10/12 h-48 justify-center space-y-3 items-center"
         id="footer-laptop"

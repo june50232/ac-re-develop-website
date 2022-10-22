@@ -5,9 +5,13 @@ const GradientBg = (props) => {
         'absolute top-0 bottom-0',
         props.classnames || 'left-0 right-0',
       ].join(' ')}
-      style={{
-        background: props.background,
-      }}
+      style={
+        props?.background
+          ? {
+              background: props.background,
+            }
+          : {}
+      }
     ></div>
   );
 };

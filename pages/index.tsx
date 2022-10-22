@@ -204,10 +204,10 @@ export default function Home() {
                     <BannerImage url={img} classnames="no-scale-effect" />
                   </div>
                   <div
-                    className="pt-5 pb-11 relative space-y-2 grow"
-                    style={{
-                      background: 'rgb(42,60,107)',
-                    }}
+                    className="pt-5 pb-11 relative space-y-2 grow bg-primary-darker"
+                    // style={{
+                    //   background: 'rgb(42,60,107)',
+                    // }}
                   >
                     <h5
                       className="text-white font-bold text-3xl pl-5"
