@@ -21,12 +21,14 @@ export default function Header() {
       ref={headerRef}
     >
       <section className="relative inline-flex w-full inline-flex justify-between items-center">
-        <Link href="">
-          <Logo
-            style={{
-              marginTop: '-15px',
-            }}
-          />
+        <Link href="./" passHref>
+          <a className="cursor-pointer">
+            <Logo
+              style={{
+                marginTop: '-15px',
+              }}
+            />
+          </a>
         </Link>
         <nav
           className="mainMenu md:flex hidden justify-end grow"

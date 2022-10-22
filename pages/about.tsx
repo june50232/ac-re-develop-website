@@ -80,7 +80,7 @@ export default function About() {
             <div className="flex flex-col space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-lg">
+                <h3 className="font-bold text-primary-darkest text-xl">
                   Founded in{' '}
                   <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
                     2021
@@ -96,7 +96,7 @@ export default function About() {
             <div className="flex flex-col space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-lg">
+                <h3 className="font-bold text-primary-darkest text-xl">
                   Innovative and{' '}
                   <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
                     Forward-Thinking
@@ -118,7 +118,7 @@ export default function About() {
             <div className="flex flex-col space-y-6 items-center">
               <IoEarthOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-lg">
+                <h3 className="font-bold text-primary-darkest text-xl">
                   <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
                     Global
                   </span>{' '}
@@ -238,7 +238,10 @@ export default function About() {
           //   clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)'
           // }}
         >
-          <div className="w-full h-[8.1rem] -mt-[100%] ml-5 bg-white">
+          <div
+            className="w-full h-[8.1rem] -mt-[100%] ml-5 bg-white overflow-hidden px-6 shadow-md"
+            data-aos="fade-up"
+          >
             <BannerImage
               url={aboutTeamsDecisionImgUrl}
               classnames="bg-white bg-contain"
@@ -301,9 +304,13 @@ export default function About() {
           >
             <BannerImage url={aboutFounderImgUrl} />
           </div>
-          <h3 className="text-white" data-aos="fade-up">
-            Solomon Chiu
-          </h3>
+          <div
+            className="border-l-8 border-solid border-white pl-2"
+            data-aos="fade-up"
+          >
+            <h3 className="text-white font-semibold">Solomon Chiu</h3>
+            <h5 className="text-white">Chairman</h5>
+          </div>
         </aside>
         <div className="h-full grow flex flex-col items-center justify-center">
           <div className="h-4/6 w-9/12 flex flex-col justify-evenly space-y-5">

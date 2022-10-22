@@ -20,3 +20,7 @@ const NavList: { title: string; url: string }[] = [
 export default NavList;
 
 export const homeUrl = './';
+export const aboutUrl = './about';
+export const servicesUrl = './services';
+export const careerUrl = './career';
+export const contactUrl = './contact';

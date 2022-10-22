@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   BannerImage,
   GradientBg,
@@ -14,6 +15,7 @@ import {
   professionImgUrl,
 } from 'common/imgUrls';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import { aboutUrl, servicesUrl } from 'common/nav';
 
 export default function Home() {
   const whyReason = [
@@ -40,16 +42,19 @@ export default function Home() {
       title: 'Prodessionalism',
       description: 'Professional Service',
       img: professionImgUrl,
+      url: aboutUrl,
     },
     {
       title: 'Global Perspectives',
       description: 'Forward-Thinking',
       img: globalImgUrl,
+      url: `${aboutUrl}#team-laptop`,
     },
     {
       title: 'ESG',
       description: 'Sustainable Future',
       img: esgImgUrl,
+      url: servicesUrl,
     },
   ];
 
@@ -192,37 +197,35 @@ export default function Home() {
                 title,
                 description,
                 img,
-                //url, // TODO
+                url, // TODO
               }) => (
-                <a
-                  className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect"
-                  key={title}
-                  href="javascript:;"
-                >
-                  <div className="absolute coreValueLine"></div>
-                  <div className="w-full h-[50%] overflow-hidden">
-                    <BannerImage url={img} classnames="no-scale-effect" />
-                  </div>
-                  <div
-                    className="pt-5 pb-11 relative space-y-2 grow bg-primary-darker"
-                    // style={{
-                    //   background: 'rgb(42,60,107)',
-                    // }}
-                  >
-                    <h5
-                      className="text-white font-bold text-3xl pl-5"
-                      style={{
-                        borderLeft: '0.5rem solid #8CBAD1',
-                      }}
+                <Link href={url} passHref key={title}>
+                  <a className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect">
+                    <div className="absolute coreValueLine"></div>
+                    <div className="w-full h-[50%] overflow-hidden">
+                      <BannerImage url={img} classnames="no-scale-effect" />
+                    </div>
+                    <div
+                      className="pt-5 pb-11 relative space-y-2 grow bg-primary-darker"
+                      // style={{
+                      //   background: 'rgb(42,60,107)',
+                      // }}
                     >
-                      {title}
-                    </h5>
-                    <p className="text-secondary-lightest text-lg  pl-7">
-                      {description}
-                    </p>
-                    <div className="absolute coreArrow"></div>
-                  </div>
-                </a>
+                      <h5
+                        className="text-white font-bold text-3xl pl-5"
+                        style={{
+                          borderLeft: '0.5rem solid #8CBAD1',
+                        }}
+                      >
+                        {title}
+                      </h5>
+                      <p className="text-secondary-lightest text-lg  pl-7">
+                        {description}
+                      </p>
+                      <div className="absolute coreArrow"></div>
+                    </div>
+                  </a>
+                </Link>
               ),
             )}
           </div>
