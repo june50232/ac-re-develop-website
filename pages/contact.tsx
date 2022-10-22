@@ -11,19 +11,21 @@ import {
 export default function Contact() {
   return (
     <>
-      <div className="h-[5.5rem] w-screen bg-white" />
-      <Section classname="h-80" data-aos="fade-up">
+      <Section classname="h-96">
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
         <BannerImage url={contactBannerImgUrl} />
-        <div className="absolute h-full w-full flex flex-col justify-center items-center space-y-5">
-          <h2 className="text-xl font-bold">Get in touch with AC Re!</h2>
+        <div
+          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
+          data-aos="fade-up"
+        >
+          <h2 className="text-3xl font-bold">Get in touch with AC Re!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-sm w-6/12 text-center leading-loose">
-            AC Re Services Co., Ltd. bring industry knowledge, expertise, and
-            insight to design programs for your business&apos;s specific risks
-            and needs. As strategic advisors, we build long-term partnerships
-            with local and regional insurance companies to assure you have the
-            protection you need.
+          <h3 className="text-lg w-6/12 text-center leading-loose font-semibold">
+            AC Re brings industry knowledge, expertise, and insight to design
+            programs for your business&apos;s specific risks and needs. As
+            strategic advisors, we build long-term partnerships with local and
+            regional insurance companies to assure you have the protection you
+            need.
           </h3>
         </div>
       </Section>
@@ -39,11 +41,11 @@ export default function Contact() {
             rel="noopener noreferrer"
           >
             <FcDepartment color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
-              <h3 className="font-bold text-primary-darkest text-base">
+            <div className="flex flex-col space-y-6 items-center">
+              <h3 className="font-bold text-primary-darkest text-xl">
                 Address
               </h3>
-              <h5 className="text-sm text-secondary-light leading-relaxed text-center">
+              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
                 9F.-5, No. 63,
                 <br /> Sec. 2, Chang&apos;an East Rd.,
                 <br />
@@ -57,11 +59,9 @@ export default function Contact() {
             className="flex flex-col space-y-3 items-center"
           >
             <FcPhoneAndroid color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
-              <h3 className="font-bold text-primary-darkest text-base">
-                Call Us
-              </h3>
-              <h5 className="text-sm text-secondary-light leading-relaxed text-center">
+            <div className="flex flex-col space-y-6 items-center">
+              <h3 className="font-bold text-primary-darkest text-xl">Call</h3>
+              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
                 +886-2-2508-0488
               </h5>
             </div>
@@ -72,45 +72,31 @@ export default function Contact() {
             className="flex flex-col space-y-3 items-center"
           >
             <FcFeedback color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
-              <h3 className="font-bold text-primary-darkest text-base">
-                Email Us
-              </h3>
-              <h5 className="text-sm text-secondary-light leading-relaxed text-center">
+            <div className="flex flex-col space-y-6 items-center">
+              <h3 className="font-bold text-primary-darkest text-xl">Email</h3>
+              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
                 info@ac-re.com.tw
               </h5>
             </div>
           </a>
           <div className="flex flex-col space-y-3 items-center">
             <FcPrint color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
-              <h3 className="font-bold text-primary-darkest text-base">
-                Fax Us
-              </h3>
-              <h5 className="text-sm text-secondary-light leading-relaxed text-center">
+            <div className="flex flex-col space-y-6 items-center">
+              <h3 className="font-bold text-primary-darkest text-xl">Fax</h3>
+              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
                 +886-2-2508-1348
               </h5>
             </div>
           </div>
         </div>
       </Section>
-      <Section classname="h-96">
-        {/* <GradientBg background="rgba(255, 247, 237, 0.4)" /> */}
-        {/* <img 
-                    src="https://maps.googleapis.com/maps/api/staticmap?center=@25.0469492,121.5254558&zoom=16&size=100%x100%&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=YOUR_API_KEY&map_id=YOUR_MAP_ID&signature=YOUR_SIGNATURE" 
-                /> */}
-        <GoogleMap></GoogleMap>
-      </Section>
       <Section
-        className="relative flex flex-col justify-center items-center space-y-5 h-screen"
+        className="relative flex flex-col justify-evenly items-center space-y-10 h-[55rem]"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
       >
-        <div
-          className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
-          data-aos="fade-up"
-        >
+        <div className="absolute -z-[1] top-2 -right-20 h-72 w-4/6">
           <BannerImage
             url={globalDottedImgUrl}
             classnames="opacity-10"
@@ -121,19 +107,21 @@ export default function Contact() {
           />
         </div>
         <div
-          className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
+          className="h-40 w-full flex flex-col justify-center items-center space-y-10 relative"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-bold">Need More Help?</h2>
+          <h2 className="text-2xl font-bold text-primary-darker">
+            Need More Help?
+          </h2>
           <hr className="w-8 text-neutral-500" />
-          <h5 className="text-sm w-6/12 text-center">
+          <h5 className="text-xl w-9/12 text-center text-primary-darker">
             Whether you are looking for specific solutions or have a question,{' '}
             <br />
             you can also connect with us via the contact form below.
           </h5>
         </div>
         <div
-          className="flex flex-wrap w-4/6 h-80 justify-between items-center"
+          className="flex flex-wrap w-4/6 h-96 justify-between items-center"
           data-aos="fade-up"
         >
           <TextInput title="Your Name" required />
@@ -143,11 +131,18 @@ export default function Contact() {
           <TextInput title="Subject" widthFull />
           <TextInput title="Message" required widthFull typeArea />
           <div className="w-full h-auto flex justify-end items-center mr-8">
-            <button className="bg-neutral-500 text-sm px-24 py-3">
+            <button className="bg-neutral-500 text-lg px-24 py-3 font-bold">
               Submit
             </button>
           </div>
         </div>
+      </Section>
+      <Section classname="h-96">
+        {/* <GradientBg background="rgba(255, 247, 237, 0.4)" /> */}
+        {/* <img 
+                    src="https://maps.googleapis.com/maps/api/staticmap?center=@25.0469492,121.5254558&zoom=16&size=100%x100%&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=YOUR_API_KEY&map_id=YOUR_MAP_ID&signature=YOUR_SIGNATURE" 
+                /> */}
+        <GoogleMap></GoogleMap>
       </Section>
     </>
   );
@@ -161,12 +156,15 @@ const TextInput = (props) => {
         props.widthFull ? 'w-full' : 'w-[44%]',
       ].join(' ')}
     >
-      <p className="text-sm w-[5.5rem] flex whitespace-nowrap mr-2">
+      <p className="text-lg w-[12rem] flex whitespace-nowrap mr-2">
         {props.title}
         {props.required && <span className="text-red">*</span>}
       </p>
       {!props.typeArea && (
-        <input type="text" className="flex grow border-none rounded-lg" />
+        <input
+          type="text"
+          className="flex grow border-none rounded-lg text-lg"
+        />
       )}
       {props.typeArea && (
         <textarea className="flex grow border-none rounded-lg" />

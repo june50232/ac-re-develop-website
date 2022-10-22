@@ -21,7 +21,7 @@ export default function Career() {
         }}
       />
       <Section
-        classname="h-80"
+        classname="h-96"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -30,9 +30,9 @@ export default function Career() {
           className="absolute h-full w-full flex flex-col justify-start items-center space-y-5"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-bold">Join us!</h2>
+          <h2 className="text-3xl font-bold">Join us!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-sm w-6/12 text-center leading-loose text-secondary">
+          <h3 className="text-lg w-6/12 text-center leading-loose text-secondary font-semibold">
             AC Re has been continually expanding by adding new talent.
             <br />
             We&apos;re looking for motivated individuals who would like to
@@ -41,25 +41,11 @@ export default function Career() {
             <br />
             We welcome diverse talents in every aspect to make up a prosperous
             team.
-            <br />
-            If you&apos;re interested in joining our team,
-            <br />
-            then please get in touch with us via{' '}
-            <a
-              href="mailto:info@ac-re.com.tw"
-              rel="noopener noreferrer"
-              className="text-primary-darkGray"
-            >
-              info@ac-re.com.tw
-            </a>
-            ,
-            <br />
-            or by completing the Employment Application form below.
           </h3>
         </div>
       </Section>
 
-      <Section classname="h-[36rem]">
+      <Section classname="h-[42rem]">
         <aside className="w-[42%] h-full overflow-hidden relative rounded-br-3xl">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
@@ -68,53 +54,40 @@ export default function Career() {
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
         >
-          <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
+          <div className="h-3/6 w-10/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>Our Team</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-sm indent-8 leading-loose"
+              className="text-secondary space-y-5 text-xl indent-8 leading-loose"
               data-aos="fade-up"
             >
               We are a united team full of highly talented and enthusiastic
-              people.
-              <br />
-              We appreciate the uniqueness of each individual and the values
-              they bring.
-              <br />
-              AC Re is committed to creating a workspace and culture that makes
-              our employees
-              <br />
-              feel safe and comfortable while continuing to grow with the
-              company.
+              people. We appreciate the uniqueness of each individual and the
+              values they bring. AC Re is committed to creating a workspace and
+              culture that makes our employees feel safe and comfortable while
+              continuing to grow with the company.
             </div>
           </div>
         </div>
       </Section>
 
-      <Section classname="h-[36rem]">
+      <Section classname="h-[50rem]">
         <div
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
         >
-          <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
+          <div className="h-3/6 w-9/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>What we care about</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-sm indent-8 leading-loose"
+              className="text-secondary space-y-5 text-xl indent-8 leading-loose"
               data-aos="fade-up"
             >
               The foundation of our success is integrity, diversity, and
-              client-driven.
-              <br />
-              We encourage individuals to express different perspectives and we
-              worship teamworking.
-              <br />
-              Using our professionalism and expertise, we are dedicated to
-              servicing our clients
-              <br />
-              across all industries and providing best solutions for them. Our
-              goal is to go beyond
-              <br />
-              traditional insurance brokers and make positive impacts across the
-              industry.
+              client-driven. We encourage individuals to express different
+              perspectives and we worship teamworking. Using our professionalism
+              and expertise, we are dedicated to servicing our clients across
+              all industries and providing best solutions for them. Our goal is
+              to go beyond traditional insurance brokers and make positive
+              impacts across the industry.
             </div>
           </div>
         </div>
@@ -125,7 +98,7 @@ export default function Career() {
       </Section>
 
       <Section
-        className="relative flex flex-col justify-center items-center space-y-5 h-screen"
+        className="relative flex flex-col justify-evenly items-center space-y-5 h-[56rem]"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -144,34 +117,55 @@ export default function Career() {
           />
         </div>
         <div
-          className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
+          className="h-50 w-full flex flex-col justify-center items-center space-y-10 relative"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-bold">Employment Application form</h2>
-          <hr className="w-8 text-neutral-500" />
-          <h5 className="text-sm w-6/12 text-center">
-            Thank you for expressing your interest in joining AC Re.
+          <h5 className="text-2xl w-9/12 text-center text-primary-darker">
+            If you&apos;re interested in joining our team,
             <br />
-            Please complete the details below and upload your CV.
+            then please get in touch with us via{' '}
+            <a
+              href="mailto:info@ac-re.com.tw"
+              rel="noopener noreferrer"
+              className="text-primary-darkGray"
+            >
+              info@ac-re.com.tw
+            </a>
+            ,
+            <br />
+            or by completing the{' '}
+            <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
+              Employment Application form
+            </span>{' '}
+            below.
           </h5>
         </div>
-        <div
-          className="flex flex-wrap w-4/6 h-80 justify-between items-center"
+        <hr className="w-8 text-neutral-500" data-aos="fade-up" />
+        <h5
+          className="text-xl w-6/12 text-center text-primary-darker"
           data-aos="fade-up"
         >
-          <TextInput title="Name" required />
+          Thank you for expressing your interest in joining AC Re.
+          <br />
+          Please complete the details below and upload your CV.
+        </h5>
+        <div
+          className="flex flex-wrap w-4/6 h-96 justify-between items-center"
+          data-aos="fade-up"
+        >
           <TextInput
             title="Title"
             required
             placeholder="Mr., Miss, Ms., Mrs."
           />
+          <TextInput title="Name" required />
           <TextInput title="Phone" required />
           <TextInput title="Email" required />
           <TextInput title="Type of role you’d like to apply" widthFull />
           <TextInput title="Cover Letter (choose a file)" widthFull />
           <TextInput title="CV upload (choose a file)" required widthFull />
           <div className="w-full h-auto flex justify-end items-center mr-8">
-            <button className="bg-neutral-500 text-sm px-24 py-3">
+            <button className="bg-neutral-500 text-lg px-24 py-3 font-bold">
               Submit
             </button>
           </div>
@@ -191,8 +185,8 @@ const TextInput = (props) => {
     >
       <p
         className={[
-          'text-sm w-[12rem] flex whitespace-nowrap mr-2',
-          props.widthFull ? 'w-[12rem]' : 'w-12',
+          'text-lg w-[12rem] flex whitespace-nowrap mr-2',
+          props.widthFull ? 'w-[18rem]' : 'w-16',
         ].join(' ')}
       >
         {props.title}
@@ -201,7 +195,7 @@ const TextInput = (props) => {
       {!props.typeArea && (
         <input
           type="text"
-          className="flex grow border-none rounded-lg text-sm"
+          className="flex grow border-none rounded-lg text-lg"
           placeholder={props.placeholder}
         />
       )}
