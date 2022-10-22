@@ -1,10 +1,6 @@
-import { services2WindImgUrl, services2SolarImgUrl } from 'common/imgUrls';
-
 const servicesData = [
   {
     title: 'Marine',
-    description:
-      'Hull & Machinery, War & Strikes Risks, Protection and Indemnity (P&I) and Freight, Demurrage and Defence (FD&D) ... etc.',
     category: [
       {
         title: 'Hull & Machinery',
@@ -91,8 +87,6 @@ const servicesData = [
   },
   {
     title: 'Property & Casualty',
-    description:
-      'Property Damage (including Business Interruption, Machinery Breakdown, Earthquake and Typhoon exposures), Offshore Wind Energy Insurance ...etc.',
     category: [
       {
         title:
@@ -101,11 +95,11 @@ const servicesData = [
       },
       {
         title: 'Offshore Wind Energy Insurance',
-        img: services2WindImgUrl,
+        img: '',
       },
       {
         title: 'Solar PV Power Insurance',
-        img: services2SolarImgUrl,
+        img: '',
       },
       {
         title: 'Construction All Risk',
@@ -171,8 +165,6 @@ const servicesData = [
   },
   {
     title: 'Reinsurance and Alternative Risk Transfer',
-    description:
-      'Facultative Reinsurance, Treaty Reinsurance, Loss Portfolio Transfer and Structured Solutions.',
     category: [
       {
         title: 'Facultative Reinsurance',
@@ -194,7 +186,7 @@ const servicesData = [
   },
   {
     title: 'Other Services & Products',
-    description: 'Captive Insurance, Risk Consulting and Claims Management.',
+    isOther: true,
     category: [
       {
         title: 'Captive Insurance',

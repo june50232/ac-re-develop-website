@@ -5,6 +5,7 @@ import { BannerImage, LaptopH2PrelineH3Wrap, GradientBg } from 'components';
 import {
   aboutBannerImgUrl,
   aboutTeamsImgUrl,
+  aboutTeamsDecisionImgUrl,
   aboutBestImgUrl,
   aboutfastGrowImgUrl,
   aboutSuccessfulImgUrl,
@@ -51,7 +52,7 @@ export default function About() {
   return (
     <>
       <section
-        className="lg:flex flex-col w-screen flex-row hidden h-screen min-h-[612px]"
+        className="lg:flex flex-col w-screen flex-row hidden h-[50rem]"
         id="banner-laptop"
       >
         <section className="w-full h-[20rem] relative" id="banner">
@@ -232,11 +233,18 @@ export default function About() {
           />
         </div>
         <aside
-          className="w-[30rem] h-full overflow-hidden relative"
+          className="w-[30rem] h-full overflow-hidden relative flex justify-center items-center"
           // style={{
           //   clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)'
           // }}
-        ></aside>
+        >
+          <div className="w-full h-[8.1rem] -mt-[100%] ml-5 bg-white">
+            <BannerImage
+              url={aboutTeamsDecisionImgUrl}
+              classnames="bg-white bg-contain"
+            />
+          </div>
+        </aside>
         <div
           className="grow h-full flex flex-col items-center justify-center pl-22"
           style={{

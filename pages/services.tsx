@@ -6,60 +6,19 @@ import {
   BannerImage,
   LaptopH2PrelineH3Wrap,
 } from 'components';
-import { servicesBannerImgUrl } from 'common/imgUrls';
+import {
+  servicesBannerImgUrl,
+  services2WindImgUrl,
+  services2ShipImgUrl,
+} from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import 'photoswipe/dist/photoswipe.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 
-const BLOCK_TYPE = {
-  NONE1: 'none1',
-  NONE2: 'none2',
-  HIDE: 'hide',
-};
-const { NONE1, NONE2, HIDE } = BLOCK_TYPE;
-
-const empty1 = {
-  title: NONE1,
-  img: '',
-};
-const empty2 = {
-  title: NONE2,
-  img: '',
-};
-const hide = {
-  title: HIDE,
-  img: '',
-};
-
-const handleUiData = (oriData, page) => {
-  let data: any = [];
-  const pageSize = 11;
-  const start = page * pageSize;
-  const end = (page + 1) * pageSize - 1;
-  oriData.forEach((o, i) => {
-    if (i < start || i > end) return;
-
-    const index = i % pageSize;
-
-    if (index === 0) {
-      data.push(hide);
-      data.push(hide);
-    }
-
-    if ((index - 2) % 3 === 0) {
-      data.push(empty1);
-      data.push(empty2);
-    }
-    data.push(o);
-  });
-  return data;
-};
-
 export default function Services() {
   return (
     <>
-      <div className="h-[5.5rem] w-screen bg-white" />
-      <Section classname="h-96" data-aos="fade-up">
+      <Section classname="h-96">
         <GradientBg background="rgba(255,255,255,0.85)" />
         <BannerImage url={servicesBannerImgUrl} />
         <div
@@ -68,12 +27,12 @@ export default function Services() {
         >
           <h2 className="text-xl font-bold">Our Services & Products</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-sm w-6/12 text-center leading-loose">
-            AC Re Services Co., Ltd. bring industry knowledge, expertise, and
-            insight to design programs for your business&apos;s specific risks
-            and needs. As strategic advisors, we build long-term partnerships
-            with local and regional insurance companies to assure you have the
-            protection you need.
+          <h3 className="text-lg font-semibold w-6/12 text-center leading-loose">
+            AC Re brings industry knowledge, expertise, and insight to design
+            programs for your business&apos;s specific risks and needs. As
+            strategic advisors, we build long-term partnerships with local and
+            regional insurance companies to assure you have the protection you
+            need.
           </h3>
         </div>
       </Section>
@@ -88,8 +47,13 @@ export default function Services() {
         <>
           <Section classname="h-[30rem]">
             <aside className="w-4/12 h-full overflow-hidden relative">
-              <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
-              <BannerImage url={servicesBannerImgUrl} />
+              <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
+              <BannerImage
+                url={services2ShipImgUrl}
+                styles={{
+                  backgroundPositionX: '100%',
+                }}
+              />
             </aside>
             <PortalClickItem
               index={0}
@@ -112,7 +76,7 @@ export default function Services() {
             <PortalClickItem index={3} width="[30%]" isOther />
             <aside className="w-[40%] h-full overflow-hidden relative">
               <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
-              <BannerImage url={servicesBannerImgUrl} />
+              <BannerImage url={services2WindImgUrl} />
             </aside>
           </Section>
         </>
@@ -128,15 +92,12 @@ const ProductTitle = (props) => {
       data-aos="fade-up"
     >
       <div className="flex items-center">
-        <h4 className="font-semibold font-subtitle text-center mr-2">
+        <h4 className="font-semibold font-subtitle text-center mr-2 text-3xl">
           {servicesData[props.index].title}
         </h4>
-        <HiOutlineCursorClick color="#DCEFFC" fontSize="1.5rem" />
+        <HiOutlineCursorClick color="#DCEFFC" fontSize="3rem" />
       </div>
       <hr className="w-8 text-primary-light" />
-      <h5 className="text-sm text-center">
-        {servicesData[props.index].description}
-      </h5>
     </div>
   );
 };
@@ -144,81 +105,68 @@ const ProductTitle = (props) => {
 const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
   return (
     <>
-      {Array(Math.floor(servicesData[index].category.length / 14) + 1)
-        .fill(null)
-        .map((o, i) => (
-          <Item
-            content={
-              <Portal
-                index={index}
-                page={i}
-                titleClassName={titleClassName}
-                isOther={isOther}
-              />
-            }
-            key={i}
-          >
-            {i === 0
-              ? ({ ref, open }) => (
-                  <div
-                    className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
-                    style={{ border: '1px dotted #DCEFFC' }}
-                    onClick={open}
-                    ref={ref as any}
-                  >
-                    <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
-                      <ProductTitle index={index} />
-                      {o}
-                    </div>
-                  </div>
-                )
-              : ({ ref }) => <div ref={ref as any}></div>}
-          </Item>
-        ))}
+      {
+        <Item
+          content={
+            <Portal
+              index={index}
+              titleClassName={titleClassName}
+              isOther={isOther}
+            />
+          }
+        >
+          {({ ref, open }) => (
+            <div
+              className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
+              style={{ border: '1px dotted #DCEFFC' }}
+              onClick={open}
+              ref={ref as any}
+            >
+              <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
+                <ProductTitle index={index} />
+              </div>
+            </div>
+          )}
+        </Item>
+      }
     </>
   );
 };
 
 const Portal: FC<{
   index: number;
-  page: number;
   titleClassName: string;
   isOther?: boolean;
-}> = ({ index, page, titleClassName, isOther }) => {
+}> = ({ index, isOther }) => {
   return (
-    <div className="bg-white w-full h-[80%] mt-[5%] shadow-2xl overflow-hidden">
-      <section className="lg:flex w-screen hidden h-full overflow-y-scroll relative py-[2%] space-y-2 relative items-start">
+    <div
+      className="w-full h-full shadow-2xl overflow-hidden"
+      style={{
+        backgroundColor: 'rgb(235,233,232)',
+      }}
+    >
+      <section className="lg:flex flex-col w-screen hidden h-full overflow-y-scroll relative py-[2%] space-y-6 relative items-center">
         <LaptopH2PrelineH3Wrap
           noFadeEffect
-          classnames={`absolute ${titleClassName}`}
+          classnames="w-[70%] text-primary-darker"
         >
           {servicesData[index].title}
         </LaptopH2PrelineH3Wrap>
+        <hr className="w-full text-primary-darker" />
         {isOther ? (
-          <div className="flex justify-evenly h-full min-h-fit pt-12 px-[2%]">
+          <div className="flex justify-evenly h-full min-h-fit pt-3 px-[2%]">
             {servicesData[index].category.map((o: any, i) => (
               <div
                 className="w-[30%] h-auto relative hover-scale-inner-img-effect"
                 key={i}
               >
-                <div className="w-full h-[35%] overflow-hidden rounded-xl relative">
-                  <BannerImage
-                    url={o.img || servicesBannerImgUrl}
-                    classnames="no-scale-effect"
-                  />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 flex justify-center items-center"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.9)',
-                    }}
-                  >
-                    <h5 className="px-3 py-5 text-center text-secondary-DEFAULT font-semibold">
-                      {o.title}
-                    </h5>
-                  </div>
-                </div>
+                <ul className="list-disc ml-6">
+                  <li className="text-primary-darker font-semibold text-lg">
+                    {o.title}
+                  </li>
+                </ul>
                 <div className="pt-5 pl-3 pr-3 pb-11 h-auto relative space-y-6">
-                  <p className="text-secondary-light text-xs indent-8 leading-loose">
+                  <p className="text-primary-darker indent-8 leading-loose">
                     {o.description}
                   </p>
                 </div>
@@ -226,54 +174,19 @@ const Portal: FC<{
             ))}
           </div>
         ) : (
-          <div className="w-[120%] h-auto -ml-[10%] -mr-[10%] flex flex-wrap overflow-y-scroll">
-            {handleUiData(servicesData[index].category, page).map(
-              ({ title, img }, i) => {
-                if (title === NONE1)
-                  return <EmptyBlock key={i} color="rgb(228,244,250)" />;
-                else if (title === NONE2)
-                  return <EmptyBlock key={i} color="rgb(228,244,250)" />;
-                else if (title === HIDE) return <HideBlock key={i} />;
-
+          <div className="w-full h-full flex justify-center items-start">
+            <ul className="w-4/6 h-auto flex flex-col list-disc">
+              {servicesData[index].category.map(({ title }, i) => {
                 return (
-                  <div
-                    key={i}
-                    className="flex w-[19%] h-[6rem] rounded-3xl relative overflow-hidden ml-2 mt-2"
-                  >
-                    <BannerImage url={img || servicesBannerImgUrl} />
-                    <div
-                      className="absolute bottom-0 left-0 right-0 top-0 flex justify-center items-center"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.7)',
-                      }}
-                    >
-                      <h5 className="px-3 py-5 text-center text-secondary-DEFAULT text-sm font-semibold">
-                        {title}
-                      </h5>
-                    </div>
-                  </div>
+                  <li key={i} className="font-semibold  text-primary-darker">
+                    {title}
+                  </li>
                 );
-              },
-            )}
+              })}
+            </ul>
           </div>
         )}
       </section>
     </div>
-  );
-};
-
-const EmptyBlock = (props) => {
-  return (
-    <div
-      className="flex w-[19%] h-[6rem] rounded-3xl relative overflow-hidden ml-2 mt-2"
-      style={{
-        background: props.color,
-      }}
-    />
-  );
-};
-const HideBlock = () => {
-  return (
-    <div className="flex w-[19%] h-[6rem] rounded-3xl relative overflow-hidden ml-2 mt-2" />
   );
 };

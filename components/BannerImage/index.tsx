@@ -14,7 +14,6 @@ export default function BannerImage(props) {
       style={{
         ...(props.styles ? props.styles : {}),
         backgroundImage: `url(${loaded || loadingImgUrl})`,
-        backgroundColor: 'lightgray',
       }}
     />
   );
