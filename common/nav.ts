@@ -1,26 +1,26 @@
+export const homeUrl = '/';
+export const aboutUrl = '/about';
+export const servicesUrl = '/services';
+export const careerUrl = '/career';
+export const contactUrl = '/contact';
+
 const NavList: { title: string; url: string }[] = [
   {
     title: 'About AC Re',
-    url: './about',
+    url: aboutUrl,
   },
   {
     title: 'Our services & products',
-    url: './services',
+    url: servicesUrl,
   },
   {
     title: 'Career',
-    url: './career',
+    url: careerUrl,
   },
   {
     title: 'Contact us',
-    url: './contact',
+    url: contactUrl,
   },
 ];
 
 export default NavList;
-
-export const homeUrl = './';
-export const aboutUrl = './about';
-export const servicesUrl = './services';
-export const careerUrl = './career';
-export const contactUrl = './contact';
