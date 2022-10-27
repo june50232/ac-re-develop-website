@@ -5,7 +5,6 @@ import { BannerImage, LaptopH2PrelineH3Wrap, GradientBg } from 'components';
 import {
   aboutBannerImgUrl,
   aboutTeamsImgUrl,
-  aboutTeamsDecisionImgUrl,
   aboutBestImgUrl,
   aboutfastGrowImgUrl,
   aboutSuccessfulImgUrl,
@@ -138,7 +137,7 @@ export default function About() {
       </section>
 
       <section
-        className="lg:inline-flex w-screen h-screen flex-col hidden min-h-[612px] overflow-hidden bg-neutral-50"
+        className="lg:inline-flex w-screen h-[36rem] flex-col hidden overflow-hidden bg-neutral-50"
         id="goal-laptop"
         // style={{
         //   background: 'rgba(255, 247, 237, 0.9)',
@@ -237,17 +236,7 @@ export default function About() {
           // style={{
           //   clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)'
           // }}
-        >
-          <div
-            className="w-full h-[8.1rem] -mt-[100%] ml-5 bg-white overflow-hidden px-6 shadow-md"
-            data-aos="fade-up"
-          >
-            <BannerImage
-              url={aboutTeamsDecisionImgUrl}
-              classnames="bg-white bg-contain"
-            />
-          </div>
-        </aside>
+        ></aside>
         <div
           className="grow h-full flex flex-col items-center justify-center pl-22"
           style={{

@@ -206,7 +206,7 @@ export default function Home() {
                       <BannerImage url={img} classnames="no-scale-effect" />
                     </div>
                     <div
-                      className="pt-5 pb-11 relative space-y-2 grow bg-primary-darker"
+                      className="pt-6 pb-6 relative space-y-6 grow bg-primary-darker"
                       // style={{
                       //   background: 'rgb(42,60,107)',
                       // }}
@@ -219,7 +219,7 @@ export default function Home() {
                       >
                         {title}
                       </h5>
-                      <p className="text-secondary-lightest text-lg  pl-7">
+                      <p className="text-secondary-lightest text-2xl  pl-7">
                         {description}
                       </p>
                       <div className="absolute coreArrow"></div>

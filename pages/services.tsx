@@ -139,13 +139,15 @@ const Portal: FC<{
   isOther?: boolean;
 }> = ({ index, isOther }) => {
   return (
-    <div
-      className="w-full h-full shadow-2xl overflow-hidden"
-      style={{
-        backgroundColor: 'rgb(235,233,232)',
-      }}
-    >
-      <section className="lg:flex flex-col w-screen hidden h-full overflow-y-scroll relative py-[2%] space-y-6 relative items-center">
+    <div className="w-full h-full shadow-2xl overflow-hidden relative">
+      <GradientBg background="rgba(235,233,232,0.9)" />
+      {!!servicesData[index].bgImg && (
+        <BannerImage
+          url={servicesData[index].bgImg}
+          styles={servicesData[index].bgImgStyle || {}}
+        />
+      )}
+      <section className="lg:flex flex-col w-screen hidden h-full overflow-y-scroll absolute inset-0 py-[2%] space-y-6 items-center">
         <LaptopH2PrelineH3Wrap
           noFadeEffect
           classnames="w-[70%] text-primary-darker"
@@ -175,10 +177,13 @@ const Portal: FC<{
           </div>
         ) : (
           <div className="w-full h-full flex justify-center items-start">
-            <ul className="w-4/6 h-auto flex flex-col list-disc">
+            <ul className="w-4/6 h-auto flex flex-col list-disc space-y-3">
               {servicesData[index].category.map(({ title }, i) => {
                 return (
-                  <li key={i} className="font-semibold  text-primary-darker">
+                  <li
+                    key={i}
+                    className="font-semibold text-primary-darker text-lg"
+                  >
                     {title}
                   </li>
                 );
