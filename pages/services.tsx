@@ -27,7 +27,7 @@ export default function Services() {
         >
           <h2 className="text-xl font-bold">Our Services & Products</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg font-semibold w-6/12 text-center leading-loose">
+          <h3 className="text-base font-normal w-6/12 text-center leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As
             strategic advisors, we build long-term partnerships with local and

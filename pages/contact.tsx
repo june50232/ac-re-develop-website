@@ -20,12 +20,16 @@ export default function Contact() {
         >
           <h2 className="text-3xl font-bold">Get in touch with AC Re!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg w-6/12 text-center leading-loose font-semibold">
-            AC Re brings industry knowledge, expertise, and insight to design
-            programs for your business&apos;s specific risks and needs. As
-            strategic advisors, we build long-term partnerships with local and
-            regional insurance companies to assure you have the protection you
-            need.
+          <h3 className="text-base text-center leading-relaxed font-normal">
+            AC Re brings industry knowledge, expertise, and insight
+            <br />
+            to design programs for your business&apos;s specific risks and
+            needs.
+            <br />
+            As strategic advisors, we build long-term partnerships with local
+            <br />
+            and regional insurance companies to assure you have the protection
+            you need.
           </h3>
         </div>
       </Section>
@@ -60,7 +64,7 @@ export default function Contact() {
           >
             <FcPhoneAndroid color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-6 items-center">
-              <h3 className="font-bold text-primary-darkest text-xl">Call</h3>
+              <h3 className="font-bold text-primary-darkest text-xl">Phone</h3>
               <h5 className="text-lg text-secondary-light leading-relaxed text-center">
                 +886-2-2508-0488
               </h5>
@@ -121,7 +125,7 @@ export default function Contact() {
           </h5>
         </div>
         <div
-          className="flex flex-wrap w-4/6 h-96 justify-between items-center"
+          className="flex flex-wrap w-5/6 h-96 justify-between items-center"
           data-aos="fade-up"
         >
           <TextInput title="Your Name" required />

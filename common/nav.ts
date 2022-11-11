@@ -14,7 +14,7 @@ const NavList: { title: string; url: string }[] = [
     url: servicesUrl,
   },
   {
-    title: 'Career',
+    title: 'Careers',
     url: careerUrl,
   },
   {

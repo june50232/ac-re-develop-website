@@ -89,10 +89,10 @@ export default function Home() {
         </h1>
       </section>
       <section
-        className="lg:inline-flex w-screen h-[58rem] flex-row hidden pl-2"
+        className="md:inline-flex w-screen h-[32rem] flex-row hidden pl-2"
         id="why-laptop"
       >
-        <aside className="w-[38%] h-full overflow-hidden relative">
+        <aside className="w-[20%] h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={smileHandShakeImgUrl} />
           {/* <GradientBg
@@ -101,12 +101,12 @@ export default function Home() {
           /> */}
         </aside>
         <div
-          className="w-[60%] h-full flex flex-col items-center justify-center"
+          className="w-[80%] h-full flex flex-col items-center justify-center"
           // style={{ background: 'azure' }}
         >
-          <div className="h-5/6 w-10/12 flex flex-col justify-around">
+          <div className="h-5/6 w-11/12 flex flex-col justify-center space-y-10">
             <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
-            <div className="text-secondary space-y-8">
+            <div className="text-secondary space-y-5">
               {whyReason.map(({ title, content }, i) => (
                 <div key={title} className="flex space-x-10" data-aos="fade-up">
                   <div className="">
@@ -118,9 +118,9 @@ export default function Home() {
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="space-y-5">
-                    <h4 className="text-xl font-semibold">{title}</h4>
-                    <h5 className="text-lg leading-relaxed">{content}</h5>
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-semibold">{title}</h4>
+                    <h5 className="text-base leading-relaxed">{content}</h5>
                   </div>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
        */}
       <section
-        className="lg:inline-flex w-screen h-[45rem] flex-row hidden justify-center items-start min-h-fit overflow-hidden relative"
+        className="md:inline-flex w-screen h-[32rem] flex-row hidden justify-around items-center min-h-fit overflow-hidden relative"
         id="core-value-laptop"
       >
         <div className="h-5/6 w-11/12 flex flex-col justify-evenly relative">
@@ -202,27 +202,24 @@ export default function Home() {
                 <Link href={url} passHref key={title}>
                   <a className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect">
                     <div className="absolute coreValueLine"></div>
-                    <div className="w-full h-[50%] overflow-hidden">
-                      <BannerImage url={img} classnames="no-scale-effect" />
+                    <div className="w-full h-[70%] overflow-hidden">
+                      <BannerImage url={img} />
                     </div>
                     <div
-                      className="pt-6 pb-6 relative space-y-6 grow bg-primary-darker"
+                      className="relative grow bg-primary-lighter flex flex-col justify-evenly "
                       // style={{
                       //   background: 'rgb(42,60,107)',
                       // }}
                     >
-                      <h5
-                        className="text-white font-bold text-3xl pl-5"
-                        style={{
-                          borderLeft: '0.5rem solid #8CBAD1',
-                        }}
-                      >
+                      <h5 className="text-primary-darker font-bold text-xl pl-2">
                         {title}
                       </h5>
-                      <p className="text-secondary-lightest text-2xl  pl-7">
-                        {description}
-                      </p>
-                      <div className="absolute coreArrow"></div>
+                      <div className="flex justify-between items-center pr-3">
+                        <p className="text-primary-darker text-lg pl-2">
+                          {description}
+                        </p>
+                        <div className="coreArrow"></div>
+                      </div>
                     </div>
                   </a>
                 </Link>

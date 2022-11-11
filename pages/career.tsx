@@ -14,25 +14,19 @@ import {
 export default function Career() {
   return (
     <>
-      <div
-        className="h-32 w-screen"
-        style={{
-          background: 'rgba(255, 247, 237, 0.85)',
-        }}
-      />
       <Section
-        classname="h-96"
+        classname="h-80"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
       >
         <div
-          className="absolute h-full w-full flex flex-col justify-start items-center space-y-5"
+          className="h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
         >
           <h2 className="text-3xl font-bold">Join us!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg w-6/12 text-center leading-loose text-secondary font-semibold">
+          <h3 className="text-base w-full text-center leading-relaxed text-secondary font-normal">
             AC Re has been continually expanding by adding new talent.
             <br />
             We&apos;re looking for motivated individuals who would like to
@@ -44,8 +38,7 @@ export default function Career() {
           </h3>
         </div>
       </Section>
-
-      <Section classname="h-[42rem]">
+      <Section classname="h-[30rem]">
         <aside className="w-[42%] h-full overflow-hidden relative rounded-br-3xl">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
@@ -57,7 +50,7 @@ export default function Career() {
           <div className="h-3/6 w-10/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>Our Team</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-xl indent-8 leading-loose"
+              className="text-secondary space-y-5 text-base indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               We are a united team full of highly talented and enthusiastic
@@ -70,7 +63,7 @@ export default function Career() {
         </div>
       </Section>
 
-      <Section classname="h-[50rem]">
+      <Section classname="h-[30rem]">
         <div
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
@@ -78,7 +71,7 @@ export default function Career() {
           <div className="h-3/6 w-9/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>What we care about</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-xl indent-8 leading-loose"
+              className="text-secondary space-y-5 text-base indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               The foundation of our success is integrity, diversity, and
@@ -120,7 +113,7 @@ export default function Career() {
           className="h-50 w-full flex flex-col justify-center items-center space-y-10 relative"
           data-aos="fade-up"
         >
-          <h5 className="text-2xl w-9/12 text-center text-primary-darker">
+          <h5 className="text-2xl text-center text-primary-darker">
             If you&apos;re interested in joining our team,
             <br />
             then please get in touch with us via{' '}
@@ -135,14 +128,14 @@ export default function Career() {
             <br />
             or by completing the{' '}
             <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
-              Employment Application form
+              Employment application form
             </span>{' '}
             below.
           </h5>
         </div>
         <hr className="w-8 text-neutral-500" data-aos="fade-up" />
         <h5
-          className="text-xl w-6/12 text-center text-primary-darker"
+          className="text-xl text-center text-primary-darker"
           data-aos="fade-up"
         >
           Thank you for expressing your interest in joining AC Re.

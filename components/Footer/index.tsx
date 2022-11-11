@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="overflow-hidden">
       <section
-        className="lg:flex hidden flex-col w-10/12 h-48 justify-center space-y-3 items-center"
+        className="md:flex hidden flex-col w-10/12 h-48 justify-center space-y-3 items-center"
         id="footer-laptop"
       >
         <div
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </section>
       <section
-        className="lg:hidden w-screen py-12 space-y-3 flex flex-col items-center"
+        className="md:hidden w-screen py-12 space-y-3 flex flex-col items-center"
         id="footer-mobile"
       >
         <div

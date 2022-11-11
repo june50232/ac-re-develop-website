@@ -10,7 +10,7 @@ export default function Section({
   return (
     <section
       className={[
-        'lg:flex w-screen hidden overflow-hidden relative',
+        'md:flex w-screen hidden overflow-hidden relative',
         classname,
       ].join(' ')}
       {...props}

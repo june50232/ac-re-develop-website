@@ -63,7 +63,7 @@
 
   h2 {
     color: theme(colors.primary.dark);
-    @apply font-semibold text-5xl;
+    @apply font-semibold text-3xl;
   }
 
   h3 {
@@ -150,13 +150,19 @@
 
   .coreValueLine {
     border: 1px solid theme(colors.primary.light);
-    @apply -left-1.5 -bottom-3 right-1.5 top-1.5 z-[1];
+    @apply -left-1.5 -bottom-1.5 right-1.5 top-1.5 -z-[1];
   }
 
   .coreArrow {
     border: 3px solid theme(colors.primary.light);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-    @apply w-4 h-4 origin-center rotate-45 bottom-[15%] right-10;
+    @apply w-4 h-4 origin-center rotate-45;
+  }
+
+  .coreArrow2 {
+    background-color: theme(colors.neutral.300);
+    clip-path: polygon(50% 0, 50% 100%, 100% 50%);
+    @apply w-10 h-10;
   }
 
   .bottom-light-gray {

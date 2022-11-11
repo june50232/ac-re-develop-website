@@ -51,7 +51,7 @@ export default function About() {
   return (
     <>
       <section
-        className="lg:flex flex-col w-screen flex-row hidden h-[50rem]"
+        className="md:flex flex-col w-screen flex-row hidden h-[43rem]"
         id="banner-laptop"
       >
         <section className="w-full h-[20rem] relative" id="banner">
@@ -61,12 +61,7 @@ export default function About() {
             className="absolute inset-0 flex flex-col justify-center items-center space-y-5"
             data-aos="fade-up"
           >
-            <h2 className="text-3xl font-bold">
-              About{' '}
-              <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
-                AC Re
-              </span>
-            </h2>
+            <h2 className="text-3xl font-bold">About AC Re</h2>
             <hr className="w-full text-white" />
           </div>
         </section>
@@ -75,60 +70,57 @@ export default function About() {
           id="intro-laptop"
           data-aos="fade-up"
         >
-          <div className="w-full h-5/6 flex justify-center items-center space-x-24">
-            <div className="flex flex-col space-y-6 items-center">
+          <div className="w-full h-5/6 flex justify-evenly items-center">
+            <div className="flex flex-col w-[26%] space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl">
-                  Founded in{' '}
-                  <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
-                    2021
-                  </span>
+                  Founded in 2021
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
-                  AC Re Services Co., Ltd. (AC Re) was
+                  AC Re Services Co., Ltd.
                   <br />
-                  founded in 2021 by Solomon Chiu.
+                  (AC Re) was founded in 2021
+                  <br />
+                  by Solomon Chiu.
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col space-y-6 items-center">
+            <div className="flex flex-col w-[35%] space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-xl">
-                  Innovative and{' '}
-                  <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
-                    Forward-Thinking
-                  </span>
+                <h3 className="font-bold text-primary-darkest text-xl text-center">
+                  Innovative and Forward-Thinking
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
                   AC Re Services is an innovative,
                   <br />
                   forward-thinking insurance broker that
                   <br />
-                  takes pride in providing risk management and
+                  takes pride in providing risk management
                   <br />
-                  insurance/reinsurance solutions for
+                  and insurance/reinsurance solutions for
                   <br />
                   direct corporate clients and reinsureds.
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col space-y-6 items-center">
+            <div className="flex flex-col w-[26%] space-y-6 items-center">
               <IoEarthOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl">
-                  <span className="border-b-8 border-neutral-300 border-solid leading-[.25rem] inline-block">
-                    Global
-                  </span>{' '}
-                  Markets
+                  Global Markets
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
-                  We offer a wide range of specialist lines;
+                  We offer a wide range
                   <br />
-                  placed in the global, composite,
+                  of specialist lines;
                   <br />
-                  and Taiwan insurance markets.
+                  placed in the global,
+                  <br />
+                  composite, and Taiwan
+                  <br />
+                  insurance markets.
                 </h5>
               </div>
             </div>
@@ -137,7 +129,7 @@ export default function About() {
       </section>
 
       <section
-        className="lg:inline-flex w-screen h-[36rem] flex-col hidden overflow-hidden bg-neutral-50"
+        className="md:inline-flex w-screen h-[30rem] flex-col hidden overflow-hidden bg-neutral-50"
         id="goal-laptop"
         // style={{
         //   background: 'rgba(255, 247, 237, 0.9)',
@@ -151,9 +143,17 @@ export default function About() {
         <div className="w-full h-full flex">
           <aside className="grow flex h-full overflow-hidden relative flex-col">
             <div className="flex h-full w-full">
-              <div className="flex w-28 h-full relative bg-neutral-100 justify-center">
+              <div className="flex w-[20%] h-full relative bg-neutral-100 justify-end items-center">
+                <div className="absolute top-2 z-[2] flex justify-between items-center">
+                  <h2 className="text-5xl">
+                    Our
+                    <br />
+                    Goal
+                  </h2>
+                  <div className="coreArrow2"></div>
+                </div>
                 <h2
-                  className="text-white text-vertical text-orientation-upright text-[10rem] italic font-serif"
+                  className="text-white text-vertical text-orientation-upright text-[10rem] italic font-serif pr-5"
                   data-aos="fade-up"
                 >
                   <span className="h-24 inline-block">G</span>
@@ -192,11 +192,13 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <div className="w-[30rem] h-full flex flex-col items-center justify-center relative z-[1]">
+          <div className="w-[15rem] h-full flex flex-col items-center justify-center relative z-[1]">
             <h3 className="text-xl" data-aos="fade-up">
-              ... insurance broker in Taiwan,
+              insurance broker
               <br />
-              with clients across the globe.
+              in Taiwan.
+              {/* <br />
+              with clients across the globe. */}
             </h3>
             {/* <div id="dotted" className='bg-neutral-100 absolute -bottom-48 -right-48 w-96 h-96 rounded-full z-[1]'></div> */}
             {/* <div id="dotted2" className='bg-neutral-200 absolute -bottom-48 right-0 w-80 h-80 rounded-full'></div> */}
@@ -215,7 +217,7 @@ export default function About() {
       </section>
       <div className="h-5"></div>
       <section
-        className="lg:inline-flex w-screen h-[45rem] flex-row hidden relative"
+        className="md:inline-flex w-screen h-[26rem] flex-row hidden relative"
         id="team-laptop"
       >
         <div className="absolute inset-0 -z-[1]">
@@ -232,7 +234,7 @@ export default function About() {
           />
         </div>
         <aside
-          className="w-[30rem] h-full overflow-hidden relative flex justify-center items-center"
+          className="w-[8rem] h-full overflow-hidden relative flex justify-center items-center"
           // style={{
           //   clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)'
           // }}
@@ -244,18 +246,18 @@ export default function About() {
             clipPath: 'polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%)',
           }}
         >
-          <div className="h-5/6 w-9/12 flex flex-col justify-evenly">
-            <div className="text-secondary space-y-12">
-              <LaptopH2PrelineH3Wrap classnames="text-3xl">
-                Highly Experienced Senior Management Team
-              </LaptopH2PrelineH3Wrap>
-              {teamReason.map((content, i) => (
+          <div className="h-5/6 w-10/12 flex flex-col justify-center space-y-10">
+            <LaptopH2PrelineH3Wrap>
+              Highly Experienced Senior Management Team
+            </LaptopH2PrelineH3Wrap>
+            <div className="text-secondary space-y-6">
+              {teamReason.map((content) => (
                 <div
                   key={content}
                   className="flex space-x-16"
                   data-aos="fade-up"
                 >
-                  <div className="">
+                  {/* <div className="">
                     <div
                       className={`flex items-center justify-center order order-${
                         (i + 1) * 25
@@ -263,9 +265,9 @@ export default function About() {
                     >
                       0{i + 1}
                     </div>
-                  </div>
-                  <div className="w-10/12 space-y-2">
-                    <h5 className="text-xl">{content}</h5>
+                  </div> */}
+                  <div className="w-full space-y-2">
+                    <h5 className="text-lg">{content}</h5>
                   </div>
                 </div>
               ))}
@@ -275,17 +277,17 @@ export default function About() {
       </section>
       <div className="h-5"></div>
       <section
-        className="lg:inline-flex w-screen h-[60rem] flex-row hidden"
+        className="md:inline-flex w-screen h-[42rem] flex-row hidden"
         id="leader-laptop"
       >
         <aside
-          className="w-[55rem] bg-primary-darker h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
+          className="w-[55rem] bg-neutral-100 h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
           style={{
             clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
           }}
         >
           <div
-            className="overflow-hidden rounded-lg w-36 h-36 z-[1]"
+            className="overflow-hidden rounded-lg w-36 h-36 z-[1] -mt-[10rem]"
             style={{
               clipPath: 'circle(50% at 50% 50%)',
             }}
@@ -294,22 +296,22 @@ export default function About() {
             <BannerImage url={aboutFounderImgUrl} />
           </div>
           <div
-            className="border-l-8 border-solid border-white pl-2"
+            className="border-l-8 border-solid border-primary-darker pl-2"
             data-aos="fade-up"
           >
-            <h3 className="text-white font-semibold">Solomon Chiu</h3>
-            <h5 className="text-white">Chairman</h5>
+            <h3 className="text-primary-darker font-semibold">Solomon Chiu</h3>
+            <h5 className="text-primary-darker">Chairman</h5>
           </div>
         </aside>
         <div className="h-full grow flex flex-col items-center justify-center">
-          <div className="h-4/6 w-9/12 flex flex-col justify-evenly space-y-5">
+          <div className="h-4/6 w-10/12 flex flex-col justify-evenly space-y-5">
             <LaptopH2PrelineH3Wrap classnames="text-3xl">
               Our Founder
             </LaptopH2PrelineH3Wrap>
-            <div className="text-secondary space-y-5">
+            <div className="text-secondary space-y-3">
               {founder.map((content, i) => (
-                <div key={i} className="flex space-x-16" data-aos="fade-up">
-                  <h5 className="text-xl leading-relaxed indent-8">
+                <div key={i} className="flex" data-aos="fade-up">
+                  <h5 className="text-lg leading-relaxed indent-8">
                     {content}
                   </h5>
                 </div>
