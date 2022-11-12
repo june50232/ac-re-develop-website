@@ -70,7 +70,7 @@ export default function About() {
           id="intro-laptop"
           data-aos="fade-up"
         >
-          <div className="w-full h-5/6 flex justify-evenly items-center">
+          <div className="w-full h-4/6 flex justify-evenly items-start">
             <div className="flex flex-col w-[26%] space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
