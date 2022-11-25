@@ -70,7 +70,7 @@ export default function About() {
           id="intro-laptop"
           data-aos="fade-up"
         >
-          <div className="w-full h-4/6 flex justify-evenly items-start">
+          <div className="w-full h-10/12 flex justify-center space-x-2 items-start">
             <div className="flex flex-col w-[26%] space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
@@ -78,15 +78,13 @@ export default function About() {
                   Founded in 2021
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
-                  AC Re Services Co., Ltd.
+                  AC Re Services Co., Ltd. (AC Re) was
                   <br />
-                  (AC Re) was founded in 2021
-                  <br />
-                  by Solomon Chiu.
+                  founded in 2021 by Solomon Chiu.
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col w-[35%] space-y-6 items-center">
+            <div className="flex flex-col w-[38%] space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl text-center">
@@ -112,15 +110,11 @@ export default function About() {
                   Global Markets
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
-                  We offer a wide range
+                  We offer a wide range of specialist
                   <br />
-                  of specialist lines;
+                  lines; placed in the global, composite,
                   <br />
-                  placed in the global,
-                  <br />
-                  composite, and Taiwan
-                  <br />
-                  insurance markets.
+                  and Taiwan insurance markets.
                 </h5>
               </div>
             </div>

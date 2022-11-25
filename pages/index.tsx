@@ -215,7 +215,7 @@ export default function Home() {
                         {title}
                       </h5>
                       <div className="flex justify-between items-center pr-3">
-                        <p className="text-primary-darker text-lg pl-2">
+                        <p className="text-primary-darker text-base pl-2">
                           {description}
                         </p>
                         <div className="coreArrow"></div>

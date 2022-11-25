@@ -26,7 +26,7 @@ export default function Career() {
         >
           <h2 className="text-3xl font-bold">Join us!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-base w-full text-center leading-relaxed text-secondary font-normal">
+          <h3 className="text-base w-full text-center leading-relaxed text-secondary font-light">
             AC Re has been continually expanding by adding new talent.
             <br />
             We&apos;re looking for motivated individuals who would like to
@@ -118,17 +118,17 @@ export default function Career() {
             <br />
             then please get in touch with us via{' '}
             <a
-              href="mailto:info@ac-re.com.tw"
+              href="mailto:hr@ac-re.com.tw"
               rel="noopener noreferrer"
               className="text-primary-darkGray"
             >
-              info@ac-re.com.tw
+              hr@ac-re.com.tw
             </a>
             ,
             <br />
             or by completing the{' '}
             <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
-              Employment application form
+              employment application form
             </span>{' '}
             below.
           </h5>

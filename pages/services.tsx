@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import servicesData from 'common/services';
 import {
   Section,
@@ -13,7 +13,6 @@ import {
 } from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import 'photoswipe/dist/photoswipe.css';
-import { Gallery, Item } from 'react-photoswipe-gallery';
 
 export default function Services() {
   return (
@@ -27,72 +26,59 @@ export default function Services() {
         >
           <h2 className="text-xl font-bold">Our Services & Products</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-base font-normal w-6/12 text-center leading-relaxed">
+          <h3 className="text-base font-light text-center leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
-            programs for your business&apos;s specific risks and needs. As
-            strategic advisors, we build long-term partnerships with local and
-            regional insurance companies to assure you have the protection you
-            need.
+            programs for your business&apos;s specific
+            <br />
+            risks and needs. As strategic advisors, we build long-term
+            partnerships with local and regional insurance
+            <br />
+            companies to assure you have the protection you need.
           </h3>
         </div>
       </Section>
-      <Gallery
-        options={{
-          bgOpacity: 0.5,
-          wheelToZoom: false,
-          pinchToClose: false,
-          closeOnVerticalDrag: false,
-        }}
-      >
-        <>
-          <Section classname="h-[30rem]">
-            <aside className="w-4/12 h-full overflow-hidden relative">
-              <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
-              <BannerImage
-                url={services2ShipImgUrl}
-                styles={{
-                  backgroundPositionX: '100%',
-                }}
-              />
-            </aside>
-            <PortalClickItem
-              index={0}
-              width="4/12"
-              titleClassName="top-[11%] left-[10%]"
-            />
-            <PortalClickItem
-              index={1}
-              width="4/12"
-              titleClassName="top-[11%] right-[66%]"
-            />
-          </Section>
-
-          <Section classname="h-[30rem]">
-            <PortalClickItem
-              index={2}
-              width="[30%]"
-              titleClassName="top-[8%] left-8 w-80 items-center"
-            />
-            <PortalClickItem index={3} width="[30%]" isOther />
-            <aside className="w-[40%] h-full overflow-hidden relative">
-              <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
-              <BannerImage url={services2WindImgUrl} />
-            </aside>
-          </Section>
-        </>
-      </Gallery>
+      <section className="md:flex w-screen hidden overflow-hidden h-[30rem] static">
+        <aside className="w-4/12 h-full overflow-hidden relative">
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services2ShipImgUrl}
+            styles={{
+              backgroundPositionX: '100%',
+            }}
+          />
+        </aside>
+        <PortalClickItem
+          index={0}
+          width="4/12"
+          titleClassName="top-[11%] left-[10%]"
+        />
+        <PortalClickItem
+          index={1}
+          width="4/12"
+          titleClassName="top-[11%] right-[66%]"
+        />
+      </section>
+      <section className="md:flex w-screen hidden overflow-hidden h-[30rem]">
+        <PortalClickItem
+          index={2}
+          width="[30%]"
+          titleClassName="top-[8%] left-8 w-80 items-center"
+        />
+        <PortalClickItem index={3} width="[30%]" isOther />
+        <aside className="w-[40%] h-full overflow-hidden relative">
+          <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
+          <BannerImage url={services2WindImgUrl} />
+        </aside>
+      </section>
     </>
   );
 }
 
 const ProductTitle = (props) => {
   return (
-    <div
-      className="text-secondary flex flex-col space-y-4 items-center justify-center px-2 w-full h-full m-2"
-      data-aos="fade-up"
-    >
+    <div className="text-secondary flex flex-col space-y-4 items-center justify-center px-2 w-full h-full m-2">
       <div className="flex items-center">
-        <h4 className="font-semibold font-subtitle text-center mr-2 text-3xl">
+        <h4 className="font-semibold font-subtitle text-center mr-2 text-xl">
           {servicesData[props.index].title}
         </h4>
         <HiOutlineCursorClick color="#DCEFFC" fontSize="3rem" />
@@ -103,32 +89,50 @@ const ProductTitle = (props) => {
 };
 
 const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
+  const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    } else {
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    }
+  }, [isOpen]);
+
   return (
     <>
-      {
-        <Item
-          content={
-            <Portal
-              index={index}
-              titleClassName={titleClassName}
-              isOther={isOther}
-            />
-          }
-        >
-          {({ ref, open }) => (
-            <div
-              className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
-              style={{ border: '1px dotted #DCEFFC' }}
-              onClick={open}
-              ref={ref as any}
-            >
-              <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
-                <ProductTitle index={index} />
+      <div
+        className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
+        style={{ border: '1px dotted #DCEFFC' }}
+        onClick={() => setOpen(!isOpen)}
+      >
+        <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
+          <ProductTitle index={index} />
+        </div>
+      </div>
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-secondary-lighter opacity-60 z-10"
+            onClick={() => setOpen(false)}
+          ></div>
+          <div className="fixed top-1/2 left-1/2 w-4/6 h-5/6 -mt-[24%] -ml-[33%] z-20 bg-white shadow-2xl">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div
+                className="absolute right-0 top-0 px-5 py-3 cursor-pointer text-xl text-secondary-lighter font-normal font-thin"
+                onClick={() => setOpen(false)}
+              >
+                X
               </div>
+              <Portal
+                index={index}
+                titleClassName={titleClassName}
+                isOther={isOther}
+              />
             </div>
-          )}
-        </Item>
-      }
+          </div>
+        </>
+      )}
     </>
   );
 };
@@ -139,24 +143,17 @@ const Portal: FC<{
   isOther?: boolean;
 }> = ({ index, isOther }) => {
   return (
-    <div className="w-full h-full shadow-2xl overflow-hidden relative">
-      <GradientBg background="rgba(235,233,232,0.9)" />
-      {!!servicesData[index].bgImg && (
-        <BannerImage
-          url={servicesData[index].bgImg}
-          styles={servicesData[index].bgImgStyle || {}}
-        />
-      )}
-      <section className="lg:flex flex-col w-screen hidden h-full overflow-y-scroll absolute inset-0 py-[2%] space-y-6 items-center">
+    <div className="h-[88%] w-[90%] overflow-hidden relative flex">
+      <section className="md:flex flex-col hidden h-full absolute inset-0 space-y-6 items-center">
         <LaptopH2PrelineH3Wrap
           noFadeEffect
           classnames="w-[70%] text-primary-darker"
         >
           {servicesData[index].title}
         </LaptopH2PrelineH3Wrap>
-        <hr className="w-full text-primary-darker" />
+        <hr className="w-full text-primary-darker font-thin" />
         {isOther ? (
-          <div className="flex justify-evenly h-full min-h-fit pt-3 px-[2%]">
+          <div className="flex justify-evenly h-full min-h-fit pt-3 px-[2%] overflow-y-scroll">
             {servicesData[index].category.map((o: any, i) => (
               <div
                 className="w-[30%] h-auto relative hover-scale-inner-img-effect"
@@ -176,14 +173,11 @@ const Portal: FC<{
             ))}
           </div>
         ) : (
-          <div className="w-full h-full flex justify-center items-start">
+          <div className="w-full h-full flex justify-center items-start overflow-y-scroll">
             <ul className="w-4/6 h-auto flex flex-col list-disc space-y-3">
               {servicesData[index].category.map(({ title }, i) => {
                 return (
-                  <li
-                    key={i}
-                    className="font-semibold text-primary-darker text-lg"
-                  >
+                  <li key={i} className="text-primary-darker">
                     {title}
                   </li>
                 );

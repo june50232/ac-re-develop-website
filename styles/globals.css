@@ -45,6 +45,7 @@
   body {
     font-size: 16px;
     scrollbar-width: none;
+    @apply font-light;
   }
 
   body::-webkit-scrollbar {
