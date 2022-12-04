@@ -116,7 +116,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
             className="fixed inset-0 bg-secondary-lighter opacity-60 z-10"
             onClick={() => setOpen(false)}
           ></div>
-          <div className="fixed top-1/2 left-1/2 w-4/6 h-5/6 -mt-[24%] -ml-[33%] z-20 bg-white shadow-2xl">
+          <div className="fixed top-[10%] left-[20%] w-[60%] h-[80%] z-20 bg-white shadow-2xl">
             <div className="relative w-full h-full flex items-center justify-center">
               <div
                 className="absolute right-0 top-0 px-5 py-3 cursor-pointer text-xl text-secondary-lighter font-normal font-thin"
@@ -153,10 +153,10 @@ const Portal: FC<{
         </LaptopH2PrelineH3Wrap>
         <hr className="w-full text-primary-darker font-thin" />
         {isOther ? (
-          <div className="flex justify-evenly h-full min-h-fit pt-3 px-[2%] overflow-y-scroll">
+          <div className="flex flex-col h-full min-h-fit pt-3 px-[2%] overflow-y-scroll">
             {servicesData[index].category.map((o: any, i) => (
               <div
-                className="w-[30%] h-auto relative hover-scale-inner-img-effect"
+                className=" h-auto relative hover-scale-inner-img-effect"
                 key={i}
               >
                 <ul className="list-disc ml-6">

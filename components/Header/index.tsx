@@ -36,17 +36,12 @@ export default function Header() {
           data-aos="fade-down"
         >
           <ul className="flex flex-wrap px-0 mb-0 list-none space-x-3 items-center">
-            {NavList.map(({ title, url }) => (
+            {NavList.map(({ title, url }, i) => (
               <li
                 key={title}
-                className={'flex menu-hover-line relative px-1 h-8'}
+                className={`flex menu-hover-line relative px-1 h-8 menu-${i}`}
               >
-                <Link
-                  href={url}
-                  className="flex self-stretch items-center font-light"
-                >
-                  {title}
-                </Link>
+                <Link href={url}>{title}</Link>
               </li>
             ))}
           </ul>

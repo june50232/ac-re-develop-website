@@ -84,22 +84,18 @@ export default function About() {
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col w-[38%] space-y-6 items-center">
+            <div className="flex flex-col w-[46%] space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl text-center">
                   Innovative and Forward-Thinking
                 </h3>
                 <h5 className="text-secondary-light leading-relaxed text-center">
-                  AC Re Services is an innovative,
+                  AC Re is an innovative, forward-thinking insurance broker
                   <br />
-                  forward-thinking insurance broker that
+                  that takes pride in risk management and insurance/reinsurance
                   <br />
-                  takes pride in providing risk management
-                  <br />
-                  and insurance/reinsurance solutions for
-                  <br />
-                  direct corporate clients and reinsureds.
+                  solutions for direct corporate clients and reinsureds.
                 </h5>
               </div>
             </div>
@@ -139,22 +135,13 @@ export default function About() {
             <div className="flex h-full w-full">
               <div className="flex w-[20%] h-full relative bg-neutral-100 justify-end items-center">
                 <div className="absolute top-2 z-[2] flex justify-between items-center">
-                  <h2 className="text-5xl">
-                    Our
+                  <h3 className="text-xl text-right">
+                    Our Goal
                     <br />
-                    Goal
-                  </h2>
+                    Is To
+                  </h3>
                   <div className="coreArrow2"></div>
                 </div>
-                <h2
-                  className="text-white text-vertical text-orientation-upright text-[10rem] italic font-serif pr-5"
-                  data-aos="fade-up"
-                >
-                  <span className="h-24 inline-block">G</span>
-                  <span className="h-24 inline-block">o</span>
-                  <span className="h-36 inline-block">a</span>
-                  <span className="h-36 inline-block">l</span>
-                </h2>
               </div>
               <div className="flex grow overflow-hidden">
                 {goal.map(

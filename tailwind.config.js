@@ -60,7 +60,11 @@ module.exports = {
         'Roboto', // time new roman
         ...defaultTheme.fontFamily.sans,
       ],
-      serif: ['AdobeGaramondBold', ...defaultTheme.fontFamily.serif],
+      serif: [
+        'HelveticaNowDisplay',
+        'AdobeGaramondBold',
+        ...defaultTheme.fontFamily.serif,
+      ],
     },
     zIndex: {
       1: '1',

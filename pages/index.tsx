@@ -205,17 +205,12 @@ export default function Home() {
                     <div className="w-full h-[70%] overflow-hidden">
                       <BannerImage url={img} />
                     </div>
-                    <div
-                      className="relative grow bg-primary-lighter flex flex-col justify-evenly "
-                      // style={{
-                      //   background: 'rgb(42,60,107)',
-                      // }}
-                    >
-                      <h5 className="text-primary-darker font-bold text-xl pl-2">
+                    <div className="relative grow bg-primary-darker flex flex-col justify-evenly pb-2">
+                      <h5 className="text-white font-bold text-xl pl-2">
                         {title}
                       </h5>
                       <div className="flex justify-between items-center pr-3">
-                        <p className="text-primary-darker text-base pl-2">
+                        <p className="text-white text-base pl-2">
                           {description}
                         </p>
                         <div className="coreArrow"></div>

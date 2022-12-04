@@ -31,6 +31,22 @@
       format('svg');
 }
 
+@font-face {
+  font-family: 'HelveticaNowDisplay';
+  font-display: swap;
+  src: url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot');
+  src: url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff')
+      format('woff'),
+    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.ttf')
+      format('truetype'),
+    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.svg#HelveticaNowDisplay')
+      format('svg');
+}
+
 @tailwind utilities;
 
 :root {
@@ -45,7 +61,7 @@
   body {
     font-size: 16px;
     scrollbar-width: none;
-    @apply font-light;
+    @apply font-normal;
   }
 
   body::-webkit-scrollbar {
@@ -210,6 +226,24 @@
   .hover-grow-effect:hover .img-caption-bg-cover.horizontal {
     opacity: 1;
   }
+}
+
+.menu-0 {
+  color: #82939a;
+  @apply font-normal tracking-normal;
+}
+
+.menu-1 {
+  @apply font-normal tracking-tight;
+}
+
+.menu-2 {
+  @apply font-light font-medium tracking-wide;
+}
+
+.menu-3 {
+  color: #82939a;
+  @apply font-light tracking-tight;
 }
 
 .order-25:after {
