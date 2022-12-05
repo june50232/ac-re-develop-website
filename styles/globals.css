@@ -34,16 +34,32 @@
 @font-face {
   font-family: 'HelveticaNowDisplay';
   font-display: swap;
-  src: url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot');
-  src: url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot?#iefix')
+  src: url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot);
+  src: url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.eot?#iefix)
       format('embedded-opentype'),
-    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff2')
+    url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff2)
       format('woff2'),
-    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff')
+    url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.woff)
       format('woff'),
-    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.ttf')
+    url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.ttf)
       format('truetype'),
-    url('https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.svg#HelveticaNowDisplay')
+    url(https://db.onlinewebfonts.com/t/edb27e30cd0569701355db3c0486c7e5.svg#HelveticaNowDisplay)
+      format('svg');
+}
+
+/* https://www.onlinewebfonts.com/download/5a29f6809bcaf222ac36b59d5189a38c */
+@font-face {
+  font-family: 'HelveticaNowText Regular';
+  src: url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.eot);
+  src: url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.woff2)
+      format('woff2'),
+    url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.woff)
+      format('woff'),
+    url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.ttf)
+      format('truetype'),
+    url(https://db.onlinewebfonts.com/t/5a29f6809bcaf222ac36b59d5189a38c.svg#HelveticaNowText%20Regular)
       format('svg');
 }
 
@@ -51,17 +67,20 @@
 
 :root {
   --brand-blue-color: #2056ae;
-  --brand-darker-blue-color: #46659e;
+  --brand-darker-blue-color: rgb(42, 60, 107);
   --brand-light-blue-color: #1ba7e6;
-  --font_1: normal normal normal initial 'AdobeGaramondBold', sans-serif;
+  --font_1: normal normal normal initial 'HelveticaNowText Regular', sans-serif;
   --font_2: normal normal normal initial 'open sans', sans-serif;
 }
 
 @layer base {
-  body {
+  html {
     font-size: 16px;
+    @apply font-normal font-sans;
+  }
+
+  body {
     scrollbar-width: none;
-    @apply font-normal;
   }
 
   body::-webkit-scrollbar {
@@ -71,6 +90,10 @@
   footer {
     border-top: 5px solid #f5f5f5;
     @apply w-screen flex justify-center items-center;
+  }
+
+  .font-family-bold {
+    font-family: 'HelveticaNowDisplay';
   }
 
   h1 {
@@ -228,22 +251,27 @@
   }
 }
 
-.menu-0 {
-  color: #82939a;
-  @apply font-normal tracking-normal;
+.service-banner {
+  font-family: 'HelveticaNowText Regular';
 }
 
-.menu-1 {
+.menu-0 {
+  color: #82939a;
   @apply font-normal tracking-tight;
 }
 
+.menu-1 {
+  @apply font-normal tracking-normal;
+}
+
 .menu-2 {
-  @apply font-light font-medium tracking-wide;
+  color: var(--brand-darker-blue-color);
+  @apply font-medium tracking-normal;
 }
 
 .menu-3 {
-  color: #82939a;
-  @apply font-light tracking-tight;
+  color: var(--brand-blue-color);
+  @apply font-bold tracking-wide;
 }
 
 .order-25:after {

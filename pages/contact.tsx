@@ -20,7 +20,7 @@ export default function Contact() {
         >
           <h2 className="text-3xl font-bold">Get in touch with AC Re!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-base text-center leading-relaxed font-light">
+          <h3 className="text-lg text-center leading-relaxed font-light">
             AC Re brings industry knowledge, expertise, and insight
             <br />
             to design programs for your business&apos;s specific risks and

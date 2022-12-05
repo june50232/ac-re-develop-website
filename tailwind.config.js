@@ -34,7 +34,7 @@ module.exports = {
       '7xl': ['.5rem', '.8rem'],
       xs: ['.57rem', '.85rem'], // 4, 6
       sm: ['.71rem', '1rem'], // 5, 7
-      base: ['1.15rem', '1.3rem'], // 7, 9
+      base: ['1rem', '1.3rem'], // 7, 9
       lg: ['1.3rem', '1.5rem'], // 8, 9
       xl: ['1.55rem', '1.8rem'], // 12, 14,52
       '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
@@ -60,11 +60,7 @@ module.exports = {
         'Roboto', // time new roman
         ...defaultTheme.fontFamily.sans,
       ],
-      serif: [
-        'HelveticaNowDisplay',
-        'AdobeGaramondBold',
-        ...defaultTheme.fontFamily.serif,
-      ],
+      serif: ['AdobeGaramondBold', ...defaultTheme.fontFamily.serif],
     },
     zIndex: {
       1: '1',

@@ -136,9 +136,9 @@ export default function About() {
               <div className="flex w-[20%] h-full relative bg-neutral-100 justify-end items-center">
                 <div className="absolute top-2 z-[2] flex justify-between items-center">
                   <h3 className="text-xl text-right">
-                    Our Goal
+                    Our goal
                     <br />
-                    Is To
+                    is to
                   </h3>
                   <div className="coreArrow2"></div>
                 </div>

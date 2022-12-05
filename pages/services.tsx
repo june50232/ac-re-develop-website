@@ -21,12 +21,12 @@ export default function Services() {
         <GradientBg background="rgba(255,255,255,0.85)" />
         <BannerImage url={servicesBannerImgUrl} />
         <div
-          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
+          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-bold">Our Services & Products</h2>
+          <h2 className="text-xl font-family-bold">Our Services & Products</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-base font-light text-center leading-relaxed">
+          <h3 className="text-lg font-light text-center leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific
             <br />

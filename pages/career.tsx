@@ -26,7 +26,7 @@ export default function Career() {
         >
           <h2 className="text-3xl font-bold">Join us!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-base w-full text-center leading-relaxed text-secondary font-light">
+          <h3 className="text-lg w-full text-center leading-relaxed text-secondary font-light">
             AC Re has been continually expanding by adding new talent.
             <br />
             We&apos;re looking for motivated individuals who would like to
@@ -50,7 +50,7 @@ export default function Career() {
           <div className="h-3/6 w-10/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>Our Team</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-base indent-8 leading-relaxed"
+              className="text-secondary space-y-5 text-lg indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               We are a united team full of highly talented and enthusiastic
@@ -71,7 +71,7 @@ export default function Career() {
           <div className="h-3/6 w-9/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>What we care about</LaptopH2PrelineH3Wrap>
             <div
-              className="text-secondary space-y-5 text-base indent-8 leading-relaxed"
+              className="text-secondary space-y-5 text-lg indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               The foundation of our success is integrity, diversity, and
