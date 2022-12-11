@@ -10,7 +10,7 @@ const NavList: { title: string; url: string }[] = [
     url: aboutUrl,
   },
   {
-    title: 'Our services & products',
+    title: 'Services & products',
     url: servicesUrl,
   },
   {

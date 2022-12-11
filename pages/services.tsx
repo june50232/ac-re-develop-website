@@ -24,7 +24,7 @@ export default function Services() {
           className="absolute h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-family-bold">Our Services & Products</h2>
+          <h2 className="text-xl font-family-bold">Services & products</h2>
           <hr className="w-8 text-neutral-500" />
           <h3 className="text-lg font-light text-center leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
@@ -37,7 +37,7 @@ export default function Services() {
           </h3>
         </div>
       </Section>
-      <section className="md:flex w-screen hidden overflow-hidden h-[30rem] static">
+      <section className="md:flex w-screen hidden overflow-hidden h-[16rem] static">
         <aside className="w-4/12 h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
@@ -58,7 +58,7 @@ export default function Services() {
           titleClassName="top-[11%] right-[66%]"
         />
       </section>
-      <section className="md:flex w-screen hidden overflow-hidden h-[30rem]">
+      <section className="md:flex w-screen hidden overflow-hidden h-[18rem]">
         <PortalClickItem
           index={2}
           width="[30%]"

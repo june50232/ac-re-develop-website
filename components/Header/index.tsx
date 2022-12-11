@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
+import { useRouter } from 'next/router';
 import { CgMenuLeft } from 'react-icons/cg';
 import Link from 'next/link';
 import NavList from 'common/nav';
 import { Logo } from '../';
 
 export default function Header() {
+  const router = useRouter();
   const navRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
@@ -36,10 +38,12 @@ export default function Header() {
           data-aos="fade-down"
         >
           <ul className="flex flex-wrap px-0 mb-0 list-none space-x-3 items-center">
-            {NavList.map(({ title, url }, i) => (
+            {NavList.map(({ title, url }) => (
               <li
                 key={title}
-                className={`flex menu-hover-line relative px-1 h-8 menu-${i}`}
+                className={`flex menu-hover-line relative px-1 h-8 font-normal tracking-normal ${
+                  router.asPath === url ? 'menu-line' : ''
+                }`}
               >
                 <Link href={url}>{title}</Link>
               </li>

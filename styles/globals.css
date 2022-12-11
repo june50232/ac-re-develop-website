@@ -152,7 +152,8 @@
     @apply absolute bottom-0;
   }
 
-  .menu-hover-line:hover:after {
+  .menu-hover-line:hover:after,
+  .menu-hover-line.menu-line:after {
     opacity: 1;
     transform: translateY(0px);
   }
@@ -257,25 +258,6 @@
 
 .service-banner {
   font-family: 'HelveticaNowText Regular';
-}
-
-.menu-0 {
-  color: #82939a;
-  @apply font-normal tracking-tight;
-}
-
-.menu-1 {
-  @apply font-normal tracking-normal;
-}
-
-.menu-2 {
-  color: var(--brand-darker-blue-color);
-  @apply font-medium tracking-normal;
-}
-
-.menu-3 {
-  color: var(--brand-blue-color);
-  @apply font-bold tracking-wide;
 }
 
 .order-25:after {

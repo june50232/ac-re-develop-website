@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {
   BannerImage,
   GradientBg,
@@ -15,7 +14,6 @@ import {
   professionImgUrl,
 } from 'common/imgUrls';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
-import { aboutUrl, servicesUrl } from 'common/nav';
 
 export default function Home() {
   const whyReason = [
@@ -39,22 +37,19 @@ export default function Home() {
   ];
   const coreValue = [
     {
-      title: 'Prodessionalism',
+      title: 'Professionalism',
       description: 'Professional Service',
       img: professionImgUrl,
-      url: aboutUrl,
     },
     {
       title: 'Global Perspectives',
       description: 'Forward-Thinking',
       img: globalImgUrl,
-      url: `${aboutUrl}#team-laptop`,
     },
     {
       title: 'ESG',
       description: 'Sustainable Future',
       img: esgImgUrl,
-      url: servicesUrl,
     },
   ];
 
@@ -192,34 +187,24 @@ export default function Home() {
             className="flex justify-between h-4/6 min-h-fit"
             data-aos="fade-up"
           >
-            {coreValue.map(
-              ({
-                title,
-                description,
-                img,
-                url, // TODO
-              }) => (
-                <Link href={url} passHref key={title}>
-                  <a className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect">
-                    <div className="absolute coreValueLine"></div>
-                    <div className="w-full h-[70%] overflow-hidden">
-                      <BannerImage url={img} />
-                    </div>
-                    <div className="relative grow bg-primary-darker flex flex-col justify-evenly pb-2">
-                      <h5 className="text-white font-bold text-xl pl-2">
-                        {title}
-                      </h5>
-                      <div className="flex justify-between items-center pr-3">
-                        <p className="text-white text-base pl-2">
-                          {description}
-                        </p>
-                        <div className="coreArrow"></div>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              ),
-            )}
+            {coreValue.map(({ title, description, img }) => (
+              <div
+                key={title}
+                className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect"
+              >
+                <div className="absolute coreValueLine"></div>
+                <div className="w-full h-[70%] overflow-hidden">
+                  <BannerImage url={img} />
+                </div>
+                <div className="relative grow bg-primary-darker flex flex-col justify-evenly pb-2">
+                  <h5 className="text-white font-bold text-xl pl-2">{title}</h5>
+                  <div className="flex justify-between items-center pr-3">
+                    <p className="text-white text-base pl-2">{description}</p>
+                    <div className="coreArrow"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
