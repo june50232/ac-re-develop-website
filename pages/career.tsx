@@ -1,17 +1,96 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Section,
   GradientBg,
   BannerImage,
   LaptopH2PrelineH3Wrap,
+  _SubmitButton,
+  _Label,
+  _Title,
+  _Input,
+  _Textarea,
+  _ErrorMsg,
 } from 'components';
-import {
-  careerTeamImgUrl,
-  globalDottedImgUrl,
-  careerCareImgUrl,
-} from 'common/imgUrls';
+import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
+
+const initValues = {
+  title: '',
+  name: '',
+  mobile: '',
+  email: '',
+  role: '',
+  coverLetter: '',
+  resume: '',
+};
+const initTouched = {
+  title: false,
+  name: false,
+  mobile: false,
+  email: false,
+  role: false,
+  coverLetter: false,
+  resume: false,
+};
+const initErrors = {
+  title: null,
+  name: null,
+  mobile: null,
+  email: null,
+  role: null,
+  coverLetter: null,
+  resume: null,
+};
+
+const initState = {
+  values: initValues,
+  touched: initTouched,
+  errors: initErrors,
+};
+
+interface FormStateInterface {
+  values: {
+    title: string;
+    name: string;
+    mobile: string;
+    email: string;
+    role: string;
+    coverLetter: string;
+    resume: string;
+  };
+  touched: {
+    title: boolean;
+    name: boolean;
+    mobile: boolean;
+    email: boolean;
+    role: boolean;
+    coverLetter: boolean;
+    resume: boolean;
+  };
+  errors: {
+    title: boolean | null;
+    name: boolean | null;
+    mobile: boolean | null;
+    email: boolean | null;
+    role: boolean | null;
+    coverLetter: boolean | null;
+    resume: boolean | null;
+  };
+}
+
+interface FormContextInterface {
+  state: FormStateInterface;
+  // eslint-disable-next-line no-unused-vars
+  setState: (val: any) => void;
+}
+
+const FormContext = React.createContext<FormContextInterface>({
+  state: initState,
+  setState: () => {},
+});
 
 export default function Career() {
+  const [state, setState] = useState(initState);
+
   return (
     <>
       <Section
@@ -91,26 +170,13 @@ export default function Career() {
       </Section>
 
       <Section
-        className="relative flex flex-col justify-evenly items-center space-y-5 h-[56rem]"
+        className="relative flex flex-col justify-evenly items-center space-y-2 h-[65rem]"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
       >
         <div
-          className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
-          data-aos="fade-up"
-        >
-          <BannerImage
-            url={globalDottedImgUrl}
-            classnames="opacity-10"
-            styles={{
-              backgroundPosition: 'top',
-            }}
-            noHoverEffect
-          />
-        </div>
-        <div
-          className="h-50 w-full flex flex-col justify-center items-center space-y-10 relative"
+          className="h-30 w-full flex flex-col justify-center items-center space-y-2 relative"
           data-aos="fade-up"
         >
           <h5 className="text-2xl text-center text-primary-darker">
@@ -142,59 +208,150 @@ export default function Career() {
           <br />
           Please complete the details below and upload your CV.
         </h5>
-        <div
-          className="flex flex-wrap w-4/6 h-96 justify-between items-center"
-          data-aos="fade-up"
+        <FormContext.Provider
+          value={{
+            state,
+            setState: (val) => setState(val),
+          }}
         >
-          <TextInput
-            title="Title"
-            required
-            placeholder="Mr., Miss, Ms., Mrs."
-          />
-          <TextInput title="Name" required />
-          <TextInput title="Phone" required />
-          <TextInput title="Email" required />
-          <TextInput title="Type of role you’d like to apply" widthFull />
-          <TextInput title="Cover Letter (choose a file)" widthFull />
-          <TextInput title="CV upload (choose a file)" required widthFull />
-          <div className="w-full h-auto flex justify-end items-center mr-8">
-            <button className="bg-neutral-500 text-lg px-24 py-3 font-bold">
-              Submit
-            </button>
+          <div
+            className="flex flex-wrap w-4/6 h-[36rem] justify-between items-center"
+            data-aos="fade-up"
+          >
+            <Field
+              name="title"
+              title="Title"
+              required
+              placeholder="Mr., Miss, Ms., Mrs."
+            />
+            <Field name="name" title="Name" required />
+            <Field name="mobile" title="Phone" required />
+            <Field name="email" title="Email" required type="email" />
+            <Field
+              name="role"
+              title="Type of role you’d like to apply"
+              widthFull
+            />
+            <Field
+              name="resume"
+              title="CV upload (choose a file)"
+              type="file"
+              required
+              widthFull
+            />
+            <Field
+              name="coverLetter"
+              title="Cover Letter (choose a file)"
+              type="file"
+              widthFull
+            />
+            <div className="w-full h-auto flex justify-end items-center mr-8">
+              <SubmitButton />
+            </div>
           </div>
-        </div>
+        </FormContext.Provider>
       </Section>
     </>
   );
 }
 
-const TextInput = (props) => {
+interface TextInputProps {
+  widthFull?: boolean;
+  title: string;
+  required?: boolean;
+  typeArea?: boolean;
+  name: string;
+  type?: string;
+  placeholder?: string;
+  isFile?: boolean;
+}
+
+const Field = ({
+  widthFull = false,
+  title = '',
+  required = false,
+  typeArea = false,
+  name,
+  type = 'text',
+  placeholder = '',
+}: TextInputProps) => {
+  const { state, setState } = useContext(FormContext);
+  const { values, errors } = state;
+  const currentValue = values[name];
+  const handleChange = ({ target }) => {
+    const val = target.value ? target.value.trim() : '';
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: val,
+      },
+      errors: {
+        ...prev.errors,
+        [target.name]: !val && required,
+      },
+    }));
+  };
+
+  const handleBlur = ({ target }) => {
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      touched: {
+        ...prev.touched,
+        [target.name]: true,
+      },
+      errors: {
+        ...prev.errors,
+        [target.name]: !currentValue && required,
+      },
+    }));
+  };
+
   return (
-    <label
-      className={[
-        'flex h-auto justify-center items-center mr-8',
-        props.widthFull ? 'w-full' : 'w-[44%]',
-      ].join(' ')}
-    >
-      <p
-        className={[
-          'text-lg w-[12rem] flex whitespace-nowrap mr-2',
-          props.widthFull ? 'w-[18rem]' : 'w-16',
-        ].join(' ')}
-      >
-        {props.title}
-        {props.required && <span className="text-red">*</span>}
-      </p>
-      {!props.typeArea && (
-        <input
-          type="text"
-          className="flex grow border-none rounded-lg text-lg"
-          placeholder={props.placeholder}
+    <_Label widthFull={widthFull}>
+      <_Title title={title} required={required} />
+      {!typeArea && (
+        <_Input
+          error={errors[name]}
+          type={type}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
+          placeholder={placeholder}
         />
       )}
-      {props.typeArea && (
-        <textarea className="flex grow border-none rounded-lg" />
+      {typeArea && (
+        <_Textarea
+          error={errors[name]}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
+        />
       )}
-    </label>
+      <_ErrorMsg error={errors[name]} title={title} />
+    </_Label>
+  );
+};
+
+const SubmitButton = () => {
+  const { state } = useContext(FormContext);
+  const { values, errors } = state;
+  const isEnabled = Object.values(errors).every((v) => v === false);
+
+  const handleSubmit = () => {
+    // eslint-disable-next-line no-console
+    console.log({ values });
+  };
+
+  return (
+    <_SubmitButton
+      disabled={!isEnabled}
+      isEnabled={isEnabled}
+      onClick={handleSubmit}
+    >
+      Submit
+    </_SubmitButton>
   );
 };

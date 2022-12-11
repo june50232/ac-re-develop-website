@@ -2,7 +2,6 @@ import HTMLHead from './HTMLHead';
 import Header from './Header';
 import Logo from './Logo';
 import Footer from './Footer';
-import CanvasVideo from './CanvasVideo';
 import Layout from './Layout';
 import Button from './Button';
 import BannerImage from './BannerImage';
@@ -11,13 +10,20 @@ import GradientBg from './GradientBg';
 import MobileContainer from './MobileContainer';
 import Section from './Section';
 import GoogleMap from './GoogleMap';
+import {
+  _SubmitButton,
+  _Label,
+  _Title,
+  _Input,
+  _Textarea,
+  _ErrorMsg,
+} from './FormElement';
 
 export {
   HTMLHead,
   Header,
   Logo,
   Footer,
-  CanvasVideo,
   Layout,
   Button,
   BannerImage,
@@ -26,4 +32,10 @@ export {
   MobileContainer,
   Section,
   GoogleMap,
+  _SubmitButton,
+  _Label,
+  _Title,
+  _Input,
+  _Textarea,
+  _ErrorMsg,
 };

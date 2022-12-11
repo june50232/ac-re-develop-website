@@ -62,7 +62,6 @@ export default function About() {
             data-aos="fade-up"
           >
             <h2 className="text-3xl font-bold">About AC Re</h2>
-            <hr className="w-full text-white" />
           </div>
         </section>
         <section

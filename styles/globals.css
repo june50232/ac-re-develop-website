@@ -135,6 +135,10 @@
 }
 
 @layer utilities {
+  .ring-none {
+    --tw-ring-color: transparent;
+  }
+
   .menu-hover-line:after {
     content: '';
     left: 0.25rem;

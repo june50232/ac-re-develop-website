@@ -1,6 +1,17 @@
-import React from 'react';
-import { Section, GradientBg, BannerImage, GoogleMap } from 'components';
-import { contactBannerImgUrl, globalDottedImgUrl } from 'common/imgUrls';
+import React, { useState, useContext } from 'react';
+import {
+  Section,
+  GradientBg,
+  BannerImage,
+  GoogleMap,
+  _SubmitButton,
+  _Label,
+  _Title,
+  _Input,
+  _Textarea,
+  _ErrorMsg,
+} from 'components';
+import { contactBannerImgUrl } from 'common/imgUrls';
 import {
   FcPhoneAndroid,
   FcDepartment,
@@ -8,7 +19,78 @@ import {
   FcFeedback,
 } from 'react-icons/fc';
 
+const initValues = {
+  name: '',
+  company: '',
+  mobile: '',
+  email: '',
+  subject: '',
+  message: '',
+};
+const initTouched = {
+  name: false,
+  company: false,
+  mobile: false,
+  email: false,
+  subject: false,
+  message: false,
+};
+const initErrors = {
+  name: null,
+  company: null,
+  mobile: null,
+  email: null,
+  subject: null,
+  message: null,
+};
+
+const initState = {
+  values: initValues,
+  touched: initTouched,
+  errors: initErrors,
+};
+
+interface FormStateInterface {
+  values: {
+    name: string;
+    company: string;
+    mobile: string;
+    email: string;
+    subject: string;
+    message: string;
+  };
+  touched: {
+    name: boolean;
+    company: boolean;
+    mobile: boolean;
+    email: boolean;
+    subject: boolean;
+    message: boolean;
+  };
+  errors: {
+    name: boolean | null;
+    company: boolean | null;
+    mobile: boolean | null;
+    email: boolean | null;
+    subject: boolean | null;
+    message: boolean | null;
+  };
+}
+
+interface FormContextInterface {
+  state: FormStateInterface;
+  // eslint-disable-next-line no-unused-vars
+  setState: (val: any) => void;
+}
+
+const FormContext = React.createContext<FormContextInterface>({
+  state: initState,
+  setState: () => {},
+});
+
 export default function Contact() {
+  const [state, setState] = useState(initState);
+
   return (
     <>
       <Section classname="h-96">
@@ -95,23 +177,13 @@ export default function Contact() {
         </div>
       </Section>
       <Section
-        className="relative flex flex-col justify-evenly items-center space-y-10 h-[55rem]"
+        className="relative flex flex-col justify-evenly items-center space-y-5 h-[55rem]"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
       >
-        <div className="absolute -z-[1] top-2 -right-20 h-72 w-4/6">
-          <BannerImage
-            url={globalDottedImgUrl}
-            classnames="opacity-10"
-            styles={{
-              backgroundPosition: 'top',
-            }}
-            noHoverEffect
-          />
-        </div>
         <div
-          className="h-40 w-full flex flex-col justify-center items-center space-y-10 relative"
+          className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
           data-aos="fade-up"
         >
           <h2 className="text-2xl font-bold text-primary-darker">
@@ -128,55 +200,128 @@ export default function Contact() {
             below.
           </h5>
         </div>
-        <div
-          className="flex flex-wrap w-5/6 h-96 justify-between items-center"
-          data-aos="fade-up"
+        <FormContext.Provider
+          value={{
+            state,
+            setState: (val) => setState(val),
+          }}
         >
-          <TextInput title="Your Name" required />
-          <TextInput title="Company Name" />
-          <TextInput title="Email Address" required />
-          <TextInput title="Phone Number" />
-          <TextInput title="Subject" widthFull />
-          <TextInput title="Message" required widthFull typeArea />
-          <div className="w-full h-auto flex justify-end items-center mr-8">
-            <button className="bg-neutral-500 text-lg px-24 py-3 font-bold">
-              Submit
-            </button>
+          <div
+            className="flex flex-wrap w-5/6 h-[35rem] justify-between items-center"
+            data-aos="fade-up"
+          >
+            <Field title="Your name" required name="name" />
+            <Field title="Company name" name="company" />
+            <Field title="Email address" required name="email" type="email" />
+            <Field title="Phone number" name="mobile" type="number" />
+            <Field title="Subject" widthFull name="subject" />
+            <Field title="Message" required widthFull typeArea name="message" />
+            <div className="w-full h-auto flex justify-end items-center mr-8">
+              <SubmitButton />
+            </div>
           </div>
-        </div>
+        </FormContext.Provider>
       </Section>
       <Section classname="h-96">
-        {/* <GradientBg background="rgba(255, 247, 237, 0.4)" /> */}
-        {/* <img 
-                    src="https://maps.googleapis.com/maps/api/staticmap?center=@25.0469492,121.5254558&zoom=16&size=100%x100%&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=YOUR_API_KEY&map_id=YOUR_MAP_ID&signature=YOUR_SIGNATURE" 
-                /> */}
         <GoogleMap></GoogleMap>
       </Section>
     </>
   );
 }
 
-const TextInput = (props) => {
+interface TextInputProps {
+  widthFull?: boolean;
+  title: string;
+  required?: boolean;
+  typeArea?: boolean;
+  name: string;
+  type?: string;
+}
+
+const Field = ({
+  widthFull = false,
+  title = '',
+  required = false,
+  typeArea = false,
+  name,
+  type = 'text',
+}: TextInputProps) => {
+  const { state, setState } = useContext(FormContext);
+  const { values, errors } = state;
+  const currentValue = values[name];
+  const handleChange = ({ target }) => {
+    const val = target.value ? target.value.trim() : '';
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: val,
+      },
+      errors: {
+        ...prev.errors,
+        [target.name]: !val && required,
+      },
+    }));
+  };
+
+  const handleBlur = ({ target }) => {
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      touched: {
+        ...prev.touched,
+        [target.name]: true,
+      },
+      errors: {
+        ...prev.errors,
+        [target.name]: !currentValue && required,
+      },
+    }));
+  };
+
   return (
-    <label
-      className={[
-        'flex h-auto justify-center items-center mr-8',
-        props.widthFull ? 'w-full' : 'w-[44%]',
-      ].join(' ')}
-    >
-      <p className="text-lg w-[12rem] flex whitespace-nowrap mr-2">
-        {props.title}
-        {props.required && <span className="text-red">*</span>}
-      </p>
-      {!props.typeArea && (
-        <input
-          type="text"
-          className="flex grow border-none rounded-lg text-lg"
+    <_Label widthFull={widthFull}>
+      <_Title title={title} required={required} />
+      {!typeArea && (
+        <_Input
+          error={errors[name]}
+          type={type}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
         />
       )}
-      {props.typeArea && (
-        <textarea className="flex grow border-none rounded-lg" />
+      {typeArea && (
+        <_Textarea
+          error={errors[name]}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
+        />
       )}
-    </label>
+      <_ErrorMsg error={errors[name]} title={title} />
+    </_Label>
+  );
+};
+
+const SubmitButton = () => {
+  const { state } = useContext(FormContext);
+  const { values, errors } = state;
+  const isEnabled = Object.values(errors).every((v) => v === false);
+
+  const handleSubmit = () => {
+    // eslint-disable-next-line no-console
+    console.log({ values });
+  };
+
+  return (
+    <_SubmitButton
+      disabled={!isEnabled}
+      isEnabled={isEnabled}
+      onClick={handleSubmit}
+    >
+      Submit
+    </_SubmitButton>
   );
 };

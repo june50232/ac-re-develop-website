@@ -17,11 +17,15 @@ export default function Layout(props) {
   }, []);
 
   return (
-    <div className="min-h-screen py-0">
-      <HTMLHead />
-      <Header />
-      <main className="pt-16 flex flex-col">{props.children}</main>
-      <Footer />
-    </div>
+    <html lang="en">
+      <div className="min-h-screen py-0">
+        <HTMLHead />
+        <body>
+          <Header />
+          <main className="pt-16 flex flex-col">{props.children}</main>
+          <Footer />
+        </body>
+      </div>
+    </html>
   );
 }
