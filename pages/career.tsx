@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import {
   Section,
   GradientBg,
@@ -36,8 +36,8 @@ const initErrors = {
   name: null,
   mobile: null,
   email: null,
-  role: null,
-  coverLetter: null,
+  role: false,
+  coverLetter: false,
   resume: null,
 };
 
@@ -45,6 +45,11 @@ const initState = {
   values: initValues,
   touched: initTouched,
   errors: initErrors,
+  files: {
+    resume: null,
+    coverLetter: null,
+  },
+  isLoading: false,
 };
 
 interface FormStateInterface {
@@ -54,8 +59,8 @@ interface FormStateInterface {
     mobile: string;
     email: string;
     role: string;
-    coverLetter: string;
-    resume: string;
+    coverLetter: any;
+    resume: any;
   };
   touched: {
     title: boolean;
@@ -75,6 +80,11 @@ interface FormStateInterface {
     coverLetter: boolean | null;
     resume: boolean | null;
   };
+  files: {
+    coverLetter: any;
+    resume: any;
+  };
+  isLoading: boolean;
 }
 
 interface FormContextInterface {
@@ -225,7 +235,7 @@ export default function Career() {
               placeholder="Mr., Miss, Ms., Mrs."
             />
             <Field name="name" title="Name" required />
-            <Field name="mobile" title="Phone" required />
+            <Field name="mobile" title="Phone" type="number" required />
             <Field name="email" title="Email" required type="email" />
             <Field
               name="role"
@@ -275,11 +285,19 @@ const Field = ({
   type = 'text',
   placeholder = '',
 }: TextInputProps) => {
+  const inputRef = useRef<any>(null);
   const { state, setState } = useContext(FormContext);
-  const { values, errors } = state;
+  const { values, errors, isLoading } = state;
   const currentValue = values[name];
+
   const handleChange = ({ target }) => {
-    const val = target.value ? target.value.trim() : '';
+    let val = target.value ? target.value.trim() : '';
+    let file = {};
+    if (type === 'file') {
+      file = {
+        [target.name]: target.files.length ? target.files[0] : '',
+      };
+    }
     setState((prev: FormStateInterface) => ({
       ...prev,
       values: {
@@ -289,6 +307,10 @@ const Field = ({
       errors: {
         ...prev.errors,
         [target.name]: !val && required,
+      },
+      files: {
+        ...prev.files,
+        ...file,
       },
     }));
   };
@@ -312,6 +334,7 @@ const Field = ({
       <_Title title={title} required={required} />
       {!typeArea && (
         <_Input
+          ref={inputRef}
           error={errors[name]}
           type={type}
           onChange={handleChange}
@@ -319,6 +342,7 @@ const Field = ({
           name={name}
           onBlur={handleBlur}
           placeholder={placeholder}
+          disabled={isLoading}
         />
       )}
       {typeArea && (
@@ -328,6 +352,7 @@ const Field = ({
           value={currentValue}
           name={name}
           onBlur={handleBlur}
+          disabled={isLoading}
         />
       )}
       <_ErrorMsg error={errors[name]} title={title} />
@@ -336,20 +361,25 @@ const Field = ({
 };
 
 const SubmitButton = () => {
-  const { state } = useContext(FormContext);
-  const { values, errors } = state;
+  const { state, setState } = useContext(FormContext);
+  const { values, errors, isLoading } = state;
   const isEnabled = Object.values(errors).every((v) => v === false);
 
   const handleSubmit = () => {
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
     // eslint-disable-next-line no-console
     console.log({ values });
   };
 
   return (
     <_SubmitButton
-      disabled={!isEnabled}
       isEnabled={isEnabled}
       onClick={handleSubmit}
+      isLoading={isLoading}
     >
       Submit
     </_SubmitButton>

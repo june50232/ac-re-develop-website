@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import {
   Section,
   GradientBg,
@@ -37,10 +37,10 @@ const initTouched = {
 };
 const initErrors = {
   name: null,
-  company: null,
-  mobile: null,
+  company: false,
+  mobile: false,
   email: null,
-  subject: null,
+  subject: false,
   message: null,
 };
 
@@ -48,6 +48,7 @@ const initState = {
   values: initValues,
   touched: initTouched,
   errors: initErrors,
+  isLoading: false,
 };
 
 interface FormStateInterface {
@@ -75,6 +76,7 @@ interface FormStateInterface {
     subject: boolean | null;
     message: boolean | null;
   };
+  isLoading: boolean;
 }
 
 interface FormContextInterface {
@@ -246,8 +248,9 @@ const Field = ({
   name,
   type = 'text',
 }: TextInputProps) => {
+  const inputRef = useRef<any>(null);
   const { state, setState } = useContext(FormContext);
-  const { values, errors } = state;
+  const { values, errors, isLoading } = state;
   const currentValue = values[name];
   const handleChange = ({ target }) => {
     const val = target.value ? target.value.trim() : '';
@@ -283,12 +286,14 @@ const Field = ({
       <_Title title={title} required={required} />
       {!typeArea && (
         <_Input
+          ref={inputRef}
           error={errors[name]}
           type={type}
           onChange={handleChange}
           value={currentValue}
           name={name}
           onBlur={handleBlur}
+          isLoading={isLoading}
         />
       )}
       {typeArea && (
@@ -298,6 +303,7 @@ const Field = ({
           value={currentValue}
           name={name}
           onBlur={handleBlur}
+          isLoading={isLoading}
         />
       )}
       <_ErrorMsg error={errors[name]} title={title} />
@@ -306,20 +312,25 @@ const Field = ({
 };
 
 const SubmitButton = () => {
-  const { state } = useContext(FormContext);
-  const { values, errors } = state;
+  const { state, setState } = useContext(FormContext);
+  const { values, errors, isLoading } = state;
   const isEnabled = Object.values(errors).every((v) => v === false);
 
   const handleSubmit = () => {
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
     // eslint-disable-next-line no-console
     console.log({ values });
   };
 
   return (
     <_SubmitButton
-      disabled={!isEnabled}
       isEnabled={isEnabled}
       onClick={handleSubmit}
+      isLoading={isLoading}
     >
       Submit
     </_SubmitButton>
