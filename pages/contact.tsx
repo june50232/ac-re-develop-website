@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Section,
   GradientBg,
@@ -18,6 +18,7 @@ import {
   FcPrint,
   FcFeedback,
 } from 'react-icons/fc';
+import { sendContactForm } from 'lib/api.js';
 
 const initValues = {
   name: '',
@@ -95,7 +96,7 @@ export default function Contact() {
 
   return (
     <>
-      <Section classname="h-96">
+      <Section classname="h-80">
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
         <BannerImage url={contactBannerImgUrl} />
         <div
@@ -104,16 +105,12 @@ export default function Contact() {
         >
           <h2 className="text-3xl font-bold">Get in touch with AC Re!</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg text-center leading-relaxed font-light">
-            AC Re brings industry knowledge, expertise, and insight
-            <br />
-            to design programs for your business&apos;s specific risks and
-            needs.
-            <br />
-            As strategic advisors, we build long-term partnerships with local
-            <br />
-            and regional insurance companies to assure you have the protection
-            you need.
+          <h3 className="text-lg font-light text-secondary leading-relaxed text-left w-2/3 indent-8">
+            AC Re brings industry knowledge, expertise, and insight to design
+            programs for your business&apos;s specific risks and needs. As
+            strategic advisors, we build long-term partnerships with local and
+            regional insurance companies to assure you have the protection you
+            need.
           </h3>
         </div>
       </Section>
@@ -133,7 +130,7 @@ export default function Contact() {
               <h3 className="font-bold text-primary-darkest text-xl">
                 Address
               </h3>
-              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
+              <h5 className="text-lg font-light text-secondary leading-relaxed text-center">
                 9F.-5, No. 63,
                 <br /> Sec. 2, Chang&apos;an East Rd.,
                 <br />
@@ -149,7 +146,7 @@ export default function Contact() {
             <FcPhoneAndroid color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-6 items-center">
               <h3 className="font-bold text-primary-darkest text-xl">Phone</h3>
-              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
+              <h5 className="text-lg font-light text-secondary leading-relaxed text-center">
                 +886-2-2508-0488
               </h5>
             </div>
@@ -162,7 +159,7 @@ export default function Contact() {
             <FcFeedback color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-6 items-center">
               <h3 className="font-bold text-primary-darkest text-xl">Email</h3>
-              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
+              <h5 className="text-lg font-light text-secondary leading-relaxed text-center">
                 info@ac-re.com.tw
               </h5>
             </div>
@@ -171,7 +168,7 @@ export default function Contact() {
             <FcPrint color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-6 items-center">
               <h3 className="font-bold text-primary-darkest text-xl">Fax</h3>
-              <h5 className="text-lg text-secondary-light leading-relaxed text-center">
+              <h5 className="text-lg font-light text-secondary leading-relaxed text-center">
                 +886-2-2508-1348
               </h5>
             </div>
@@ -192,11 +189,11 @@ export default function Contact() {
             Need More Help?
           </h2>
           <hr className="w-8 text-neutral-500" />
-          <h5 className="text-xl w-9/12 text-center text-primary-darker">
+          <h5 className="text-lg font-light text-secondary w-9/12 text-center leading-relaxed">
             Whether you are looking for specific solutions or have a question,{' '}
             <br />
             you can also connect with us via the{' '}
-            <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
+            <span className="border-b-8 border-neutral-300 border-solid leading-3 inline-block">
               contact form
             </span>{' '}
             below.
@@ -248,7 +245,6 @@ const Field = ({
   name,
   type = 'text',
 }: TextInputProps) => {
-  const inputRef = useRef<any>(null);
   const { state, setState } = useContext(FormContext);
   const { values, errors, isLoading } = state;
   const currentValue = values[name];
@@ -286,7 +282,6 @@ const Field = ({
       <_Title title={title} required={required} />
       {!typeArea && (
         <_Input
-          ref={inputRef}
           error={errors[name]}
           type={type}
           onChange={handleChange}
@@ -316,14 +311,13 @@ const SubmitButton = () => {
   const { values, errors, isLoading } = state;
   const isEnabled = Object.values(errors).every((v) => v === false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setState((prev: FormStateInterface) => ({
       ...prev,
       isLoading: true,
     }));
 
-    // eslint-disable-next-line no-console
-    console.log({ values });
+    await sendContactForm(values);
   };
 
   return (

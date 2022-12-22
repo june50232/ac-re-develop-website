@@ -92,13 +92,24 @@ export const _Textarea = ({ error, ...restProps }) => {
   );
 };
 
-export const _ErrorMsg = ({ error, title, ...restProps }) => {
+interface ErrorMsgProps {
+  error?: boolean;
+  title?: string;
+  errorMsg?: string;
+}
+
+export const _ErrorMsg = ({
+  error,
+  title,
+  errorMsg,
+  ...restProps
+}: ErrorMsgProps) => {
   return (
     <p
       {...restProps}
       className={`text-red leading-loose ${error ? '' : 'invisible'}`}
     >
-      {title} is required.
+      {errorMsg || `${title} is required.`}
     </p>
   );
 };

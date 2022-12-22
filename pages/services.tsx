@@ -17,28 +17,26 @@ import 'photoswipe/dist/photoswipe.css';
 export default function Services() {
   return (
     <>
-      <Section classname="h-96">
+      <Section classname="h-80">
         <GradientBg background="rgba(255,255,255,0.85)" />
         <BannerImage url={servicesBannerImgUrl} />
         <div
           className="absolute h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
-          <h2 className="text-xl font-family-bold">Services & products</h2>
+          <h2 className="text-3xl font-bold">Services & products</h2>
           <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg font-light text-center leading-relaxed">
+          <h3 className="text-lg font-light text-secondary leading-relaxed text-left w-2/3 indent-8">
             AC Re brings industry knowledge, expertise, and insight to design
-            programs for your business&apos;s specific
-            <br />
-            risks and needs. As strategic advisors, we build long-term
-            partnerships with local and regional insurance
-            <br />
-            companies to assure you have the protection you need.
+            programs for your business&apos;s specific risks and needs. As
+            strategic advisors, we build long-term partnerships with local and
+            regional insurance companies to assure you have the protection you
+            need.
           </h3>
         </div>
       </Section>
       <section className="md:flex w-screen hidden overflow-hidden h-[16rem] static">
-        <aside className="w-4/12 h-full overflow-hidden relative">
+        <aside className="flex w-6/12 h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -49,23 +47,23 @@ export default function Services() {
         </aside>
         <PortalClickItem
           index={0}
-          width="4/12"
+          width="3/12"
           titleClassName="top-[11%] left-[10%]"
         />
         <PortalClickItem
           index={1}
-          width="4/12"
+          width="2/12"
           titleClassName="top-[11%] right-[66%]"
         />
       </section>
-      <section className="md:flex w-screen hidden overflow-hidden h-[18rem]">
+      <section className="flex md:flex w-screen hidden overflow-hidden h-[18rem] static">
         <PortalClickItem
           index={2}
-          width="[30%]"
+          width="3/12"
           titleClassName="top-[8%] left-8 w-80 items-center"
         />
-        <PortalClickItem index={3} width="[30%]" isOther />
-        <aside className="w-[40%] h-full overflow-hidden relative">
+        <PortalClickItem index={3} width="3/12" isOther />
+        <aside className="w-7/12 h-full overflow-hidden relative flex grow">
           <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
           <BannerImage url={services2WindImgUrl} />
         </aside>
@@ -102,7 +100,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
   return (
     <>
       <div
-        className={`w-${width} h-full flex flex-col items-center justify-center cursor-pointer`}
+        className={`w-${width} h-full flex grow items-center justify-center cursor-pointer`}
         style={{ border: '1px dotted #DCEFFC' }}
         onClick={() => setOpen(!isOpen)}
       >

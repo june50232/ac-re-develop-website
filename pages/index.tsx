@@ -115,7 +115,9 @@ export default function Home() {
                   </div>
                   <div className="space-y-2">
                     <h4 className="text-lg font-semibold">{title}</h4>
-                    <h5 className="text-base leading-relaxed">{content}</h5>
+                    <h5 className="text-lg font-light text-secondary indent-8 leading-relaxed">
+                      {content}
+                    </h5>
                   </div>
                 </div>
               ))}

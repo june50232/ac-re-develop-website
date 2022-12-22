@@ -1,9 +1,37 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { transporter, mailOptions } from 'helpers/nodemailer';
 
 type Data = {
-  name: string;
+  name?: string;
+  message?: string;
+  success?: boolean;
 };
 
-export default function Main(_: NextApiRequest, res: NextApiResponse<Data>) {
-  res.status(200).json({ name: 'John Doe' });
-}
+const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  if (req.method === 'POST') {
+    const data = req.body;
+    if (!data.name || !data.email || !data.message) {
+      return res.status(400).json({ message: 'Bad request' });
+    }
+
+    try {
+      const mailData = {
+        ...mailOptions,
+        subject: data.subject,
+        text: 'This is a test string',
+        html: '<h1>Test title</h1><p>Some body text</p>',
+      };
+      await transporter.sendMail(mailData);
+
+      return res.status(200).json({ success: true });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+      return res.status(400).json({ message: 'Bad request' });
+    }
+  }
+
+  return res.status(400).json({ message: 'Bad request' });
+};
+
+export default handler;

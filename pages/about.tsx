@@ -54,7 +54,7 @@ export default function About() {
         className="md:flex flex-col w-screen flex-row hidden h-[43rem]"
         id="banner-laptop"
       >
-        <section className="w-full h-[20rem] relative" id="banner">
+        <section className="w-full h-80 relative" id="banner">
           {/* <GradientBg background="linear-gradient(rgba(255, 255, 255, 0.9), transparent, transparent, rgba(255, 255, 255, 0.9))" /> */}
           <BannerImage url={aboutBannerImgUrl} />
           <div
@@ -76,10 +76,9 @@ export default function About() {
                 <h3 className="font-bold text-primary-darkest text-xl">
                   Founded in 2021
                 </h3>
-                <h5 className="text-secondary-light leading-relaxed text-center">
-                  AC Re Services Co., Ltd. (AC Re) was
-                  <br />
-                  founded in 2021 by Solomon Chiu.
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                  AC Re Services Co., Ltd. (AC Re) was founded in 2021 by
+                  Solomon Chiu.
                 </h5>
               </div>
             </div>
@@ -89,11 +88,9 @@ export default function About() {
                 <h3 className="font-bold text-primary-darkest text-xl text-center">
                   Innovative and Forward-Thinking
                 </h3>
-                <h5 className="text-secondary-light leading-relaxed text-center">
-                  AC Re is an innovative, forward-thinking insurance broker
-                  <br />
-                  that takes pride in risk management and insurance/reinsurance
-                  <br />
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                  AC Re is an innovative, forward-thinking insurance broker that
+                  takes pride in risk management and insurance/reinsurance
                   solutions for direct corporate clients and reinsureds.
                 </h5>
               </div>
@@ -104,12 +101,9 @@ export default function About() {
                 <h3 className="font-bold text-primary-darkest text-xl">
                   Global Markets
                 </h3>
-                <h5 className="text-secondary-light leading-relaxed text-center">
-                  We offer a wide range of specialist
-                  <br />
-                  lines; placed in the global, composite,
-                  <br />
-                  and Taiwan insurance markets.
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                  We offer a wide range of specialist lines; placed in the
+                  global, composite, and Taiwan insurance markets.
                 </h5>
               </div>
             </div>
@@ -203,7 +197,7 @@ export default function About() {
         <div className="absolute inset-0 -z-[1]">
           <GradientBg
             classnames="w-full h-full"
-            background="linear-gradient(rgba(255, 247, 237, 0.9), transparent)"
+            background="linear-gradient(rgba(255, 251, 235, 0.9), rgba(254, 249, 195, 0.5))"
           />
           <BannerImage
             url={aboutTeamsImgUrl}
@@ -214,7 +208,7 @@ export default function About() {
           />
         </div>
         <aside
-          className="w-[8rem] h-full overflow-hidden relative flex justify-center items-center"
+          className="w-2/12 h-full overflow-hidden relative flex justify-center items-center"
           // style={{
           //   clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)'
           // }}
@@ -247,7 +241,9 @@ export default function About() {
                     </div>
                   </div> */}
                   <div className="w-full space-y-2">
-                    <h5 className="text-lg">{content}</h5>
+                    <h5 className="text-lg font-light text-secondary leading-relaxed  indent-8">
+                      {content}
+                    </h5>
                   </div>
                 </div>
               ))}
@@ -291,7 +287,7 @@ export default function About() {
             <div className="text-secondary space-y-3">
               {founder.map((content, i) => (
                 <div key={i} className="flex" data-aos="fade-up">
-                  <h5 className="text-lg leading-relaxed indent-8">
+                  <h5 className="text-lg font-light text-secondary leading-relaxed indent-8">
                     {content}
                   </h5>
                 </div>
