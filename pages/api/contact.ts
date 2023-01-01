@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { transporter, mailOptions } from 'helpers/nodemailer';
+import { transporter, mailOptions } from 'common/nodemailer';
 
 type Data = {
   name?: string;
