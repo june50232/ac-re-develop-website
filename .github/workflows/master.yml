@@ -19,7 +19,7 @@ jobs:
           CONTACT_EMAIL_PASS: ${{ secrets.CONTACT_EMAIL_PASS }}
           AWS_S3: ${{ secrets.AWS_S3 }}
         run: |
-          echo $CONTACT_EMAIL
+          echo $AWS_S3
 
       - name: Build and export
         uses: docker/build-push-action@v3
