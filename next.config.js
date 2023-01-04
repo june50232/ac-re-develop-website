@@ -1,14 +1,15 @@
 const isProd = process.env.NODE_ENV === 'production';
+const awss3 = process.env.AWS_S3
 
 module.exports = {
   images: {
     loader: 'akamai',
-    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    path: awss3,
   },
   output: 'standalone',
   // assetPrefix: '/ac-re-develop-website',
   env: {
-    s3domain: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    s3domain: awss3,
   },
-  basePath: isProd ? '/ac-re-develop-website' : '',
+  basePath: isProd ? '/dev' : '',
 };

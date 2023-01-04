@@ -17,6 +17,7 @@ jobs:
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}  
           CONTACT_EMAIL_TO: ${{ secrets.CONTACT_EMAIL_TO }}  
           CONTACT_EMAIL_PASS: ${{ secrets.CONTACT_EMAIL_PASS }}
+          AWS_S3: ${{ secrets.AWS_S3 }}
         run: |
           echo $CONTACT_EMAIL
 
