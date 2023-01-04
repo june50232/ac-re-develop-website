@@ -12,6 +12,14 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Retrieve the secret
+        env:
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}  
+          CONTACT_EMAIL_TO: ${{ secrets.CONTACT_EMAIL_TO }}  
+          CONTACT_EMAIL_PASS: ${{ secrets.CONTACT_EMAIL_PASS }}
+        run: |
+          echo $CONTACT_EMAIL
+
       - name: Build and export
         uses: docker/build-push-action@v3
         with:

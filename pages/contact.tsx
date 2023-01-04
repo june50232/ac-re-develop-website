@@ -152,7 +152,7 @@ export default function Contact() {
             </div>
           </a>
           <a
-            href="mailto:info@ac-re.com.tw"
+            href="mailto:1yuting.chiu@gmail.com?subject=Contact%20AC-Re&body=Your%20name%3A%20%0A%0ACompany%20name%3A%0A%0APhone%20number%3A%0A%0AMessage%3A%0A%0A"
             rel="noopener noreferrer"
             className="flex flex-col space-y-3 items-center"
           >

@@ -12,7 +12,7 @@ import {
   _ErrorMsg,
 } from 'components';
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
-import { attachEmail } from 'lib/api.js';
+import { sendCareerForm } from 'lib/api.js';
 
 const initValues = {
   title: '',
@@ -403,7 +403,7 @@ const SubmitButton = () => {
       }
     }
 
-    await attachEmail(formData);
+    await sendCareerForm(formData);
   };
 
   return (
