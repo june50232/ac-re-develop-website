@@ -8,8 +8,7 @@ module.exports = {
     apiDomain: process.env.API_DOMAIN,
   },
   basePath: isProd ? '/dev' : '',
-  // images: {
-  //   loader: 'akamai',
-  //   path: process.env.s3Domain,
-  // },
+  images: {
+    unoptimized: true,
+  },
 };
