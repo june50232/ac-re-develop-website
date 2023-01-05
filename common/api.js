@@ -32,8 +32,8 @@ export const sendCareerForm = async (formData) => {
 export const sendCareerForm = (formData) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      // url: `${apiDomain}send-attachment`,
-      url: `https://ac-re-api.onrender.com/send-attachment`,
+      url: `${apiDomain}send-attachment`,
+      //url: `https://ac-re-api.onrender.com/send-attachment`,
       type: 'POST',
       datatype: 'json',
       processData: false,

@@ -15,7 +15,7 @@ import {
   Spinner,
 } from 'components';
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
-import { sendCareerForm } from 'lib/api.js';
+import { sendCareerForm } from 'common/api.js';
 
 const initValues = {
   title: '',
@@ -337,7 +337,7 @@ const Field = ({
   const isError = !!errors[name]
 
   const handleChange = ({ target }) => {
-    let val = target.value ? target.value.trim() : '';
+    let val = target.value;
     let files = {};
     let currentErrorMsg = '';
     let errorMsg = {};
@@ -377,10 +377,15 @@ const Field = ({
   };
 
   const handleBlur = ({ target }) => {
-    const isError = (!currentValue && required) || !!errorMsg[target.name];
+    const val = currentValue ? currentValue.trim() : ''
+    const isError = (!val && required) || !!errorMsg[target.name];
 
     setState((prev: FormStateInterface) => ({
       ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: val,
+      },
       touched: {
         ...prev.touched,
         [target.name]: true,

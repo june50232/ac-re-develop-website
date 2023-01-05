@@ -21,7 +21,7 @@ import {
   FcPrint,
   FcFeedback,
 } from 'react-icons/fc';
-import { sendContactForm } from 'lib/api.js';
+import { sendContactForm } from 'common/api.js';
 
 const initValues = {
   name: '',

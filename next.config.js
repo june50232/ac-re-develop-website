@@ -4,8 +4,8 @@ module.exports = {
   output: 'standalone',
   // assetPrefix: '/ac-re-develop-website',
   env: {
-    s3Domain: process.env.AWS_S3,
-    apiDomain: process.env.API_DOMAIN,
+    s3Domain: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    apiDomain: 'https://ac-re-api.onrender.com/',
   },
   basePath: isProd ? '/dev' : '',
   images: {
