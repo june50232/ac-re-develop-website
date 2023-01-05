@@ -10,6 +10,7 @@ import GradientBg from './GradientBg';
 import MobileContainer from './MobileContainer';
 import Section from './Section';
 import GoogleMap from './GoogleMap';
+import Spinner from './Spinner';
 import {
   _SubmitButton,
   _Label,
@@ -17,6 +18,9 @@ import {
   _Input,
   _Textarea,
   _ErrorMsg,
+  _AfterSubmitCard,
+  _Grid,
+  _IconInput,
 } from './FormElement';
 
 export {
@@ -36,6 +40,10 @@ export {
   _Label,
   _Title,
   _Input,
+  _IconInput,
   _Textarea,
   _ErrorMsg,
+  _AfterSubmitCard,
+  _Grid,
+  Spinner,
 };

@@ -29,6 +29,9 @@ module.exports = {
         darkest: '#3F4079',
       },
       neutral: colors.amber,
+      gray: colors.gray,
+      blue: colors.blue,
+      red: colors.red,
     },
     fontSize: {
       '7xl': ['.5rem', '.8rem'],

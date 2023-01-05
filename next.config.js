@@ -1,14 +1,15 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  images: {
-    loader: 'akamai',
-    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
-  },
   output: 'standalone',
   // assetPrefix: '/ac-re-develop-website',
   env: {
-    s3domain: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    s3Domain: process.env.AWS_S3,
+    apiDomain: process.env.API_DOMAIN,
   },
   basePath: isProd ? '/dev' : '',
+  // images: {
+  //   loader: 'akamai',
+  //   path: process.env.s3Domain,
+  // },
 };

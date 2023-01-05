@@ -6,10 +6,13 @@ import {
   LaptopH2PrelineH3Wrap,
   _SubmitButton,
   _Label,
-  _Title,
   _Input,
   _Textarea,
   _ErrorMsg,
+  _AfterSubmitCard,
+  _Grid,
+  _IconInput,
+  Spinner,
 } from 'components';
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
 import { sendCareerForm } from 'lib/api.js';
@@ -57,6 +60,8 @@ const initState = {
   },
   isLoading: false,
   errorMsg: initErrorMsg,
+  isSubmitSuccess: false,
+  isSubmitFail: false,
 };
 
 interface FormStateInterface {
@@ -96,6 +101,8 @@ interface FormStateInterface {
     coverLetter: string;
     resume: string;
   };
+  isSubmitSuccess: boolean;
+  isSubmitFail: boolean;
 }
 
 interface FormContextInterface {
@@ -110,7 +117,12 @@ const FormContext = React.createContext<FormContextInterface>({
 });
 
 export default function Career() {
-  const [state, setState] = useState(initState);
+  const [state, setState] = useState<FormStateInterface>(initState);
+  const {
+    isLoading,
+    isSubmitSuccess,
+    isSubmitFail,
+  } = state
 
   return (
     <>
@@ -196,7 +208,7 @@ export default function Career() {
           className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative"
           data-aos="fade-up"
         >
-          <h5 className="text-2xl text-center text-primary-darker  leading-relaxed">
+          <h5 className="text-2xl text-center text-primary-darker leading-relaxed">
             If you&apos;re interested in joining our team,
             <br />
             then please get in touch with us via{' '}
@@ -231,41 +243,75 @@ export default function Career() {
             setState: (val) => setState(val),
           }}
         >
-          <div
-            className="flex flex-wrap w-4/6 h-[36rem] justify-between items-center"
-            data-aos="fade-up"
-          >
-            <Field
-              name="title"
-              title="Title"
-              required
-              placeholder="Mr., Miss, Ms., Mrs."
-            />
-            <Field name="name" title="Name" required />
-            <Field name="mobile" title="Phone" type="number" required />
-            <Field name="email" title="Email" required type="email" />
-            <Field
-              name="role"
-              title="Type of role you’d like to apply"
-              widthFull
-            />
-            <Field
-              name="resume"
-              title="CV upload (choose a file)"
-              type="file"
-              required
-              widthFull
-            />
-            <Field
-              name="coverLetter"
-              title="Cover Letter (choose a file)"
-              type="file"
-              widthFull
-            />
-            <div className="w-full h-auto flex justify-end items-center mr-8">
-              <SubmitButton />
+          {(isSubmitSuccess || isSubmitFail) 
+            ?
+              <_AfterSubmitCard 
+                isSuccess={isSubmitSuccess}
+                onClick={() => {
+                  setState((prev: FormStateInterface) => ({
+                    ...prev,
+                    isSubmitSuccess: false,
+                    isSubmitFail: false,
+                  }));
+                }}
+              />
+            : 
+            <div
+              className="w-4/6 relative"
+              data-aos="fade-up"
+            >
+              <div className="grid gap-6 mb-6 md:grid-cols-2">
+                <Field
+                  name="title"
+                  title="Title"
+                  required
+                  type="text"
+                  placeholder="Mr., Miss, Ms., Mrs."
+                />
+                <Field 
+                  name="name" 
+                  title="Name" 
+                  type="text"
+                  required 
+                />
+                <Field 
+                  name="mobile" 
+                  title="Phone" 
+                  type="tel" 
+                  required 
+                />
+                <Field 
+                  name="email" 
+                  title="Email" 
+                  required 
+                  type="email" 
+                />
+              </div>
+              <Field
+                name="role"
+                title="Type of role you’d like to apply"
+                type="text"
+                fullWidth
+              />
+              <Field
+                name="resume"
+                title="CV upload (choose a file)"
+                type="file"
+                required
+                fullWidth
+              />
+              <Field
+                name="coverLetter"
+                title="Cover Letter (choose a file)"
+                type="file"
+                fullWidth
+              />
+              <div className="w-full h-auto flex justify-end items-center mr-8">
+                <SubmitButton />
+              </div>
+              {isLoading && <Spinner/>}
             </div>
-          </div>
+          }   
         </FormContext.Provider>
       </Section>
     </>
@@ -273,7 +319,7 @@ export default function Career() {
 }
 
 interface TextInputProps {
-  widthFull?: boolean;
+  fullWidth?: boolean;
   title: string;
   required?: boolean;
   typeArea?: boolean;
@@ -284,10 +330,9 @@ interface TextInputProps {
 }
 
 const Field = ({
-  widthFull = false,
+  fullWidth = false,
   title = '',
   required = false,
-  typeArea = false,
   name,
   type = 'text',
   placeholder = '',
@@ -295,6 +340,7 @@ const Field = ({
   const { state, setState } = useContext(FormContext);
   const { values, errors, isLoading, errorMsg } = state;
   const currentValue = values[name];
+  const isError = !!errors[name]
 
   const handleChange = ({ target }) => {
     let val = target.value ? target.value.trim() : '';
@@ -353,11 +399,13 @@ const Field = ({
   };
 
   return (
-    <_Label widthFull={widthFull}>
-      <_Title title={title} required={required} />
-      {!typeArea && (
+    <_Grid
+      fullWidth={fullWidth}
+    >
+      <_Label isError={isError} name={name} title={title} required={required} />
+      {type === 'text' && (
         <_Input
-          error={errors[name]}
+          isError={isError}
           type={type}
           onChange={handleChange}
           value={currentValue}
@@ -365,20 +413,35 @@ const Field = ({
           onBlur={handleBlur}
           placeholder={placeholder}
           disabled={isLoading}
+          id={name}
         />
       )}
-      {typeArea && (
+      {['email', 'tel'].includes(type) && (
+        <_IconInput 
+          isError={isError}
+          type={type}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
+          placeholder={placeholder}
+          disabled={isLoading}
+          id={name}
+        />
+      )}
+      {type === 'textArea' && (
         <_Textarea
-          error={errors[name]}
+          error={isError}
           onChange={handleChange}
           value={currentValue}
           name={name}
           onBlur={handleBlur}
           disabled={isLoading}
+          id={name}
         />
       )}
-      <_ErrorMsg error={errors[name]} title={title} errorMsg={errorMsg[name]} />
-    </_Label>
+      {isError && <_ErrorMsg title={title} errorMsg={errorMsg[name]} />} 
+    </_Grid>
   );
 };
 
@@ -387,7 +450,7 @@ const SubmitButton = () => {
   const { values, errors, isLoading, files } = state;
   const isEnabled = Object.values(errors).every((v) => v === false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     setState((prev: FormStateInterface) => ({
       ...prev,
       isLoading: true,
@@ -403,7 +466,21 @@ const SubmitButton = () => {
       }
     }
 
-    await sendCareerForm(formData);
+    sendCareerForm(formData)
+      .then(() => {
+        setState((prev: FormStateInterface) => ({
+          ...prev,
+          isLoading: false,
+          isSubmitSuccess: true,
+        }));
+      })
+      .catch(() => {
+        setState((prev: FormStateInterface) => ({
+          ...prev,
+          isLoading: false,
+          isSubmitFail: true,
+        }));
+      })
   };
 
   return (
