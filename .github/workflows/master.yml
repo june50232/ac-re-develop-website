@@ -18,6 +18,7 @@ jobs:
           CONTACT_EMAIL_TO: ${{ secrets.CONTACT_EMAIL_TO }}  
           CONTACT_EMAIL_PASS: ${{ secrets.CONTACT_EMAIL_PASS }}
           AWS_S3: ${{ secrets.AWS_S3 }}
+          API_DOMAIN: ${{ secrets.API_DOMAIN }}
         run: |
           echo $AWS_S3
 
