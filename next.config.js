@@ -9,6 +9,7 @@ module.exports = {
   },
   basePath: isProd ? '/dev' : '',
   images: {
-    unoptimized: true,
+    loader: 'akamai',
+    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
   },
 };
