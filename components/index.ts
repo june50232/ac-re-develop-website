@@ -21,6 +21,7 @@ import {
   _AfterSubmitCard,
   _Grid,
   _IconInput,
+  _InputFile,
 } from './FormElement';
 
 export {
@@ -40,6 +41,7 @@ export {
   _Label,
   _Title,
   _Input,
+  _InputFile,
   _IconInput,
   _Textarea,
   _ErrorMsg,

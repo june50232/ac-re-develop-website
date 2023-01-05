@@ -6,10 +6,13 @@ import {
   GoogleMap,
   _SubmitButton,
   _Label,
-  _Title,
   _Input,
   _Textarea,
   _ErrorMsg,
+  _AfterSubmitCard,
+  _Grid,
+  _IconInput,
+  Spinner,
 } from 'components';
 import { contactBannerImgUrl } from 'common/imgUrls';
 import {
@@ -50,6 +53,8 @@ const initState = {
   touched: initTouched,
   errors: initErrors,
   isLoading: false,
+  isSubmitSuccess: false,
+  isSubmitFail: false,
 };
 
 interface FormStateInterface {
@@ -78,6 +83,8 @@ interface FormStateInterface {
     message: boolean | null;
   };
   isLoading: boolean;
+  isSubmitSuccess: boolean;
+  isSubmitFail: boolean;
 }
 
 interface FormContextInterface {
@@ -93,6 +100,11 @@ const FormContext = React.createContext<FormContextInterface>({
 
 export default function Contact() {
   const [state, setState] = useState(initState);
+  const {
+    isLoading,
+    isSubmitSuccess,
+    isSubmitFail,
+  } = state
 
   return (
     <>
@@ -176,7 +188,7 @@ export default function Contact() {
         </div>
       </Section>
       <Section
-        className="relative flex flex-col justify-evenly items-center space-y-5 h-[55rem]"
+        className="relative flex flex-col justify-evenly items-center space-y-10 py-20"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -205,20 +217,33 @@ export default function Contact() {
             setState: (val) => setState(val),
           }}
         >
-          <div
-            className="flex flex-wrap w-5/6 h-[35rem] justify-between items-center"
-            data-aos="fade-up"
-          >
-            <Field title="Your name" required name="name" />
-            <Field title="Company name" name="company" />
-            <Field title="Email address" required name="email" type="email" />
-            <Field title="Phone number" name="mobile" type="number" />
-            <Field title="Subject" widthFull name="subject" />
-            <Field title="Message" required widthFull typeArea name="message" />
-            <div className="w-full h-auto flex justify-end items-center mr-8">
-              <SubmitButton />
-            </div>
-          </div>
+          {(isSubmitSuccess || isSubmitFail) 
+            ?
+              <_AfterSubmitCard 
+                isSuccess={isSubmitSuccess}
+                onClick={() => {
+                  setState(initState);
+                }}
+              />
+            : 
+              <div
+                className="relative w-4/6"
+                data-aos="fade-up"
+              >
+                <div className="grid gap-6 mb-6 md:grid-cols-2">
+                  <Field title="Your name" required name="name" type="text" />
+                  <Field title="Company name" name="company" type="text" />
+                  <Field title="Email address" required name="email" type="email" />
+                  <Field title="Phone number" name="mobile" type="tel" />
+                </div>
+                <Field title="Subject" fullWidth name="subject" type="textArea" />
+                <Field title="Message" required fullWidth type="textArea" name="message" rows="4" />
+                <div className="w-full h-auto flex justify-end items-center mr-8">
+                  <SubmitButton />
+                </div>
+                {isLoading && <Spinner/>}
+              </div>
+          }
         </FormContext.Provider>
       </Section>
       <Section classname="h-96">
@@ -229,25 +254,29 @@ export default function Contact() {
 }
 
 interface TextInputProps {
-  widthFull?: boolean;
+  fullWidth?: boolean;
   title: string;
   required?: boolean;
-  typeArea?: boolean;
   name: string;
   type?: string;
+  placeholder?: string;
+  rows?: string;
 }
 
 const Field = ({
-  widthFull = false,
+  fullWidth = false,
   title = '',
   required = false,
-  typeArea = false,
   name,
   type = 'text',
+  placeholder = '',
+  rows = '1'
 }: TextInputProps) => {
   const { state, setState } = useContext(FormContext);
   const { values, errors, isLoading } = state;
   const currentValue = values[name];
+  const isError = !!errors[name]
+  
   const handleChange = ({ target }) => {
     const val = target.value ? target.value.trim() : '';
     setState((prev: FormStateInterface) => ({
@@ -278,31 +307,50 @@ const Field = ({
   };
 
   return (
-    <_Label widthFull={widthFull}>
-      <_Title title={title} required={required} />
-      {!typeArea && (
+    <_Grid
+      fullWidth={fullWidth}
+    >
+      <_Label isError={isError} name={name} title={title} required={required} />
+      {type === 'text' && (
         <_Input
-          error={errors[name]}
+          isError={isError}
           type={type}
           onChange={handleChange}
           value={currentValue}
           name={name}
           onBlur={handleBlur}
-          isLoading={isLoading}
+          placeholder={placeholder}
+          disabled={isLoading}
+          id={name}
         />
       )}
-      {typeArea && (
-        <_Textarea
-          error={errors[name]}
+      {['email', 'tel'].includes(type) && (
+        <_IconInput 
+          isError={isError}
+          type={type}
           onChange={handleChange}
           value={currentValue}
           name={name}
           onBlur={handleBlur}
-          isLoading={isLoading}
+          placeholder={placeholder}
+          disabled={isLoading}
+          id={name}
         />
       )}
-      <_ErrorMsg error={errors[name]} title={title} />
-    </_Label>
+      {type === 'textArea' && (
+        <_Textarea
+          isError={isError}
+          onChange={handleChange}
+          value={currentValue}
+          name={name}
+          onBlur={handleBlur}
+          disabled={isLoading}
+          id={name}
+          rows={rows}
+        />
+      )}
+      {isError && <_ErrorMsg title={title} />} 
+    </_Grid>
   );
 };
 

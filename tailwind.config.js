@@ -28,10 +28,10 @@ module.exports = {
         darker: '#000000',
         darkest: '#3F4079',
       },
-      neutral: colors.amber,
       gray: colors.gray,
       blue: colors.blue,
       red: colors.red,
+      neutral: colors.amber,
     },
     fontSize: {
       '7xl': ['.5rem', '.8rem'],
@@ -77,5 +77,8 @@ module.exports = {
       '10%': '10%',
     },
   },
-  plugins: [require('postcss-nesting'), require('@tailwindcss/forms')],
+  plugins: [
+    require('postcss-nesting'), 
+    require('@tailwindcss/forms')
+  ],
 };

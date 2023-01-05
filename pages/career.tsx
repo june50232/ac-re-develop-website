@@ -7,11 +7,11 @@ import {
   _SubmitButton,
   _Label,
   _Input,
-  _Textarea,
   _ErrorMsg,
   _AfterSubmitCard,
   _Grid,
   _IconInput,
+  _InputFile,
   Spinner,
 } from 'components';
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
@@ -199,7 +199,7 @@ export default function Career() {
       </Section>
 
       <Section
-        className="relative flex flex-col justify-evenly items-center space-y-2 h-[65rem]"
+        className="relative flex flex-col justify-evenly items-center space-y-10 py-20"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -248,11 +248,7 @@ export default function Career() {
               <_AfterSubmitCard 
                 isSuccess={isSubmitSuccess}
                 onClick={() => {
-                  setState((prev: FormStateInterface) => ({
-                    ...prev,
-                    isSubmitSuccess: false,
-                    isSubmitFail: false,
-                  }));
+                  setState(initState);
                 }}
               />
             : 
@@ -306,7 +302,7 @@ export default function Career() {
                 type="file"
                 fullWidth
               />
-              <div className="w-full h-auto flex justify-end items-center mr-8">
+              <div className="w-full h-auto flex justify-end items-center mt-8">
                 <SubmitButton />
               </div>
               {isLoading && <Spinner/>}
@@ -322,11 +318,9 @@ interface TextInputProps {
   fullWidth?: boolean;
   title: string;
   required?: boolean;
-  typeArea?: boolean;
   name: string;
   type?: string;
   placeholder?: string;
-  isFile?: boolean;
 }
 
 const Field = ({
@@ -429,13 +423,15 @@ const Field = ({
           id={name}
         />
       )}
-      {type === 'textArea' && (
-        <_Textarea
-          error={isError}
+      {['file'].includes(type) && (
+        <_InputFile 
+          isError={isError}
+          type={type}
           onChange={handleChange}
           value={currentValue}
           name={name}
           onBlur={handleBlur}
+          placeholder={placeholder}
           disabled={isLoading}
           id={name}
         />

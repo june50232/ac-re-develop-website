@@ -36,7 +36,7 @@ export const _SubmitButton = ({
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          Processing...
+          Please wait. Processing...
         </>
       ) : (
         children
@@ -95,8 +95,8 @@ export const _Input = ({ isError, ...restProps }) => {
     <input
       className={
         isError
-        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500"
-        : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+        : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       }
       maxLength={255}
       {...restProps}
@@ -104,9 +104,24 @@ export const _Input = ({ isError, ...restProps }) => {
   );
 };
 
+export const _InputFile = ({ isError, ...restProps }) => {
+  return (
+    <input
+      className={
+        isError
+        ? "block w-full text-lg text-red-900 border border-red-300 rounded-lg cursor-pointer bg-red-50 focus:outline-none p-2.5"
+        : "block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none p-2.5"
+      }
+      maxLength={255}
+      aria-describedby="user_avatar_help"
+      {...restProps}
+    />
+  );
+};
+
 export const _IconInput = ({ isError, type, ...restProps }) => {
   return (
-    <div className="relative mb-6">
+    <div className="relative">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         {type === 'email' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>}
         {type === 'tel' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>}
@@ -125,14 +140,13 @@ export const _IconInput = ({ isError, type, ...restProps }) => {
   );
 };
 
-export const _Textarea = ({ error, ...restProps }) => {
+export const _Textarea = ({ isError, ...restProps }) => {
   return (
     <textarea
-      className={`flex grow rounded-lg w-full ${
-        error
-          ? 'border-red border-2 focus:border-red focus:ring-none'
-          : 'border-none focus:border-none'
-      }`}
+      className={isError 
+        ? "block p-2.5 w-full text-sm text-red-900 bg-red-50 rounded-lg border border-red-300 focus:ring-red-500 focus:border-red-500"
+        : "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+      }
       maxLength={10000}
       {...restProps}
     />
@@ -168,6 +182,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick }: AfterSubmitProps) => {
   return (
     <div
       className="flex flex-col w-4/6 h-[30rem] space-y-6 justify-center items-center relative border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      data-aos="flip-left"
     >
       {isSuccess 
       ? (
@@ -197,12 +212,12 @@ export const _AfterSubmitCard = ({ isSuccess, onClick }: AfterSubmitProps) => {
         <>
           <FcServices fontSize="3rem" />
           <h5
-            className="text-2xl text-primary-darker leading-relaxed" 
+            className="text-2xl leading-relaxed text-red-600" 
           >
             Submit failed
           </h5>
           <p
-            className="text-lg font-light text-secondary text-center leading-relaxed"
+            className="text-lg font-light text-red-600 text-center leading-relaxed"
           >
             We are sorry that our system is currently blocked.
             <br/>

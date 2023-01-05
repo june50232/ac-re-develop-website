@@ -9,6 +9,7 @@ export default function Layout(props) {
       duration: 3000,
       offset: 8,
       delay: 50,
+      once: true,
     });
     // AOS.refresh({
     //   duration: 3000,
