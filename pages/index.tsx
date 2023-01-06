@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <>
       <section
-        className="flex w-screen h-[30rem] flex-row overflow-hidden relative mb-2"
+        className="flex w-screen h-80 flex-row overflow-hidden relative mb-2"
         id="banner-laptop-mobile"
       >
         <GradientBg background="rgba(255, 247, 237, 0.7)" />
@@ -115,7 +115,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-2">
                     <h4 className="text-lg font-semibold">{title}</h4>
-                    <h5 className="text-lg font-light text-secondary indent-8 leading-relaxed">
+                    <h5 className="text-lg font-light text-secondary leading-relaxed">
                       {content}
                     </h5>
                   </div>

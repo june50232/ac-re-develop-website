@@ -70,38 +70,38 @@ export default function About() {
           data-aos="fade-up"
         >
           <div className="w-full h-10/12 flex justify-center space-x-2 items-start">
-            <div className="flex flex-col w-[26%] space-y-6 items-center">
+            <div className="flex flex-col w-[27%] space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl">
                   Founded in 2021
                 </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
                   AC Re Services Co., Ltd. (AC Re) was founded in 2021 by
                   Solomon Chiu.
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col w-[46%] space-y-6 items-center">
+            <div className="flex flex-col w-[45%] space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl text-center">
                   Innovative and Forward-Thinking
                 </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
                   AC Re is an innovative, forward-thinking insurance broker that
                   takes pride in risk management and insurance/reinsurance
                   solutions for direct corporate clients and reinsureds.
                 </h5>
               </div>
             </div>
-            <div className="flex flex-col w-[26%] space-y-6 items-center">
+            <div className="flex flex-col w-[27%] space-y-6 items-center">
               <IoEarthOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
                 <h3 className="font-bold text-primary-darkest text-xl">
                   Global Markets
                 </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-left w-11/12 indent-8">
+                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
                   We offer a wide range of specialist lines; placed in the
                   global, composite, and Taiwan insurance markets.
                 </h5>
