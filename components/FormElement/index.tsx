@@ -217,7 +217,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
             )}
           </p>
           <NarrowButton 
-            text="Request another applying"
+            text={formName === 'career' ? "Request another applying" : "Send another message"}
             onClick={() => onClick()}
           />
         </>
