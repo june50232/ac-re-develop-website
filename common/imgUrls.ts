@@ -1,5 +1,6 @@
-const domain =
-  process.env.NODE_ENV === 'production' ? process.env.s3Domain : '';
+// const domain =
+//   process.env.NODE_ENV === 'production' ? process.env.s3Domain : '';
+const domain = ''
 
 export const loadingImgUrl = `${domain}/img/loading.gif`;
 export const globalImgUrl = `${domain}/img/global.png`;

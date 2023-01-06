@@ -11,6 +11,6 @@ module.exports = {
   basePath: isProd ? '/ac-re-develop-website' : '',
   images: {
     loader: 'akamai',
-    path: 'https://acre-website.s3.ap-northeast-1.amazonaws.com',
+    path: '/img',
   },
 };
