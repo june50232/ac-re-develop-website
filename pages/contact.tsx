@@ -224,6 +224,7 @@ export default function Contact() {
                 onClick={() => {
                   setState(initState);
                 }}
+                formName="contact"
               />
             : 
               <div
@@ -278,7 +279,7 @@ const Field = ({
   const isError = !!errors[name]
   
   const handleChange = ({ target }) => {
-    const val = target.value ? target.value.trim() : '';
+    const val = target.value || '';
     setState((prev: FormStateInterface) => ({
       ...prev,
       values: {
@@ -293,15 +294,22 @@ const Field = ({
   };
 
   const handleBlur = ({ target }) => {
+    const val = currentValue ? currentValue.trim() : ''
+    const isError = !val && required
+
     setState((prev: FormStateInterface) => ({
       ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: val,
+      },
       touched: {
         ...prev.touched,
         [target.name]: true,
       },
       errors: {
         ...prev.errors,
-        [target.name]: !currentValue && required,
+        [target.name]: isError,
       },
     }));
   };
@@ -359,13 +367,28 @@ const SubmitButton = () => {
   const { values, errors, isLoading } = state;
   const isEnabled = Object.values(errors).every((v) => v === false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     setState((prev: FormStateInterface) => ({
       ...prev,
       isLoading: true,
     }));
 
-    await sendContactForm(values);
+    const sendValues = JSON.stringify(values)
+    sendContactForm(sendValues)
+      .then(() => {
+        setState((prev: FormStateInterface) => ({
+          ...prev,
+          isLoading: false,
+          isSubmitSuccess: true,
+        }));
+      })
+      .catch(() => {
+        setState((prev: FormStateInterface) => ({
+          ...prev,
+          isLoading: false,
+          isSubmitFail: true,
+        }));
+      })
   };
 
   return (

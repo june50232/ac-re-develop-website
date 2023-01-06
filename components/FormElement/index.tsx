@@ -130,8 +130,8 @@ export const _IconInput = ({ isError, type, ...restProps }) => {
         className={[
           "block w-full pl-10 p-2.5",
           isError
-          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500"
-          : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+          : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         ].join(' ')}
         maxLength={255}
         {...restProps}
@@ -144,8 +144,8 @@ export const _Textarea = ({ isError, ...restProps }) => {
   return (
     <textarea
       className={isError 
-        ? "block p-2.5 w-full text-sm text-red-900 bg-red-50 rounded-lg border border-red-300 focus:ring-red-500 focus:border-red-500"
-        : "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+        ? "block p-2.5 w-full text-lg text-red-900 bg-red-50 rounded-lg border border-red-300 focus:ring-red-500 focus:border-red-500"
+        : "block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
       }
       maxLength={10000}
       {...restProps}
@@ -176,9 +176,10 @@ export const _ErrorMsg = ({
 interface AfterSubmitProps {
   isSuccess: boolean;
   onClick: () => void;
+  formName: string;
 }
 
-export const _AfterSubmitCard = ({ isSuccess, onClick }: AfterSubmitProps) => {
+export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitProps) => {
   return (
     <div
       className="flex flex-col w-4/6 h-[30rem] space-y-6 justify-center items-center relative border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
@@ -196,11 +197,24 @@ export const _AfterSubmitCard = ({ isSuccess, onClick }: AfterSubmitProps) => {
           <p
             className="text-lg font-light text-secondary text-center leading-relaxed"
           >
-            Thank you for your interest in AC Re. 
-            <br/>
-            We are happy you took the time to complete the form, 
-            <br/>
-            and we look forward to reviewing your application.
+            {formName === 'career' && (
+              <>
+              Thank you for your interest in AC Re. 
+              <br/>
+              We are happy you took the time to complete the form, 
+              <br/>
+              and we look forward to reviewing your application.
+              </>
+            )}
+            {formName === 'contact' && (
+              <>
+              Thank you for getting in touch with AC Re. 
+              <br/>
+              We appreciate you contacting us, 
+              <br/>
+              and we will get back in touch with you soon.
+              </>
+            )}
           </p>
           <NarrowButton 
             text="Request another applying"
@@ -219,11 +233,24 @@ export const _AfterSubmitCard = ({ isSuccess, onClick }: AfterSubmitProps) => {
           <p
             className="text-lg font-light text-red-600 text-center leading-relaxed"
           >
-            We are sorry that our system is currently blocked.
-            <br/>
-            Please send request via hr@ac-re.com.tw,
-            <br/>
-            and we look forward to reviewing your application.
+            {formName === 'career' && (
+              <>
+              We are sorry that our system is currently blocked.
+              <br/>
+              Please send request via <a href="emailto: hr@ac-re.com.tw">hr@ac-re.com.tw</a>
+              <br/>
+              and we look forward to reviewing your application.
+              </>
+            )}
+            {formName === 'contact' && (
+              <>
+              We are sorry that our system is currently blocked.
+              <br/>
+              Please send request via <a href="emailto: info@ac-re.com.tw">info@ac-re.com.tw</a>
+              <br/>
+              and we will get back in touch with you soon.
+              </>
+            )}
           </p>
           <NarrowButton 
             text="Retry again"

@@ -250,6 +250,7 @@ export default function Career() {
                 onClick={() => {
                   setState(initState);
                 }}
+                formName="career"
               />
             : 
             <div
@@ -337,7 +338,7 @@ const Field = ({
   const isError = !!errors[name]
 
   const handleChange = ({ target }) => {
-    let val = target.value;
+    let val = target.value || '';
     let files = {};
     let currentErrorMsg = '';
     let errorMsg = {};
