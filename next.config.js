@@ -10,7 +10,6 @@ module.exports = {
   },
   basePath: isProd ? '/ac-re-develop-website' : '',
   images: {
-    loader: 'akamai',
-    path: '/img',
+    unoptimized: true
   },
 };
