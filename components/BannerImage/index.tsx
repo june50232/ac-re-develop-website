@@ -1,9 +1,4 @@
-import { useProgressiveImage } from 'hooks';
-import { loadingImgUrl } from 'common/imgUrls';
-
 export default function BannerImage(props) {
-  const loaded = useProgressiveImage(props?.url);
-
   return (
     <div
       className={[
@@ -13,7 +8,7 @@ export default function BannerImage(props) {
       ].join(' ')}
       style={{
         ...(props.styles ? props.styles : {}),
-        backgroundImage: `url(${loaded || loadingImgUrl})`,
+        backgroundImage: `url(${props?.url})`,
       }}
     />
   );
