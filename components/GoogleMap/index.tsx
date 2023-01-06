@@ -15,7 +15,7 @@ const AnyReactComponent = (props) => (
 // Map
 export default function GoogleMap() {
   const setting = {
-    key: 'AIzaSyA4F-W4_A_hTMj0cogAaJfZkD-XAo3n3AY',
+    key: 'AIzaSyD8YT4z-cC_Mi15d-IDybklyXgwI4nq95E',
     center: {
       lat: 25.0469492,
       lng: 121.5254558,

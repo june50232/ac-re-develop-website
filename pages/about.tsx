@@ -241,7 +241,7 @@ export default function About() {
                     </div>
                   </div> */}
                   <div className="w-full space-y-2">
-                    <h5 className="text-lg font-light text-secondary leading-relaxed  indent-8">
+                    <h5 className="text-lg font-light text-secondary leading-relaxed">
                       {content}
                     </h5>
                   </div>
