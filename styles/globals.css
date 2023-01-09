@@ -95,20 +95,53 @@
   .font-family-bold {
     font-family: 'HelveticaNowDisplay';
   }
-
+/*
   h1 {
-    color: theme(colors.secondary.dark);
-    @apply text-5xl;
+    color: theme(colors.primary.dark);
+    @apply text-3xl font-bold leading-relaxed;
   }
 
   h2 {
     color: theme(colors.primary.dark);
-    @apply font-semibold text-3xl;
+    @apply text-2xl font-semibold leading-relaxed;
   }
 
   h3 {
     color: theme(colors.secondary.dark);
-    @apply text-xl font-bold;
+    @apply text-xl font-semibold leading-relaxed;
+  }
+
+  h4 {
+    color: theme(colors.secondary.dark);
+    @apply text-lg leading-relaxed;
+  }
+
+  h5 {
+    @apply text-base leading-relaxed;
+  }
+  */
+
+  h5 {
+    @apply text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl leading-loose
+  }
+  
+  h4 {
+    @apply text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-loose
+  }
+  
+  h3 {
+    color: theme(colors.primary.dark);
+    @apply text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose font-semibold
+  }
+  
+  h2 {
+    color: theme(colors.primary.dark);
+    @apply text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl leading-loose font-semibold
+  }
+  
+  h1 {
+    color: theme(colors.primary.dark);
+    @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-loose font-bold
   }
 
   .img-hover-scale,
@@ -118,11 +151,6 @@
   .img-hover-scale:hover,
   .hover-scale-inner-img-effect:hover .bannerImg {
     transform: scale(1.1);
-  }
-
-  .font-subtitle {
-    font-size: 1.1rem;
-    @apply tracking-wide leading-7;
   }
 
   .text-vertical {
@@ -205,7 +233,7 @@
   }
 
   .coreArrow2 {
-    background-color: theme(colors.neutral.300);
+    background-color: theme(colors.amber.300);
     clip-path: polygon(50% 0, 50% 100%, 100% 50%);
     @apply w-10 h-10;
   }
@@ -332,13 +360,17 @@
 
 /* .hover-effect1 end */
 .retry-button > button {
-  @apply text-blue-700 border border-blue-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500;
+  @apply text-blue-700 border border-blue-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center;
 }
 
 .retry-button:hover > button {
-  @apply bg-blue-700 text-white dark:text-white;
+  @apply bg-blue-500 text-white border-blue-500;
+}
+
+.retry-button:hover > h3 {
+  @apply text-blue-500;
 }
 
 .retry-button:focus > button {
-  @apply ring-4 outline-none dark:ring-blue-800;
+  @apply ring-4 outline-none;
 }

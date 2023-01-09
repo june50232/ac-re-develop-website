@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 z-10 bg-white shadow-lg w-screen h-16 flex pt-8 pb-6 pl-11 pr-6 justify-center"
+      className="fixed top-0 left-0 z-10 bg-white shadow-lg w-screen h-20 flex pt-8 pb-6 pl-11 pr-6 justify-center"
       ref={headerRef}
     >
       <section className="relative inline-flex w-full inline-flex justify-between items-center">
@@ -41,11 +41,13 @@ export default function Header() {
             {NavList.map(({ title, url }) => (
               <li
                 key={title}
-                className={`flex menu-hover-line relative px-1 h-8 font-normal tracking-normal ${
+                className={`flex menu-hover-line relative px-1 h-10 font-normal tracking-normal ${
                   router.asPath === url ? 'menu-line' : ''
                 }`}
               >
-                <Link href={url}>{title}</Link>
+                <h4 className='font-normal leading-normal'>
+                  <Link href={url}>{title}</Link>
+                </h4>
               </li>
             ))}
           </ul>

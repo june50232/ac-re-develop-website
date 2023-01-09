@@ -31,27 +31,21 @@ module.exports = {
       gray: colors.gray,
       blue: colors.blue,
       red: colors.red,
-      neutral: colors.amber,
+      amber: colors.amber,
     },
-    fontSize: {
-      '7xl': ['.5rem', '.8rem'],
-      xs: ['.57rem', '.85rem'], // 4, 6
-      sm: ['.71rem', '1rem'], // 5, 7
-      base: ['1rem', '1.3rem'], // 7, 9
-      lg: ['1.3rem', '1.5rem'], // 8, 9
-      xl: ['1.55rem', '1.8rem'], // 12, 14,52
-      '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
-      '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
-      '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
-      '6xl': ['5rem', '5rem'],
-      '8xl': ['6rem', '6rem'], // 18, 21.78
-    },
-    extend: {
-      screens: {
-        '2xl': '1470px',
-        // => @media (min-width: 992px) { ... }
-      },
-    },
+    // fontSize: {
+    //   '7xl': ['.5rem', '.8rem'],
+    //   xs: ['.57rem', '.85rem'], // 4, 6
+    //   sm: ['.71rem', '1rem'], // 5, 7
+    //   base: ['1rem', '1.3rem'], // 7, 9
+    //   lg: ['1.3rem', '1.5rem'], // 8, 9
+    //   xl: ['1.55rem', '1.8rem'], // 12, 14,52
+    //   '2xl': ['1.85rem', '2.24rem'], // 13, 15.73
+    //   '3xl': ['2.28rem', '2.77rem'], // 16, 19.36
+    //   '5xl': ['2.57rem', '3.11rem'], // 18, 21.78
+    //   '6xl': ['5rem', '5rem'],
+    //   '8xl': ['6rem', '6rem'], // 18, 21.78
+    // },
   },
   extends: {
     fontFamily: {

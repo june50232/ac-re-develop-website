@@ -51,60 +51,60 @@ export default function About() {
   return (
     <>
       <section
-        className="md:flex flex-col w-screen flex-row hidden h-[43rem]"
+        className="md:flex flex-col w-screen flex-row hidden"
         id="banner-laptop"
       >
-        <section className="w-full h-80 relative" id="banner">
+        <section className="w-full h-96 relative" id="banner">
           {/* <GradientBg background="linear-gradient(rgba(255, 255, 255, 0.9), transparent, transparent, rgba(255, 255, 255, 0.9))" /> */}
           <BannerImage url={aboutBannerImgUrl} />
           <div
             className="absolute inset-0 flex flex-col justify-center items-center space-y-5"
             data-aos="fade-up"
           >
-            <h2 className="text-3xl font-bold">About AC Re</h2>
+            <h1>About AC Re</h1>
           </div>
         </section>
         <section
-          className="w-full grow flex items-center justify-center"
+          className="w-full grow flex items-center justify-center px-2 py-20"
           id="intro-laptop"
           data-aos="fade-up"
         >
-          <div className="w-full h-10/12 flex justify-center space-x-2 items-start">
-            <div className="flex flex-col w-[27%] space-y-6 items-center">
+          <div className="h-10/12 flex justify-center space-x-1 items-start">
+            <div className="flex flex-col w-[28%] space-y-6 items-center">
               <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-xl">
+                <h2 className="text-primary-darkest">
                   Founded in 2021
-                </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
+                </h2>
+                <h3 className="font-light text-secondary text-center leading-relaxed">
                   AC Re Services Co., Ltd. (AC Re) was founded in 2021 by
                   Solomon Chiu.
-                </h5>
+                </h3>
               </div>
             </div>
-            <div className="flex flex-col w-[45%] space-y-6 items-center">
+            <div className="flex flex-col w-[46%] space-y-6 items-center">
               <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-xl text-center">
+                <h2 className="text-primary-darkest">
                   Innovative and Forward-Thinking
-                </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
+                </h2>
+                <h3 className="font-light text-secondary leading-relaxed text-center">
                   AC Re is an innovative, forward-thinking insurance broker that
                   takes pride in risk management and insurance/reinsurance
                   solutions for direct corporate clients and reinsureds.
-                </h5>
+                </h3>
               </div>
             </div>
-            <div className="flex flex-col w-[27%] space-y-6 items-center">
+            <div className="flex flex-col w-[28%] space-y-6 items-center">
               <IoEarthOutline color="#A0DDFE" fontSize="3rem" />
               <div className="flex flex-col space-y-3 items-center">
-                <h3 className="font-bold text-primary-darkest text-xl">
+                <h2 className="text-primary-darkest">
                   Global Markets
-                </h3>
-                <h5 className="text-lg font-light text-secondary leading-relaxed text-center w-11/12">
+                </h2>
+                <h3 className="font-light text-secondary leading-relaxed text-center">
                   We offer a wide range of specialist lines; placed in the
                   global, composite, and Taiwan insurance markets.
-                </h5>
+                </h3>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function About() {
       </section>
 
       <section
-        className="md:inline-flex w-screen h-[30rem] flex-col hidden overflow-hidden bg-neutral-50"
+        className="md:inline-flex w-screen h-[35rem] flex-col hidden overflow-hidden bg-amber-50"
         id="goal-laptop"
         // style={{
         //   background: 'rgba(255, 247, 237, 0.9)',
@@ -120,19 +120,19 @@ export default function About() {
       >
         {/* <div className="w-full h-32 flex justify-start pl-16 items-center">
           <LaptopH2PrelineH3Wrap
-            classnames="border-l-[1rem] border-neutral-200 border-solid pl-4"
+            classnames="border-l-[1rem] border-amber-200 border-solid pl-4"
           >Our Goal</LaptopH2PrelineH3Wrap>
         </div> */}
         <div className="w-full h-full flex">
           <aside className="grow flex h-full overflow-hidden relative flex-col">
             <div className="flex h-full w-full">
-              <div className="flex w-[20%] h-full relative bg-neutral-100 justify-end items-center">
+              <div className="flex w-[20%] h-full relative bg-amber-100 justify-end items-center">
                 <div className="absolute top-2 z-[2] flex justify-between items-center">
-                  <h3 className="text-xl text-right">
+                  <h1 className="text-right leading-relaxed">
                     Our goal
                     <br />
                     is to
-                  </h3>
+                  </h1>
                   <div className="coreArrow2"></div>
                 </div>
               </div>
@@ -147,18 +147,18 @@ export default function About() {
                       {!noGradientBg && (
                         <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
                       )}
-                      <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-11 bottom-[20%]">
+                      <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-16 bottom-[20%]">
                         <h3
-                          className="absolute bottom-4 color-neutral-200 text-base top-8 left-3 text-secondary-DEFAULT text-vertical"
+                          className="absolute bottom-4 color-amber-200 top-4 left-4 text-secondary-DEFAULT text-vertical"
                           data-aos="fade-up"
                         >
                           {title}
                         </h3>
                       </div>
-                      <div className="absolute img-caption-bg-cover left-0 right-0 top-0 h-16 horizontal overflow-hidden">
-                        <h3 className="absolute text-primary-dark text-xl top-4 left-4 right-4 text-horizontal whitespace-nowrap">
+                      <div className="absolute img-caption-bg-cover left-0 right-0 top-0 h-20 horizontal overflow-hidden">
+                        <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
                           {title}
-                        </h3>
+                        </h2>
                       </div>
                     </div>
                   ),
@@ -166,32 +166,32 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <div className="w-[15rem] h-full flex flex-col items-center justify-center relative z-[1]">
-            <h3 className="text-xl" data-aos="fade-up">
+          <div className="w-[20%] h-full flex flex-col items-center justify-center relative z-[1]">
+            <h2 data-aos="fade-up">
               insurance broker
               <br />
               in Taiwan.
               {/* <br />
               with clients across the globe. */}
-            </h3>
-            {/* <div id="dotted" className='bg-neutral-100 absolute -bottom-48 -right-48 w-96 h-96 rounded-full z-[1]'></div> */}
-            {/* <div id="dotted2" className='bg-neutral-200 absolute -bottom-48 right-0 w-80 h-80 rounded-full'></div> */}
+            </h2>
+            {/* <div id="dotted" className='bg-amber-100 absolute -bottom-48 -right-48 w-96 h-96 rounded-full z-[1]'></div> */}
+            {/* <div id="dotted2" className='bg-amber-200 absolute -bottom-48 right-0 w-80 h-80 rounded-full'></div> */}
             <div
               id="triangleBg"
-              className="absolute bg-neutral-100 top-0 bottom-0 left-0 w-20 -z-[1]"
+              className="absolute bg-amber-100 top-0 bottom-0 left-0 w-20 -z-[1]"
               style={{
                 // background: "rgba(255, 247, 237, 0.9)",
                 clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
               }}
             ></div>
-            {/* <div id="dotted3" className='bg-neutral-400 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
-            {/* <div id="dotted4" className='bg-neutral-200 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
+            {/* <div id="dotted3" className='bg-amber-400 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
+            {/* <div id="dotted4" className='bg-amber-200 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
           </div>
         </div>
       </section>
       <div className="h-5"></div>
       <section
-        className="md:inline-flex w-screen h-[26rem] flex-row hidden relative"
+        className="md:inline-flex w-screen flex-row hidden relative"
         id="team-laptop"
       >
         <div className="absolute inset-0 -z-[1]">
@@ -214,7 +214,7 @@ export default function About() {
           // }}
         ></aside>
         <div
-          className="grow h-full flex flex-col items-center justify-center pl-22"
+          className="grow h-full flex flex-col items-center justify-center pl-22 py-20"
           style={{
             backgroundColor: 'rgba(255, 247, 237,0.8)',
             clipPath: 'polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%)',
@@ -231,19 +231,10 @@ export default function About() {
                   className="flex space-x-16"
                   data-aos="fade-up"
                 >
-                  {/* <div className="">
-                    <div
-                      className={`flex items-center justify-center order order-${
-                        (i + 1) * 25
-                      }`}
-                    >
-                      0{i + 1}
-                    </div>
-                  </div> */}
                   <div className="w-full space-y-2">
-                    <h5 className="text-lg font-light text-secondary leading-relaxed">
+                    <h2 className="font-light text-secondary leading-relaxed">
                       {content}
-                    </h5>
+                    </h2>
                   </div>
                 </div>
               ))}
@@ -253,11 +244,11 @@ export default function About() {
       </section>
       <div className="h-5"></div>
       <section
-        className="md:inline-flex w-screen h-[42rem] flex-row hidden"
+        className="md:inline-flex w-screen h-[60rem] flex-row hidden"
         id="leader-laptop"
       >
         <aside
-          className="w-[55rem] bg-neutral-100 h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
+          className="w-[66rem] bg-amber-100 h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
           style={{
             clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
           }}
@@ -275,22 +266,20 @@ export default function About() {
             className="border-l-8 border-solid border-primary-darker pl-2"
             data-aos="fade-up"
           >
-            <h3 className="text-primary-darker font-semibold">Solomon Chiu</h3>
-            <h5 className="text-primary-darker">Chairman</h5>
+            <h2 className="text-primary-darker font-bold">Solomon Chiu</h2>
+            <h3 className="text-primary-darker">Chairman</h3>
           </div>
         </aside>
         <div className="h-full grow flex flex-col items-center justify-center">
-          <div className="h-4/6 w-10/12 flex flex-col justify-evenly space-y-5">
-            <LaptopH2PrelineH3Wrap classnames="text-3xl">
+          <div className="flex flex-col justify-evenly space-y-5 px-16">
+            <LaptopH2PrelineH3Wrap>
               Our Founder
             </LaptopH2PrelineH3Wrap>
-            <div className="text-secondary space-y-3">
+            <div className="text-secondary space-y-6">
               {founder.map((content, i) => (
-                <div key={i} className="flex" data-aos="fade-up">
-                  <h5 className="text-lg font-light text-secondary leading-relaxed indent-8">
-                    {content}
-                  </h5>
-                </div>
+                <h2 key={i} className="font-light text-secondary leading-relaxed indent-8" data-aos="fade-up">
+                  {content}
+                </h2>
               ))}
             </div>
           </div>

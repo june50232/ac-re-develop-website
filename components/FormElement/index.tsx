@@ -10,7 +10,7 @@ export const _SubmitButton = ({
   isLoading,
   ...restProps
 }) => {
-  let stateClassname = 'bg-neutral-500 cursor-pointer px-24';
+  let stateClassname = 'bg-amber-500 cursor-pointer px-24';
   if (!isEnabled) {
     stateClassname =
       'bg-secondary-lightest text-white cursor-not-allowed px-24';
@@ -20,10 +20,10 @@ export const _SubmitButton = ({
   }
   return (
     <button
-      className={`text-lg  py-3 font-semibold ${stateClassname}`}
+      className={`py-3 ${stateClassname}`}
       disabled={!isEnabled || isLoading}
       {...restProps}
-    >
+    ><h3 className={stateClassname}>
       {isLoading ? (
         <>
           <svg
@@ -36,11 +36,12 @@ export const _SubmitButton = ({
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
           </svg>
-          Please wait. Processing...
+          Please wait, don&apos;t reload this page. Processing...
         </>
       ) : (
         children
       )}
+      </h3>
     </button>
   );
 };
@@ -70,13 +71,13 @@ export const _Label = ({ isError, name, required, title, ...restProps }: LabelPr
       className="block mb-2"
       {...restProps}
     >
-      <p className={[
-          "text-lg flex whitespace-nowrap leading-loose",
+      <h3 className={[
+          "flex whitespace-nowrap font-normal leading-loose",
           isError ? 'text-red-700 dark:text-red-500' : 'text-gray-900 dark:text-white',
         ].join(' ')}>
         {title}
-        {required && <span className="text-red">*</span>}
-      </p>
+        {required && <span className="text-red-500">*</span>}
+      </h3>
     </label>
   );
 };
@@ -95,8 +96,8 @@ export const _Input = ({ isError, ...restProps }) => {
     <input
       className={
         isError
-        ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
-        : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        ? "font-light bg-red-50 border border-red-500 text-red-900 placeholder-red-700 rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
+        : "font-light bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
       }
       maxLength={255}
       {...restProps}
@@ -109,8 +110,8 @@ export const _InputFile = ({ isError, ...restProps }) => {
     <input
       className={
         isError
-        ? "block w-full text-lg text-red-900 border border-red-300 rounded-lg cursor-pointer bg-red-50 focus:outline-none p-2.5"
-        : "block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none p-2.5"
+        ? "font-light block w-full text-red-900 border border-red-300 rounded-lg cursor-pointer bg-red-50 focus:outline-none p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
+        : "font-light block w-full text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
       }
       maxLength={255}
       aria-describedby="user_avatar_help"
@@ -130,8 +131,8 @@ export const _IconInput = ({ isError, type, ...restProps }) => {
         className={[
           "block w-full pl-10 p-2.5",
           isError
-          ? "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
-          : "bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          ? "font-light bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
+          : "font-light bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
         ].join(' ')}
         maxLength={255}
         {...restProps}
@@ -164,12 +165,12 @@ export const _ErrorMsg = ({
   ...restProps
 }: ErrorMsgProps) => {
   return (
-    <p
+    <h3
       {...restProps}
-      className={"leading-loose mt-2 text-red-600 dark:text-red-500"}
+      className={"font-light leading-loose mt-2 text-red-600"}
     >
       {errorMsg || `${title} is required.`}
-    </p>
+    </h3>
   );
 };
 
@@ -189,13 +190,13 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
       ? (
         <>
           <FcOk fontSize="3rem" />
-          <h5
-            className="text-2xl text-primary-darker leading-relaxed" 
+          <h1
+            className="text-primary-darker font-normal leading-relaxed" 
           >
             Submit successfully
-          </h5>
-          <p
-            className="text-lg font-light text-secondary text-center leading-relaxed"
+          </h1>
+          <h2
+            className="font-light text-secondary text-center leading-relaxed"
           >
             {formName === 'career' && (
               <>
@@ -215,7 +216,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               and we will get back in touch with you soon.
               </>
             )}
-          </p>
+          </h2>
           <NarrowButton 
             text={formName === 'career' ? "Request another applying" : "Send another message"}
             onClick={() => onClick()}
@@ -225,13 +226,13 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
       : (
         <>
           <FcServices fontSize="3rem" />
-          <h5
-            className="text-2xl leading-relaxed text-red-600" 
+          <h1
+            className="font-normal leading-relaxed text-red-600" 
           >
             Submit failed
-          </h5>
-          <p
-            className="text-lg font-light text-red-600 text-center leading-relaxed"
+          </h1>
+          <h2
+            className="font-light text-red-600 text-center leading-relaxed"
           >
             {formName === 'career' && (
               <>
@@ -251,7 +252,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               and we will get back in touch with you soon.
               </>
             )}
-          </p>
+          </h2>
           <NarrowButton 
             text="Retry again"
             onClick={() => onClick()}
@@ -266,7 +267,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
 const NarrowButton = ({ text, onClick }) => {
   return (
     <div onClick={onClick} className='flex space-x-3 justify-center items-center retry-button'>
-      <p className='leading-relaxed text-lg text-blue-700 cursor-pointer'>{text}</p>
+      <h3 className='leading-relaxed text-blue-700 cursor-pointer font-light'>{text}</h3>
       <button type="button">
         <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
         <span className="sr-only">Icon description</span>

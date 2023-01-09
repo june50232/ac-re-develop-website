@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <>
       <section
-        className="flex w-screen h-80 flex-row overflow-hidden relative mb-2"
+        className="flex w-screen h-96 flex-row overflow-hidden relative mb-2"
         id="banner-laptop-mobile"
       >
         <GradientBg background="rgba(255, 247, 237, 0.7)" />
@@ -65,7 +65,7 @@ export default function Home() {
           classnames="bg-fixed"
           noHoverEffect
         />
-        <h1 className="absolute flex items-center justify-center inset-0 font-semibold text-xl">
+        <div className="absolute flex items-center justify-center inset-0 px-4">
           <FaQuoteLeft
             color="#ffffff"
             fontSize="1.5rem"
@@ -73,7 +73,7 @@ export default function Home() {
               marginRight: '1rem',
             }}
           />
-          We bring industry knowledge, expertise, and insight for clients
+          <h1>We bring industry knowledge, expertise, and insight for clients</h1>
           <FaQuoteRight
             color="#ffffff"
             fontSize="1.5rem"
@@ -81,13 +81,13 @@ export default function Home() {
               marginLeft: '1rem',
             }}
           />
-        </h1>
+        </div>
       </section>
       <section
-        className="md:inline-flex w-screen h-[32rem] flex-row hidden pl-2"
+        className="grid grid-cols-1 md:grid-cols-5 w-screen pl-2"
         id="why-laptop"
       >
-        <aside className="w-[20%] h-full overflow-hidden relative">
+        <aside className="col-span-1 h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={smileHandShakeImgUrl} />
           {/* <GradientBg
@@ -96,7 +96,7 @@ export default function Home() {
           /> */}
         </aside>
         <div
-          className="w-[80%] h-full flex flex-col items-center justify-center"
+          className="col-span-1 md:col-span-4 h-full flex flex-col items-center justify-center py-12"
           // style={{ background: 'azure' }}
         >
           <div className="h-5/6 w-11/12 flex flex-col justify-center space-y-10">
@@ -113,11 +113,11 @@ export default function Home() {
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <h4 className="text-lg font-semibold">{title}</h4>
-                    <h5 className="text-lg font-light text-secondary leading-relaxed">
+                  <div className="space-y-5">
+                    <h2 className='leading-relaxed'>{title}</h2>
+                    <h2 className="font-light text-secondary leading-relaxed">
                       {content}
-                    </h5>
+                    </h2>
                   </div>
                 </div>
               ))}
@@ -168,7 +168,7 @@ export default function Home() {
       </section>
        */}
       <section
-        className="md:inline-flex w-screen h-[32rem] flex-row hidden justify-around items-center min-h-fit overflow-hidden relative"
+        className="md:inline-flex w-screen h-[38rem] flex-row hidden justify-around items-center min-h-fit overflow-hidden relative"
         id="core-value-laptop"
       >
         <div className="h-5/6 w-11/12 flex flex-col justify-evenly relative">
@@ -198,10 +198,10 @@ export default function Home() {
                 <div className="w-full h-[70%] overflow-hidden">
                   <BannerImage url={img} />
                 </div>
-                <div className="relative grow bg-primary-darker flex flex-col justify-evenly pb-2">
-                  <h5 className="text-white font-bold text-xl pl-2">{title}</h5>
+                <div className="relative grow bg-primary-darker flex flex-col justify-evenly py-3">
+                  <h2 className="text-white pl-3 leading-relaxed">{title}</h2>
                   <div className="flex justify-between items-center pr-3">
-                    <p className="text-white text-base pl-2">{description}</p>
+                    <h2 className="text-white pl-3 font-light leading-relaxed">{description}</h2>
                     <div className="coreArrow"></div>
                   </div>
                 </div>

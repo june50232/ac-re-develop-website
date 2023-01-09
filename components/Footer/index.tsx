@@ -11,7 +11,7 @@ export default function Footer() {
         id="footer-laptop"
       >
         <div
-          className="flex justify-center items-center w-full space-x-6"
+          className="flex justify-center items-center w-full space-x-12"
           data-aos="fade-up"
         >
           <a
@@ -20,31 +20,31 @@ export default function Footer() {
           >
             <MdPhoneInTalk
               color="#A0DDFE"
-              fontSize="1.5rem"
+              fontSize="2rem"
               style={{
                 transform: 'rotate(25deg)',
               }}
             />
-            <h5 className="lg:text-base font-bold text-primary-dark">
+            <h3>
               +886-2-2508-0488
-            </h5>
+            </h3>
           </a>
           <a
             className="flex justify-center items-center space-x-2"
             href="mailto:info@ac-re.com.tw"
           >
-            <MdOutlineMail color="#A0DDFE" fontSize="1.5rem" />
-            <h5 className="lg:text-base font-bold text-primary-dark">
+            <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
+            <h3>
               info@ac-re.com.tw
-            </h5>
+            </h3>
           </a>
         </div>
         <hr className="w-full block bottom-light-gray" data-aos="fade-up" />
         <div className="w-full justify-center items-center" data-aos="fade-up">
-          <p className="text-secondary-lightest text-xs text-center">
+          <h5 className="text-secondary-lightest text-center">
             Copyright © {new Date().getFullYear()} by AC Re Services Co., Ltd.
             All Rights Reserved.
-          </p>
+          </h5>
         </div>
       </section>
       <section
@@ -79,13 +79,13 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <p
-          className="flex text-secondary-lightest text-7xl text-center w-10/12 pt-6"
+        <h5
+          className="flex font-light text-secondary-lightest text-center w-10/12 pt-6"
           data-aos="fade-up"
         >
           Copyright © {new Date().getFullYear()} by AC Re Services Co., Ltd. All
           Rights Reserved.
-        </p>
+        </h5>
       </section>
     </footer>
   );

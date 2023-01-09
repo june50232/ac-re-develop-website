@@ -1,11 +1,11 @@
 const LaptopH2PrelineH3Wrap = (props) => {
   return (
-    <h2
-      className={props.classnames}
+    <h1
+      className={[props.classnames, 'leading-relaxed'].join(' ')}
       data-aos={props.noFadeEffect ? '' : 'fade-up'}
     >
       {props.children}
-    </h2>
+    </h1>
   );
 };
 

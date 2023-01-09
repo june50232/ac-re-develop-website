@@ -17,16 +17,16 @@ import 'photoswipe/dist/photoswipe.css';
 export default function Services() {
   return (
     <>
-      <Section classname="h-80">
+      <Section classname="h-96">
         <GradientBg background="rgba(255,255,255,0.85)" />
         <BannerImage url={servicesBannerImgUrl} />
         <div
           className="absolute h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl font-bold">Services & products</h2>
-          <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg font-light text-secondary leading-relaxed text-left w-2/3 indent-8">
+          <h1>Services & products</h1>
+          <hr className="w-8 text-amber-500" />
+          <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As
             strategic advisors, we build long-term partnerships with local and
@@ -78,9 +78,9 @@ const ProductTitle = (props) => {
   return (
     <div className="text-secondary flex flex-col space-y-4 items-center justify-center px-2 w-full h-full m-2">
       <div className="flex items-center">
-        <h4 className="font-semibold font-subtitle text-center mr-2 text-xl">
+        <h2 className="tracking-wide text-center mr-2">
           {servicesData[props.index].title}
-        </h4>
+        </h2>
         <HiOutlineCursorClick color="#DCEFFC" fontSize="3rem" />
       </div>
       <hr className="w-8 text-primary-light" />
@@ -118,12 +118,12 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
           ></div>
           <div className="fixed top-[10%] left-[20%] w-[60%] h-[80%] z-20 bg-white shadow-2xl">
             <div className="relative w-full h-full flex items-center justify-center">
-              <div
-                className="absolute right-0 top-0 px-5 py-3 cursor-pointer text-xl text-secondary-lighter font-normal font-thin"
+              <h1
+                className="absolute right-6 top-3 px-6 py-6 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
                 onClick={() => setOpen(false)}
               >
                 X
-              </div>
+              </h1>
               <Portal
                 index={index}
                 titleClassName={titleClassName}
@@ -161,13 +161,13 @@ const Portal: FC<{
               >
                 <ul className="list-disc ml-6">
                   <li className="text-primary-darker font-semibold text-lg">
-                    {o.title}
+                    <h2>{o.title}</h2>
                   </li>
                 </ul>
                 <div className="pt-5 pl-3 pr-3 pb-11 h-auto relative space-y-6">
-                  <p className="text-primary-darker indent-8 leading-loose">
+                  <h3 className="text-primary-darker font-light indent-8 leading-loose">
                     {o.description}
-                  </p>
+                  </h3>
                 </div>
               </div>
             ))}
@@ -177,8 +177,8 @@ const Portal: FC<{
             <ul className="w-4/6 h-auto flex flex-col list-disc space-y-3">
               {servicesData[index].category.map(({ title }, i) => {
                 return (
-                  <li key={i} className="text-primary-darker">
-                    {title}
+                  <li key={i}>
+                    <h3 className="text-primary-darker font-light leading-relaxed">{title}</h3>
                   </li>
                 );
               })}

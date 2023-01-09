@@ -127,7 +127,7 @@ export default function Career() {
   return (
     <>
       <Section
-        classname="h-80"
+        classname="h-96"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -136,9 +136,9 @@ export default function Career() {
           className="h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl font-bold">Join us!</h2>
-          <hr className="w-8 text-neutral-500" />
-          <h3 className="text-lg font-light text-secondary text-left leading-relaxed w-2/3 indent-8 leading-relaxed">
+          <h1>Join us!</h1>
+          <hr className="w-8 text-amber-500" />
+          <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
             AC Re has been continually expanding by adding new talent.
             We&apos;re looking for motivated individuals who would like to grow
             within a dynamic and friendly environment. We welcome diverse
@@ -146,7 +146,7 @@ export default function Career() {
           </h3>
         </div>
       </Section>
-      <Section classname="h-[30rem]">
+      <Section classname="h-[32rem]">
         <aside className="w-[42%] h-full overflow-hidden relative rounded-br-3xl">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
@@ -157,8 +157,8 @@ export default function Career() {
         >
           <div className="h-3/6 w-10/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>Our Team</LaptopH2PrelineH3Wrap>
-            <div
-              className="text-lg text-secondary font-light space-y-5 indent-8 leading-relaxed"
+            <h3
+              className="text-secondary font-light space-y-5 indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               We are a united team full of highly talented and enthusiastic
@@ -166,20 +166,20 @@ export default function Career() {
               values they bring. AC Re is committed to creating a workspace and
               culture that makes our employees feel safe and comfortable while
               continuing to grow with the company.
-            </div>
+            </h3>
           </div>
         </div>
       </Section>
 
-      <Section classname="h-[30rem]">
+      <Section classname="h-[36rem]">
         <div
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
         >
           <div className="h-3/6 w-9/12 flex flex-col justify-evenly space-y-10">
             <LaptopH2PrelineH3Wrap>What we care about</LaptopH2PrelineH3Wrap>
-            <div
-              className="text-secondary font-light space-y-5 text-lg indent-8 leading-relaxed"
+            <h3
+              className="text-secondary font-light space-y-5 indent-8 leading-relaxed"
               data-aos="fade-up"
             >
               The foundation of our success is integrity, diversity, and
@@ -189,7 +189,7 @@ export default function Career() {
               all industries and providing best solutions for them. Our goal is
               to go beyond traditional insurance brokers and make positive
               impacts across the industry.
-            </div>
+            </h3>
           </div>
         </div>
         <aside className="w-[42%] h-full overflow-hidden relative rounded-tl-3xl">
@@ -208,7 +208,7 @@ export default function Career() {
           className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative"
           data-aos="fade-up"
         >
-          <h5 className="text-2xl text-center text-primary-darker leading-relaxed">
+          <h2 className="text-center text-primary-darker leading-relaxed">
             If you&apos;re interested in joining our team,
             <br />
             then please get in touch with us via{' '}
@@ -222,20 +222,20 @@ export default function Career() {
             ,
             <br />
             or by completing the{' '}
-            <span className="border-b-8 border-neutral-300 border-solid leading-4 inline-block">
+            <span className="border-b-8 border-amber-300 border-solid leading-4 inline-block">
               employment application form
             </span>{' '}
             below.
-          </h5>
-          <hr className="w-8 text-neutral-500" data-aos="fade-up" />
-          <h5
-            className="text-lg font-light text-secondary text-center leading-relaxed"
+          </h2>
+          <hr className="w-8 text-amber-500" data-aos="fade-up" />
+          <h2
+            className="font-light text-secondary text-center leading-relaxed"
             data-aos="fade-up"
           >
             Thank you for expressing your interest in joining AC Re.
             <br />
             Please complete the details below and upload your CV.
-          </h5>
+          </h2>
         </div>
         <FormContext.Provider
           value={{
