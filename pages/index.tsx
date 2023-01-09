@@ -168,34 +168,30 @@ export default function Home() {
       </section>
        */}
       <section
-        className="md:inline-flex w-screen h-[38rem] flex-row hidden justify-around items-center min-h-fit overflow-hidden relative"
+        className="overflow-hidden relative pt-3 pb-12 px-8 md:px-16 space-y-6"
         id="core-value-laptop"
       >
-        <div className="h-5/6 w-11/12 flex flex-col justify-evenly relative">
-          <div
-            className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
-            data-aos="fade-up"
-          >
-            <BannerImage
-              url={globalDottedImgUrl}
-              classnames="opacity-25"
-              styles={{
-                backgroundPosition: 'top',
-              }}
-            />
-          </div>
-          <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
-          <div
-            className="flex justify-between h-4/6 min-h-fit"
-            data-aos="fade-up"
-          >
-            {coreValue.map(({ title, description, img }) => (
+        <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
+        <div
+          className="absolute -z-[1] top-2 -right-20 h-72 w-4/6"
+          data-aos="fade-up"
+        >
+          <BannerImage
+            url={globalDottedImgUrl}
+            classnames="opacity-25"
+            styles={{
+              backgroundPosition: 'top',
+            }}
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-12 md:py-12" data-aos="fade-up">
+          {coreValue.map(({ title, description, img }) => (
               <div
                 key={title}
-                className="flex flex-col w-[32%] h-full relative hover-scale-inner-img-effect"
+                className="relative hover-scale-inner-img-effect"
               >
                 <div className="absolute coreValueLine"></div>
-                <div className="w-full h-[70%] overflow-hidden">
+                <div className="w-full h-52 overflow-hidden">
                   <BannerImage url={img} />
                 </div>
                 <div className="relative grow bg-primary-darker flex flex-col justify-evenly py-3">
@@ -207,61 +203,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </section>
-      {/* 
-      <section
-        className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
-        id="core-value-mobile"
-      >
-        <MobileContainer classnames="flex-col">
-          <BannerImage
-            url={globalDottedImgUrl}
-            classnames="absolute -z-[1] opacity-25 top-5 bottom-0"
-            styles={{
-              height: 'auto',
-              backgroundPosition: 'top',
-            }}
-          />
-          <h2 className="text-3xl mb-3" data-aos="fade-up">
-            Core Value
-          </h2>
-          <h5 className="text-secondary-light tracking-wide" data-aos="fade-up">
-            Professionalism, Global
-            <br />
-            Perspectives and ESG
-          </h5>
-        </MobileContainer>
-        <div className="flex flex-col text-secondary space-y-12 px-8 pt-10">
-          {coreValue.map(
-            ({
-              title,
-              description,
-              img,
-              //url, // TODO
-            }) => (
-              <a
-                className="w-full relative"
-                key={title}
-                href="javascript:;"
-                data-aos="fade-up"
-              >
-                <div className="absolute coreValueLine"></div>
-                <div className="w-full h-72">
-                  <BannerImage url={img} />
-                </div>
-                <div className="pt-5 pl-3 pb-11 relative">
-                  <h5 className="text-secondary-dark font-bold">{title}</h5>
-                  <p className="text-secondary-lightest">{description}</p>
-                  <div className="absolute coreArrow"></div>
-                </div>
-              </a>
-            ),
-          )}
-        </div>
-      </section>
-      */}
     </>
   );
 }

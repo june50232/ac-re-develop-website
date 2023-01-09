@@ -12,6 +12,24 @@ import {
 } from 'common/imgUrls';
 
 export default function About() {
+  const about = [
+    {
+      icon: <BsCalendar3 color="#A0DDFE" fontSize="3rem" />,
+      title: 'Founded in 2021',
+      content: <><span className='whitespace-nowrap'>AC Re Services Co., Ltd.</span> <span className='whitespace-nowrap'>(AC Re)</span> was founded in 2021 by <span className='whitespace-nowrap'>Solomon Chiu.</span></>,
+      width: '28%',
+    },{
+      icon: <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />,
+      title: 'Innovative and Forward-Thinking',
+      content: <><span className='whitespace-nowrap'>AC Re</span> is an innovative, forward-thinking <span className='whitespace-nowrap'>insurance broker</span> that takes pride in <span className='whitespace-nowrap'>risk management</span> and <span className='whitespace-nowrap'>insurance/reinsurance solutions</span> for <span className='whitespace-nowrap'>direct corporate clients and reinsureds.</span></>,
+      width: '46%',
+    },{
+      icon: <IoEarthOutline color="#A0DDFE" fontSize="3rem" />,
+      title: 'Global Markets',
+      content: <>We offer a wide range of <span className='whitespace-nowrap'>specialist lines;</span> placed in the global, composite, and <span className='whitespace-nowrap'>Taiwan insurance markets.</span></>,
+    }
+  ]
+
   const teamReason = [
     'Long tenured and international market experienced management team.',
     'Provide excellent holistic solutions incorporating our mutual values which are professionalism, global perspectives, and ESG.',
@@ -50,79 +68,45 @@ export default function About() {
 
   return (
     <>
-      <section
-        className="md:flex flex-col w-screen flex-row hidden"
-        id="banner-laptop"
-      >
-        <section className="w-full h-96 relative" id="banner">
-          {/* <GradientBg background="linear-gradient(rgba(255, 255, 255, 0.9), transparent, transparent, rgba(255, 255, 255, 0.9))" /> */}
-          <BannerImage url={aboutBannerImgUrl} />
-          <div
-            className="absolute inset-0 flex flex-col justify-center items-center space-y-5"
-            data-aos="fade-up"
-          >
-            <h1>About AC Re</h1>
-          </div>
-        </section>
-        <section
-          className="w-full grow flex items-center justify-center px-2 py-20"
-          id="intro-laptop"
+      <section className="w-full h-96 relative" id="banner">
+        {/* <GradientBg background="linear-gradient(rgba(255, 255, 255, 0.9), transparent, transparent, rgba(255, 255, 255, 0.9))" /> */}
+        <BannerImage url={aboutBannerImgUrl} />
+        <div
+          className="absolute inset-0 flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
         >
-          <div className="h-10/12 flex justify-center space-x-1 items-start">
-            <div className="flex flex-col w-[28%] space-y-6 items-center">
-              <BsCalendar3 color="#A0DDFE" fontSize="3rem" />
+          <h1>About AC Re</h1>
+        </div>
+      </section>
+      <section
+        className="w-full px-6 md:px-2 xl:px-20 py-20"
+        id="intro-laptop"
+        data-aos="fade-up"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-10 gap-x-4">
+          {about.map((o, i) => (
+            <div
+              key={i}
+              className={`flex flex-col space-y-6 items-center col-span-1 ${i === 1 && 'md:col-span-2'}`}
+              >
+              {o.icon}
               <div className="flex flex-col space-y-3 items-center">
                 <h2 className="text-primary-darkest">
-                  Founded in 2021
+                  {o.title}
                 </h2>
                 <h3 className="font-light text-secondary text-center leading-relaxed">
-                  AC Re Services Co., Ltd. (AC Re) was founded in 2021 by
-                  Solomon Chiu.
+                  {o.content}
                 </h3>
               </div>
-            </div>
-            <div className="flex flex-col w-[46%] space-y-6 items-center">
-              <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />
-              <div className="flex flex-col space-y-3 items-center">
-                <h2 className="text-primary-darkest">
-                  Innovative and Forward-Thinking
-                </h2>
-                <h3 className="font-light text-secondary leading-relaxed text-center">
-                  AC Re is an innovative, forward-thinking insurance broker that
-                  takes pride in risk management and insurance/reinsurance
-                  solutions for direct corporate clients and reinsureds.
-                </h3>
-              </div>
-            </div>
-            <div className="flex flex-col w-[28%] space-y-6 items-center">
-              <IoEarthOutline color="#A0DDFE" fontSize="3rem" />
-              <div className="flex flex-col space-y-3 items-center">
-                <h2 className="text-primary-darkest">
-                  Global Markets
-                </h2>
-                <h3 className="font-light text-secondary leading-relaxed text-center">
-                  We offer a wide range of specialist lines; placed in the
-                  global, composite, and Taiwan insurance markets.
-                </h3>
-              </div>
-            </div>
           </div>
-        </section>
+          ))}
+        </div>
       </section>
 
       <section
         className="md:inline-flex w-screen h-[35rem] flex-col hidden overflow-hidden bg-amber-50"
         id="goal-laptop"
-        // style={{
-        //   background: 'rgba(255, 247, 237, 0.9)',
-        // }}
       >
-        {/* <div className="w-full h-32 flex justify-start pl-16 items-center">
-          <LaptopH2PrelineH3Wrap
-            classnames="border-l-[1rem] border-amber-200 border-solid pl-4"
-          >Our Goal</LaptopH2PrelineH3Wrap>
-        </div> */}
         <div className="w-full h-full flex">
           <aside className="grow flex h-full overflow-hidden relative flex-col">
             <div className="flex h-full w-full">
@@ -171,21 +155,14 @@ export default function About() {
               insurance broker
               <br />
               in Taiwan.
-              {/* <br />
-              with clients across the globe. */}
             </h2>
-            {/* <div id="dotted" className='bg-amber-100 absolute -bottom-48 -right-48 w-96 h-96 rounded-full z-[1]'></div> */}
-            {/* <div id="dotted2" className='bg-amber-200 absolute -bottom-48 right-0 w-80 h-80 rounded-full'></div> */}
             <div
               id="triangleBg"
               className="absolute bg-amber-100 top-0 bottom-0 left-0 w-20 -z-[1]"
               style={{
-                // background: "rgba(255, 247, 237, 0.9)",
                 clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
               }}
             ></div>
-            {/* <div id="dotted3" className='bg-amber-400 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
-            {/* <div id="dotted4" className='bg-amber-200 absolute -bottom-48 -right-48 w-96 h-96 rounded-full'></div> */}
           </div>
         </div>
       </section>
