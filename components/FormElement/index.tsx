@@ -131,7 +131,7 @@ export const _IconInput = ({ isError, type, ...restProps }) => {
         className={[
           "block w-full pl-10 p-2.5",
           isError
-          ? "font-light bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
+          ? "font-light bg-red-50 border border-red-500 text-red-900 placeholder-red-700 rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
           : "font-light bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
         ].join(' ')}
         maxLength={255}
@@ -145,8 +145,8 @@ export const _Textarea = ({ isError, ...restProps }) => {
   return (
     <textarea
       className={isError 
-        ? "block p-2.5 w-full text-lg text-red-900 bg-red-50 rounded-lg border border-red-300 focus:ring-red-500 focus:border-red-500"
-        : "block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+        ? "font-light block p-2.5 w-full text-red-900 bg-red-50 rounded-lg border border-red-300 focus:ring-red-500 focus:border-red-500 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
+        : "font-light block p-2.5 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-loose"
       }
       maxLength={10000}
       {...restProps}

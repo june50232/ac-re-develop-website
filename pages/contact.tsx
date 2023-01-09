@@ -197,9 +197,9 @@ export default function Contact() {
           className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
           data-aos="fade-up"
         >
-          <h2 className="font-bold text-primary-darker">
+          <h1 className="font-bold text-primary-darker">
             Need More Help?
-          </h2>
+          </h1>
           <hr className="w-8 text-amber-500" />
           <h2 className="font-light text-secondary w-9/12 text-center leading-relaxed">
             Whether you are looking for specific solutions or have a question,{' '}
