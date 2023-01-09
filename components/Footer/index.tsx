@@ -25,18 +25,18 @@ export default function Footer() {
                 transform: 'rotate(25deg)',
               }}
             />
-            <h3>
+            <h4 className='hover:text-primary-light'>
               +886-2-2508-0488
-            </h3>
+            </h4>
           </a>
           <a
             className="flex justify-center items-center space-x-2"
             href="mailto:info@ac-re.com.tw"
           >
             <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
-            <h3>
+            <h4 className='hover:text-primary-light'>
               info@ac-re.com.tw
-            </h3>
+            </h4>
           </a>
         </div>
         <hr className="w-full block bottom-light-gray" data-aos="fade-up" />

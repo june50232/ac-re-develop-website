@@ -214,7 +214,7 @@ export default function About() {
           // }}
         ></aside>
         <div
-          className="grow h-full flex flex-col items-center justify-center pl-22 py-20"
+          className="grow h-full flex flex-col items-center justify-center pl-22 py-28"
           style={{
             backgroundColor: 'rgba(255, 247, 237,0.8)',
             clipPath: 'polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%)',

@@ -35,7 +35,7 @@ export default function Services() {
           </h3>
         </div>
       </Section>
-      <section className="md:flex w-screen hidden overflow-hidden h-[18rem] static">
+      <section className="md:flex w-screen hidden overflow-hidden h-96 static">
         <aside className="flex w-6/12 h-full overflow-hidden relative">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
@@ -56,7 +56,7 @@ export default function Services() {
           titleClassName="top-[11%] right-[66%]"
         />
       </section>
-      <section className="flex md:flex w-screen hidden overflow-hidden h-[18rem] static">
+      <section className="flex md:flex w-screen hidden overflow-hidden h-96 static">
         <aside className="flex w-6/12 h-full overflow-hidden relative">
           <PortalClickItem
             index={2}
