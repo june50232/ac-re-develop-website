@@ -17,12 +17,10 @@ export default function About() {
       icon: <BsCalendar3 color="#A0DDFE" fontSize="3rem" />,
       title: 'Founded in 2021',
       content: <><span className='whitespace-nowrap'>AC Re Services Co., Ltd.</span> <span className='whitespace-nowrap'>(AC Re)</span> was founded in 2021 by <span className='whitespace-nowrap'>Solomon Chiu.</span></>,
-      width: '28%',
     },{
       icon: <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />,
       title: 'Innovative and Forward-Thinking',
-      content: <><span className='whitespace-nowrap'>AC Re</span> is an innovative, forward-thinking <span className='whitespace-nowrap'>insurance broker</span> that takes pride in <span className='whitespace-nowrap'>risk management</span> and <span className='whitespace-nowrap'>insurance/reinsurance solutions</span> for <span className='whitespace-nowrap'>direct corporate clients and reinsureds.</span></>,
-      width: '46%',
+      content: <><span className='whitespace-nowrap'>AC Re</span> is an innovative, forward-thinking <span className='whitespace-nowrap'>insurance broker</span> that takes pride in <span className='whitespace-nowrap'>risk management</span> and <span className='whitespace-nowrap'>insurance/reinsurance</span> solutions for <span className='whitespace-nowrap'>direct corporate clients and reinsureds.</span></>,
     },{
       icon: <IoEarthOutline color="#A0DDFE" fontSize="3rem" />,
       title: 'Global Markets',
@@ -79,11 +77,11 @@ export default function About() {
         </div>
       </section>
       <section
-        className="w-full px-6 md:px-2 xl:px-20 py-20"
+        className="w-full px-6 md:px-1 xl:px-20 py-20"
         id="intro-laptop"
         data-aos="fade-up"
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-10 gap-x-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-10 gap-x-1">
           {about.map((o, i) => (
             <div
               key={i}
