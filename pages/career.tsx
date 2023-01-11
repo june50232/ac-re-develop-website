@@ -329,12 +329,12 @@ export default function Career() {
                   name={name}
                   title={title}
                   description={<>
-                    {renderFileLink({name, title: 'upload (size small than 200k)', type: 'file'})}
+                    {renderFileLink({name, title: 'upload (size smaller than 200k)', type: 'file'})}
                     &nbsp;or&nbsp;
                     {renderFileLink({name, title: 'by link', type: 'text'})}
                   </>}
                   type={values[`${name}InputType`]}
-                  placeholder={values[`${name}InputType`] === 'text' ? `Online public link  ex: Google Drive link or Onedrive link` : ''}
+                  placeholder={values[`${name}InputType`] === 'text' ? `Online public link  ex: google drive link or onedrive link` : ''}
                   required={name === 'resume'}
                   fullWidth
                 />
