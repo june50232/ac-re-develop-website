@@ -10,8 +10,8 @@ export default function Logo(props) {
       >
         <Image 
           src="/img/logo.svg" 
-          width={150*scale}
-          height={39*scale}
+          width="150rem"
+          height="39rem"
           alt="logo"
         />
     </div>

@@ -125,48 +125,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* 
-      <section
-        className="lg:hidden w-screen py-12 space-y-12 min-h-fit"
-        id="why-mobile"
-      >
-        <MobileContainer classnames="flex-col">
-          <BannerImage
-            url={globalDottedImgUrl}
-            classnames="absolute -z-[1] opacity-25 top-5 bottom-0"
-            styles={{
-              height: 'auto',
-              backgroundPosition: 'top',
-            }}
-          />
-          <h2 className="text-3xl mb-3" data-aos="fade-up">
-            WHY AC Re
-          </h2>
-        </MobileContainer>
-        <div className="text-secondary space-y-20 px-8 pt-12">
-          {whyReason.map(({ title, content }, i) => (
-            <div key={title} className="relative" data-aos="fade-up">
-              <div className="absolute -z-[1] -left-7 -top-16">
-                <div
-                  className={`flex items-center justify-center order order-${
-                    (i + 1) * 25
-                  } mobile`}
-                >
-                  0{i + 1}
-                </div>
-              </div>
-              <div className="pl-8 space-y-6">
-                <h4 className="font-semibold font-subtitle">{title}</h4>
-                <h5 className="text-base tracking-wide">{content}</h5>
-              </div>
-            </div>
-          ))}
-        </div>
-        <MobileContainer classnames="px-3 h-80 overflow-hidden" isFadeUp>
-          <BannerImage url={smileHandShakeImgUrl} />
-        </MobileContainer>
-      </section>
-       */}
       <section
         className="overflow-hidden relative pt-3 pb-12 px-8 md:px-16 space-y-6"
         id="core-value-laptop"
