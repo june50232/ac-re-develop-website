@@ -61,13 +61,13 @@ interface LabelProps {
   isError: boolean;
   name: string;
   required: boolean;
-  title: string
+  title: string;
+  description?: any;
 }
 
-export const _Label = ({ isError, name, required, title, ...restProps }: LabelProps) => {
+export const _Label = ({ isError, required, title, description, ...restProps }: LabelProps) => {
   return (
     <label
-      htmlFor={name}
       className="block mb-2"
       {...restProps}
     >
@@ -75,7 +75,7 @@ export const _Label = ({ isError, name, required, title, ...restProps }: LabelPr
           "flex whitespace-nowrap font-normal leading-loose",
           isError ? 'text-red-700 dark:text-red-500' : 'text-gray-900 dark:text-white',
         ].join(' ')}>
-        {title}
+        {title}&nbsp;{description && '-'}&nbsp;{description && description}
         {required && <span className="text-red-500">*</span>}
       </h3>
     </label>

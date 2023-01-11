@@ -41,7 +41,7 @@ export default function About() {
 
   const goal = [
     {
-      title: 'Be The Fatest-Growing',
+      title: 'Be The Fastest-Growing',
       img: aboutfastGrowImgUrl,
       style: {
         backgroundPositionX: '85%',
@@ -81,11 +81,11 @@ export default function About() {
         id="intro-laptop"
         data-aos="fade-up"
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-10 gap-x-1">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-y-10 gap-x-1">
           {about.map((o, i) => (
             <div
               key={i}
-              className={`flex flex-col space-y-6 items-center col-span-1 ${i === 1 && 'md:col-span-2'}`}
+              className={`flex flex-col space-y-6 items-center col-span-2 ${i === 1 && 'md:col-span-3'}`}
               >
               {o.icon}
               <div className="flex flex-col space-y-3 items-center">

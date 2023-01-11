@@ -25,6 +25,8 @@ const initValues = {
   role: '',
   coverLetter: '',
   resume: '',
+  resumeInputType: 'file',
+  coverLetterInputType: 'file',
 };
 const initTouched = {
   title: false,
@@ -73,6 +75,8 @@ interface FormStateInterface {
     role: string;
     coverLetter: any;
     resume: any;
+    resumeInputType: string;
+    coverLetterInputType: string;
   };
   touched: {
     title: boolean;
@@ -119,10 +123,33 @@ const FormContext = React.createContext<FormContextInterface>({
 export default function Career() {
   const [state, setState] = useState<FormStateInterface>(initState);
   const {
+    values,
     isLoading,
     isSubmitSuccess,
     isSubmitFail,
   } = state
+
+  const handleFileType = (name, type): void => {
+    if (values[`${name}InputType`] === type) return
+    
+    setState((prev: FormStateInterface) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [name]: initValues[name],
+        [`${name}InputType`]: type,
+      },
+    }));
+  }
+
+  const renderFileLink = ({name, type, title}) => (
+    <span 
+      className={`${values[`${name}InputType`] !== type && 'text-blue-500 hover:text-blue-700 cursor-pointer'}`}
+      {...values[`${name}InputType`] !== type ? {
+        onClick: () => handleFileType(name, type)
+      } : {}}
+    >{title}</span>
+  )
 
   return (
     <>
@@ -290,19 +317,28 @@ export default function Career() {
                 type="text"
                 fullWidth
               />
-              <Field
-                name="resume"
-                title="CV upload (choose a file)"
-                type="file"
-                required
-                fullWidth
-              />
-              <Field
-                name="coverLetter"
-                title="Cover Letter (choose a file)"
-                type="file"
-                fullWidth
-              />
+              {[{
+                title: 'CV',
+                name: 'resume',
+              }, {
+                title: 'Cover Letter',
+                name: 'coverLetter',
+              }].map(({name, title}, i) => (
+                <Field
+                  key={i}
+                  name={name}
+                  title={title}
+                  description={<>
+                    {renderFileLink({name, title: 'upload (size small than 200k)', type: 'file'})}
+                    &nbsp;or&nbsp;
+                    {renderFileLink({name, title: 'by link', type: 'text'})}
+                  </>}
+                  type={values[`${name}InputType`]}
+                  placeholder={values[`${name}InputType`] === 'text' ? `Online public link  ex: Google Drive link or Onedrive link` : ''}
+                  required={name === 'resume'}
+                  fullWidth
+                />
+              ))}
               <div className="w-full h-auto flex justify-end items-center mt-8">
                 <SubmitButton />
               </div>
@@ -318,6 +354,7 @@ export default function Career() {
 interface TextInputProps {
   fullWidth?: boolean;
   title: string;
+  description?: any;
   required?: boolean;
   name: string;
   type?: string;
@@ -327,6 +364,7 @@ interface TextInputProps {
 const Field = ({
   fullWidth = false,
   title = '',
+  description = '',
   required = false,
   name,
   type = 'text',
@@ -402,7 +440,7 @@ const Field = ({
     <_Grid
       fullWidth={fullWidth}
     >
-      <_Label isError={isError} name={name} title={title} required={required} />
+      <_Label isError={isError} name={name} title={title} description={description} required={required} />
       {type === 'text' && (
         <_Input
           isError={isError}
