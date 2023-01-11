@@ -69,7 +69,7 @@ export default function Footer() {
           </a>
         </div>
         <ul className="w-10/12" data-aos="fade-up">
-          {NavList.map(({ title, url }) => (
+          {NavList.map(({ title, url, isPhoneHidden }) => !isPhoneHidden && (
             <li key={title} className={'h-8'}>
               <Link href={url}>
                 <a className="text-base tracking-tight font-bold text-secondary-light">

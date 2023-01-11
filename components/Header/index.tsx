@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import { CgMenuLeft } from 'react-icons/cg';
+// import { CgMenuLeft } from 'react-icons/cg';
 import Link from 'next/link';
 import NavList from 'common/nav';
 import { Logo } from '../';
@@ -10,12 +10,12 @@ export default function Header() {
   const navRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
-  const toggleNav = () => {
-    if (navRef?.current && headerRef?.current) {
-      navRef.current?.classList?.toggle('open');
-      headerRef.current?.classList?.toggle('open');
-    }
-  };
+  // const toggleNav = () => {
+  //   if (navRef?.current && headerRef?.current) {
+  //     navRef.current?.classList?.toggle('open');
+  //     headerRef.current?.classList?.toggle('open');
+  //   }
+  // };
 
   return (
     <header
@@ -52,6 +52,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        {/*  
         <div
           onClick={toggleNav}
           className="hamburger-button md:hidden inline-flex items-center h-7 space-x-1.5"
@@ -60,6 +61,7 @@ export default function Header() {
           <CgMenuLeft className="text-lg hamburger-button-icon" />
           <span className="text-xs font-bold">MENU</span>
         </div>
+        */}
       </section>
     </header>
   );
