@@ -137,7 +137,7 @@ export default function About() {
                           {title}
                         </h3>
                       </div>
-                      <div className="absolute img-caption-bg-cover left-0 right-0 top-0 h-16 horizontal overflow-hidden">
+                      <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal overflow-hidden">
                         <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
                           {title}
                         </h2>
@@ -219,7 +219,7 @@ export default function About() {
       </section>
       <div className="h-5"></div>
       <section
-        className="md:inline-flex w-screen h-[46rem] flex-row hidden"
+        className="md:inline-flex w-screen h-[53rem] flex-row hidden"
         id="leader-laptop"
       >
         <aside

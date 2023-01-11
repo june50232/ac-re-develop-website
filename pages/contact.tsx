@@ -127,7 +127,7 @@ export default function Contact() {
         </div>
       </Section>
       <Section
-        classname="h-96 grow flex items-center justify-center"
+        classname="h-80 grow flex items-center justify-center"
         data-aos="fade-up"
       >
         <div className="w-full h-7/12 flex justify-evenly items-start">
