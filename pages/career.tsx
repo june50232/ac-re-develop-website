@@ -139,6 +139,10 @@ export default function Career() {
         [name]: initValues[name],
         [`${name}InputType`]: type,
       },
+      files: {
+        ...prev.files,
+        [name]: initState.files[name],
+      },
     }));
   }
 
