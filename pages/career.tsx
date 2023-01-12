@@ -338,7 +338,7 @@ export default function Career() {
                     {renderFileLink({name, title: 'by link', type: 'text'})}
                   </>}
                   type={values[`${name}InputType`]}
-                  placeholder={values[`${name}InputType`] === 'text' ? `Online public link  ex: google drive link or onedrive link` : ''}
+                  placeholder={values[`${name}InputType`] === 'text' ? 'google drive link or onedrive link（public）' : ''}
                   required={name === 'resume'}
                   fullWidth
                 />
