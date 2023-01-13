@@ -243,7 +243,7 @@ export default function Career() {
         }}
       >
         <div
-          className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative"
+          className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative px-8"
           data-aos="fade-up"
         >
           <h2 className="text-center text-primary-darker leading-relaxed">
@@ -253,7 +253,7 @@ export default function Career() {
             <a
               href="mailto:hr@ac-re.com.tw"
               rel="noopener noreferrer"
-              className="text-primary-darkGray"
+              className="text-primary-darkGray whitespace-nowrap"
             >
               hr@ac-re.com.tw
             </a>
@@ -345,7 +345,7 @@ export default function Career() {
                   fullWidth
                 />
               ))}
-              <div className="w-full h-auto flex justify-center md:justify-end items-center mt-8">
+              <div className="w-full h-auto flex justify-center md:justify-end items-center mt-8 px-8">
                 <SubmitButton />
               </div>
               {isLoading && <Spinner/>}
