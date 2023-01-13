@@ -14,7 +14,7 @@ export default function HTMLHead() {
         <meta name="keywords" content="Keywords" />
 
         {/* Android */}
-        <meta name="theme-color" content="red" />
+        <meta name="theme-color" content="white" />
         <meta name="mobile-web-app-capable" content="yes" />
 
         {/* iOS */}

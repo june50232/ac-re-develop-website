@@ -52,7 +52,7 @@ export default function Footer() {
         id="footer-mobile"
       >
         <div
-          className="flex w-11/12  items-center justify-evenly pb-6"
+          className="flex w-11/12  items-center justify-evenly pb-12"
           data-aos="fade-up"
         >
           <a className="" href="tel:+886225080488">
@@ -68,12 +68,12 @@ export default function Footer() {
             <MdOutlineMail color="#A0DDFE" fontSize="5rem" />
           </a>
         </div>
-        <ul className="w-10/12" data-aos="fade-up">
+        <ul className="w-10/12 space-y-6" data-aos="fade-up">
           {NavList.map(({ title, url, isPhoneHidden }) => !isPhoneHidden && (
-            <li key={title} className={'h-8'}>
+            <li key={title} className={'h-8 text-center'}>
               <Link href={url}>
-                <a className="text-base tracking-tight font-bold text-secondary-light">
-                  {title}
+                <a className="tracking-tight font-bold text-secondary-light">
+                  <h2>{title}</h2>
                 </a>
               </Link>
             </li>

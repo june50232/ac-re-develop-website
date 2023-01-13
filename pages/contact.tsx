@@ -239,7 +239,7 @@ export default function Contact() {
                 </div>
                 <Field title="Subject" fullWidth name="subject" type="textArea" />
                 <Field title="Message" required fullWidth type="textArea" name="message" rows="4" />
-                <div className="w-full h-auto flex justify-end items-center mr-8">
+                <div className="w-full h-auto flex justify-center md:justify-end items-center mr-8">
                   <SubmitButton />
                 </div>
                 {isLoading && <Spinner/>}

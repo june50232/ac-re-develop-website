@@ -72,8 +72,8 @@ export const _Label = ({ isError, required, title, description, ...restProps }: 
       {...restProps}
     >
       <h3 className={[
-          "flex whitespace-nowrap font-normal leading-loose",
-          isError ? 'text-red-700 dark:text-red-500' : 'text-gray-900 dark:text-white',
+          "font-normal leading-loose",
+          isError ? 'text-red-700' : 'text-gray-900',
         ].join(' ')}>
         {title}&nbsp;{description && '-'}&nbsp;{description && description}
         {required && <span className="text-red-500">*</span>}
@@ -84,10 +84,10 @@ export const _Label = ({ isError, required, title, description, ...restProps }: 
 
 export const _Title = (props) => {
   return (
-    <p className="text-lg w-[12rem] flex whitespace-nowrap leading-loose">
+    <span className="text-lg w-[12rem] leading-loose">
       {props.title}
       {props.required && <span className="text-red">*</span>}
-    </p>
+    </span>
   );
 };
 
@@ -124,8 +124,8 @@ export const _IconInput = ({ isError, type, ...restProps }) => {
   return (
     <div className="relative">
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        {type === 'email' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>}
-        {type === 'tel' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>}
+        {type === 'email' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>}
+        {type === 'tel' && <svg aria-hidden="true" className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>}
       </div>
       <input
         className={[
@@ -183,7 +183,7 @@ interface AfterSubmitProps {
 export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitProps) => {
   return (
     <div
-      className="flex flex-col w-4/6 h-[30rem] space-y-6 justify-center items-center relative border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      className="flex flex-col w-4/6 h-[30rem] space-y-6 justify-center items-center relative border border-gray-200 rounded-lg shadow-md"
       data-aos="flip-left"
     >
       {isSuccess 
@@ -273,9 +273,5 @@ const NarrowButton = ({ text, onClick }) => {
         <span className="sr-only">Icon description</span>
       </button>
     </div>
-    // <button onClick={onClick} type="button" className="leading-relaxed text-lg font-light text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-    //     {text}
-    //     <svg aria-hidden="true" className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-    // </button>
   )
 }

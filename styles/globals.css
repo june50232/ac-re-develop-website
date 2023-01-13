@@ -75,8 +75,7 @@
 
 @layer base {
   html {
-    font-size: 12px;
-    @apply font-normal font-sans;
+    @apply font-normal font-sans text-base md:text-xs;
   }
 
   body {

@@ -336,16 +336,16 @@ export default function Career() {
                   name={name}
                   title={title}
                   description={<>
-                    {renderFileLink({name, title: 'upload (size smaller than 200k)', type: 'file'})}
+                    {renderFileLink({name, title: 'upload (size<200k)', type: 'file'})}
                     &nbsp;or&nbsp;
                     {renderFileLink({name, title: 'by link', type: 'text'})}
                   </>}
                   type={values[`${name}InputType`]}
-                  placeholder={values[`${name}InputType`] === 'text' ? 'google drive link or onedrive link（public）' : ''}
+                  placeholder={values[`${name}InputType`] === 'text' ? 'Public link only (e.g., google drive, onedrive or LinkedIn profile)' : ''}
                   fullWidth
                 />
               ))}
-              <div className="w-full h-auto flex justify-end items-center mt-8">
+              <div className="w-full h-auto flex justify-center md:justify-end items-center mt-8">
                 <SubmitButton />
               </div>
               {isLoading && <Spinner/>}
