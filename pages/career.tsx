@@ -345,7 +345,7 @@ export default function Career() {
                   fullWidth
                 />
               ))}
-              <div className="w-full h-auto flex justify-center md:justify-end items-center mt-8 px-8">
+              <div className="w-full h-auto flex justify-center md:justify-end items-center mt-8">
                 <SubmitButton />
               </div>
               {isLoading && <Spinner/>}
