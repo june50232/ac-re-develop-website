@@ -3,6 +3,7 @@ import {
   FcOk,
   FcServices 
 } from 'react-icons/fc'
+import { Mailto } from 'components'
 
 export const _SubmitButton = ({
   isEnabled,
@@ -238,7 +239,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               <>
               We are sorry that our system is currently blocked.
               <br/>
-              Please send request via <a href="emailto: hr@ac-re.com.tw">hr@ac-re.com.tw</a>
+              Please send request via <Mailto type="career">hr@ac-re.com.tw</Mailto>
               <br/>
               and we look forward to reviewing your application.
               </>
@@ -247,7 +248,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               <>
               We are sorry that our system is currently blocked.
               <br/>
-              Please send request via <a href="emailto: info@ac-re.com.tw">info@ac-re.com.tw</a>
+              Please send request via <Mailto>info@ac-re.com.tw</Mailto>
               <br/>
               and we will get back in touch with you soon.
               </>

@@ -13,6 +13,7 @@ import {
   _Grid,
   _IconInput,
   Spinner,
+  Mailto,
 } from 'components';
 import { contactBannerImgUrl } from 'common/imgUrls';
 import {
@@ -163,11 +164,9 @@ export default function Contact() {
               </h3>
             </div>
           </a>
-          <a
-            href="mailto:1yuting.chiu@gmail.com?subject=Contact%20AC-Re&body=Your%20name%3A%20%0A%0ACompany%20name%3A%0A%0APhone%20number%3A%0A%0AMessage%3A%0A%0A"
-            rel="noopener noreferrer"
+          <Mailto
             className="flex flex-col space-y-3 items-center"
-          >
+          ><>
             <FcFeedback color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-3 items-center">
               <h2 className="text-primary-darkest">Email</h2>
@@ -175,7 +174,8 @@ export default function Contact() {
                 info@ac-re.com.tw
               </h3>
             </div>
-          </a>
+            </>
+          </Mailto>
           <div className="flex flex-col space-y-3 items-center">
             <FcPrint color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-3 items-center">

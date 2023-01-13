@@ -2,6 +2,7 @@ import React from 'react';
 import { MdPhoneInTalk, MdOutlineMail } from 'react-icons/md';
 import NavList from 'common/nav';
 import Link from 'next/link';
+import { Mailto } from 'components'
 
 export default function Footer() {
   return (
@@ -25,19 +26,20 @@ export default function Footer() {
                 transform: 'rotate(25deg)',
               }}
             />
-            <h4 className='hover:text-primary-light'>
+            <h4 className='hover:text-blue-600 hover:underline'>
               +886-2-2508-0488
             </h4>
           </a>
-          <a
+          <Mailto
             className="flex justify-center items-center space-x-2"
-            href="mailto:info@ac-re.com.tw"
           >
-            <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
-            <h4 className='hover:text-primary-light'>
-              info@ac-re.com.tw
-            </h4>
-          </a>
+            <>
+              <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
+              <h4 className='hover:text-blue-600 hover:underline'>
+                info@ac-re.com.tw
+              </h4>
+            </>
+          </Mailto>
         </div>
         <hr className="w-full block bottom-light-gray" data-aos="fade-up" />
         <div className="w-full justify-center items-center" data-aos="fade-up">
@@ -55,7 +57,7 @@ export default function Footer() {
           className="flex w-11/12  items-center justify-evenly pb-12"
           data-aos="fade-up"
         >
-          <a className="" href="tel:+886225080488">
+          <a href="tel:+886225080488">
             <MdPhoneInTalk
               color="#A0DDFE"
               fontSize="5rem"
@@ -64,9 +66,9 @@ export default function Footer() {
               }}
             />
           </a>
-          <a className="" href="mailto:info@ac-re.com.tw">
+          <Mailto>
             <MdOutlineMail color="#A0DDFE" fontSize="5rem" />
-          </a>
+          </Mailto>
         </div>
         <ul className="w-10/12 space-y-6" data-aos="fade-up">
           {NavList.map(({ title, url, isPhoneHidden }) => !isPhoneHidden && (
@@ -80,11 +82,11 @@ export default function Footer() {
           ))}
         </ul>
         <h5
-          className="flex font-light text-secondary-lightest text-center w-10/12 pt-6"
+          className="font-light text-secondary-lightest text-center w-10/12 pt-6"
           data-aos="fade-up"
         >
-          Copyright © {new Date().getFullYear()} by AC Re Services Co., Ltd. All
-          Rights Reserved.
+          Copyright © {new Date().getFullYear()} by AC Re Services Co., Ltd. <span className='whitespace-nowrap'>All
+          Rights Reserved.</span>
         </h5>
       </section>
     </footer>

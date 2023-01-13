@@ -13,6 +13,7 @@ import {
   _IconInput,
   _InputFile,
   Spinner,
+  Mailto,
 } from 'components';
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
 import { sendCareerForm } from 'common/api.js';
@@ -50,8 +51,8 @@ const initErrors = {
   mobile: null,
   email: null,
   role: false,
-  coverLetter: null,
-  resume: null,
+  coverLetter: false,
+  resume: false,
 };
 
 const initErrorMsg = {
@@ -250,13 +251,12 @@ export default function Career() {
             If you&apos;re interested in joining our team,
             <br />
             then please get in touch with us via{' '}
-            <a
-              href="mailto:hr@ac-re.com.tw"
-              rel="noopener noreferrer"
+            <Mailto
+              type='career'
               className="text-primary-darkGray whitespace-nowrap"
             >
               hr@ac-re.com.tw
-            </a>
+            </Mailto>
             ,
             <br />
             or by completing the{' '}
@@ -389,7 +389,7 @@ const Field = ({
       if (target.files.length) {
         const size = !!target.files[0].size ? target.files[0].size / 1024 : 0;
         if (size > 200) {
-          currentErrorMsg = <>File is greater than 200k, please send it via <a href="mailto:hr@ac-re.com.tw" className="font-light text-blue-600 hover:underline">hr@ac-re.com.tw</a></>;
+          currentErrorMsg = <>File is greater than 200k, please send it via <Mailto type='career' className="font-light text-blue-600 hover:underline">hr@ac-re.com.tw</Mailto></>;
         }
       }
       files = {

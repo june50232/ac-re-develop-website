@@ -11,6 +11,7 @@ import MobileContainer from './MobileContainer';
 import Section from './Section';
 import GoogleMap from './GoogleMap';
 import Spinner from './Spinner';
+import Mailto from './Mailto';
 import {
   _SubmitButton,
   _Label,
@@ -48,4 +49,5 @@ export {
   _AfterSubmitCard,
   _Grid,
   Spinner,
+  Mailto,
 };
