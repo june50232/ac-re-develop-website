@@ -156,7 +156,7 @@ export const _Textarea = ({ isError, ...restProps }) => {
 
 interface ErrorMsgProps {
   title?: string;
-  errorMsg?: string;
+  errorMsg?: any;
 }
 
 export const _ErrorMsg = ({

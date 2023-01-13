@@ -17,6 +17,13 @@ import {
 import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
 import { sendCareerForm } from 'common/api.js';
 
+const requiredField = [
+  'title',
+  'name',
+  'mobile',
+  'email'
+]
+
 const initValues = {
   title: '',
   name: '',
@@ -43,7 +50,7 @@ const initErrors = {
   mobile: null,
   email: null,
   role: false,
-  coverLetter: false,
+  coverLetter: null,
   resume: null,
 };
 
@@ -292,7 +299,6 @@ export default function Career() {
                 <Field
                   name="title"
                   title="Title"
-                  required
                   type="text"
                   placeholder="Mr., Miss, Ms., Mrs."
                 />
@@ -300,18 +306,15 @@ export default function Career() {
                   name="name" 
                   title="Name" 
                   type="text"
-                  required 
                 />
                 <Field 
                   name="mobile" 
                   title="Phone" 
                   type="tel" 
-                  required 
                 />
                 <Field 
                   name="email" 
                   title="Email" 
-                  required 
                   type="email" 
                 />
               </div>
@@ -339,7 +342,6 @@ export default function Career() {
                   </>}
                   type={values[`${name}InputType`]}
                   placeholder={values[`${name}InputType`] === 'text' ? 'google drive link or onedrive link（public）' : ''}
-                  required={name === 'resume'}
                   fullWidth
                 />
               ))}
@@ -359,7 +361,6 @@ interface TextInputProps {
   fullWidth?: boolean;
   title: string;
   description?: any;
-  required?: boolean;
   name: string;
   type?: string;
   placeholder?: string;
@@ -369,11 +370,11 @@ const Field = ({
   fullWidth = false,
   title = '',
   description = '',
-  required = false,
   name,
   type = 'text',
   placeholder = '',
 }: TextInputProps) => {
+  const required = requiredField.includes(name)
   const { state, setState } = useContext(FormContext);
   const { values, errors, isLoading, errorMsg } = state;
   const currentValue = values[name];
@@ -382,17 +383,17 @@ const Field = ({
   const handleChange = ({ target }) => {
     let val = target.value || '';
     let files = {};
-    let currentErrorMsg = '';
+    let currentErrorMsg: any = '';
     let errorMsg = {};
     if (type === 'file') {
       if (target.files.length) {
         const size = !!target.files[0].size ? target.files[0].size / 1024 : 0;
         if (size > 200) {
-          currentErrorMsg = 'file size should <= 200k';
+          currentErrorMsg = <>File is greater than 200k, please send it via <a href="mailto:hr@ac-re.com.tw" className="font-light text-blue-600 hover:underline">hr@ac-re.com.tw</a></>;
         }
       }
       files = {
-        [target.name]: target.files.length ? target.files[0] : '',
+        [target.name]: (!!target.files.length && !currentErrorMsg) ? target.files[0] : '',
       };
       errorMsg[target.name] = currentErrorMsg;
     }
@@ -492,7 +493,13 @@ const Field = ({
 const SubmitButton = () => {
   const { state, setState } = useContext(FormContext);
   const { values, errors, isLoading, files } = state;
-  const isEnabled = Object.values(errors).every((v) => v === false);
+  let isEnabled = true;
+
+  for (const [name, value] of Object.entries(errors)) {
+    if (value !== false && requiredField.includes(name)) {
+      isEnabled = false
+    }
+  }
 
   const handleSubmit = () => {
     setState((prev: FormStateInterface) => ({
@@ -501,11 +508,18 @@ const SubmitButton = () => {
     }));
 
     let formData = new FormData();
+    let filteredValues = {}
 
-    formData.append('data', JSON.stringify(values));
+    for (const [name, value] of Object.entries(values)) {
+      if (!!value && !errors[name]) {
+        filteredValues[name] = value
+      }
+    }   
 
-    for (const [, value] of Object.entries(files)) {
-      if (value) {
+    formData.append('data', JSON.stringify(filteredValues));
+
+    for (const [name, value] of Object.entries(files)) {
+      if (!!value && !errors[name]) {
         formData.append('files', value);
       }
     }
