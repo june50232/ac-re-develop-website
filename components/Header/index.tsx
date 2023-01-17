@@ -35,7 +35,6 @@ export default function Header() {
         <nav
           className="mainMenu md:flex hidden justify-end grow"
           ref={navRef}
-          data-aos="fade-down"
         >
           <ul className="flex flex-wrap px-0 mb-0 list-none space-x-3 items-center">
             {NavList.map(({ title, url }) => (

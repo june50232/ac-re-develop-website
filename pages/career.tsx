@@ -15,7 +15,11 @@ import {
   Spinner,
   Mailto,
 } from 'components';
-import { careerTeamImgUrl, careerCareImgUrl } from 'common/imgUrls';
+import { 
+  careerTeamImgUrl, 
+  careerCareImgUrl,
+  careerBannerImgUrl, 
+} from 'common/imgUrls';
 import { sendCareerForm } from 'common/api.js';
 
 const requiredField = [
@@ -171,8 +175,15 @@ export default function Career() {
           background: 'rgba(255, 247, 237, 0.85)',
         }}
       >
+        <GradientBg background="rgba(255, 247, 237, 0.85)" />
+        <BannerImage 
+          url={careerBannerImgUrl} 
+          styles={{
+            backgroundPosition: 'center 35%'
+          }}
+        />
         <div
-          className="h-full w-full flex flex-col justify-center items-center space-y-5"
+          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
         >
           <h1>Join us!</h1>

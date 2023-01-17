@@ -94,31 +94,6 @@
   .font-family-bold {
     font-family: 'HelveticaNowDisplay';
   }
-/*
-  h1 {
-    color: theme(colors.primary.dark);
-    @apply text-3xl font-bold leading-relaxed;
-  }
-
-  h2 {
-    color: theme(colors.primary.dark);
-    @apply text-2xl font-semibold leading-relaxed;
-  }
-
-  h3 {
-    color: theme(colors.secondary.dark);
-    @apply text-xl font-semibold leading-relaxed;
-  }
-
-  h4 {
-    color: theme(colors.secondary.dark);
-    @apply text-lg leading-relaxed;
-  }
-
-  h5 {
-    @apply text-base leading-relaxed;
-  }
-  */
 
   h5 {
     @apply text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl leading-loose
@@ -200,11 +175,7 @@
 
   .order {
     color: theme(colors.primary.lighter);
-    @apply w-12 h-12 rounded-full relative font-bold;
-  }
-
-  .order.mobile {
-    @apply w-24 h-24 text-xl;
+    @apply w-20 h-20 rounded-full relative font-bold text-2xl;
   }
 
   .order:before,

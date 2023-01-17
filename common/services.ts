@@ -1,13 +1,6 @@
-import {
-  services2WindImgUrl,
-  services2ShipToLeftImgUrl,
-  services2TransferImgUrl,
-} from 'common/imgUrls';
-
 const servicesData = [
   {
     title: 'Marine',
-    bgImg: services2ShipToLeftImgUrl,
     bgImgStyle: {
       backgroundPositionX: '0%',
     },
@@ -97,7 +90,6 @@ const servicesData = [
   },
   {
     title: 'Property & Casualty',
-    bgImg: services2WindImgUrl,
     category: [
       {
         title:
@@ -176,7 +168,6 @@ const servicesData = [
   },
   {
     title: 'Reinsurance and Alternative Risk Transfer',
-    bgImg: services2TransferImgUrl,
     bgImgStyle: {
       backgroundPositionY: '0%',
     },

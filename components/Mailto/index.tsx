@@ -18,7 +18,6 @@ const _Mailto = ({
     <a
         href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(queries.map(b => b).join(''))}`}
         rel="noopener noreferrer"
-        target="_blank"
         className={className}
     >{children}</a>
 )

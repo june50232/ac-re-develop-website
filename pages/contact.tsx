@@ -111,7 +111,12 @@ export default function Contact() {
     <>
       <Section classname="h-96">
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
-        <BannerImage url={contactBannerImgUrl} />
+        <BannerImage 
+          url={contactBannerImgUrl} 
+          style={{
+            backgroundPosition: 'center 24%'
+          }}
+        />
         <div
           className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
