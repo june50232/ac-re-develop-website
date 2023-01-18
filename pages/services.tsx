@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom'
 import servicesData from 'common/services';
 import {
-  Section,
   GradientBg,
   BannerImage,
   LaptopH2PrelineH3Wrap,
@@ -22,11 +21,13 @@ import 'photoswipe/dist/photoswipe.css';
 export default function Services() {
   return (
     <>
-      <Section classname="h-96">
-        <GradientBg background="rgba(255,255,255,0.85)" />
-        <BannerImage url={servicesBannerImgUrl} />
+      <section className="h-96 w-screen relative">
+        <div className='relative w-full h-full'>
+          <GradientBg background="rgba(255,255,255,0.85)" />
+          <BannerImage url={servicesBannerImgUrl} />
+        </div>
         <div
-          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
+          className="absolute top-0 z-2 h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
           <h1>Services & products</h1>
@@ -39,9 +40,9 @@ export default function Services() {
             need.
           </h3>
         </div>
-      </Section>
+      </section>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-48 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -50,7 +51,7 @@ export default function Services() {
             }}
           />
         </div>
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={0}
             titleClassName="top-[11%] left-[10%]"
@@ -58,7 +59,7 @@ export default function Services() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>
         <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3ConstructionImgUrl}
@@ -67,13 +68,13 @@ export default function Services() {
             }}
           />
         </div>
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={1}
             titleClassName="top-[11%] right-[66%]"
           />
         </div>
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-48 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3WindImgUrl}
@@ -84,7 +85,7 @@ export default function Services() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-48 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5AnalysisImgUrl}
@@ -93,13 +94,13 @@ export default function Services() {
             }}
           />
         </div>
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={2}
             titleClassName="top-[8%] left-8 w-80 items-center"
           />
         </div>
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-96'>  
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>  
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5Analysis2ImgUrl}
@@ -107,14 +108,14 @@ export default function Services() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 static">
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={3}
             titleClassName="top-[11%] right-[66%]"
             isOther
           />
         </div>
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-96'>
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-48 md:h-96'>
         <GradientBg background="linear-gradient(rgba(255,255,255,0.3), rgb(224,242,248,0.2),rgb(224,242,248,0.05),rgb(224,242,248,0.2), rgb(255,255,255,0.3))" />
           <BannerImage
             url={services5RiskImgUrl}
@@ -174,7 +175,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
             className="fixed inset-0 bg-secondary-lighter opacity-60 z-10"
             onClick={() => setOpen(false)}
           ></div>
-          <div className="fixed top-[10%] left-[20%] w-[60%] h-[80%] z-20 bg-white shadow-2xl rounded-lg">
+          <div className="fixed top-[10%] left-0 md:left-[20%] w-full md:w-[60%] h-[80%] z-20 bg-white shadow-2xl rounded-lg">
             <div className="relative w-full h-full flex items-center justify-center">
               <h1
                 className="absolute right-6 top-3 px-6 py-6 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
@@ -204,7 +205,7 @@ const PortalContent: FC<{
 }> = ({ index, isOther }) => {
   return (
     <div className="h-[88%] w-[90%] overflow-hidden relative flex">
-      <section className="md:flex flex-col hidden h-full absolute inset-0 space-y-6 items-center">
+      <section className="flex flex-col h-full absolute inset-0 space-y-6 items-center">
         <LaptopH2PrelineH3Wrap
           noFadeEffect
           classnames="w-[70%] text-primary-darker"

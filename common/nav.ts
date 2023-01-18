@@ -12,7 +12,6 @@ const NavList: { title: string; url: string; isPhoneHidden?: boolean }[] = [
   {
     title: 'Services & products',
     url: servicesUrl,
-    isPhoneHidden: true,
   },
   {
     title: 'Careers',
