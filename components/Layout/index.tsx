@@ -18,7 +18,7 @@ export default function Layout(props) {
   }, []);
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <div className="min-h-screen py-0">
         <HTMLHead />
         <body>

@@ -78,11 +78,13 @@
     @apply font-normal font-sans text-base md:text-xs;
   }
 
-  body {
+  body,
+  .invisible-scrollbar {
     scrollbar-width: none;
   }
 
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar,
+  .invisible-scrollbar::-webkit-scrollbar {
     display: none;
   }
 

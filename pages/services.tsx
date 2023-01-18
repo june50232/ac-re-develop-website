@@ -42,7 +42,7 @@ export default function Services() {
         </div>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-48 md:h-96'>
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-36 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -59,8 +59,8 @@ export default function Services() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>
-        <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),rgb(224,242,248,0.1),rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),rgb(224,242,248,0.1),rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3ConstructionImgUrl}
             styles={{
@@ -74,7 +74,7 @@ export default function Services() {
             titleClassName="top-[11%] right-[66%]"
           />
         </div>
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-48 md:h-96'>
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-36 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3WindImgUrl}
@@ -85,7 +85,7 @@ export default function Services() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-48 md:h-96'>
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-36 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5AnalysisImgUrl}
@@ -100,7 +100,7 @@ export default function Services() {
             titleClassName="top-[8%] left-8 w-80 items-center"
           />
         </div>
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>  
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>  
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),transparent,rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5Analysis2ImgUrl}
@@ -115,7 +115,7 @@ export default function Services() {
             isOther
           />
         </div>
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-48 md:h-96'>
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-36 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.6), rgb(224,242,248,0.5),rgb(224,242,248,0.2),rgb(224,242,248,0.3), rgb(255,255,255,0.5))" />
           <BannerImage
             url={services5RiskImgUrl}
@@ -214,7 +214,7 @@ const PortalContent: FC<{
         </LaptopH2PrelineH3Wrap>
         <hr className="w-full text-primary-darker font-thin" />
         {isOther ? (
-          <div className="flex flex-col h-full min-h-fit pt-3 px-[2%] overflow-y-scroll">
+          <div className="flex flex-col h-full min-h-fit pt-3 px-[2%] overflow-y-scroll invisible-scrollbar">
             {servicesData[index].category.map((o: any, i) => (
               <div
                 className=" h-auto relative hover-scale-inner-img-effect"
@@ -234,7 +234,7 @@ const PortalContent: FC<{
             ))}
           </div>
         ) : (
-          <div className="w-full h-full flex justify-center items-start overflow-y-scroll">
+          <div className="w-full h-full flex justify-center items-start overflow-y-scroll invisible-scrollbar">
             <ul className={`w-4/6 h-auto ${index === 2 && 'mt-6'} flex flex-col list-disc space-y-${index === 2 ? '6' : '3'}`}>
               {servicesData[index].category.map(({ title }, i) => {
                 return (
