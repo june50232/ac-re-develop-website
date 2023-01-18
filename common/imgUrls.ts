@@ -40,23 +40,11 @@ export const aboutFounderImgUrl = `${domain}/about-founder.png`;
 //https://www.shutterstock.com/zh-Hant/image-photo/wave-boat-on-beach-background-waves-1542535259
 export const servicesBannerImgUrl = `${domain}/services-banner.png`;
 
-// unknown https://www.shutterstock.com/zh-Hant/image-photo/electrical-engineers-using-laptops-monitor-operation-1773902651
-export const services3ConstructionImgUrl = `${domain}/services-3-construction.png`;
-
 // https://www.shutterstock.com/zh-Hant/image-photo/solar-energy-panel-photovoltaic-cell-wind-1421845307
 export const services3WindImgUrl = `${domain}/services-3-wind.png`;
 
 // https://www.shutterstock.com/zh-Hant/image-photo/webinar-banner-aerial-top-view-cargo-1846546738
 export const services2ShipImgUrl = `${domain}/services-2-ship.png`;
-
-// unknown https://www.shutterstock.com/zh/image-photo/businessman-collects-wooden-puzzles-word-risk-1405516823
-export const services5RiskImgUrl = `${domain}/services-5-risk.png`;
-
-// unknown https://www.shutterstock.com/zh-Hant/image-photo/businessman-hand-working-new-modern-computer-736790485
-export const services5AnalysisImgUrl = `${domain}/services-5-analysis.png`;
-
-// unknown https://www.shutterstock.com/zh-Hant/image-photo/analyzing-sales-data-431666989
-export const services5Analysis2ImgUrl = `${domain}/services-5-analysis2.png`;
 
 // https://www.shutterstock.com/zh-Hant/image-photo/law-concept-man-dark-blue-suit-2076650119
 export const contactBannerImgUrl = `${domain}/contact-banner.png`;

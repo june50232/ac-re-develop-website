@@ -10,10 +10,6 @@ import {
   servicesBannerImgUrl,
   services3WindImgUrl,
   services2ShipImgUrl,
-  services3ConstructionImgUrl,
-  services5AnalysisImgUrl,
-  services5Analysis2ImgUrl,
-  services5RiskImgUrl,
 } from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import 'photoswipe/dist/photoswipe.css';
@@ -42,7 +38,7 @@ export default function Services() {
         </div>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-36 md:h-96'>
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -57,70 +53,33 @@ export default function Services() {
             titleClassName="top-[11%] left-[10%]"
           />
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),rgb(224,242,248,0.1),rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
-          <BannerImage
-            url={services3ConstructionImgUrl}
-            styles={{
-              backgroundPosition: 'initial',
-            }}
-          />
-        </div>
         <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={1}
             titleClassName="top-[11%] right-[66%]"
           />
         </div>
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-36 md:h-96'>
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
-          <BannerImage
-            url={services3WindImgUrl}
-            styles={{
-              backgroundPosition: 'initial',
-            }}
-          />
-        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-36 md:h-96'>
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
-          <BannerImage
-            url={services5AnalysisImgUrl}
-            styles={{
-              backgroundPositionX: '100%',
-            }}
-          />
-        </div>
         <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={2}
             titleClassName="top-[8%] left-8 w-80 items-center"
           />
         </div>
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>  
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),transparent,rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
-          <BannerImage
-            url={services5Analysis2ImgUrl}
-          />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 static">
         <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
-          <PortalClickItem
-            index={3}
-            titleClassName="top-[11%] right-[66%]"
-            isOther
-          />
+        <PortalClickItem
+          index={3}
+          titleClassName="top-[11%] right-[66%]"
+          isOther
+        />
         </div>
-        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-36 md:h-96'>
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.6), rgb(224,242,248,0.5),rgb(224,242,248,0.2),rgb(224,242,248,0.3), rgb(255,255,255,0.5))" />
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
-            url={services5RiskImgUrl}
+            url={services3WindImgUrl}
             styles={{
-              backgroundPosition: 'center 20%'
+              backgroundPosition: 'initial',
             }}
           />
         </div>
