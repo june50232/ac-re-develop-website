@@ -60,7 +60,7 @@ export default function Services() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
         <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>
-        <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
+        <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),rgb(224,242,248,0.1),rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3ConstructionImgUrl}
             styles={{
@@ -86,7 +86,7 @@ export default function Services() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
         <div className='col-span-1 md:col-span-1 relative overflow-hidden h-48 md:h-96'>
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5AnalysisImgUrl}
             styles={{
@@ -101,7 +101,7 @@ export default function Services() {
           />
         </div>
         <div className='col-span-1 md:col-span-2 relative overflow-hidden h-48 md:h-96'>  
-          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.3),transparent,rgb(224,242,248,0.3), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services5Analysis2ImgUrl}
           />
@@ -116,7 +116,7 @@ export default function Services() {
           />
         </div>
         <div className='col-span-1 md:col-span-3 relative overflow-hidden h-48 md:h-96'>
-        <GradientBg background="linear-gradient(rgba(255,255,255,0.3), rgb(224,242,248,0.2),rgb(224,242,248,0.05),rgb(224,242,248,0.2), rgb(255,255,255,0.3))" />
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.6), rgb(224,242,248,0.5),rgb(224,242,248,0.2),rgb(224,242,248,0.3), rgb(255,255,255,0.5))" />
           <BannerImage
             url={services5RiskImgUrl}
             styles={{
