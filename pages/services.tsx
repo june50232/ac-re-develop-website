@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom'
 import servicesData from 'common/services';
 import {
   Section,
@@ -8,8 +9,12 @@ import {
 } from 'components';
 import {
   servicesBannerImgUrl,
-  services2WindImgUrl,
+  services3WindImgUrl,
   services2ShipImgUrl,
+  services3ConstructionImgUrl,
+  services5AnalysisImgUrl,
+  services5Analysis2ImgUrl,
+  services5RiskImgUrl,
 } from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import 'photoswipe/dist/photoswipe.css';
@@ -35,8 +40,8 @@ export default function Services() {
           </h3>
         </div>
       </Section>
-      <section className="md:flex w-screen hidden overflow-hidden h-96 static">
-        <aside className="flex w-6/12 h-full overflow-hidden relative">
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-96'>
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -44,39 +49,91 @@ export default function Services() {
               backgroundPositionX: '100%',
             }}
           />
-        </aside>
-        <PortalClickItem
-          index={0}
-          width="3/12"
-          titleClassName="top-[11%] left-[10%]"
-        />
-        <PortalClickItem
-          index={1}
-          width="2/12"
-          titleClassName="top-[11%] right-[66%]"
-        />
-      </section>
-      <section className="flex md:flex w-screen hidden overflow-hidden h-96 static">
-        <aside className="flex w-6/12 h-full overflow-hidden relative">
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+          <PortalClickItem
+            index={0}
+            titleClassName="top-[11%] left-[10%]"
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-96'>
+        <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services3ConstructionImgUrl}
+            styles={{
+              backgroundPosition: 'initial',
+            }}
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+          <PortalClickItem
+            index={1}
+            titleClassName="top-[11%] right-[66%]"
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-96'>
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services3WindImgUrl}
+            styles={{
+              backgroundPosition: 'initial',
+            }}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className='col-span-1 md:col-span-1 relative overflow-hidden h-96'>
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services5AnalysisImgUrl}
+            styles={{
+              backgroundPositionX: '100%',
+            }}
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
           <PortalClickItem
             index={2}
-            width="7/12"
             titleClassName="top-[8%] left-8 w-80 items-center"
           />
-           <PortalClickItem index={3} width="5/12" isOther />
-        </aside>
-        <aside className="w-6/12 h-full overflow-hidden relative flex">
-          <GradientBg background="linear-gradient(rgb(224,242,248), transparent, transparent, transparent, rgba(224,242,248,0.9))" />
-          <BannerImage url={services2WindImgUrl} />
-        </aside>
-      </section>
+        </div>
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-96'>  
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.1),transparent,rgb(224,242,248,0.1), rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services5Analysis2ImgUrl}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 static">
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-96'>
+          <PortalClickItem
+            index={3}
+            titleClassName="top-[11%] right-[66%]"
+            isOther
+          />
+        </div>
+        <div className='col-span-1 md:col-span-3 relative overflow-hidden h-96'>
+        <GradientBg background="linear-gradient(rgba(255,255,255,0.3), rgb(224,242,248,0.2),rgb(224,242,248,0.05),rgb(224,242,248,0.2), rgb(255,255,255,0.3))" />
+          <BannerImage
+            url={services5RiskImgUrl}
+            styles={{
+              backgroundPosition: 'center 20%'
+            }}
+          />
+        </div>
+      </div>
     </>
   );
 }
 
 const ProductTitle = (props) => {
   return (
-    <div className="text-secondary flex flex-col space-y-4 items-center justify-center px-2 w-full h-full m-2">
+    <div 
+      className="text-secondary flex flex-col space-y-4 items-center justify-center px-2 w-full h-full m-2"
+      data-aos="fade-up"
+      >
       <div className="flex items-center">
         <h2 className="tracking-wide text-center mr-2">
           {servicesData[props.index].title}
@@ -111,12 +168,13 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
         </div>
       </div>
       {isOpen && (
-        <>
+        createPortal(
+          <>
           <div
             className="fixed inset-0 bg-secondary-lighter opacity-60 z-10"
             onClick={() => setOpen(false)}
           ></div>
-          <div className="fixed top-[10%] left-[20%] w-[60%] h-[80%] z-20 bg-white shadow-2xl">
+          <div className="fixed top-[10%] left-[20%] w-[60%] h-[80%] z-20 bg-white shadow-2xl rounded-lg">
             <div className="relative w-full h-full flex items-center justify-center">
               <h1
                 className="absolute right-6 top-3 px-6 py-6 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
@@ -124,20 +182,22 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
               >
                 X
               </h1>
-              <Portal
+              <PortalContent
                 index={index}
                 titleClassName={titleClassName}
                 isOther={isOther}
               />
             </div>
           </div>
-        </>
+        </>,
+          document.body
+        )
       )}
     </>
   );
 };
 
-const Portal: FC<{
+const PortalContent: FC<{
   index: number;
   titleClassName: string;
   isOther?: boolean;
@@ -174,11 +234,15 @@ const Portal: FC<{
           </div>
         ) : (
           <div className="w-full h-full flex justify-center items-start overflow-y-scroll">
-            <ul className="w-4/6 h-auto flex flex-col list-disc space-y-3">
+            <ul className={`w-4/6 h-auto ${index === 2 && 'mt-6'} flex flex-col list-disc space-y-${index === 2 ? '6' : '3'}`}>
               {servicesData[index].category.map(({ title }, i) => {
                 return (
                   <li key={i}>
-                    <h3 className="text-primary-darker font-light leading-relaxed">{title}</h3>
+                    {index === 2 
+                    ? <h1 className="text-primary-darker font-light leading-relaxed">{title}</h1>
+                    : <h3 className="text-primary-darker font-light leading-relaxed">{title}</h3>
+                  }
+                    
                   </li>
                 );
               })}
