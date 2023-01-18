@@ -105,8 +105,8 @@ export default function Home() {
             <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-5">
               {whyReason.map(({ title, content }, i) => (
-                <div key={title} className="flex space-x-6" data-aos="fade-up">
-                  <div className="">
+                <div key={title} className="grid grid-cols-1 md:grid-cols-8 gap-6" data-aos="fade-up">
+                  <div className="col-span-1">
                     <div
                       className={`flex items-center justify-center order order-${
                         (i + 1) * 25
@@ -115,7 +115,7 @@ export default function Home() {
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="space-y-5">
+                  <div className="col-span-1 md:col-span-7 space-y-5">
                     <h2 className='leading-relaxed'>{title}</h2>
                     <h2 className="font-light text-secondary leading-relaxed">
                       {content}
@@ -128,12 +128,12 @@ export default function Home() {
         </div>
       </section>
       <section
-        className="overflow-hidden relative pt-3 pb-12 px-8 md:px-16 md:pt-12 space-y-6 md:space-y-1"
+        className="md:overflow-hidden relative pt-3 pb-12 px-8 md:px-16 md:pt-12 space-y-6 md:space-y-1"
         id="core-value-laptop"
       >
         <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
         <div
-          className="absolute -z-[1] -top-20 -right-20 md:top-0 md:-right-48 h-72 w-4/6"
+          className="absolute -z-[1] -top-20 -right-20 md:top-0 md:-right-48 h-72 w-full md:w-4/6"
           data-aos="fade-up"
         >
           <BannerImage
