@@ -29,7 +29,6 @@ export const aboutTeamsImgUrl = `${domain}/about-teams.png`;
 // https://www.shutterstock.com/zh-Hant/image-photo/wooden-figures-on-yellow-background-concept-1919675303
 export const aboutBestImgUrl = `${domain}/about-best.png`;
 
-// TODO
 // https://www.shutterstock.com/zh-Hant/image-photo/hand-woman-watering-small-plant-pot-1022552590
 export const aboutfastGrowImgUrl = `${domain}/about-fast-growing.png`;
 
@@ -41,7 +40,7 @@ export const aboutFounderImgUrl = `${domain}/about-founder.png`;
 //https://www.shutterstock.com/zh-Hant/image-photo/wave-boat-on-beach-background-waves-1542535259
 export const servicesBannerImgUrl = `${domain}/services-banner.png`;
 
-// https://www.shutterstock.com/zh-Hant/image-photo/electrical-engineers-using-laptops-monitor-operation-1773902651
+// unknown https://www.shutterstock.com/zh-Hant/image-photo/electrical-engineers-using-laptops-monitor-operation-1773902651
 export const services3ConstructionImgUrl = `${domain}/services-3-construction.png`;
 
 // https://www.shutterstock.com/zh-Hant/image-photo/solar-energy-panel-photovoltaic-cell-wind-1421845307
@@ -50,19 +49,19 @@ export const services3WindImgUrl = `${domain}/services-3-wind.png`;
 // https://www.shutterstock.com/zh-Hant/image-photo/webinar-banner-aerial-top-view-cargo-1846546738
 export const services2ShipImgUrl = `${domain}/services-2-ship.png`;
 
-// https://www.shutterstock.com/zh/image-photo/businessman-collects-wooden-puzzles-word-risk-1405516823
+// unknown https://www.shutterstock.com/zh/image-photo/businessman-collects-wooden-puzzles-word-risk-1405516823
 export const services5RiskImgUrl = `${domain}/services-5-risk.png`;
 
-// https://www.shutterstock.com/zh-Hant/image-photo/businessman-hand-working-new-modern-computer-736790485
+// unknown https://www.shutterstock.com/zh-Hant/image-photo/businessman-hand-working-new-modern-computer-736790485
 export const services5AnalysisImgUrl = `${domain}/services-5-analysis.png`;
 
-// https://www.shutterstock.com/zh-Hant/image-photo/analyzing-sales-data-431666989
+// unknown https://www.shutterstock.com/zh-Hant/image-photo/analyzing-sales-data-431666989
 export const services5Analysis2ImgUrl = `${domain}/services-5-analysis2.png`;
 
 // https://www.shutterstock.com/zh-Hant/image-photo/law-concept-man-dark-blue-suit-2076650119
 export const contactBannerImgUrl = `${domain}/contact-banner.png`;
 
-// already download: https://www.shutterstock.com/zh-Hant/image-photo/hiring-career-employment-human-resources-concept-590104691
+// https://www.shutterstock.com/zh-Hant/image-photo/hiring-career-employment-human-resources-concept-590104691
 export const careerBannerImgUrl = `${domain}/career-banner.png`;
 
 // https://www.shutterstock.com/zh-Hant/image-photo/large-business-team-showing-unity-their-744417571
