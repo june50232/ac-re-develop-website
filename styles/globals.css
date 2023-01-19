@@ -177,7 +177,6 @@
 
   .order {
     color: theme(colors.primary.lighter);
-    @apply w-20 h-20 rounded-full relative font-bold text-2xl;
   }
 
   .order:before,

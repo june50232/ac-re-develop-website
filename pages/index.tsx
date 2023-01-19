@@ -105,17 +105,17 @@ export default function Home() {
             <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-5">
               {whyReason.map(({ title, content }, i) => (
-                <div key={title} className="grid grid-cols-1 md:grid-cols-8 gap-6" data-aos="fade-up">
+                <div key={title} className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6" data-aos="fade-up">
                   <div className="col-span-1">
                     <div
-                      className={`flex items-center justify-center order order-${
+                      className={`flex items-center justify-center w-20 h-20 rounded-full relative font-bold text-2xl m-auto order order-${
                         (i + 1) * 25
                       }`}
                     >
                       0{i + 1}
                     </div>
                   </div>
-                  <div className="col-span-1 md:col-span-7 space-y-5">
+                  <div className="col-span-1 md:col-span-7 lg:col-span-11 space-y-5">
                     <h2 className='leading-relaxed'>{title}</h2>
                     <h2 className="font-light text-secondary leading-relaxed">
                       {content}
