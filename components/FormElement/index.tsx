@@ -24,6 +24,7 @@ export const _SubmitButton = ({
       className={`py-3 ${stateClassname}`}
       disabled={!isEnabled || isLoading}
       {...restProps}
+      id="submit-button"
     ><h3 className={stateClassname}>
       {isLoading ? (
         <>
@@ -182,10 +183,12 @@ interface AfterSubmitProps {
 }
 
 export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitProps) => {
+  const mailToFrom = `${formName}-form-submit-${isSuccess ? 'success' : 'failed'}`
   return (
     <div
       className="flex flex-col w-4/6 h-[30rem] space-y-6 justify-center items-center relative border border-gray-200 rounded-lg shadow-md"
       data-aos="flip-left"
+      id={`after-submit-${formName}-${isSuccess ? 'success' : 'failed'}`}
     >
       {isSuccess 
       ? (
@@ -221,6 +224,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
           <NarrowButton 
             text={formName === 'career' ? "Request another applying" : "Send another message"}
             onClick={() => onClick()}
+            mailToFrom={mailToFrom}
           />
         </>
       )
@@ -239,7 +243,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               <>
               We are sorry that our system is currently blocked.
               <br/>
-              Please send request via <Mailto type="career">hr@ac-re.com.tw</Mailto>
+              Please send request via <Mailto type="career" from={mailToFrom}>hr@ac-re.com.tw</Mailto>
               <br/>
               and we look forward to reviewing your application.
               </>
@@ -248,7 +252,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
               <>
               We are sorry that our system is currently blocked.
               <br/>
-              Please send request via <Mailto>info@ac-re.com.tw</Mailto>
+              Please send request via <Mailto from={mailToFrom}>info@ac-re.com.tw</Mailto>
               <br/>
               and we will get back in touch with you soon.
               </>
@@ -257,6 +261,7 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
           <NarrowButton 
             text="Retry again"
             onClick={() => onClick()}
+            mailToFrom={mailToFrom}
           />
         </>
       )
@@ -265,9 +270,9 @@ export const _AfterSubmitCard = ({ isSuccess, onClick, formName }: AfterSubmitPr
   )
 } 
 
-const NarrowButton = ({ text, onClick }) => {
+const NarrowButton = ({ text, onClick, mailToFrom }) => {
   return (
-    <div onClick={onClick} className='flex space-x-3 justify-center items-center retry-button'>
+    <div onClick={onClick} className='flex space-x-3 justify-center items-center retry-button' id={`${mailToFrom}-${text.split(' ').join('-')}-button`}>
       <h3 className='leading-relaxed text-blue-700 cursor-pointer font-light'>{text}</h3>
       <button type="button">
         <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>

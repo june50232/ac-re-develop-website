@@ -17,7 +17,7 @@ import 'photoswipe/dist/photoswipe.css';
 export default function Services() {
   return (
     <>
-      <section className="h-96 w-screen relative">
+      <section className="h-96 w-screen relative" id="services-banner">
         <div className='relative w-full h-full'>
           <GradientBg background="rgba(255,255,255,0.85)" />
           <BannerImage url={servicesBannerImgUrl} />
@@ -37,8 +37,8 @@ export default function Services() {
           </h3>
         </div>
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
+      <div className="grid grid-cols-1 md:grid-cols-4" id="services-category">
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-ship">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -74,7 +74,7 @@ export default function Services() {
           isOther
         />
         </div>
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96'>
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-wind">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3WindImgUrl}
@@ -107,6 +107,7 @@ const ProductTitle = (props) => {
 
 const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
   const [isOpen, setOpen] = useState(false);
+  const id = servicesData[index].title.split(' ').join('')
 
   useEffect(() => {
     if (isOpen) {
@@ -122,6 +123,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
         className={`w-${width} h-full flex grow items-center justify-center cursor-pointer`}
         style={{ border: '1px dotted #DCEFFC' }}
         onClick={() => setOpen(!isOpen)}
+        id={id}
       >
         <div className="h-3/6 w-9/12 flex flex-col justify-evenly">
           <ProductTitle index={index} />
@@ -134,7 +136,10 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
             className="fixed inset-0 bg-secondary-lighter opacity-60 z-10"
             onClick={() => setOpen(false)}
           ></div>
-          <div className="fixed top-[10%] left-0 md:left-[20%] w-full md:w-[60%] h-[80%] z-20 bg-white shadow-2xl rounded-lg">
+          <div 
+            className="fixed top-[10%] left-0 md:left-[20%] w-full md:w-[60%] h-[80%] z-20 bg-white shadow-2xl rounded-lg"
+            id={`${id}Modal`}
+          >
             <div className="relative w-full h-full flex items-center justify-center">
               <h1
                 className="absolute right-6 top-3 px-6 py-6 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
@@ -162,6 +167,7 @@ const PortalContent: FC<{
   titleClassName: string;
   isOther?: boolean;
 }> = ({ index, isOther }) => {
+  const id = servicesData[index].title.split(' ').join('')
   return (
     <div className="h-[88%] w-[90%] overflow-hidden relative flex">
       <section className="flex flex-col h-full absolute inset-0 space-y-6 items-center">
@@ -178,6 +184,7 @@ const PortalContent: FC<{
               <div
                 className=" h-auto relative hover-scale-inner-img-effect"
                 key={i}
+                id={`${id}_Content_${i}`}
               >
                 <ul className="list-disc ml-6">
                   <li className="text-primary-darker font-semibold text-lg">
@@ -197,12 +204,11 @@ const PortalContent: FC<{
             <ul className={`w-4/6 h-auto ${index === 2 && 'mt-6'} flex flex-col list-disc space-y-${index === 2 ? '6' : '3'}`}>
               {servicesData[index].category.map(({ title }, i) => {
                 return (
-                  <li key={i}>
+                  <li key={i} id={`${id}_Content_${i}`}>
                     {index === 2 
                     ? <h1 className="text-primary-darker font-light leading-relaxed">{title}</h1>
                     : <h3 className="text-primary-darker font-light leading-relaxed">{title}</h3>
-                  }
-                    
+                  } 
                   </li>
                 );
               })}

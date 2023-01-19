@@ -109,7 +109,7 @@ export default function Contact() {
 
   return (
     <>
-      <Section classname="h-96">
+      <Section classname="h-96" id="contact-banner">
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
         <BannerImage 
           url={contactBannerImgUrl} 
@@ -135,6 +135,7 @@ export default function Contact() {
       <Section
         classname="h-80 grow flex items-center justify-center"
         data-aos="fade-up"
+        id="contact-info"
       >
         <div className="w-full h-7/12 flex justify-evenly items-start">
           <a
@@ -171,6 +172,7 @@ export default function Contact() {
           </a>
           <Mailto
             className="flex flex-col space-y-3 items-center"
+            from="contact"
           ><>
             <FcFeedback color="#A0DDFE" fontSize="3rem" />
             <div className="flex flex-col space-y-3 items-center">
@@ -197,6 +199,7 @@ export default function Contact() {
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
+        id="contact-form"
       >
         <div
           className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
@@ -252,7 +255,7 @@ export default function Contact() {
           }
         </FormContext.Provider>
       </Section>
-      <Section classname="h-96">
+      <Section classname="h-96" id="contact-map">
         <GoogleMap></GoogleMap>
       </Section>
     </>

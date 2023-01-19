@@ -66,7 +66,7 @@ export default function About() {
 
   return (
     <>
-      <section className="w-full h-96 relative" id="banner">
+      <section className="w-full h-96 relative" id="about-banner">
         {/* <GradientBg background="linear-gradient(rgba(255, 255, 255, 0.9), transparent, transparent, rgba(255, 255, 255, 0.9))" /> */}
         <BannerImage url={aboutBannerImgUrl} />
         <div
@@ -78,7 +78,7 @@ export default function About() {
       </section>
       <section
         className="w-full px-6 md:px-1 xl:px-20 py-20"
-        id="intro-laptop"
+        id="about-intro"
         data-aos="fade-up"
       >
         <div className="grid grid-cols-1 md:grid-cols-7 gap-y-10 gap-x-1">
@@ -86,6 +86,7 @@ export default function About() {
             <div
               key={i}
               className={`flex flex-col space-y-6 items-center col-span-2 ${i === 1 && 'md:col-span-3'}`}
+              id={o.title.split(' ').join('')}
               >
               {o.icon}
               <div className="flex flex-col space-y-3 items-center">
@@ -103,7 +104,7 @@ export default function About() {
 
       <section
         className="md:inline-flex w-screen h-[35rem] flex-col hidden overflow-hidden bg-amber-50"
-        id="goal-laptop"
+        id="about-goal"
       >
         <div className="w-full h-full grid grid-cols-1 md:grid-cols-5 relative">
             <div className="col-span-1 flex h-full relative bg-amber-100 justify-end items-center">
@@ -117,12 +118,13 @@ export default function About() {
                 <div className="coreArrow2"></div>
               </div>
             </div>
-            <>
+            <div className='col-span-3 flex'>
               {goal.map(
-                ({ title, img, style = {}, noGradientBg = false }) => (
+                ({ title, img, style = {}, noGradientBg = false }, i) => (
                   <div
-                    className="col-span-1 h-full flex grow hover-grow-effect relative overflow-hidden"
+                    className="h-full flex grow hover-grow-effect relative overflow-hidden"
                     key={title}
+                    id={`about-goal${i}`}
                   >
                     <BannerImage url={img} styles={style} />
                     {!noGradientBg && (
@@ -144,7 +146,7 @@ export default function About() {
                   </div>
                 ),
               )}
-            </>
+            </div>
           <div className="col-span-1 h-full flex flex-col items-center justify-center relative z-[1]">
             <h2 data-aos="fade-up">
               insurance broker
@@ -164,7 +166,7 @@ export default function About() {
       <div className="h-5"></div>
       <section
         className="md:inline-flex w-screen flex-row hidden relative"
-        id="team-laptop"
+        id="about-team"
       >
         <div className="absolute inset-0 -z-[1]">
           <GradientBg
@@ -197,11 +199,12 @@ export default function About() {
               Highly Experienced Senior Management Team
             </LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-6">
-              {teamReason.map((content) => (
+              {teamReason.map((content, i) => (
                 <div
                   key={content}
                   className="flex space-x-16"
                   data-aos="fade-up"
+                  id={`teamSection${i+1}`}
                 >
                   <div className="w-full space-y-2">
                     <h2 className="font-light text-secondary leading-relaxed">
@@ -217,7 +220,7 @@ export default function About() {
       <div className="h-5"></div>
       <section
         className="md:inline-flex w-screen h-[53rem] flex-row hidden"
-        id="leader-laptop"
+        id="about-founder"
       >
         <aside
           className="w-[66rem] bg-amber-100 h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
@@ -231,6 +234,7 @@ export default function About() {
               clipPath: 'circle(50% at 50% 50%)',
             }}
             data-aos="fade-up"
+            id="founderPhoto"
           >
             <BannerImage url={aboutFounderImgUrl} />
           </div>
@@ -238,8 +242,8 @@ export default function About() {
             className="border-l-8 border-solid border-primary-darker pl-2"
             data-aos="fade-up"
           >
-            <h2 className="text-primary-darker font-bold">Solomon Chiu</h2>
-            <h3 className="text-primary-darker">Chairman</h3>
+            <h2 className="text-primary-darker font-bold" id="founderName">Solomon Chiu</h2>
+            <h3 className="text-primary-darker" id="founderTitle">Chairman</h3>
           </div>
         </aside>
         <div className="h-full grow flex flex-col items-center justify-center">
@@ -249,7 +253,12 @@ export default function About() {
             </LaptopH2PrelineH3Wrap>
             <div className="text-secondary space-y-6">
               {founder.map((content, i) => (
-                <h2 key={i} className="font-light text-secondary leading-relaxed indent-8" data-aos="fade-up">
+                <h2 
+                  key={i} 
+                  className="font-light text-secondary leading-relaxed indent-8" 
+                  data-aos="fade-up"
+                  id={`coreValueSection${i}`}
+                >
                   {content}
                 </h2>
               ))}

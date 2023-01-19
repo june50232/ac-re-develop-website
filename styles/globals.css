@@ -221,7 +221,6 @@
   }
 
   .hover-grow-effect:hover {
-    /* flex: 3; */
     flex-grow: 3;
   }
 

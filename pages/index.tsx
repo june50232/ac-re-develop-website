@@ -60,7 +60,7 @@ export default function Home() {
     <>
       <section
         className="flex w-screen h-96 flex-row overflow-hidden relative mb-2"
-        id="banner-laptop-mobile"
+        id="home-banner"
       >
         <GradientBg background="rgba(255, 247, 237, 0.7)" />
         <BannerImage
@@ -87,9 +87,9 @@ export default function Home() {
       </section>
       <section
         className="grid grid-cols-1 md:grid-cols-5 w-screen pl-2"
-        id="why-laptop"
+        id="home-why"
       >
-        <aside className="col-span-1 h-full overflow-hidden relative">
+        <aside className="col-span-1 h-full overflow-hidden relative" id="home-why-img">
           <GradientBg 
             background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))"
           />
@@ -99,7 +99,7 @@ export default function Home() {
         </aside>
         <div
           className="col-span-1 md:col-span-4 h-full flex flex-col items-center justify-center py-12"
-          // style={{ background: 'azure' }}
+          id="home-why-content"
         >
           <div className="h-5/6 w-11/12 flex flex-col justify-center space-y-10">
             <LaptopH2PrelineH3Wrap>Why AC Re</LaptopH2PrelineH3Wrap>
@@ -129,7 +129,7 @@ export default function Home() {
       </section>
       <section
         className="md:overflow-hidden relative pt-3 pb-12 px-8 md:px-16 md:pt-12 space-y-6 md:space-y-1"
-        id="core-value-laptop"
+        id="home-core-value"
       >
         <LaptopH2PrelineH3Wrap>Our Core Value</LaptopH2PrelineH3Wrap>
         <div
@@ -149,6 +149,7 @@ export default function Home() {
               <div
                 key={title}
                 className="relative hover-scale-inner-img-effect"
+                id={title.split(' ').join('')}
               >
                 <div className="absolute coreValueLine"></div>
                 <div className="w-full h-52 overflow-hidden">

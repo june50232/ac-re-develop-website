@@ -3,9 +3,10 @@ import React, { ReactChild } from 'react'
 interface MailToProps {
     email: string;
     queries: any;
-    className: string
-    subject: string
+    className: string;
+    subject: string;
     children?: ReactChild;
+    from?: string;
 }
 
 const _Mailto = ({
@@ -14,11 +15,12 @@ const _Mailto = ({
     className = '',
     subject = '',
     children,
+    from = '',
 }: MailToProps) => (
     <a
         href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(queries.map(b => b).join(''))}`}
         rel="noopener noreferrer"
-        className={className}
+        className={[className, `${from}-mail-to-${email}`].join(' ')}
     >{children}</a>
 )
 
@@ -26,17 +28,20 @@ interface WrapperProps {
     type?: string;
     className?: string;
     children?: ReactChild;
+    from?: string;
 }
 
 const Mailto = ({
     type = 'contact',
     className = '',
     children,
+    from = '',
 }: WrapperProps) => {
     return (
         <_Mailto
             className={className}
             subject={type === 'contact' ? 'Contact AC Re' : 'AC Re employment application'}
+            from={from}
             email={
                 type === 'contact'
                 ? 'info@ac-re.com.tw'

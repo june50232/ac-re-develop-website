@@ -24,7 +24,7 @@ export default function Header() {
     >
       <section className="relative inline-flex w-full inline-flex justify-between items-center">
         <Link href="./" passHref>
-          <a className="cursor-pointer">
+          <a className="cursor-pointer" id="logo">
             <Logo
               style={{
                 marginTop: '-15px',
@@ -44,9 +44,13 @@ export default function Header() {
                   router.asPath === url ? 'menu-line' : ''
                 }`}
               >
-                <h4 className='font-normal leading-normal'>
-                  <Link href={url}>{title}</Link>
-                </h4>
+                <Link href={url} passHref>
+                  <a id={title.split(' ').join('')}>
+                    <h4 className='font-normal leading-normal'>
+                      {title}
+                    </h4>
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>

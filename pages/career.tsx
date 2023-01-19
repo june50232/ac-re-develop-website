@@ -164,6 +164,7 @@ export default function Career() {
       {...values[`${name}InputType`] !== type ? {
         onClick: () => handleFileType(name, type)
       } : {}}
+      id={`career-field-${name}-${type}`}
     >{title}</span>
   )
 
@@ -174,6 +175,7 @@ export default function Career() {
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
+        id="career-banner"
       >
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
         <BannerImage 
@@ -185,6 +187,7 @@ export default function Career() {
         <div
           className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
+          id='CareerBanner'
         >
           <h1>Join us!</h1>
           <hr className="w-8 text-amber-500" />
@@ -196,7 +199,7 @@ export default function Career() {
           </h3>
         </div>
       </Section>
-      <Section classname="h-[32rem]">
+      <Section classname="h-[32rem]" id="career-team">
         <aside className="w-[42%] h-full overflow-hidden relative rounded-br-3xl">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
@@ -221,7 +224,7 @@ export default function Career() {
         </div>
       </Section>
 
-      <Section classname="h-[36rem]">
+      <Section classname="h-[36rem]" id="career-care">
         <div
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
@@ -253,6 +256,7 @@ export default function Career() {
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
+        id="career-form"
       >
         <div
           className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative px-8"
@@ -265,6 +269,7 @@ export default function Career() {
             <Mailto
               type='career'
               className="text-primary-darkGray whitespace-nowrap"
+              from="career-form"
             >
               hr@ac-re.com.tw
             </Mailto>
@@ -400,7 +405,7 @@ const Field = ({
       if (target.files.length) {
         const size = !!target.files[0].size ? target.files[0].size / 1024 : 0;
         if (size > 200) {
-          currentErrorMsg = <>File is greater than 200k, please send it via <Mailto type='career' className="font-light text-blue-600 hover:underline">hr@ac-re.com.tw</Mailto></>;
+          currentErrorMsg = <>File is greater than 200k, please send it via <Mailto type='career' from="career-form-file-oversize" className="font-light text-blue-600 hover:underline">hr@ac-re.com.tw</Mailto></>;
         }
       }
       files = {

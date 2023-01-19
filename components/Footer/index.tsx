@@ -18,6 +18,7 @@ export default function Footer() {
           <a
             className="flex justify-center items-center space-x-2"
             href="tel:+886225080488"
+            id="footer-phone"
           >
             <MdPhoneInTalk
               color="#A0DDFE"
@@ -32,6 +33,7 @@ export default function Footer() {
           </a>
           <Mailto
             className="flex justify-center items-center space-x-2"
+            from="footer"
           >
             <>
               <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
