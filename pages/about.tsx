@@ -105,50 +105,47 @@ export default function About() {
         className="md:inline-flex w-screen h-[35rem] flex-col hidden overflow-hidden bg-amber-50"
         id="goal-laptop"
       >
-        <div className="w-full h-full flex">
-          <aside className="grow flex h-full overflow-hidden relative flex-col">
-            <div className="flex h-full w-full">
-              <div className="flex w-[20%] h-full relative bg-amber-100 justify-end items-center">
-                <div className="absolute top-2 z-[2] flex justify-between items-center">
-                  <h1 className="text-right leading-relaxed">
-                    Our goal
-                    <br />
-                    is to
-                  </h1>
-                  <div className="coreArrow2"></div>
-                </div>
-              </div>
-              <div className="flex grow overflow-hidden">
-                {goal.map(
-                  ({ title, img, style = {}, noGradientBg = false }) => (
-                    <div
-                      className="h-full flex grow hover-grow-effect relative overflow-hidden"
-                      key={title}
-                    >
-                      <BannerImage url={img} styles={style} />
-                      {!noGradientBg && (
-                        <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
-                      )}
-                      <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-16 bottom-[20%]">
-                        <h3
-                          className="absolute bottom-4 color-amber-200 top-4 left-4 text-secondary-DEFAULT text-vertical"
-                          data-aos="fade-up"
-                        >
-                          {title}
-                        </h3>
-                      </div>
-                      <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal overflow-hidden">
-                        <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
-                          {title}
-                        </h2>
-                      </div>
-                    </div>
-                  ),
-                )}
+        <div className="w-full h-full grid grid-cols-1 md:grid-cols-5 relative">
+            <div className="col-span-1 flex h-full relative bg-amber-100 justify-end items-center">
+              
+              <div className="absolute top-2 z-[2] flex justify-between items-center">
+                <h1 className="text-right leading-relaxed">
+                  Our goal
+                  <br />
+                  is to
+                </h1>
+                <div className="coreArrow2"></div>
               </div>
             </div>
-          </aside>
-          <div className="w-[20%] h-full flex flex-col items-center justify-center relative z-[1]">
+            <>
+              {goal.map(
+                ({ title, img, style = {}, noGradientBg = false }) => (
+                  <div
+                    className="col-span-1 h-full flex grow hover-grow-effect relative overflow-hidden"
+                    key={title}
+                  >
+                    <BannerImage url={img} styles={style} />
+                    {!noGradientBg && (
+                      <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
+                    )}
+                    <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-16 bottom-[20%]">
+                      <h3
+                        className="absolute bottom-4 color-amber-200 top-4 left-4 text-secondary-DEFAULT text-vertical"
+                        data-aos="fade-up"
+                      >
+                        {title}
+                      </h3>
+                    </div>
+                    <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal overflow-hidden">
+                      <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
+                        {title}
+                      </h2>
+                    </div>
+                  </div>
+                ),
+              )}
+            </>
+          <div className="col-span-1 h-full flex flex-col items-center justify-center relative z-[1]">
             <h2 data-aos="fade-up">
               insurance broker
               <br />
