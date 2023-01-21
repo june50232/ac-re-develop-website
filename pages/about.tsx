@@ -101,14 +101,12 @@ export default function About() {
           ))}
         </div>
       </section>
-
       <section
-        className="md:inline-flex w-screen h-[35rem] flex-col hidden overflow-hidden bg-amber-50"
-        id="about-goal"
+        className="md:inline-flex hidden w-screen h-[35rem] flex-col overflow-hidden bg-amber-50"
+        id="about-goal-md"
       >
         <div className="w-full h-full grid grid-cols-1 md:grid-cols-5 relative">
             <div className="col-span-1 flex h-full relative bg-amber-100 justify-end items-center">
-              
               <div className="absolute top-2 z-[2] flex justify-between items-center">
                 <h1 className="text-right leading-relaxed">
                   Our goal
@@ -130,7 +128,7 @@ export default function About() {
                     {!noGradientBg && (
                       <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
                     )}
-                    <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-16 bottom-[20%]">
+                    <div className="absolute img-caption-bg-cover top-0 left-0 vertical opacity-100 hover:opacity-0 w-16 bottom-[20%]">
                       <h3
                         className="absolute bottom-4 color-amber-200 top-4 left-4 text-secondary-DEFAULT text-vertical"
                         data-aos="fade-up"
@@ -138,7 +136,7 @@ export default function About() {
                         {title}
                       </h3>
                     </div>
-                    <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal overflow-hidden">
+                    <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal opacity-0 hover:opacity-100 overflow-hidden">
                       <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
                         {title}
                       </h2>
@@ -163,10 +161,53 @@ export default function About() {
           </div>
         </div>
       </section>
+      <section
+        className="md:hidden flex-col w-screen overflow-hidden bg-amber-50"
+        id="about-goal-md"
+        data-aos="fade-up"
+      >
+        <div className="px-6 w-full col-span-1 py-8 relative justify-end items-center bg-amber-100"
+          style={{
+            clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
+          }}
+        >
+          <div className="z-[2] flex justify-center items-center">
+            <h1 className="text-center leading-relaxed">
+              Our goal is to
+            </h1>
+          </div>
+        </div>
+        <div className='grow flex-col px-3 pt-2'>
+          {goal.map(
+            ({ title, img, style = {}, noGradientBg = false }, i) => (
+              <div
+                className={`h-[15rem] flex grow hover-grow-effect relative overflow-hidden`}
+                key={title}
+                id={`about-goal${i}`}
+              >
+                <BannerImage url={img} styles={style} />
+                {!noGradientBg && (
+                  <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
+                )}
+                <div className="absolute img-caption-bg-cover left-0 right-0 bottom-0 pt-10 pb-9 horizontal opacity-100 overflow-hidden">
+                  <h2 className="text-center absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
+                    {title}
+                  </h2>
+                </div>
+              </div>
+            ),
+          )}
+        </div>
+        <div className="py-10 flex flex-col items-center justify-center relative z-[1]">
+          <h2>
+            insurance broker in Taiwan.
+          </h2>
+        </div>
+      </section>
       <div className="h-5"></div>
       <section
         className="md:inline-flex w-screen flex-row hidden relative"
-        id="about-team"
+        id="about-team-md"
       >
         <div className="absolute inset-0 -z-[1]">
           <GradientBg
@@ -217,10 +258,55 @@ export default function About() {
           </div>
         </div>
       </section>
+      <section
+        className="md:hidden w-screen overflow-hidden bg-amber-50"
+        id="about-team-phone"
+        data-aos="fade-up"
+      >
+        <div className="p-6 w-full col-span-1 flex h-[10%] relative justify-end items-center bg-amber-100"
+          style={{
+            clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
+          }}
+        >
+          <h1 className="leading-relaxed text-center">
+              Highly Experienced Senior Management Team
+            </h1>
+        </div>
+        <div className="h-36 relative px-3 pt-3">
+          <GradientBg
+            classnames="w-full h-full"
+            background="linear-gradient(rgba(255, 251, 235, 0.9), rgba(254, 249, 195, 0.3))"
+          />
+          <BannerImage
+            url={aboutTeamsImgUrl}
+            styles={{
+              backgroundPositionY: 'bottom',
+              backgroundPositionX: '45%',
+            }}
+          />
+        </div>
+        <div 
+          className="text-secondary space-y-6 px-6 pt-6 pb-12 bg-amber-50"
+          >
+          {teamReason.map((content, i) => (
+            <div
+              key={content}
+              className="space-x-16"
+              id={`teamSection${i+1}`}
+            >
+              <div className="w-full space-y-2">
+                <h2 className="font-light text-secondary leading-relaxed">
+                  {content}
+                </h2>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <div className="h-5"></div>
       <section
         className="md:inline-flex w-screen h-[53rem] flex-row hidden"
-        id="about-founder"
+        id="about-founder-md"
       >
         <aside
           className="w-[66rem] bg-amber-100 h-full overflow-hidden relative flex flex-col justify-center items-center space-y-10"
@@ -265,6 +351,53 @@ export default function About() {
             </div>
           </div>
         </div>
+      </section>
+      <section
+        className="md:hidden w-screen overflow-hidden bg-amber-50"
+        id="about-founder-phone"
+        data-aos="fade-up"
+      >
+        <div className="p-6 w-full h-[10%] relative bg-amber-100"
+          style={{
+            clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
+          }}
+        >
+          <h1 className="leading-relaxed text-center">
+            Our Founder
+          </h1>
+        </div>
+        <div
+          className="bg-amber-50 overflow-hidden relative space-y-3 flex flex-col justify-center items-center pt-6"
+        >
+          <div
+              className="overflow-hidden rounded-lg w-36 h-36 z-[1]"
+              style={{
+                clipPath: 'circle(50% at 50% 50%)',
+              }}
+              id="founderPhoto"
+            >
+              <BannerImage url={aboutFounderImgUrl} />
+            </div>
+            <div
+              className="border-l-8 border-solid border-primary-darker pl-2"
+            >
+              <h2 className="text-primary-darker font-bold" id="founderName">Solomon Chiu</h2>
+              <h3 className="text-primary-darker" id="founderTitle">Chairman</h3>
+            </div>
+        </div>
+        <div 
+          className="text-secondary space-y-6 px-6 pt-6 pb-20 bg-amber-50"
+          >
+            {founder.map((content, i) => (
+                <h2 
+                  key={i} 
+                  className="font-light text-secondary leading-relaxed indent-8" 
+                  id={`coreValueSection${i}`}
+                >
+                  {content}
+                </h2>
+              ))}
+          </div>
       </section>
     </>
   );
