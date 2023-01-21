@@ -170,8 +170,8 @@ export default function Career() {
 
   return (
     <>
-      <Section
-        classname="h-96"
+      <section
+        className="h-96 w-screen relative"
         style={{
           background: 'rgba(255, 247, 237, 0.85)',
         }}
@@ -185,12 +185,12 @@ export default function Career() {
           }}
         />
         <div
-          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
+          className="absolute top-0 h-full w-full flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
           id='CareerBanner'
         >
           <h1>Join us!</h1>
-          <hr className="w-8 text-amber-500" />
+          <hr className="md:block hidden w-8 text-amber-500" />
           <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
             AC Re has been continually expanding by adding new talent.
             We&apos;re looking for motivated individuals who would like to grow
@@ -198,8 +198,8 @@ export default function Career() {
             talents in every aspect to make up a prosperous team.
           </h3>
         </div>
-      </Section>
-      <Section classname="h-[32rem]" id="career-team">
+      </section>
+      <Section classname="h-[32rem]" id="career-team-md">
         <aside className="w-[42%] h-full overflow-hidden relative rounded-br-3xl">
           <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
           <BannerImage url={careerTeamImgUrl} />
@@ -223,8 +223,47 @@ export default function Career() {
           </div>
         </div>
       </Section>
-
-      <Section classname="h-[36rem]" id="career-care">
+      <section
+        className="md:hidden w-screen overflow-hidden"
+        id="career-team-phone"
+        data-aos="fade-up"
+        style={{
+          background: 'rgba(255, 247, 237, 0.85)',
+        }}
+      >
+        <div className="p-6 w-full col-span-1 flex h-[10%] relative justify-center items-center bg-amber-100"
+          style={{
+            clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
+          }}
+        >
+          <h1 className="leading-relaxed text-center">
+            Our Team
+          </h1>
+        </div>
+        <div className="h-48 sm:h-56 relative px-3 pt-3">
+          <GradientBg
+            classnames="w-full h-full"
+            background="linear-gradient(rgba(255, 251, 235, 0.9), rgba(254, 249, 195, 0.3))"
+          />
+          <BannerImage
+            url={careerTeamImgUrl}
+            styles={{
+              backgroundPositionY: '26%',
+            }}
+          />
+        </div>
+        <h3 
+          className="text-secondary space-y-6 px-6 pt-6 pb-12"
+        >
+          We are a united team full of highly talented and enthusiastic
+          people. We appreciate the uniqueness of each individual and the
+          values they bring. AC Re is committed to creating a workspace and
+          culture that makes our employees feel safe and comfortable while
+          continuing to grow with the company.
+        </h3>
+      </section>      
+      <div className="h-5"></div>
+      <Section classname="h-[36rem]" id="career-care-md">
         <div
           className="w-[58%] h-full flex flex-col items-center justify-center"
           data-aos="fade-up"
@@ -250,7 +289,49 @@ export default function Career() {
           <BannerImage url={careerCareImgUrl} />
         </aside>
       </Section>
-
+      <section
+        className="md:hidden w-screen overflow-hidden"
+        id="career-care-phone"
+        data-aos="fade-up"
+        style={{
+          background: 'rgba(255, 247, 237, 0.85)',
+        }}
+      >
+        <div className="p-6 w-full col-span-1 flex h-[10%] relative justify-center items-center bg-amber-100"
+          style={{
+            clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
+          }}
+        >
+          <h1 className="leading-relaxed text-center">
+            What we care about
+          </h1>
+        </div>
+        <div className="h-48 sm:h-52 relative px-3 pt-3">
+          <GradientBg
+            classnames="w-full h-full"
+            background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))"
+          />
+          <BannerImage
+            url={careerCareImgUrl}
+            // styles={{
+            //   backgroundPositionY: 'bottom',
+            //   backgroundPositionX: '45%',
+            // }}
+          />
+        </div>
+        <h3 
+          className="text-secondary space-y-6 px-6 pt-6 pb-12"
+        >
+          The foundation of our success is integrity, diversity, and
+          client-driven. We encourage individuals to express different
+          perspectives and we worship teamworking. Using our professionalism
+          and expertise, we are dedicated to servicing our clients across
+          all industries and providing best solutions for them. Our goal is
+          to go beyond traditional insurance brokers and make positive
+          impacts across the industry.
+        </h3>
+      </section>      
+      <div className="h-5"></div>
       <Section
         className="relative flex flex-col justify-evenly items-center space-y-10 py-20"
         style={{

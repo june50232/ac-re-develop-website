@@ -18,16 +18,14 @@ export default function Services() {
   return (
     <>
       <section className="h-96 w-screen relative" id="services-banner">
-        <div className='relative w-full h-full'>
-          <GradientBg background="rgba(255,255,255,0.85)" />
-          <BannerImage url={servicesBannerImgUrl} />
-        </div>
+        <GradientBg background="rgba(255,255,255,0.85)" />
+        <BannerImage url={servicesBannerImgUrl} />
         <div
           className="absolute top-0 z-2 h-full w-full flex flex-col justify-center items-center space-y-5 service-banner"
           data-aos="fade-up"
         >
           <h1>Services & products</h1>
-          <hr className="w-8 text-amber-500" />
+          <hr className="md:block hidden w-8 text-amber-500" />
           <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As

@@ -109,7 +109,7 @@ export default function Contact() {
 
   return (
     <>
-      <Section classname="h-96" id="contact-banner">
+      <section className="h-96 w-screen relative" id="contact-banner">
         <GradientBg background="rgba(255, 247, 237, 0.85)" />
         <BannerImage 
           url={contactBannerImgUrl} 
@@ -118,11 +118,11 @@ export default function Contact() {
           }}
         />
         <div
-          className="absolute h-full w-full flex flex-col justify-center items-center space-y-5"
+          className="absolute h-full w-full top-0 flex flex-col justify-center items-center space-y-5"
           data-aos="fade-up"
         >
           <h1>Get in touch with AC Re!</h1>
-          <hr className="w-8 text-amber-500" />
+          <hr className="md:block hidden w-8 text-amber-500" />
           <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As
@@ -131,21 +131,20 @@ export default function Contact() {
             need.
           </h3>
         </div>
-      </Section>
-      <Section
-        classname="h-80 grow flex items-center justify-center"
+      </section>
+      <section
+        className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-1 py-12 lg:px-24 xl:px-36 2xl:px-48"
         data-aos="fade-up"
         id="contact-info"
       >
-        <div className="w-full h-7/12 flex justify-evenly items-start">
-          <a
+        <a
             href="https://www.google.com.tw/maps/place/10491%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E9%95%B7%E5%AE%89%E6%9D%B1%E8%B7%AF%E4%BA%8C%E6%AE%B563%E8%99%9F/@25.0485715,121.5315824,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a963cec3cdd7:0xd8de6f134ac1fbc2!8m2!3d25.0485715!4d121.5337711?hl=zh-TW"
             className="flex flex-col space-y-3 items-center"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FcDepartment color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
+            <div className="flex flex-col md:space-y-3 items-center">
               <h2 className="text-primary-darkest">
                 Address
               </h2>
@@ -160,10 +159,10 @@ export default function Contact() {
           <a
             href="tel:886225080488"
             rel="noopener noreferrer"
-            className="flex flex-col space-y-3 items-center"
+            className="flex flex-col md:space-y-3 items-center"
           >
             <FcPhoneAndroid color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
+            <div className="flex flex-col md:space-y-3 items-center">
               <h2 className="text-primary-darkest">Phone</h2>
               <h3 className="font-light text-secondary text-center leading-relaxed">
                 +886-2-2508-0488
@@ -175,7 +174,7 @@ export default function Contact() {
             from="contact"
           ><>
             <FcFeedback color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
+            <div className="flex flex-col md:space-y-3 items-center">
               <h2 className="text-primary-darkest">Email</h2>
               <h3 className="font-light text-secondary text-center leading-relaxed">
                 info@ac-re.com.tw
@@ -185,15 +184,14 @@ export default function Contact() {
           </Mailto>
           <div className="flex flex-col space-y-3 items-center">
             <FcPrint color="#A0DDFE" fontSize="3rem" />
-            <div className="flex flex-col space-y-3 items-center">
+            <div className="flex flex-col md:space-y-3 items-center">
               <h2 className="text-primary-darkest">Fax</h2>
               <h3 className="font-light text-secondary text-center leading-relaxed">
                 +886-2-2508-1348
               </h3>
             </div>
           </div>
-        </div>
-      </Section>
+      </section>
       <Section
         className="relative flex flex-col justify-evenly items-center space-y-10 py-20"
         style={{
@@ -255,9 +253,9 @@ export default function Contact() {
           }
         </FormContext.Provider>
       </Section>
-      <Section classname="h-96" id="contact-map">
+      <section className="h-96 relative" id="contact-map">
         <GoogleMap></GoogleMap>
-      </Section>
+      </section>
     </>
   );
 }

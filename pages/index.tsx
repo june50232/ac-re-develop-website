@@ -108,7 +108,7 @@ export default function Home() {
                 <div key={title} className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6" data-aos="fade-up">
                   <div className="col-span-1">
                     <div
-                      className={`flex items-center justify-center w-20 h-20 rounded-full relative font-bold text-2xl m-auto order order-${
+                      className={`flex items-center justify-center w-20 h-20 rounded-full relative font-bold text-2xl md:m-auto order order-${
                         (i + 1) * 25
                       }`}
                     >

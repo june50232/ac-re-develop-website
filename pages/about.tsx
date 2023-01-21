@@ -163,7 +163,7 @@ export default function About() {
       </section>
       <section
         className="md:hidden flex-col w-screen overflow-hidden bg-amber-50"
-        id="about-goal-md"
+        id="about-goal-phone"
         data-aos="fade-up"
       >
         <div className="px-6 w-full col-span-1 py-8 relative justify-end items-center bg-amber-100"
@@ -181,7 +181,7 @@ export default function About() {
           {goal.map(
             ({ title, img, style = {}, noGradientBg = false }, i) => (
               <div
-                className={`h-[15rem] flex grow hover-grow-effect relative overflow-hidden`}
+                className={`sm:h-80 h-60 flex grow hover-grow-effect relative overflow-hidden`}
                 key={title}
                 id={`about-goal${i}`}
               >
@@ -263,7 +263,7 @@ export default function About() {
         id="about-team-phone"
         data-aos="fade-up"
       >
-        <div className="p-6 w-full col-span-1 flex h-[10%] relative justify-end items-center bg-amber-100"
+        <div className="p-6 w-full col-span-1 flex h-[10%] relative justify-center items-center bg-amber-100"
           style={{
             clipPath: 'polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)',
           }}
@@ -272,7 +272,7 @@ export default function About() {
               Highly Experienced Senior Management Team
             </h1>
         </div>
-        <div className="h-36 relative px-3 pt-3">
+        <div className="sm:h-56 h-52 relative px-3 pt-3">
           <GradientBg
             classnames="w-full h-full"
             background="linear-gradient(rgba(255, 251, 235, 0.9), rgba(254, 249, 195, 0.3))"

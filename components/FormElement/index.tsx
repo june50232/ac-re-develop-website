@@ -11,13 +11,13 @@ export const _SubmitButton = ({
   isLoading,
   ...restProps
 }) => {
-  let stateClassname = 'bg-amber-500 cursor-pointer px-24';
+  let stateClassname = 'bg-amber-500 cursor-pointer md:px-24 md:w-auto w-full';
   if (!isEnabled) {
     stateClassname =
-      'bg-secondary-lightest text-white cursor-not-allowed px-24';
+      'bg-secondary-lightest text-white cursor-not-allowed md:px-24 md:w-auto w-full';
   } else if (isLoading) {
     stateClassname =
-      'bg-secondary-lightest text-white cursor-not-allowed flex px-12';
+      'bg-secondary-lightest text-white cursor-not-allowed flex md:px-12 md:w-auto w-full';
   }
   return (
     <button
