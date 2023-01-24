@@ -76,7 +76,7 @@ export default function Header() {
         </div>
       </section>
       <div
-        className='hidden -z-[1] opacity-10 absolute h-screen w-screen top-0 left-0 bg-blue-50'
+        className='hidden opacity-30 absolute h-screen w-screen top-0 left-0 bg-blue-50'
         id="phone-nav-bg"
         ref={navBgRef}
         onClick={toggleNav}
