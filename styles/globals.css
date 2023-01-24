@@ -346,7 +346,7 @@
 }
 
 #phone-nav.open {
-  @apply opacity-100 transition-opacity
+  @apply block md:hidden;
 }
 
 body.open {

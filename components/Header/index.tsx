@@ -71,7 +71,7 @@ export default function Header() {
         </div>
       </section>
       <div
-        className="md:hidden opacity-0 absolute top-[4.5rem] bg-white w-screen left-0 shadow-2xl divide-y divide-slate-200"
+        className="hidden absolute top-[4.5rem] bg-white w-screen left-0 shadow-2xl divide-y divide-slate-200"
         ref={navRef}
         id="phone-nav"
       >

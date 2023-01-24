@@ -73,7 +73,7 @@ export default function Footer() {
           </Mailto>
         </div>
         <ul className="w-10/12 space-y-6" data-aos="fade-up">
-          {NavList.map(({ title, url, isPhoneHidden }) => !isPhoneHidden && (
+          {NavList.map(({ title, url }) => (
             <li key={title} className={'h-8 text-center'}>
               <Link href={url}>
                 <a className="tracking-tight font-bold text-secondary-light">
