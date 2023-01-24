@@ -10,11 +10,11 @@ export default function HTMLHead() {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="description" content="AC Re always acts in the client’s best interest and represents you rather than a single insurance company, you can trust you’ll be receiving unbiased information and recommendations." />
-        <meta name="keywords" content="Keywords" />
+        <meta name="keywords" content="Taiwan insurance broker, risk management program, insurance companies, Taiwan insurance markets, Solomon Chiu, AC Re, AC Re Services Co., Ltd., customized insurance, insurance claim advice" />
 
         {/* Android */}
         <meta name="theme-color" content="white" />
+        <meta name="description" content="By offering a customized insurance and risk management program, where we design the policies, negotiate the terms with insurance companies and help you find the most appropriate cover perfectly tailored to your unique needs at fair prices." />
         <meta name="mobile-web-app-capable" content="yes" />
 
         {/* iOS */}

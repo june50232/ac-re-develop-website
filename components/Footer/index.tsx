@@ -62,14 +62,14 @@ export default function Footer() {
           <a href="tel:+886225080488">
             <MdPhoneInTalk
               color="#A0DDFE"
-              fontSize="5rem"
+              fontSize="3.5rem"
               style={{
                 transform: 'rotate(25deg)',
               }}
             />
           </a>
           <Mailto>
-            <MdOutlineMail color="#A0DDFE" fontSize="5rem" />
+            <MdOutlineMail color="#A0DDFE" fontSize="3.5rem" />
           </Mailto>
         </div>
         <ul className="w-10/12 space-y-6" data-aos="fade-up">

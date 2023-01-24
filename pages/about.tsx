@@ -128,7 +128,7 @@ export default function About() {
                     {!noGradientBg && (
                       <GradientBg background="linear-gradient(rgba(255, 247, 237, 0.9), transparent, transparent, transparent, rgba(255, 247, 237, 0.9))" />
                     )}
-                    <div className="absolute img-caption-bg-cover top-0 left-0 vertical opacity-100 hover:opacity-0 w-16 bottom-[20%]">
+                    <div className="absolute img-caption-bg-cover top-0 left-0 vertical w-16 bottom-[20%]">
                       <h3
                         className="absolute bottom-4 color-amber-200 top-4 left-4 text-secondary-DEFAULT text-vertical"
                         data-aos="fade-up"
@@ -136,7 +136,7 @@ export default function About() {
                         {title}
                       </h3>
                     </div>
-                    <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal opacity-0 hover:opacity-100 overflow-hidden">
+                    <div className="absolute img-caption-bg-cover left-0 right-0 top-0 pt-10 pb-9 horizontal overflow-hidden">
                       <h2 className="absolute text-primary-dark top-5 left-4 right-4 text-horizontal whitespace-nowrap">
                         {title}
                       </h2>

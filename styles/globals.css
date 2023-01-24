@@ -224,6 +224,13 @@
     flex-grow: 3;
   }
 
+  .img-caption-bg-cover.vertical {
+    @apply md:opacity-100
+  }
+  .hover-grow-effect:hover .img-caption-bg-cover.vertical {
+    @apply md:opacity-0
+  }
+
   .img-caption-bg-cover {
     background: linear-gradient(
       rgba(255, 255, 255, 0.9),
@@ -240,7 +247,11 @@
       rgba(255, 255, 255, 0.7),
       transparent
     );
+    @apply md:opacity-0
   }
+  .hover-grow-effect:hover .img-caption-bg-cover.horizontal {
+    @apply md:opacity-100
+}
 }
 
 .order-25:after {
@@ -333,3 +344,12 @@
 .retry-button:focus > button {
   @apply ring-4 outline-none;
 }
+
+#phone-nav.open {
+  @apply opacity-100 transition-opacity
+}
+
+body.open {
+  @apply overflow-hidden
+}
+

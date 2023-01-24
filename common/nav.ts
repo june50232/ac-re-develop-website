@@ -4,7 +4,12 @@ export const servicesUrl = '/services';
 export const careerUrl = '/career';
 export const contactUrl = '/contact';
 
-const NavList: { title: string; url: string; isPhoneHidden?: boolean }[] = [
+const NavList: { title: string; url: string; isPhoneHidden?: boolean; isMdNavHidden?: boolean }[] = [
+  {
+    title: 'Home',
+    url: homeUrl,
+    isMdNavHidden: true,
+  },
   {
     title: 'About AC Re',
     url: aboutUrl,

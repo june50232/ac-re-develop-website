@@ -223,6 +223,7 @@ export default function Career() {
           </div>
         </div>
       </Section>
+      <div className="h-5 md:hidden"></div>
       <section
         className="md:hidden w-screen overflow-hidden"
         id="career-team-phone"

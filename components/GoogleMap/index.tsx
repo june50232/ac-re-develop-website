@@ -17,8 +17,8 @@ export default function GoogleMap() {
   const setting = {
     key: 'AIzaSyD8YT4z-cC_Mi15d-IDybklyXgwI4nq95E',
     center: {
-      lat: 25.0469492,
-      lng: 121.5254558,
+      lat: 25.0485715,
+      lng: 121.5337711,
     },
     mark: {
       lat: 25.0485715,
