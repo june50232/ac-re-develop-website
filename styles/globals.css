@@ -345,11 +345,12 @@
   @apply ring-4 outline-none;
 }
 
-#phone-nav.open {
+#phone-nav.open,
+#phone-nav-bg.open {
   @apply block md:hidden;
 }
 
 body.open {
-  @apply overflow-hidden
+  overflow: hidden !important;
 }
 

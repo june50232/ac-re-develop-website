@@ -9,10 +9,15 @@ export default function Header() {
   const router = useRouter();
   const navRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const navBgRef = useRef<HTMLDivElement>(null);
 
   const toggleNav = () => {
-    if (navRef?.current && headerRef?.current) {
+    if (navRef?.current 
+      && headerRef?.current
+      && navBgRef?.current
+      ) {
       navRef.current?.classList?.toggle('open');
+      navBgRef.current?.classList?.toggle('open');
       document.body.classList?.toggle('open');
     }
   };
@@ -70,6 +75,12 @@ export default function Header() {
           <span className="text-xs font-bold">MENU</span>
         </div>
       </section>
+      <div
+        className='hidden -z-[1] opacity-10 absolute h-screen w-screen top-0 left-0 bg-blue-50'
+        id="phone-nav-bg"
+        ref={navBgRef}
+        onClick={toggleNav}
+      ></div>
       <div
         className="hidden absolute top-[4.5rem] bg-white w-screen left-0 shadow-2xl divide-y divide-slate-200"
         ref={navRef}
