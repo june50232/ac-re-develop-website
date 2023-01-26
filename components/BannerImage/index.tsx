@@ -1,4 +1,9 @@
-export default function BannerImage(props) {
+import React from 'react'
+import useWindowSize from 'common/useWindowSize'
+
+const BannerImage = (props) => {
+  const { width } = useWindowSize();
+  const imgPrefix = width < 768 ? './mobileImg' : './img'
   return (
     <div
       className={[
@@ -8,8 +13,10 @@ export default function BannerImage(props) {
       ].join(' ')}
       style={{
         ...(props.styles ? props.styles : {}),
-        backgroundImage: `url(${props?.url})`,
+        backgroundImage: `url(${imgPrefix}${props?.url})`,
       }}
     />
   );
 }
+
+export default BannerImage
