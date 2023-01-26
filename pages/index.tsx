@@ -106,7 +106,9 @@ export default function Home() {
             <div className="text-secondary space-y-5">
               {whyReason.map(({ title, content }, i) => (
                 <div key={title} className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
-                  <div className="col-span-1">
+                  <div className="col-span-1"
+                    data-aos="fade-right"
+                  >
                     <div
                       className={`flex items-center justify-center w-20 h-20 rounded-full relative font-bold text-2xl md:m-auto order order-${
                         (i + 1) * 25
