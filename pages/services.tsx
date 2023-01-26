@@ -140,7 +140,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
           >
             <div className="relative w-full h-full flex items-center justify-center">
               <h1
-                className="absolute right-6 top-3 px-6 py-6 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
+                className="absolute right-6 top-3 md:p-6 p-3 cursor-pointer text-secondary-lighter hover:text-secondary-light font-thin hover:font-normal z-10"
                 onClick={() => setOpen(false)}
               >
                 X
@@ -168,10 +168,10 @@ const PortalContent: FC<{
   const id = servicesData[index].title.split(' ').join('')
   return (
     <div className="h-[88%] w-[90%] overflow-hidden relative flex">
-      <section className="flex flex-col h-full absolute inset-0 space-y-6 items-center">
+      <section className="flex flex-col h-full absolute inset-0 space-y-6 md:items-center">
         <LaptopH2PrelineH3Wrap
           noFadeEffect
-          classnames="w-[70%] text-primary-darker"
+          classnames="w-[85%] md:w-[70%] text-primary-darker pl-5 md:pl-0"
         >
           {servicesData[index].title}
         </LaptopH2PrelineH3Wrap>
@@ -180,7 +180,7 @@ const PortalContent: FC<{
           <div className="flex flex-col h-full min-h-fit pt-3 px-[2%] overflow-y-scroll invisible-scrollbar">
             {servicesData[index].category.map((o: any, i) => (
               <div
-                className=" h-auto relative hover-scale-inner-img-effect"
+                className="h-auto relative hover-scale-inner-img-effect"
                 key={i}
                 id={`${id}_Content_${i}`}
               >
@@ -199,7 +199,7 @@ const PortalContent: FC<{
           </div>
         ) : (
           <div className="w-full h-full flex justify-center items-start overflow-y-scroll invisible-scrollbar">
-            <ul className={`w-4/6 h-auto ${index === 2 && 'mt-6'} flex flex-col list-disc space-y-${index === 2 ? '6' : '3'}`}>
+            <ul className={`px-6 md:px-0 md:w-4/6 h-auto ${index === 2 && 'mt-6'} flex flex-col list-disc space-y-${index === 2 ? '6' : '3'}`}>
               {servicesData[index].category.map(({ title }, i) => {
                 return (
                   <li key={i} id={`${id}_Content_${i}`}>

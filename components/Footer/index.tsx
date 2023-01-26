@@ -1,10 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { MdPhoneInTalk, MdOutlineMail } from 'react-icons/md';
 import NavList from 'common/nav';
 import Link from 'next/link';
 import { Mailto } from 'components'
 
 export default function Footer() {
+  const router = useRouter();
+
   return (
     <footer className="overflow-hidden">
       <section
@@ -74,10 +77,16 @@ export default function Footer() {
         </div>
         <ul className="w-10/12 space-y-6" data-aos="fade-up">
           {NavList.map(({ title, url }) => (
-            <li key={title} className={'h-8 text-center'}>
+            <li key={title} className={`h-8 text-center`}>
               <Link href={url}>
                 <a className="tracking-tight font-bold text-secondary-light">
-                  <h2>{title}</h2>
+                  <h2>
+                <span className={`pb-2 relative menu-hover-line ${
+                  router.asPath === url ? 'menu-line' : ''
+                }`}>
+                  {title}
+                </span>
+              </h2>
                 </a>
               </Link>
             </li>
