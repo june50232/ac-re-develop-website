@@ -26,7 +26,7 @@ export default function Services() {
         >
           <h1>Services & products</h1>
           <hr className="md:block hidden w-8 text-amber-500" />
-          <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
+          <h3 className="font-light text-secondary text-left px-6 md:px-0 md:w-2/3 indent-8 leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As
             strategic advisors, we build long-term partnerships with local and

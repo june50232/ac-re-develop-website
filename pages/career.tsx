@@ -191,7 +191,7 @@ export default function Career() {
         >
           <h1>Join us!</h1>
           <hr className="md:block hidden w-8 text-amber-500" />
-          <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
+          <h3 className="font-light text-secondary text-left px-6 md:px-0 md:w-2/3 indent-8 leading-relaxed">
             AC Re has been continually expanding by adding new talent.
             We&apos;re looking for motivated individuals who would like to grow
             within a dynamic and friendly environment. We welcome diverse
@@ -341,7 +341,7 @@ export default function Career() {
         id="career-form"
       >
         <div
-          className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative px-8"
+          className="h-50 w-full flex flex-col justify-center items-center space-y-5 relative px-6"
           data-aos="fade-up"
         >
           <h2 className="text-center text-primary-darker leading-relaxed">
@@ -390,7 +390,7 @@ export default function Career() {
               />
             : 
             <div
-              className="w-4/6 relative"
+              className="px-6 w-full md:w-5/6 lg:w-4/6 md:px-0 relative"
               data-aos="fade-up"
             >
               <div className="grid gap-6 mb-6 md:grid-cols-2">

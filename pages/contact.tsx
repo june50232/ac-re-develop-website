@@ -123,7 +123,7 @@ export default function Contact() {
         >
           <h1>Get in touch with AC Re!</h1>
           <hr className="md:block hidden w-8 text-amber-500" />
-          <h3 className="font-light text-secondary text-left w-2/3 indent-8 leading-relaxed">
+          <h3 className="font-light text-secondary text-left px-6 md:px-0 md:w-2/3 indent-8 leading-relaxed">
             AC Re brings industry knowledge, expertise, and insight to design
             programs for your business&apos;s specific risks and needs. As
             strategic advisors, we build long-term partnerships with local and
@@ -200,14 +200,14 @@ export default function Contact() {
         id="contact-form"
       >
         <div
-          className="h-40 w-full flex flex-col justify-center items-center space-y-5 relative"
+          className="w-full flex flex-col justify-center items-center space-y-5 relative"
           data-aos="fade-up"
         >
           <h1 className="font-bold text-primary-darker">
             Need More Help?
           </h1>
           <hr className="w-8 text-amber-500" />
-          <h2 className="font-light text-secondary w-9/12 text-center leading-relaxed">
+          <h2 className="font-light text-secondary px-6 md:px-0 md:w-9/12 text-center leading-relaxed">
             Whether you are looking for specific solutions or have a question,{' '}
             <br />
             you can also connect with us via the{' '}
@@ -234,7 +234,7 @@ export default function Contact() {
               />
             : 
               <div
-                className="relative w-4/6"
+                className="relative px-6 w-full md:w-5/6 lg:w-4/6 md:px-0"
                 data-aos="fade-up"
               >
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
