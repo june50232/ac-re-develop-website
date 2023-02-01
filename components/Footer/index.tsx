@@ -1,21 +1,17 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { MdPhoneInTalk, MdOutlineMail } from 'react-icons/md';
-import NavList from 'common/nav';
-import Link from 'next/link';
 import { Mailto } from 'components'
 
 export default function Footer() {
-  const router = useRouter();
 
   return (
     <footer className="overflow-hidden">
       <section
-        className="md:flex hidden flex-col w-10/12 h-48 justify-center space-y-3 items-center"
+        className="md:flex md:flex-col w-10/12 justify-center py-12 md:py-16 space-y-6 md:space-y-6 items-center"
         id="footer-laptop"
       >
         <div
-          className="flex justify-center items-center w-full space-x-12"
+          className="md:flex md:justify-center md:items-center w-full space-y-6 md:space-y-0 md:space-x-12"
           data-aos="fade-up"
         >
           <a
@@ -30,9 +26,10 @@ export default function Footer() {
                 transform: 'rotate(25deg)',
               }}
             />
-            <h4 className='hover:text-blue-600 hover:underline'>
+            <h2 className='md:hidden font-normal'>+886-2-2508-0488</h2>
+            <h3 className='hidden md:block hover:text-blue-600 hover:underline'>
               +886-2-2508-0488
-            </h4>
+            </h3>
           </a>
           <Mailto
             className="flex justify-center items-center space-x-2"
@@ -40,9 +37,10 @@ export default function Footer() {
           >
             <>
               <MdOutlineMail color="#A0DDFE" fontSize="2rem" />
-              <h4 className='hover:text-blue-600 hover:underline'>
+              <h2 className='md:hidden font-normal'>info@ac-re.com.tw</h2>
+              <h3 className='hidden md:block hover:text-blue-600 hover:underline'>
                 info@ac-re.com.tw
-              </h4>
+              </h3>
             </>
           </Mailto>
         </div>
@@ -54,6 +52,7 @@ export default function Footer() {
           </h5>
         </div>
       </section>
+      {/* 
       <section
         className="md:hidden w-screen py-12 space-y-3 flex flex-col items-center"
         id="footer-mobile"
@@ -75,23 +74,7 @@ export default function Footer() {
             <MdOutlineMail color="#A0DDFE" fontSize="3.5rem" />
           </Mailto>
         </div>
-        <ul className="w-10/12 space-y-6" data-aos="fade-up">
-          {NavList.map(({ title, url }) => (
-            <li key={title} className={`h-8 text-center`}>
-              <Link href={url}>
-                <a className="tracking-tight font-bold text-secondary-light">
-                  <h2>
-                <span className={`pb-2 relative menu-hover-line ${
-                  router.asPath === url ? 'menu-line' : ''
-                }`}>
-                  {title}
-                </span>
-              </h2>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      
         <h5
           className="font-light text-secondary-lightest text-center w-10/12 pt-6"
           data-aos="fade-up"
@@ -100,6 +83,7 @@ export default function Footer() {
           Rights Reserved.</span>
         </h5>
       </section>
+       */}
     </footer>
   );
 }

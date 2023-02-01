@@ -20,7 +20,7 @@ export default function About() {
     },{
       icon: <IoDiamondOutline color="#A0DDFE" fontSize="3rem" />,
       title: 'Innovative and Forward-Thinking',
-      content: <><span className='whitespace-nowrap'>AC Re</span> is an innovative, forward-thinking <span className='whitespace-nowrap'>insurance broker</span> that takes pride in <span className='whitespace-nowrap'>risk management</span> and <span className='whitespace-nowrap'>insurance/reinsurance</span> solutions for <span className='whitespace-nowrap'>direct corporate clients and reinsureds.</span></>,
+      content: <><span className='whitespace-nowrap'>AC Re</span> is an innovative, forward-thinking <span className='whitespace-nowrap'>insurance broker</span> that takes pride in <span className='whitespace-nowrap'>risk management</span> and <span className='whitespace-nowrap'>insurance/reinsurance</span> solutions for <span className='md:whitespace-nowrap'>direct corporate clients and reinsureds.</span></>,
     },{
       icon: <IoEarthOutline color="#A0DDFE" fontSize="3rem" />,
       title: 'Global Markets',

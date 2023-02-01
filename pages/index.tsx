@@ -67,22 +67,26 @@ export default function Home() {
           url={homeOceanBanner}
           noHoverEffect
         />
-        <div className="absolute flex items-center justify-center inset-0 px-4">
-          <FaQuoteLeft
-            color="#ffffff"
-            fontSize="1.5rem"
-            style={{
-              marginRight: '1rem',
-            }}
-          />
+        <div className="absolute flex items-center justify-center inset-0 px-6">
+          <span className='hidden sm:block'>
+            <FaQuoteLeft
+              color="#ffffff"
+              fontSize="1.5rem"
+              style={{
+                marginRight: '1rem',
+              }}
+            />
+          </span>
           <h1>We bring industry knowledge, expertise, and insight for clients</h1>
-          <FaQuoteRight
-            color="#ffffff"
-            fontSize="1.5rem"
-            style={{
-              marginLeft: '1rem',
-            }}
-          />
+          <span className='hidden sm:block'>
+            <FaQuoteRight
+              color="#ffffff"
+              fontSize="1.5rem"
+              style={{
+                marginLeft: '1rem',
+              }}
+            />
+          </span>
         </div>
       </section>
       <section

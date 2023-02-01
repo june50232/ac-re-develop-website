@@ -254,7 +254,7 @@ export default function Career() {
           />
         </div>
         <h3 
-          className="text-secondary space-y-6 px-6 pt-6 pb-12"
+          className="text-secondary font-light space-y-6 px-6 pt-6 pb-12"
         >
           We are a united team full of highly talented and enthusiastic
           people. We appreciate the uniqueness of each individual and the
@@ -321,7 +321,7 @@ export default function Career() {
           />
         </div>
         <h3 
-          className="text-secondary space-y-6 px-6 pt-6 pb-12"
+          className="text-secondary space-y-6 px-6 pt-6 pb-12 font-light"
         >
           The foundation of our success is integrity, diversity, and
           client-driven. We encourage individuals to express different
@@ -368,8 +368,8 @@ export default function Career() {
             className="font-light text-secondary text-center leading-relaxed"
             data-aos="fade-up"
           >
-            Thank you for expressing your interest in joining AC Re.
-            <br />
+            Thank you for expressing your interest in joining AC Re.&nbsp;  
+            <br className='hidden md:block' />
             Please complete the details below and upload your CV.
           </h2>
         </div>
