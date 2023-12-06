@@ -10,6 +10,7 @@ import {
   servicesBannerImgUrl,
   services3WindImgUrl,
   services2ShipImgUrl,
+  services4LifeImgUrl,
 } from 'common/imgUrls';
 import { HiOutlineCursorClick } from 'react-icons/hi';
 import 'photoswipe/dist/photoswipe.css';
@@ -63,15 +64,27 @@ export default function Services() {
           <PortalClickItem
             index={2}
             titleClassName="top-[8%] left-8 w-80 items-center"
+            isTextLarge={true}
           />
         </div>
         <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
-        <PortalClickItem
-          index={3}
-          titleClassName="top-[11%] right-[66%]"
-          isOther
-        />
+          <PortalClickItem
+            index={3}
+            titleClassName="top-[11%] right-[66%] items-center"
+            isTextLarge={true}
+          />
         </div>
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-wind">
+          <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
+          <BannerImage
+            url={services4LifeImgUrl}
+            styles={{
+              backgroundPosition: '20%',
+            }}
+          />
+        </div> 
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4">
         <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-wind">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
@@ -79,6 +92,20 @@ export default function Services() {
             styles={{
               backgroundPosition: 'initial',
             }}
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+          <PortalClickItem
+            index={4}
+            titleClassName="top-[8%] left-8 w-80 items-center"
+            isTextLarge={true}
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+          <PortalClickItem
+            index={5}
+            titleClassName="top-[11%] right-[66%]"
+            isOther
           />
         </div>
       </div>
@@ -103,7 +130,7 @@ const ProductTitle = (props) => {
   );
 };
 
-const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
+const PortalClickItem = ({ index, width, titleClassName, isOther, isTextLarge }: any) => {
   const [isOpen, setOpen] = useState(false);
   const id = servicesData[index].title.split(' ').join('')
 
@@ -149,6 +176,7 @@ const PortalClickItem = ({ index, width, titleClassName, isOther }: any) => {
                 index={index}
                 titleClassName={titleClassName}
                 isOther={isOther}
+                isTextLarge={isTextLarge}
               />
             </div>
           </div>
@@ -164,7 +192,8 @@ const PortalContent: FC<{
   index: number;
   titleClassName: string;
   isOther?: boolean;
-}> = ({ index, isOther }) => {
+  isTextLarge?: boolean
+}> = ({ index, isOther, isTextLarge }) => {
   const id = servicesData[index].title.split(' ').join('')
   return (
     <div className="h-[88%] w-[90%] overflow-hidden relative flex">
@@ -203,7 +232,7 @@ const PortalContent: FC<{
               {servicesData[index].category.map(({ title }, i) => {
                 return (
                   <li key={i} id={`${id}_Content_${i}`}>
-                    {index === 2 
+                    {isTextLarge 
                     ? <h1 className="text-primary-darker font-light leading-relaxed">{title}</h1>
                     : <h3 className="text-primary-darker font-light leading-relaxed">{title}</h3>
                   } 

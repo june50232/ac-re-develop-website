@@ -39,6 +39,9 @@ export const servicesBannerImgUrl = '/services-banner.png';
 // https://www.shutterstock.com/zh-Hant/image-photo/solar-energy-panel-photovoltaic-cell-wind-1421845307
 export const services3WindImgUrl = '/services-3-wind.png';
 
+// https://pixabay.com/photos/team-spirit-teamwork-community-2447163/
+export const services4LifeImgUrl = '/service-4-life.png';
+
 // https://www.shutterstock.com/zh-Hant/image-photo/webinar-banner-aerial-top-view-cargo-1846546738
 export const services2ShipImgUrl = '/services-2-ship.png';
 

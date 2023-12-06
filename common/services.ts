@@ -167,7 +167,41 @@ const servicesData = [
     ],
   },
   {
-    title: 'Reinsurance and Alternative Risk Transfer',
+    title: 'Group Life',
+    category: [
+      {
+        title: 'Life Insurance',
+      },
+      {
+        title: 'Health Insurance',
+      },
+      {
+        title: 'Personal Accident Insurance',
+      },
+      {
+        title: 'Annuity Insurance',
+      }
+    ]
+  },
+  {
+    title: 'Life Reinsurance and Alternative Risk Transfer',
+    category: [
+      {
+        title: 'Facultative Reinsurance',
+      },
+      {
+        title: 'Treaty Reinsurance',
+      },
+      {
+        title: 'Loss Portfolio Transfer',
+      },
+      {
+        title: 'Structured Solutions',
+      }
+    ]
+  },
+  {
+    title: 'Non-Life Reinsurance and Alternative Risk Transfer',
     bgImgStyle: {
       backgroundPositionY: '0%',
     },
