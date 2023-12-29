@@ -59,15 +59,15 @@ export default function Services() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+      <div className="grid grid-cols-1 md:grid-cols-6">
+        <div className='col-span-1 md:col-span-2 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={2}
             titleClassName="top-[8%] left-8 w-80 items-center"
             isTextLarge={true}
           />
         </div>
-        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+        <div className='col-span-1 md:col-span-2 overflow-hidden h-48 md:h-96'>
           <PortalClickItem
             index={3}
             titleClassName="top-[11%] right-[66%] items-center"
