@@ -37,7 +37,7 @@ export default function Services() {
         </div>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-4" id="services-category">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-ship">
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-64 md:h-96' id="services-img-ship">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), rgb(224,242,248,0.5),rgb(224,242,248,0.1),rgb(224,242,248,0.5), rgb(255,255,255,0.85))" />
           <BannerImage
             url={services2ShipImgUrl}
@@ -59,22 +59,8 @@ export default function Services() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-6">
-        <div className='col-span-1 md:col-span-2 overflow-hidden h-48 md:h-96'>
-          <PortalClickItem
-            index={2}
-            titleClassName="top-[8%] left-8 w-80 items-center"
-            isTextLarge={true}
-          />
-        </div>
-        <div className='col-span-1 md:col-span-2 overflow-hidden h-48 md:h-96'>
-          <PortalClickItem
-            index={3}
-            titleClassName="top-[11%] right-[66%] items-center"
-            isTextLarge={true}
-          />
-        </div>
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-wind">
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className='md:order-last col-span-1 md:col-span-2 relative overflow-hidden h-64 md:h-96' id="services-img-wind">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services4LifeImgUrl}
@@ -82,10 +68,24 @@ export default function Services() {
               backgroundPosition: '20%',
             }}
           />
-        </div> 
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+          <PortalClickItem
+            index={2}
+            titleClassName="top-[8%] left-8 w-80 items-center"
+            isTextLarge={true}
+          />
+        </div>
+        <div className='col-span-1 md:col-span-1 overflow-hidden h-48 md:h-96'>
+          <PortalClickItem
+            index={3}
+            titleClassName="top-[11%] right-[66%] items-center"
+            isTextLarge={true}
+          />
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-36 md:h-96' id="services-img-wind">
+        <div className='col-span-1 md:col-span-2 relative overflow-hidden h-64 md:h-96' id="services-img-wind">
           <GradientBg background="linear-gradient(rgba(255,255,255,0.85), transparent, transparent, transparent, rgb(255,255,255,0.85))" />
           <BannerImage
             url={services3WindImgUrl}
